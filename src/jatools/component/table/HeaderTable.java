@@ -1,0 +1,166 @@
+package jatools.component.table;
+
+import jatools.component.Component;
+
+
+/**
+ * DOCUMENT ME!
+ *
+ * @author $author$
+ * @version $Revision: 1.3 $
+  */
+public class HeaderTable extends Table {
+    /**
+     * Creates a new HeaderTable object.
+     */
+    public HeaderTable() {
+        this.gridSpec = null;
+    }
+    
+    private String[] groupNames;
+    private int[] groupColumns;
+    
+    
+
+    static HeaderTable create(Table table) {
+        HeaderTable header = new HeaderTable();
+        header.setChildren(table.getChildren());
+        header.setNodePath(table.getNodePath());
+
+        return header;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public int getColumnCount() {
+        return getCell().colSpan;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public int getRowCount() {
+        return getCell().rowSpan;
+    }
+
+    /**
+    * DOCUMENT ME!
+    *
+    * @param from DOCUMENT ME!
+    * @param to DOCUMENT ME!
+    *
+    * @return DOCUMENT ME!
+    */
+    public int getRowHeight(int from, int to) {
+        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeight");
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param row DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public int getRowHeight(int row) {
+        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeight");
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public int[] getRowHeights() {
+        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param row DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public int getRowY(int row) {
+        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public int getTotalRowHeights() {
+        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param col DOCUMENT ME!
+     * @param span DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public int getWidth(int col, int span) {
+        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param child DOCUMENT ME!
+     * @param index DOCUMENT ME!
+     */
+    public void insert(Component child, int index) {
+        super.insert(child, index);
+        notifyRootTable();
+    }
+
+    /**
+    * DOCUMENT ME!
+    *
+    * @param child DOCUMENT ME!
+    */
+    public void remove(Component child) {
+        super.remove(child);
+        notifyRootTable();
+    }
+
+    protected void notifyRootTable() {
+        TableBase g = this.getRootTable();
+
+        if (g != null) {
+            g.setDirty();
+        }
+    }
+    
+    public void add(Component child) {
+        super.add(child);
+
+        notifyRootTable();
+    }
+
+	public int[] getGroupColumns() {
+		return groupColumns;
+	}
+
+	public void setGroupColumns(int[] groupColumns) {
+		this.groupColumns = groupColumns;
+	}
+
+	public String[] getGroupNames() {
+		return groupNames;
+	}
+
+	public void setGroupNames(String[] groupNames) {
+		this.groupNames = groupNames;
+	}
+
+}
