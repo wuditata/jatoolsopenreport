@@ -1,3 +1,6 @@
-授权用户:DEMO
-软件狗号:safenet(20070198,94241968)
+简表(JOR) License
+
+
+简表(JOR) 的License条款，正在拟订之中，因此，为了避免不必要的法律纠纷，请你暂时不要将本代码用于任何商业用途中。License条款将在近期推出，详情请关注  www.jatools.com/jor.
+
 
