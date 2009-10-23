@@ -33,7 +33,7 @@ public interface BorderBase {
     /**
      * DOCUMENT ME!
      */
-    public static final String DEFAULT_STYLE_TEXT = "border:1 solid #000000";
+    public static final String DEFAULT_STYLE_TEXT = "border:1px solid #000000";
 
    
 
