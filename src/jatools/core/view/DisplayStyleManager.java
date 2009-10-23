@@ -1,32 +1,36 @@
 package jatools.core.view;
 
-
 import jatools.engine.export.html.HtmlExport;
+
 import jatools.formatter.DecimalFormat;
 import jatools.formatter.Format2;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.io.IOException;
-import java.io.Writer;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
 import jxl.biff.DisplayFormat;
+
 import jxl.format.Alignment;
 import jxl.format.Border;
 import jxl.format.BorderLineStyle;
 import jxl.format.Colour;
 import jxl.format.UnderlineStyle;
 import jxl.format.VerticalAlignment;
+
 import jxl.write.DateFormat;
 import jxl.write.NumberFormat;
 import jxl.write.WritableCellFormat;
 import jxl.write.WritableFont;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
+
+import java.awt.Color;
+import java.awt.Font;
+
+import java.io.IOException;
+import java.io.Writer;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 
 /**
@@ -37,6 +41,7 @@ import jxl.write.WriteException;
   */
 public class DisplayStyleManager {
     public static final String NORMAL_CLASS_PREFIX = "c";
+    public static final String DIV_CLASS_PREFIX = "d";
     public static final String TD_CLASS_PREFIX = "t";
     int id = 0;
     ArrayList csses = new ArrayList();
@@ -181,7 +186,7 @@ public class DisplayStyleManager {
         while (it.hasNext()) {
             DisplayStyle css = (DisplayStyle) it.next();
 
-            styles.append(toHtmlCSS(css, ""));
+            styles.append(CSSBuilder.build(css, ""));
         }
 
         return styles.toString();
@@ -202,7 +207,7 @@ public class DisplayStyleManager {
                 while (it.hasNext()) {
                     DisplayStyle css = (DisplayStyle) it.next();
 
-                    out.write(toHtmlCSS(css, ""));
+                    out.write(CSSBuilder.build(css, ""));
                 }
 
                 out.write("</style>");
@@ -214,69 +219,7 @@ public class DisplayStyleManager {
         }
     }
 
-    private static String toHtmlCSS(DisplayStyle style, String _html_report_id) {
-        StringBuffer result = new StringBuffer();
-
-        if (style.isForCell()) {
-            int id2 = style.getId2();
-
-            if (id2 != -1) {
-                result.append("." + _html_report_id + TD_CLASS_PREFIX +
-                    ((DisplayStyle) style).getId2());
-                result.append("{");
-                result.append(style.getBorder().toString());
-                result.append("}\n");
-            }
-        }
-
-        Font font = style.getFont();
-        result.append("." + _html_report_id + NORMAL_CLASS_PREFIX + ((DisplayStyle) style).getId());
-
-        result.append("{");
-
-        result.append("font-family: ");
-        result.append(font.getName());
-        result.append(";");
-
-        result.append("font-size: ");
-        result.append(String.valueOf(font.getSize()));
-        result.append("px;");
-
-        if (font.isBold()) {
-            result.append("font-weight: bold;");
-        }
-
-        if (font.isItalic()) {
-            result.append("font-style: italic;");
-        }
-
-        if (!style.isForCell() && (style.getBorder() != null)) {
-            result.append(style.getBorder() + ";");
-        }
-
-        if (style.getBackColor() != null) {
-            result.append("background-color: #");
-
-            String backColor = Integer.toHexString(style.getBackColor().getRGB() &
-                    HtmlExport.colorMask).toUpperCase();
-            backColor = ("000000" + backColor).substring(backColor.length());
-            result.append(backColor + ";");
-        }
-
-        if (style.getForeColor().getRGB() != Color.black.getRGB()) {
-            result.append("color: #");
-
-            String hexa = Integer.toHexString(style.getForeColor().getRGB() & HtmlExport.colorMask)
-                                 .toUpperCase();
-            hexa = ("000000" + hexa).substring(hexa.length());
-            result.append(hexa + ";");
-        }
-
-        result.append("}\n");
-
-        return result.toString();
-    }
-
+   
     private void generateXlsCSS() {
         if ((csses == null) || csses.isEmpty()) {
             return;

@@ -1,15 +1,16 @@
 package jatools.core.view;
 
-
-
 import jatools.accessor.PropertyAccessor;
 import jatools.accessor.PropertyDescriptor;
+
 import jatools.component.ComponentConstants;
+
 import jatools.formatter.Format2;
 import jatools.formatter.FormatUtil;
 
 import java.awt.Color;
 import java.awt.Font;
+
 import java.io.Serializable;
 
 
@@ -315,6 +316,15 @@ public class DisplayStyle implements PropertyAccessor, Cloneable, Serializable {
      *
      * @return DOCUMENT ME!
      */
+    public boolean isMiddleMultiline() {
+        return (isWordwrap() && (getVerticalAlignment() == TextView.MIDDLE));
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
     public int getId() {
         return id;
     }
@@ -327,7 +337,7 @@ public class DisplayStyle implements PropertyAccessor, Cloneable, Serializable {
     public int getId2() {
         this.forCell = true;
 
-        return (getBorder() != null) ? id : (-1);
+        return ((getBorder() != null) || (this.verticalAlignment > -1)) ? id : (-1);
     }
 
     /**

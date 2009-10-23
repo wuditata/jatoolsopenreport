@@ -56,9 +56,6 @@ public class HtmlExport extends BasicExport {
     final static SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
     final static SimpleDateFormat timeformat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
     static boolean NO_PAGE_BORDER = System2.getProperty("html.no.page.border") != null;
-    private static final String[] ALIGN_CLASS = {
-            "tl", "tc", "tr", "tl", "tc", "tr", "bl", "bc", "br"
-        };
     private static final String[] ALIGN_CLASS2 = { "tl", "t", "tr", "l", "cc", "r", "bl", "b", "br" };
     public static final String CSS_TEXT_ALIGN_LEFT = "left";
     public static final String CSS_TEXT_ALIGN_RIGHT = "right";
@@ -319,8 +316,7 @@ public class HtmlExport extends BasicExport {
                 body.append("<tr ");
             }
 
-            body.append(StringUtil.format("style='line-height:#px;' height='#'>",
-                    size.getSize(i) + "", size.getSize(i) + ""));
+            body.append(StringUtil.format("height='#'>", size.getSize(i) + ""));
 
             for (int j = 0; j < tableView.getColumns().length(); j++) {
                 AbstractView view = tableView.getViewOver(i, j);
@@ -330,23 +326,30 @@ public class HtmlExport extends BasicExport {
                 } else if ((view.getCell().row == i) && (view.getCell().column == j)) {
                     body.append("<td ");
 
-                    Border border = view.getBorder();
+                    String cellCls = this.getCellClass(view);
 
-                    if ((border != null) || (view.getCell().rowSpan > 1)) {
-                        body.append("style='");
-
-                        if (border != null) {
-                            body.append(border.toString());
-                        }
-
-                        if (view.getCell().rowSpan > 1) {
-                            body.append(StringUtil.format("line-height:#px;",
-                                    "" + size.getSize(view.getCell().row, view.getCell().rowSpan)));
-                        }
-
-                        body.append("' ");
+                    if (cellCls != null) {
+                        body.append("class='" + cellCls + "' ");
                     }
 
+                    //                    if (view.get) {
+                    //                        Border border = view.getBorder();
+                    //                    }
+                    //
+                    //                    if ((border != null) || (view.getCell().rowSpan > 1)) {
+                    //                        body.append("style='");
+                    //
+                    //                        if (border != null) {
+                    //                            body.append(border.toString());
+                    //                        }
+                    //
+                    //                        if (view.getCell().rowSpan > 1) {
+                    //                            body.append(StringUtil.format("line-height:#px;",
+                    //                                    "" + size.getSize(view.getCell().row, view.getCell().rowSpan)));
+                    //                        }
+                    //
+                    //                        body.append("' ");
+                    //                    }
                     if (view.getCell().rowSpan > 1) {
                         body.append(" rowSpan='" + view.getCell().rowSpan + "' ");
                     }
@@ -679,15 +682,17 @@ public class HtmlExport extends BasicExport {
             out.write("div.pb div{position:absolute}\n");
             out.write("div.pb table{position:absolute}\n");
             out.write("div.pb img{position:absolute}\n");
-            out.write("div.pb p{overflow:hidden;position:absolute;width:100%;}\n");
+            // out.write("div.pb p{overflow:hidden;position:absolute;width:100%;}\n");
             out.write("div.td {overflow:hidden;width:100%;height:100%;}\n");
             out.write("div.pb div.h{overflow:hidden;}");
-            out.write(".tl{text-align:left}\n");
-            out.write(".tc{text-align:center}\n");
-            out.write(".tr{text-align:right}\n");
-            out.write(".bl{bottom:0;text-align:left}\n");
-            out.write(".bc{bottom:0;text-align:center}\n");
-            out.write(".br{bottom:0;text-align:right}\n");
+
+            //out.write(".nt{display:table-cell;_position:absolute}\n");
+            out.write(".txd{position:static;width:100%}\n");
+
+            out.write(".mt{display:table}\n");
+            out.write(
+                "div.mt div.mt2{position:static;_position:absolute;_top: 50%;_left: 0;display:table-cell;vertical-align:middle;}\n");
+            out.write(".mt2 p{_position: relative;_top:-50%}\n");
 
             out.write("img.tl{top:0;left:0}\n");
             out.write("img.tr{top:0;right:0}\n");
@@ -701,8 +706,6 @@ public class HtmlExport extends BasicExport {
             out.write(".fr_t{z-index:3;}\n");
             out.write(".fr_l{z-index:2;}\n");
             out.write(".fr_c{cursor:hand;}\n");
-
-            out.write("}\n");
             out.write(styleManager.toHtmlCSS());
 
             for (Iterator it = borderCache.values().iterator(); it.hasNext();) {
@@ -727,6 +730,20 @@ public class HtmlExport extends BasicExport {
         this.options = options;
     }
 
+    private String getCellClass(View v) {
+        String cls = null;
+
+        if (v instanceof TextView) {
+            int id = ((TextView) v).getDisplayStyle().getId2();
+
+            if (id > -1) {
+                cls = DisplayStyleManager.TD_CLASS_PREFIX + id;
+            }
+        }
+
+        return cls;
+    }
+
     /**
      * DOCUMENT ME!
      *
@@ -734,16 +751,87 @@ public class HtmlExport extends BasicExport {
      * @param clipped DOCUMENT ME!
      */
     public void encodeText(TextView v, boolean clipped) {
+        if (v.getCell() != null) {
+            encodeCellText(v, clipped);
+        } else {
+            encodeNormalText(v);
+        }
+    }
+
+    private void encodeNormalText(TextView v) {
+        if (v.getDisplayStyle().isMiddleMultiline()) {
+            encodeMiddleMultilineText(v);
+        } else {
+            // div  p 
+            Rectangle b = v.getBounds();
+            body.append("<div ");
+
+            body.append("class='" + DisplayStyleManager.DIV_CLASS_PREFIX +
+                v.getDisplayStyle().getId());
+
+            body.append(" nt' ");
+
+            if ((v.getCell() == null) || (v.getBackgroundImageStyle() != null)) {
+                body.openStyle();
+
+                if (v.getCell() == null) {
+                    body.append(b, v.getBorder());
+                }
+
+                if (v.getBackgroundImageStyle() != null) {
+                    body.append(getImageEncoder().encode(v.getBackgroundImageStyle()));
+                }
+
+                body.closeStyle();
+            }
+
+            if (v.getTooltipText() != null) {
+                body.append(StringUtil.format(" title='#' ", v.getTooltipText()));
+            }
+
+            body.append(">");
+
+            String pClass = DisplayStyleManager.NORMAL_CLASS_PREFIX + v.getDisplayStyle().getId();
+
+            body.append("<div class='" + pClass + " txd' ");
+
+            if (!v.getDisplayStyle().isWordwrap() &&
+                    (v.getDisplayStyle().getVerticalAlignment() == TextView.MIDDLE)) {
+                body.append("style='line-height:" + b.height + "px' ");
+            }
+
+            TextLine[] lines = v.getWrappedLines();
+
+            body.append(">");
+
+            String text = null;
+
+            if (lines.length > 0) {
+                text = getWrappedText(lines);
+                text = text.replaceAll("\n", "<br>");
+            } else {
+                text = v.getText();
+            }
+
+            body.append(encodeHyperlink(v.getHyperlink(), text, true));
+            body.append("</div>");
+
+            body.closeDiv();
+        }
+    }
+
+    private void encodeMiddleMultilineText(TextView v) {
+        // <div style='display:table;height: 300px;position: relative;width: 400px;border: 1px solid #596480;color: inherit;background: #ffc' >
+        //<div style='_position: absolute;_top: 50%;_left: 0;display:table-cell;vertical-align:middle;'><p style='_position: relative;_top: -50%'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas dignissim diam eu sem. Proin nunc ante, accumsan sollicitudin, sodales at, semper sed, ipsum. Etiam orci. Vestibulum magna lectus, venenatis nec, tempus ac, dictum vel, lorem.</p></div>
+        //</div>
+
+        // div  p 
         Rectangle b = v.getBounds();
         body.append("<div ");
 
-        body.append("class='c" + v.getDisplayStyle().getId());
+        body.append("class='" + DisplayStyleManager.DIV_CLASS_PREFIX + v.getDisplayStyle().getId());
 
-        if (v.getCell() != null) {
-            body.append(" td");
-        }
-
-        body.append("' ");
+        body.append(" mt' ");
 
         if ((v.getCell() == null) || (v.getBackgroundImageStyle() != null)) {
             body.openStyle();
@@ -759,9 +847,54 @@ public class HtmlExport extends BasicExport {
             body.closeStyle();
         }
 
-        if (v.getCell() != null) {
-            v.getDisplayStyle().getId2();
+        if (v.getTooltipText() != null) {
+            body.append(StringUtil.format(" title='#' ", v.getTooltipText()));
         }
+
+        body.append(">");
+        body.append("<div class='mt2'>");
+
+        String pClass = DisplayStyleManager.NORMAL_CLASS_PREFIX + v.getDisplayStyle().getId();
+
+        body.append("<p class='" + pClass + " txd' ");
+
+        if (!v.getDisplayStyle().isWordwrap() &&
+                (v.getDisplayStyle().getVerticalAlignment() == TextView.MIDDLE)) {
+            body.append("style='line-height:" + b.height + "px' ");
+        }
+
+        TextLine[] lines = v.getWrappedLines();
+
+        body.append(">");
+
+        String text = null;
+
+        if (lines.length > 0) {
+            text = getWrappedText(lines);
+            text = text.replaceAll("\n", "<br>");
+        } else {
+            text = v.getText();
+        }
+
+        body.append(encodeHyperlink(v.getHyperlink(), text, true));
+        body.append("</p></div>");
+
+        body.closeDiv();
+    }
+
+    /**
+    * DOCUMENT ME!
+    *
+    * @param v DOCUMENT ME!
+    * @param clipped DOCUMENT ME!
+    */
+    public void encodeCellText(TextView v, boolean clipped) {
+        body.append("<p ");
+
+        body.append("class='" + DisplayStyleManager.NORMAL_CLASS_PREFIX +
+            v.getDisplayStyle().getId());
+
+        body.append("' ");
 
         if (v.getTooltipText() != null) {
             body.append(StringUtil.format(" title='#' ", v.getTooltipText()));
@@ -769,52 +902,8 @@ public class HtmlExport extends BasicExport {
 
         body.append(">");
 
-        int ha = v.getHorizontalAlignment();
-        int va = v.getVerticalAlignment();
-
-        String pClass = ALIGN_CLASS[(va * 3) + ha];
-
-        body.append("<p class='" + pClass + "' ");
-
         TextLine[] lines = v.getWrappedLines();
         boolean wrapped = lines.length > 1;
-
-        boolean styled = false;
-
-        if (wrapped) {
-            body.append(StringUtil.format("style='line-height:#px;", v.getFont().getSize() + ""));
-
-            if (va == 1) {
-                body.append(StringUtil.format("top:#; ",
-                        ((v.getBounds().height - lines[lines.length - 1].getBottom()) / 2) + ""));
-            } else if (va > 1) {
-                body.append(StringUtil.format("top:#; ",
-                        (v.getBounds().height - lines[lines.length - 1].getBottom()) + ""));
-            }
-
-            styled = true;
-        } else if ((v.getCell() == null) && (va == 1)) {
-            body.append("style='line-height:" + v.getBounds().height + "px; ");
-            styled = true;
-        }
-
-        if (v.getCharWidth() != 0) {
-            int charWidth = v.getCharWidth() * 2;
-            int spacing = charWidth - v.getFont().getSize();
-
-            if (!styled) {
-                body.append("style='");
-            }
-
-            body.append("letter-spacing:" + spacing + "px;");
-            styled = true;
-        }
-
-        if (styled) {
-            body.append("'");
-        }
-
-        body.append(">");
 
         String text = null;
 
@@ -827,8 +916,6 @@ public class HtmlExport extends BasicExport {
 
         body.append(encodeHyperlink(v.getHyperlink(), text, true));
         body.append("</p>");
-
-        body.closeDiv();
     }
 
     private String getWrappedText(TextLine[] lines) {

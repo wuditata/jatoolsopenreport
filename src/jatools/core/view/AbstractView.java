@@ -278,4 +278,8 @@ public abstract class AbstractView implements View, Cloneable {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public DisplayStyle getDisplayStyle() {
+        return null;
+    }
 }

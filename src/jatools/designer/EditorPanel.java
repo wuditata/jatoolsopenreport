@@ -41,12 +41,17 @@ public class EditorPanel extends JSplitPane {
         setOneTouchExpandable(true);
 
         JTabbedPane propTab = new JTabbedPane();
-        DefaultReportsTreePanel examplesPanel = new DefaultReportsTreePanel();
         
+        DefaultReportsTreePanel dr = new DefaultReportsTreePanel();
+        
+        CurrentReportsTreePanel cr = new CurrentReportsTreePanel();
+        
+        JSplitPane sp = new JSplitPane(JSplitPane.VERTICAL_SPLIT, true, cr, dr);
+        sp.setDividerLocation(200);
+        sp.setOneTouchExpandable(true);
 
         propTab.addTab("设计", propertTable);
-        propTab.addTab("示例报表", examplesPanel);
-        propTab.setSelectedIndex(1);
+        propTab.addTab("示例报表", sp);
 
         setLeftComponent(propTab);
         setRightComponent(tabbedPanel);

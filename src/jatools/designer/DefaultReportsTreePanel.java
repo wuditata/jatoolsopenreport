@@ -96,6 +96,8 @@ public class DefaultReportsTreePanel extends JScrollPane {
             Main.getInstance()
                 .createEditor(doc, ReportDocument.getCachedFile(doc).getName(),
                 ReportDocument.getCachedFile(doc).getAbsolutePath());
+            App.getMruManager().open(path);
+            
         } catch (Exception e1) {
             e1.printStackTrace();
         }
