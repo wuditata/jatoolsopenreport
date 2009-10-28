@@ -25,6 +25,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -140,7 +141,7 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
 
         table.setEditable(1, true);
 
-        downCommand = new JButton(Util.getIcon("/jatools/icons/down.gif"));
+        downCommand = new JButton(Util.getIcon("/jatools/icons/download.gif"));
         upCommand = new JButton(Util.getIcon("/jatools/icons/up.gif"));
 
         upCommand.addActionListener(new ActionListener() {
@@ -432,7 +433,7 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
             ArrayList summaryVector = new ArrayList();
 
             for (Iterator iterator = rows.iterator(); iterator.hasNext();) {
-                ArrayList v = (ArrayList) iterator.next();
+                Vector v = (Vector) iterator.next();
                 Column calcField = (Column) v.get(0);
                 String calcType = (String) v.get(1);
 

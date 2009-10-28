@@ -1,7 +1,6 @@
 package jatools.data.reader;
 
 
-
 /**
  * DOCUMENT ME!
  *
@@ -20,8 +19,6 @@ public class ArrayCursor implements Cursor {
     public ArrayCursor(Object[] values) {
         this.values = values;
     }
-    
-    
 
     /* (non-Javadoc)
          * @see jatools.data.reader.Cursor#getRow()
@@ -77,13 +74,19 @@ public class ArrayCursor implements Cursor {
         return row < (this.values.length - 1);
     }
 
-	public void last() {
-		row = this.values.length ;
-		
-	}
-	
-	public boolean isRowBased()
-	{
-		return false;
-	}
+    /**
+     * DOCUMENT ME!
+     */
+    public void last() {
+        row = this.values.length;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public boolean isRowBased() {
+        return false;
+    }
 }

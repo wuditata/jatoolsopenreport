@@ -19,6 +19,7 @@ import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultSingleSelectionModel;
@@ -179,7 +180,7 @@ public class TableBuilder extends JDialog implements ChangeListener {
             Object[] groups = new Object[groupBys.size()];
 
             for (int i = 0; i < groups.length; i++) {
-                groups[i] = ((ArrayList) groupBys.get(i)).get(0);
+                groups[i] = ((Vector) groupBys.get(i)).get(0);
             }
 
             summarySelector.setGroupBys(groups);

@@ -101,7 +101,7 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
             for (int i = 0; i < fields.length; i++) {
                 if (!table.exists(0, fields[i].getUserObject())) {
                     table.addRow(new Object[] {
-                            fields[i].getUserObject(), fields[i].getProperty(SimpleTreeNode.ALIAS)
+                            fields[i].getUserObject(),null
                         }, true);
                 }
             }
@@ -139,7 +139,7 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
 
                     hitField = (Column) stn.getUserObject();
 
-                    alias = (String) stn.getProperty(SimpleTreeNode.ALIAS);
+                   // alias = (String) stn.getProperty(SimpleTreeNode.ALIAS);
                 }
             }
         }
@@ -208,7 +208,7 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
         table = new CustomTable(new String[] { "Ãû³Æ", "ÏÔÊ¾±êÇ©" });
         table.setEditable(1, true);
 
-        downCommand = new JButton(Util.getIcon("/jatools/icons/down.gif"));
+        downCommand = new JButton(Util.getIcon("/jatools/icons/download.gif"));
         upCommand = new JButton(Util.getIcon("/jatools/icons/up.gif"));
 
         upCommand.addActionListener(new ActionListener() {
