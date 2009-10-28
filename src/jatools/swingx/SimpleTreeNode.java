@@ -20,7 +20,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
  * Preferences - Java - Code Generation - Code and Comments
  */
 public class SimpleTreeNode extends DefaultMutableTreeNode {
-    public static final String ALIAS = "alias";
+    public static final String ALIAS2 = "alias";
     int type;
     Icon icon;
     Map properites;
@@ -58,9 +58,9 @@ public class SimpleTreeNode extends DefaultMutableTreeNode {
     public String toString() {
         String alias = null;
 
-        if (this.properites != null) {
-            alias = (String) this.properites.get(ALIAS);
-        }
+//        if (this.properites != null) {
+//            alias = (String) this.properites.get(ALIAS);
+//        }
 
         if (alias == null) {
             return super.toString();

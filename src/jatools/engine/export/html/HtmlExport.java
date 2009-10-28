@@ -315,6 +315,8 @@ public class HtmlExport extends BasicExport {
             if (!rowtag) {
                 body.append("<tr ");
             }
+            
+            
 
             body.append(StringUtil.format("height='#'>", size.getSize(i) + ""));
 

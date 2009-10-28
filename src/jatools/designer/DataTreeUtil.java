@@ -80,7 +80,7 @@ public class DataTreeUtil {
 
                 SimpleTreeNode treeNode = new SimpleTreeNode(rows.getColumn(i), fieldIcon, FIELD);
 
-                treeNode.setProperty(SimpleTreeNode.ALIAS, alias);
+           //     treeNode.setProperty(SimpleTreeNode.ALIAS, alias);
 
                 readerCatagory.add(treeNode);
             }

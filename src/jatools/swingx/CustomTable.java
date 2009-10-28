@@ -215,7 +215,7 @@ public class CustomTable extends JTable {
         }
 
         public ArrayList cloneRows() {
-            return (ArrayList) this.dataVector.clone();
+            return new ArrayList(this.dataVector);
         }
 
         public boolean isCellEditable(int row, int col) {

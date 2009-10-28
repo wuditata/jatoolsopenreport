@@ -101,7 +101,7 @@ public class GroupBySelector extends JPanel implements ChangeListener, ListSelec
     private JPanel getTargetPanel() {
         table = new CustomTable(new String[] { "Ãû³Æ", "ÅÅÐò" });
 
-        downCommand = new JButton(Util.getIcon("/jatools/icons/down.gif"));
+        downCommand = new JButton(Util.getIcon("/jatools/icons/download.gif"));
         upCommand = new JButton(Util.getIcon("/jatools/icons/up.gif"));
 
         upCommand.addActionListener(new ActionListener() {

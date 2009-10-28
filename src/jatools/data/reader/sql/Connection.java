@@ -5,21 +5,23 @@
  */
 package jatools.data.reader.sql;
 
+import bsh.Interpreter;
+
 import jatools.accessor.PropertyAccessor;
 import jatools.accessor.PropertyDescriptor;
+
 import jatools.component.ComponentConstants;
+
 import jatools.engine.ValueIfClosed;
+
 import jatools.engine.script.ReportContext;
 import jatools.engine.script.Script;
+
+import org.apache.log4j.Logger;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import org.apache.log4j.Logger;
-
-import bsh.Interpreter;
-
 
 
 /**
@@ -29,7 +31,6 @@ import bsh.Interpreter;
  * @author $author$
  */
 public class Connection implements PropertyAccessor, ValueIfClosed {
-
     private static Logger logger = Logger.getLogger("ZConnection"); //
     private String driver;
     private String url;
@@ -184,13 +185,6 @@ public class Connection implements PropertyAccessor, ValueIfClosed {
      *             DOCUMENT ME!
      */
 
-
-
-
-
-    
-  
-
     /**
      * DOCUMENT ME!
      *
@@ -201,12 +195,21 @@ public class Connection implements PropertyAccessor, ValueIfClosed {
     public java.sql.Connection getConnection() throws Exception {
         return getConnection(ReportContext.getDefaultContext());
     }
-    
-    public java.sql.Connection getConnection(Script dataProvider) throws Exception {
-    	//System.out.println("get !");
-        return ConnectionPools.getDefault().getConnection(this,dataProvider);
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param dataProvider DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     *
+     * @throws Exception DOCUMENT ME!
+     */
+    public java.sql.Connection getConnection(Script dataProvider)
+        throws Exception {
+        //System.out.println("get !");
+        return ConnectionPools.getDefault().getConnection(this, dataProvider);
     }
-    
 
     /**
      * DOCUMENT ME!
