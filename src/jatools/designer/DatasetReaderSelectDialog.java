@@ -49,14 +49,14 @@ public class DatasetReaderSelectDialog extends JDialog implements ChangeListener
      */
     public static final String CATAGORY = "catagory";
     DatasetReaderSelectPanel panel;
-    JButton browseButton = new JButton("浏览数据");
+    JButton browseButton = new JButton(App.messages.getString("res.75"));
     JButton okButton = new JButton(CommandPanel.OK);
     ReportDocument document;
     DatasetReader reader;
     boolean externalReader;
 
     DatasetReaderSelectDialog(Frame owner, ReportDocument doc) {
-        super(owner, "选择数据集", true);
+        super(owner, App.messages.getString("res.76"), true);
         panel = new DatasetReaderSelectPanel();
 
         ActionListener cancel = new ActionListener() {
@@ -165,7 +165,7 @@ public class DatasetReaderSelectDialog extends JDialog implements ChangeListener
                         checker.check(_reader.getName());
                     } catch (Exception e) {
                         e.printStackTrace();
-                        JOptionPane.showInputDialog(null, "将在当前报表中创建数据集变量，变量名称为:", "创建数据集变量",
+                        JOptionPane.showInputDialog(null, App.messages.getString("res.77"), App.messages.getString("res.78"),
                             JOptionPane.OK_CANCEL_OPTION);
                     }
                 }
@@ -217,7 +217,7 @@ class DatasetReaderSelectPanel extends JPanel {
     DatasetReaderSelectPanel() {
         super(new BorderLayout());
 
-        SimpleTreeNode root = new SimpleTreeNode("可选数据集列表", null, -1);
+        SimpleTreeNode root = new SimpleTreeNode(App.messages.getString("res.79"), null, -1);
         tree = new IconTree();
 
         tree.setModel(new DefaultTreeModel(root));

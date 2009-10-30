@@ -1,5 +1,6 @@
 package jatools.designer.property.editor.printstyle;
 
+import jatools.designer.App;
 import jatools.engine.css.CSSValue;
 import jatools.engine.css.rule.TextRule;
 import jatools.swingx.SwingUtil;
@@ -42,9 +43,9 @@ public class TextRulePanel extends JPanel {
         };
     private static final String[] autoSizePrompts = {
             "",
-            "自动宽度",
-            "自动高度",
-            "打不下时,自动分页"
+            App.messages.getString("res.344"),
+            App.messages.getString("res.345"),
+            App.messages.getString("res.346")
         };
     private static final String[] autoSizeValues = {
             "",
@@ -54,8 +55,8 @@ public class TextRulePanel extends JPanel {
         };
     private String[] lineEditablePrompts = {
             "",
-            "可以",
-            "不可以"
+            App.messages.getString("res.347"),
+            App.messages.getString("res.348")
         };
     TemplateComboBox levelCombo;
     TemplateComboBox autoWidthCombo = new TemplateComboBox(autoSizePrompts);
@@ -76,7 +77,7 @@ public class TextRulePanel extends JPanel {
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
         //        gbc.insets = new Insets(10, 0, 0, 0);
-        add(new JLabel("向下合并级别:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.349"), JLabel.LEFT), gbc);
         //gbc.fill=gbc.HORIZONTAL;
         gbc.gridwidth = gbc.REMAINDER;
         gbc.gridheight = 1;
@@ -86,13 +87,13 @@ public class TextRulePanel extends JPanel {
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("自动大小:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.350"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(autoWidthCombo, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("最大宽度:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.351"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(maxWidthCombo, gbc);
 
@@ -186,7 +187,7 @@ public class TextRulePanel extends JPanel {
         } catch (Exception e) {
         }
 
-        JFrame frame = new JFrame("文本");
+        JFrame frame = new JFrame(App.messages.getString("res.143"));
         frame.setResizable(true);
 
         TextRulePanel p = new TextRulePanel();

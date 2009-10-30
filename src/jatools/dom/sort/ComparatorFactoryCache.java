@@ -1,5 +1,6 @@
 package jatools.dom.sort;
 
+import jatools.designer.App;
 import jatools.dom.src.ArrayNodeSource;
 import jatools.dom.src.GroupNodeSource;
 import jatools.dom.src.RowNodeSource;
@@ -34,7 +35,7 @@ public class ComparatorFactoryCache {
         NodeComparatorFactory p = (NodeComparatorFactory) painters.get(cls);
 
         if (p == null) {
-            throw new IllegalArgumentException("该类型节点不支持排序:" + cls.getName());
+            throw new IllegalArgumentException(App.messages.getString("res.44") + cls.getName());
         }
 
         return p;

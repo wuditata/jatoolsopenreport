@@ -3,6 +3,7 @@ package jatools.designer.action;
 
 import jatools.component.Component;
 import jatools.component.table.Cell;
+import jatools.designer.App;
 import jatools.designer.ClipBoard;
 import jatools.designer.ReportPanel;
 import jatools.designer.layer.table.TableEditKit;
@@ -32,7 +33,7 @@ public class PasteAction extends EditClipAction {
      * Creates a new PasteAction object.
      */
     public PasteAction() {
-        super(null, "Õ³Ìù", getIcon("/jatools/icons/paste.gif"),
+        super(null, App.messages.getString("res.99"), getIcon("/jatools/icons/paste.gif"),
             getIcon("/jatools/icons/paste2.gif"));
         setStroke(ctrl(KeyEvent.VK_V));
     }
@@ -43,7 +44,7 @@ public class PasteAction extends EditClipAction {
      * @param panel DOCUMENT ME!
      */
     public PasteAction(ReportPanel panel) {
-        super(panel, "Õ³Ìù", getIcon("/jatools/icons/paste.gif"),
+        super(panel, App.messages.getString("res.99"), getIcon("/jatools/icons/paste.gif"),
             getIcon("/jatools/icons/paste2.gif"));
         setStroke(ctrl(KeyEvent.VK_V));
     }

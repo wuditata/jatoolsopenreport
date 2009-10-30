@@ -3,6 +3,7 @@ package jatools.designer.config;
 
 import jatools.accessor.AutoAccessor;
 import jatools.data.reader.DatasetReader;
+import jatools.designer.App;
 import jatools.util.Util;
 import jatools.xml.XmlReader;
 import jatools.xml.XmlWriter;
@@ -60,9 +61,9 @@ public class Configuration extends AutoAccessor implements ChangeListener, Datas
             configure = (Configuration) XmlReader.read(is);
             is.close();
         } catch (FileNotFoundException e) {
-            Util.debug(logger, "读文件错： 文件没找到," + filePath);
+            Util.debug(logger, App.messages.getString("res.503") + filePath);
         } catch (Exception e) {
-            Util.debug(logger, "读文件错：" + Util.toString(e));
+            Util.debug(logger, App.messages.getString("res.504") + Util.toString(e));
         }
 
         if (configure == null) {
@@ -87,7 +88,7 @@ public class Configuration extends AutoAccessor implements ChangeListener, Datas
             XmlWriter.write(this, fo);
             fo.close();
         } catch (Exception ex) {
-            Util.debug(logger, "写文件错：" + filePath + "," + Util.toString(ex));
+            Util.debug(logger, App.messages.getString("res.505") + filePath + "," + Util.toString(ex));
         }
     }
 

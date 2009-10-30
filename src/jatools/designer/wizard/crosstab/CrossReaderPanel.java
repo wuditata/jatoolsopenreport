@@ -2,6 +2,7 @@ package jatools.designer.wizard.crosstab;
 
 import jatools.data.reader.DatasetReader;
 import jatools.dataset.Column;
+import jatools.designer.App;
 import jatools.designer.DataTree;
 import jatools.designer.DataTreeUtil;
 import jatools.designer.wizard.BuilderContext;
@@ -93,7 +94,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
         JPanel leftTopPanel = new JPanel(new BorderLayout());
         leftTopPanel.setBorder(new EmptyBorder(20, 20, 20, 3));
 
-        JLabel dataLabel = new JLabel("可用字段:", JLabel.LEFT);
+        JLabel dataLabel = new JLabel(App.messages.getString("res.84"), JLabel.LEFT);
         leftTopPanel.add(dataLabel, BorderLayout.NORTH);
         dataTree = new DataTree(null);
 
@@ -106,7 +107,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
         leftBottomPanel.setBorder(new EmptyBorder(20, 20, 0, 3));
 
         JPanel rowPanel = new JPanel(new BorderLayout());
-        JLabel rowLabel = new JLabel("行标题:", JLabel.LEFT);
+        JLabel rowLabel = new JLabel(App.messages.getString("res.217"), JLabel.LEFT);
         rowPanel.add(rowLabel, BorderLayout.WEST);
         rdeleteButton = createReleteButton();
 
@@ -149,7 +150,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
 
         // 东部上半部分
         JPanel columnPanel = new JPanel(new BorderLayout());
-        JLabel columnLabel = new JLabel("列标题:", JLabel.LEFT);
+        JLabel columnLabel = new JLabel(App.messages.getString("res.218"), JLabel.LEFT);
         columnPanel.add(columnLabel, BorderLayout.WEST);
         cdeleteButton = createCdeleteButton();
 
@@ -187,7 +188,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
         rightBottomPanel.setBorder(new EmptyBorder(20, 3, 0, 20));
 
         JPanel aggregationPanel = new JPanel(new BorderLayout());
-        JLabel aggregationLabel = new JLabel("统计函数:", JLabel.LEFT);
+        JLabel aggregationLabel = new JLabel(App.messages.getString("res.219"), JLabel.LEFT);
         aggregationPanel.add(aggregationLabel, BorderLayout.WEST);
         adeleteButton = createAdeleteButton();
         aggregationPanel.add(adeleteButton, BorderLayout.EAST);
@@ -239,11 +240,11 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
 
         this.add(dataPanel, BorderLayout.CENTER);
 
-        chkFlowlayout = new JCheckBox("计算值纵向排列");
+        chkFlowlayout = new JCheckBox(App.messages.getString("res.220"));
         chkFlowlayout.setEnabled(false);
-        chkTopSummary = new JCheckBox("行合计居上");
+        chkTopSummary = new JCheckBox(App.messages.getString("res.221"));
         chkTopSummary.setSelected(false);
-        chkLeftSummary = new JCheckBox("列合计居左");
+        chkLeftSummary = new JCheckBox(App.messages.getString("res.222"));
         chkLeftSummary.setSelected(false);
 
         JPanel tmp = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -286,8 +287,8 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
      */
     private CustomTable createRowTabel() {
         CustomTable table = new CustomTable(new String[] {
-                    "名称",
-                    "排序"
+                    App.messages.getString("res.81"),
+                    App.messages.getString("res.97")
                 });
 
         table.getModel().addTableModelListener(new TableModelListener() {
@@ -337,8 +338,8 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
      */
     private CustomTable createColumnTable() {
         CustomTable table = new CustomTable(new String[] {
-                    "名称",
-                    "排序"
+                    App.messages.getString("res.81"),
+                    App.messages.getString("res.97")
                 });
 
         table.getModel().addTableModelListener(new TableModelListener() {
@@ -354,7 +355,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
                     new OrderBy(OrderBy.ORIGINAL)
                 });
 
-        table.getColumn("排序").setCellEditor(new DefaultCellEditor(sortTypeChooser));
+        table.getColumn(App.messages.getString("res.97")).setCellEditor(new DefaultCellEditor(sortTypeChooser));
         table.setEditable(1, true);
 
         return table;

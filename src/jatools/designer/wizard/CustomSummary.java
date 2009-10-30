@@ -7,6 +7,7 @@ import jatools.data.sum.MaxField;
 import jatools.data.sum.MinField;
 import jatools.data.sum.Sum;
 import jatools.data.sum.SumField;
+import jatools.designer.App;
 
 
 /**
@@ -16,12 +17,12 @@ import jatools.data.sum.SumField;
  * @version $Revision$
   */
 public class CustomSummary {
-    public static final String COUNT = "计数(count)";
-    public static final String SUM = "合计(sum)";
-    public static final String MAX = "最大值(max)";
-    public static final String MIN = "最小值(min)";
-    public static final String AVERAGE = "平均值(avg)";
-    public static final String DISTINCT_COUNT = "唯一计数(distinctCount)";
+    public static final String COUNT = App.messages.getString("res.188");
+    public static final String SUM = App.messages.getString("res.189");
+    public static final String MAX = App.messages.getString("res.190");
+    public static final String MIN = App.messages.getString("res.191");
+    public static final String AVERAGE = App.messages.getString("res.177");
+    public static final String DISTINCT_COUNT = App.messages.getString("res.192");
     public static final String[] SUPPORT_FUNCTIONS = {
             COUNT, SUM, MAX, MIN, AVERAGE, DISTINCT_COUNT,
         };

@@ -2,15 +2,14 @@ package jatools.engine;
 
 import jatools.util.Util;
 
-import org.apache.log4j.PropertyConfigurator;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-
 import java.util.PropertyResourceBundle;
+
+import org.apache.log4j.PropertyConfigurator;
 
 
 /**

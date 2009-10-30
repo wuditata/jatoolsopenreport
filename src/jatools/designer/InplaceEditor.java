@@ -289,7 +289,7 @@ public class InplaceEditor extends JTextArea implements KeyListener, FocusListen
         JTextComponent comp;
 
         public CutAction(JTextComponent comp) {
-            super("¼ôÇÐ");
+            super(App.messages.getString("res.98"));
             this.comp = comp;
         }
 
@@ -306,7 +306,7 @@ public class InplaceEditor extends JTextArea implements KeyListener, FocusListen
         JTextComponent comp;
 
         public PasteAction(JTextComponent comp) {
-            super("Õ³Ìù");
+            super(App.messages.getString("res.99"));
             this.comp = comp;
         }
 
@@ -330,7 +330,7 @@ public class InplaceEditor extends JTextArea implements KeyListener, FocusListen
         JTextComponent comp;
 
         public DeleteAction(JTextComponent comp) {
-            super("É¾³ý");
+            super(App.messages.getString("res.69"));
             this.comp = comp;
         }
 
@@ -347,7 +347,7 @@ public class InplaceEditor extends JTextArea implements KeyListener, FocusListen
         protected JTextComponent comp;
 
         public SelectAllAction(JTextComponent comp) {
-            super("È«Ñ¡");
+            super(App.messages.getString("res.100"));
             this.comp = comp;
         }
 
@@ -370,7 +370,7 @@ public class InplaceEditor extends JTextArea implements KeyListener, FocusListen
         JTextComponent comp;
 
         public CopyAction(JTextComponent comp) {
-            super("¸´ÖÆ");
+            super(App.messages.getString("res.101"));
             this.comp = comp;
         }
 

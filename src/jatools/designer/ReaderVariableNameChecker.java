@@ -51,21 +51,21 @@ public class ReaderVariableNameChecker implements NameChecker {
         String err = null;
 
         if ((name == null) || name.equals("")) {
-            err = "变量名不能为空.";
+            err = App.messages.getString("res.87");
         } else {
             String stringName = (String) name;
 
             Pattern pattern = Pattern.compile(NAME_PATTERN);
 
             if (!pattern.matcher(stringName).find()) {
-                err = "非法的变量名.";
+                err = App.messages.getString("res.88");
             } else {
                 if (this.namesCache == null) {
                     prepareNamesCache();
                 }
 
                 if (namesCache.contains(name)) {
-                    err = "变量名不能重复，当前报表中已经存在该变量名:" + name + ".";
+                    err = App.messages.getString("res.89") + name + ".";
                 }
             }
         }

@@ -1,5 +1,7 @@
 package jatools.designer.wizard.crosstab;
 
+import jatools.designer.App;
+
 
 /**
  * <p>Title: </p>
@@ -10,9 +12,9 @@ package jatools.designer.wizard.crosstab;
  * @version 1.0
  */
 public class OrderBy {
-    public static final String ASC = "ÉýÐò";
-    public static final String DESC = "½µÐò";
-    public static final String ORIGINAL = "Ô­Ðò";
+    public static final String ASC = App.messages.getString("res.94");
+    public static final String DESC = App.messages.getString("res.95");
+    public static final String ORIGINAL = App.messages.getString("res.96");
     String orderby;
 
     /**

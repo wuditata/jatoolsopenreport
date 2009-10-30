@@ -2,6 +2,7 @@ package jatools.designer.data;
 
 
 import jatools.data.reader.DatasetReader;
+import jatools.designer.App;
 import jatools.designer.DatasetReaderConfigureTree;
 import jatools.designer.wizard.BuilderContext;
 import jatools.swingx.CustomTable;
@@ -88,7 +89,7 @@ public class ReaderSelector extends javax.swing.JPanel implements ChangeListener
     }
 
     private JPanel getTargetPanel() {
-        table = new CustomTable(new String[] { "名称" });
+        table = new CustomTable(new String[] { App.messages.getString("res.81") });
 
         table.getModel().addTableModelListener(this);
 
@@ -98,7 +99,7 @@ public class ReaderSelector extends javax.swing.JPanel implements ChangeListener
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
 
-        result.add(new JLabel("选用数据集:"), gbc);
+        result.add(new JLabel(App.messages.getString("res.495")), gbc);
         gbc.weighty = 1.0;
 
         JScrollPane scroll = new JScrollPane(table);
@@ -149,14 +150,14 @@ public class ReaderSelector extends javax.swing.JPanel implements ChangeListener
 
     private JPanel getSourceTreePanel() {
         datasetTree = new DatasetReaderConfigureTree();
-        table = new CustomTable(new String[] { "名称" });
+        table = new CustomTable(new String[] { App.messages.getString("res.81") });
 
         JPanel result = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
-        result.add(new JLabel("可用数据集:"), gbc);
+        result.add(new JLabel(App.messages.getString("res.496")), gbc);
         gbc.weighty = 1.0;
 
         result.add(new JScrollPane(datasetTree), gbc);

@@ -31,6 +31,8 @@
 
 package jatools.data.rs.filter;
 
+import jatools.designer.App;
+
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.HashSet;
@@ -219,7 +221,7 @@ public class FilterParser { // QueryParser
 			result = parseWhereOr(tokens,filter);
 			tokens.nextToken();
 			if (tokens.ttype != ')') {
-				throw FilterParserException.create("没有 ')'", tokens
+				throw FilterParserException.create(App.messages.getString("res.547"), tokens
 						);
 			}
 		} else {
@@ -278,7 +280,7 @@ public class FilterParser { // QueryParser
 //			}
 		}
 
-		throw FilterParserException.create("没有操作符", tokens
+		throw FilterParserException.create(App.messages.getString("res.548"), tokens
 				);
 	}
 
@@ -315,7 +317,7 @@ public class FilterParser { // QueryParser
 				tokens.nextToken();
 			} while (tokens.ttype == ',');
 			if (tokens.ttype != ')') {
-				throw FilterParserException.create("缺少 ')'",
+				throw FilterParserException.create(App.messages.getString("res.549"),
 						tokens);
 			}
 			return list;
@@ -324,7 +326,7 @@ public class FilterParser { // QueryParser
 		// TODO peut etre avoir un keyword DATE pour les dates: Date(31/12/2004)
 
 		throw FilterParserException
-				.create("缺少值", tokens);
+				.create(App.messages.getString("res.550"), tokens);
 	}
 
 	// ////////////////////////////////////////////////////////////////////

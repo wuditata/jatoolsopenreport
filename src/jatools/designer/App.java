@@ -41,13 +41,14 @@ public class App implements ProtectPublic {
     public static MruManager mruManager = new MruManager(5, new OpenMruAction());
     public static Configuration configuration;
     private static SplashWindow splash;
+    public static Messages messages;
 
     static {
         String jre = System.getProperty("java.version");
 
         if ("1.4.1".compareTo(jre) > 0) {
             JOptionPane.showMessageDialog(null,
-                "运行简表设计器,需要jre.1.4.2或以上版本,而您jre版本是 " + jre + ",请参考设计器安装指南.", "出错了",
+                App.messages.getString("res.45") + jre + App.messages.getString("res.46"), App.messages.getString("res.47"),
                 JOptionPane.ERROR_MESSAGE);
 
             throw new RuntimeException("invalid jre version");

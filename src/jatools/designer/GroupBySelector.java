@@ -44,9 +44,9 @@ import javax.swing.tree.TreePath;
   */
 public class GroupBySelector extends JPanel implements ChangeListener, ListSelectionListener,
     TableModelListener {
-    final static String ASC = "ÉýÐò";
-    final static String DESC = "½µÐò";
-    final static String ORIGINAL = "Ô­Ðò";
+    final static String ASC = App.messages.getString("res.94");
+    final static String DESC = App.messages.getString("res.95");
+    final static String ORIGINAL = App.messages.getString("res.96");
     JButton selectCommand;
     JButton unselectCommand;
     JButton unselectAllCommand;
@@ -99,7 +99,7 @@ public class GroupBySelector extends JPanel implements ChangeListener, ListSelec
     }
 
     private JPanel getTargetPanel() {
-        table = new CustomTable(new String[] { "Ãû³Æ", "ÅÅÐò" });
+        table = new CustomTable(new String[] { App.messages.getString("res.81"), App.messages.getString("res.97") });
 
         downCommand = new JButton(Util.getIcon("/jatools/icons/download.gif"));
         upCommand = new JButton(Util.getIcon("/jatools/icons/up.gif"));
@@ -126,7 +126,7 @@ public class GroupBySelector extends JPanel implements ChangeListener, ListSelec
         table.getModel().addTableModelListener(this);
 
         JComboBox sortTypeChooser = new JComboBox(new String[] { ASC, DESC, ORIGINAL });
-        table.getColumn("ÅÅÐò").setCellEditor(new DefaultCellEditor(sortTypeChooser));
+        table.getColumn(App.messages.getString("res.97")).setCellEditor(new DefaultCellEditor(sortTypeChooser));
 
         table.setEditable(1, true);
 
@@ -134,7 +134,7 @@ public class GroupBySelector extends JPanel implements ChangeListener, ListSelec
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 1.0;
-        result.add(new JLabel("Ñ¡ÓÃ×Ö¶Î:"), gbc);
+        result.add(new JLabel(App.messages.getString("res.83")), gbc);
         gbc.weightx = 0;
         result.add(upCommand, gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
@@ -205,7 +205,7 @@ public class GroupBySelector extends JPanel implements ChangeListener, ListSelec
         gbc.fill = GridBagConstraints.BOTH;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
-        result.add(new JLabel("¿ÉÓÃ×Ö¶Î:"), gbc);
+        result.add(new JLabel(App.messages.getString("res.84")), gbc);
         gbc.weighty = 1.0;
         result.add(new JScrollPane(sourceTree), gbc);
 

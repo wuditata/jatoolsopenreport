@@ -1,5 +1,6 @@
 package jatools.server;
 
+import jatools.designer.App;
 import jatools.engine.ReportJob;
 import jatools.io.DefaultResourceOutputFactory;
 import jatools.io.ResourceOutputFactory;
@@ -73,7 +74,7 @@ public class ReportWriter extends ReportActionBase {
                 String as = (String) request.getParameter(ReportJob.AS_PARAM);
 
                 if ((as == null) && (formats.indexOf(as + ";") == 1)) {
-                    throw new Exception("请指定正确的输出格式.");
+                    throw new Exception(App.messages.getString("res.20"));
                 }
 
                 job = createJob(request);

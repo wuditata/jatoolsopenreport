@@ -7,6 +7,7 @@ package jatools.component;
 import jatools.ReportDocument;
 import jatools.accessor.PropertyDescriptor;
 import jatools.data.Formula;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.engine.script.Script;
 import jatools.formatter.Format2;
@@ -91,7 +92,7 @@ public class Text extends Label implements Var {
                 if (dataProvider != null) {
                     data = dataProvider.eval(variable.substring(1));
                 } else {
-                    System.out.println("不能解析脚本" + variable);
+                    System.out.println(App.messages.getString("res.566") + variable);
                 }
             } else {
                 data = dataProvider.get(variable);

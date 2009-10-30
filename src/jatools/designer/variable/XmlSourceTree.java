@@ -1,5 +1,6 @@
 package jatools.designer.variable;
 
+import jatools.designer.App;
 import jatools.designer.DocumentVariableNameChecker;
 import jatools.designer.ReportEditor;
 import jatools.designer.data.NameChecker;
@@ -622,7 +623,7 @@ public class XmlSourceTree extends JTree implements NameChecker, DragSourceListe
                                 if ((nodeValue.getNodeSource().getParent() == null) ||
                                         !nodeValue.getNodeSource().getParent()
                                                       .equals(tnv.getNodeSource().getParent())) {
-                                    JOptionPane.showConfirmDialog(this, "不支持不同父节点之间的拖放", "提示",
+                                    JOptionPane.showConfirmDialog(this, App.messages.getString("res.234"), App.messages.getString("res.55"),
                                         JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE);
 
                                     return;

@@ -12,6 +12,7 @@ import jatools.component.table.HeaderTable;
 import jatools.component.table.PowerTable;
 import jatools.component.table.RowPanel;
 import jatools.component.table.Table;
+import jatools.designer.App;
 import jatools.engine.printer.ColumnPanelPrinter;
 import jatools.engine.printer.ImagePrinter;
 import jatools.engine.printer.LabelPrinter;
@@ -82,7 +83,7 @@ public class PrinterFactory {
             Class printerClass = (Class) printerClassesCache.get(c.getClass());
 
             if (printerClass == null) {
-                System.out.println(c.getClass() + "本版本不支持此功能:" + c.getClass());
+                System.out.println(c.getClass() + App.messages.getString("res.23") + c.getClass());
 
                 return null;
             }

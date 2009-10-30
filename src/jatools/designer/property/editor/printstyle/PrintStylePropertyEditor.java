@@ -1,5 +1,6 @@
 package jatools.designer.property.editor.printstyle;
 
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.engine.css.PrintStyle;
 import jatools.swingx.Chooser;
@@ -37,7 +38,7 @@ public class PrintStylePropertyEditor extends JDialog implements Chooser {
      * Creates a new BackgroundImageEditor object.
      */
     public PrintStylePropertyEditor() {
-        super(Main.getInstance(), "打印样式设置", true);
+        super(Main.getInstance(), App.messages.getString("res.328"), true);
 
         this.getContentPane().add(this.getTabbedPanel(), BorderLayout.CENTER);
 
@@ -58,10 +59,10 @@ public class PrintStylePropertyEditor extends JDialog implements Chooser {
             };
 
         CommandPanel commandPanel = CommandPanel.createPanel(false);
-        commandPanel.addComponent("确定", oklistener);
-        commandPanel.addComponent("取消", cancellistener);
+        commandPanel.addComponent(App.messages.getString("res.3"), oklistener);
+        commandPanel.addComponent(App.messages.getString("res.4"), cancellistener);
 
-        commandPanel.addComponent("为空",
+        commandPanel.addComponent(App.messages.getString("res.181"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;
@@ -87,14 +88,14 @@ public class PrintStylePropertyEditor extends JDialog implements Chooser {
         repeatPanel = new RepeatRulePanel();
         pagePanel = new PageRulePanel();
         layoutPanel = new LayoutRulePanel();
-        tab.addTab("文本", textPanel);
-        tab.addTab("交叉表", crossTabPanel);
+        tab.addTab(App.messages.getString("res.143"), textPanel);
+        tab.addTab(App.messages.getString("res.227"), crossTabPanel);
    
         
-        tab.addTab("可见性", visiblePanel);
-        tab.addTab("循环", repeatPanel);
-        tab.addTab("分页", pagePanel);
-        tab.addTab("打印后布局", layoutPanel);
+        tab.addTab(App.messages.getString("res.329"), visiblePanel);
+        tab.addTab(App.messages.getString("res.330"), repeatPanel);
+        tab.addTab(App.messages.getString("res.331"), pagePanel);
+        tab.addTab(App.messages.getString("res.332"), layoutPanel);
 
         return tab;
     }

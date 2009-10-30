@@ -1,5 +1,6 @@
 package jatools.designer.action;
 
+import jatools.designer.App;
 import jatools.designer.SelectionState;
 
 import java.awt.Point;
@@ -18,7 +19,7 @@ public class AlignRightAction extends AlignAction {
      * Creates a new AlignRightAction object.
      */
     public AlignRightAction() {
-        super("”“∂‘∆Î", getIcon("/jatools/icons/alignright.gif"),
+        super(App.messages.getString("res.519"), getIcon("/jatools/icons/alignright.gif"),
             getIcon("/jatools/icons/alignright2.gif"));
     }
 

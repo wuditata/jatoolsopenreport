@@ -4,6 +4,7 @@ package jatools.designer.wizard.blank;
 import jatools.ReportDocument;
 import jatools.component.Page;
 import jatools.component.PagePanel;
+import jatools.designer.App;
 import jatools.designer.wizard.BuilderContext;
 import jatools.designer.wizard.ReportBuilder;
 import jatools.designer.wizard.ReportStyler;
@@ -22,7 +23,7 @@ import javax.swing.Icon;
  * @version $Revision$
   */
 public class BlankStyler implements ReportStyler {
-    static final String STYLER_NAME = "空白报表";
+    static final String STYLER_NAME = App.messages.getString("res.230");
     static final String ICON_URL = "/jatools/icons/styleblank.gif";
     ReportBuilder builder;
 
@@ -104,7 +105,7 @@ public class BlankStyler implements ReportStyler {
      * @return DOCUMENT ME!
      */
     public String getDescription() {
-        return "生成一个包含页脚,页眉,主体的报表.";
+        return App.messages.getString("res.231");
     }
 
     class _BlankBuilder implements ReportBuilder {

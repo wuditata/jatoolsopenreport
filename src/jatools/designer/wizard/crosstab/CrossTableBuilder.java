@@ -42,10 +42,10 @@ public class CrossTableBuilder
   CrossHeaderSelector crossHeaderSelector;
   CrossPrintSelector2 crossPrintSelector;
 
-  static final String PREVIEW = "<- 上一步";
-  static final String NEXT = "下一步 ->";
-  static final String FINISHED = " 完成 ";
-  static final String CANCEL = "取消";
+  static final String PREVIEW = App.messages.getString("res.197");
+  static final String NEXT = App.messages.getString("res.198");
+  static final String FINISHED = App.messages.getString("res.199");
+  static final String CANCEL = App.messages.getString("res.4");
   JButton nextCommand = new JButton(NEXT);
   JButton prevCommand = new JButton(PREVIEW);
   JButton cancelCommand = new JButton(CANCEL);
@@ -59,7 +59,7 @@ public class CrossTableBuilder
   static final String[] PROMPT_STRINGS = {
       " 报表数据集选择. 必须且只有一个数据集 (必选). ", //数据集提示信息
       " 选择列标题,行标题,及统计函数 (必选)", //显示项提示信息
-      "页面打印标签设置"
+      App.messages.getString("res.223")
   };
 
   public CrossTableBuilder() {
@@ -67,7 +67,7 @@ public class CrossTableBuilder
   }
 
   public CrossTableBuilder(Frame owner, BuilderContext context) {
-    super(owner, "交叉报表向导", true);
+    super(owner, App.messages.getString("res.224"), true);
     isExitOk = false;
     setSize(600, 500);
     this.context = context;
@@ -77,9 +77,9 @@ public class CrossTableBuilder
     crossHeaderSelector = new CrossHeaderSelector();
     crossPrintSelector=new CrossPrintSelector2();
     steps = new JTabbedPane();
-    steps.addTab("数据集", readerSelector);
-    steps.addTab("行列表头", crossHeaderSelector);
-    steps.addTab("打印样式",crossPrintSelector);
+    steps.addTab(App.messages.getString("res.80"), readerSelector);
+    steps.addTab(App.messages.getString("res.225"), crossHeaderSelector);
+    steps.addTab(App.messages.getString("res.226"),crossPrintSelector);
 
     infoLabel = new JLabel(PROMPT_STRINGS[0]);
     infoLabel.setHorizontalAlignment(JLabel.LEFT);
@@ -99,7 +99,7 @@ public class CrossTableBuilder
         }
         else {
           JOptionPane.showMessageDialog(CrossTableBuilder.this,
-                                        new JLabel("请先选择一个数据集!"));
+                                        new JLabel(App.messages.getString("res.204")));
         }
       }
     });

@@ -1,6 +1,7 @@
 package jatools.designer.property.editor;
 
 import jatools.component.Image;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.swingx.Chooser;
 import jatools.swingx.CommandPanel;
@@ -49,11 +50,11 @@ public class ImageSrcPropertyEditor extends JDialog implements Chooser {
             "field"
         };
     final static String[] typePropmts = {
-            "内建",
-            "网络文件",
-            "本地文件",
-            "类路径",
-            "数据集字段"
+            App.messages.getString("res.282"),
+            App.messages.getString("res.283"),
+            App.messages.getString("res.284"),
+            App.messages.getString("res.285"),
+            App.messages.getString("res.286")
         };
     JComboBox typeCombo = null;
     JTextField pathText = null;
@@ -66,7 +67,7 @@ public class ImageSrcPropertyEditor extends JDialog implements Chooser {
      * Creates a new BackgroundImageEditor object.
      */
     public ImageSrcPropertyEditor(boolean clear) {
-        super(Main.getInstance(), "图片源文件设置", true);
+        super(Main.getInstance(), App.messages.getString("res.308"), true);
         pathText = new JTextField(13);
 
         typeCombo = new JComboBox(typePropmts);
@@ -84,10 +85,10 @@ public class ImageSrcPropertyEditor extends JDialog implements Chooser {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.WEST;
 
-        p.add(new TitledSeparator("图片源文件"), gbc);
+        p.add(new TitledSeparator(App.messages.getString("res.297")), gbc);
         gbc.gridwidth = 1;
 
-        JLabel label = new JLabel("类型:");
+        JLabel label = new JLabel(App.messages.getString("res.298"));
         label.setPreferredSize(new Dimension(30, 23));
         p.add(label, gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
@@ -100,7 +101,7 @@ public class ImageSrcPropertyEditor extends JDialog implements Chooser {
         //        gbc.gridwidth = GridBagConstraints.REMAINDER;
         //        p.add(new JLabel("选择一个本地文件,嵌入到报表模板中."), gbc);
         gbc.gridwidth = 1;
-        p.add(new JLabel("路径:"), gbc);
+        p.add(new JLabel(App.messages.getString("res.299")), gbc);
         gbc.weightx = 100;
 
         p.add(this.pathText, gbc);
@@ -140,7 +141,7 @@ public class ImageSrcPropertyEditor extends JDialog implements Chooser {
         CommandPanel commandPanel = CommandPanel.createPanel(oklistener, cancellistener);
 
         if (clear) {
-            commandPanel.addComponent("为空",
+            commandPanel.addComponent(App.messages.getString("res.181"),
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         done = true;
@@ -181,7 +182,7 @@ public class ImageSrcPropertyEditor extends JDialog implements Chooser {
                         if (ii != null) {
                             base64 = Base64Util.encode(scratch);
 
-                            pathText.setText("<内建>");
+                            pathText.setText(App.messages.getString("res.304"));
                         }
                     } else {
                         pathText.setText(f.getAbsolutePath());
@@ -229,7 +230,7 @@ public class ImageSrcPropertyEditor extends JDialog implements Chooser {
             this.typeCombo.setSelectedIndex(index);
 
             if (index == 0) {
-                this.pathText.setText("<内建>");
+                this.pathText.setText(App.messages.getString("res.304"));
                 this.base64 = src.substring(Image.SOURCE_BUILT_IN.length() + 1);
             } else {
                 this.pathText.setText(src.substring(src.indexOf(":") + 1));

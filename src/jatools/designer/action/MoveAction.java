@@ -1,5 +1,6 @@
 package jatools.designer.action;
 
+import jatools.designer.App;
 import jatools.designer.SelectionState;
 import jatools.designer.peer.ComponentPeer;
 
@@ -22,7 +23,7 @@ class MoveAction extends ReportAction {
      * @param orientation DOCUMENT ME!
      */
     public MoveAction(int orientation) {
-        super("移动被选件");
+        super(App.messages.getString("res.530"));
         this.orientation = orientation;
     }
 

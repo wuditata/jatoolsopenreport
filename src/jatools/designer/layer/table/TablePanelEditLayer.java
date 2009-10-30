@@ -13,6 +13,7 @@ import jatools.component.table.HeaderTable;
 import jatools.component.table.RowPanel;
 import jatools.component.table.Table;
 import jatools.component.table.TableBase;
+import jatools.designer.App;
 import jatools.designer.InplaceEditor;
 import jatools.designer.Main;
 import jatools.designer.ReportPanel;
@@ -76,7 +77,7 @@ public class TablePanelEditLayer extends AbstractLayer implements Painter {
     private JPopupMenu pop;
     private Point start;
     private Table hot;
-    private _PopAction deleteAll = new _PopAction("删除本板以及子孙板");
+    private _PopAction deleteAll = new _PopAction(App.messages.getString("res.380"));
     private JMenuItem deleteAllItem = new JMenuItem(deleteAll);
     private Point selectedPoint;
     private int dragMoveWidth = 1;
@@ -888,11 +889,11 @@ public class TablePanelEditLayer extends AbstractLayer implements Painter {
         if (pop == null) {
             pop = new JPopupMenu();
 
-            _PopAction a = new _PopAction("根据选中单元格添加板");
+            _PopAction a = new _PopAction(App.messages.getString("res.381"));
             a.putValue(Action.ACTION_COMMAND_KEY, INSERT_LIST_BY_SELECT);
             pop.add(a);
 
-            a = new _PopAction("删除本板");
+            a = new _PopAction(App.messages.getString("res.382"));
             a.putValue(Action.ACTION_COMMAND_KEY, DELETE_LIST);
             pop.add(a);
 

@@ -3,6 +3,7 @@ package jatools.designer.chooser;
 
 
 import jatools.ReportDocument;
+import jatools.designer.App;
 import jatools.designer.wizard.BuilderContext;
 import jatools.designer.wizard.ReportBuilder;
 import jatools.designer.wizard.ReportStyler;
@@ -75,7 +76,7 @@ public class NewPanel extends ReportProvider {
                 }
             };
 
-        JPanel commands = CommandPanel.createPanel("创建", ok, "取消", cancel);
+        JPanel commands = CommandPanel.createPanel(App.messages.getString("res.506"), ok, App.messages.getString("res.4"), cancel);
 
         tooltip = new JLabel();
         tooltip.setVerticalAlignment(SwingConstants.TOP);
@@ -95,7 +96,7 @@ public class NewPanel extends ReportProvider {
                 }
             });
 
-        JLabel commentsLabel = new JLabel("请选择报表类型 ");
+        JLabel commentsLabel = new JLabel(App.messages.getString("res.507"));
         add(commentsLabel, BorderLayout.NORTH);
 
         add(center, BorderLayout.CENTER);
@@ -158,7 +159,7 @@ public class NewPanel extends ReportProvider {
     public static ReportDocument newDocument(Frame frame) {
         document = null;
 
-        d = new JDialog(frame, "新建", true);
+        d = new JDialog(frame, App.messages.getString("res.508"), true);
 
         NewPanel newPanel = new NewPanel();
         newPanel.setBorder(BorderFactory.createEmptyBorder(25, 20, 25, 20));

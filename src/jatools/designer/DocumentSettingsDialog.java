@@ -35,14 +35,14 @@ public class DocumentSettingsDialog extends JDialog {
      * @param doc DOCUMENT ME!
      */
     public DocumentSettingsDialog(ReportDocument doc) {
-        super(Main.getInstance(), "报表属性", true);
+        super(Main.getInstance(), App.messages.getString("res.85"), true);
 
         JPanel p = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.fill = GridBagConstraints.BOTH;
         gbc.anchor = GridBagConstraints.WEST;
-        p.add(new JLabel("报表标题:"), gbc);
+        p.add(new JLabel(App.messages.getString("res.86")), gbc);
         gbc.weightx = 1.0;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
@@ -52,14 +52,14 @@ public class DocumentSettingsDialog extends JDialog {
         p.add(Box.createVerticalStrut(20), gbc);
 
         CommandPanel cp = CommandPanel.createPanel(false);
-        JButton cancel = new JButton("取消");
+        JButton cancel = new JButton(App.messages.getString("res.4"));
         cancel.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     cancel();
                 }
             });
 
-        JButton ok = new JButton("确定");
+        JButton ok = new JButton(App.messages.getString("res.3"));
         ok.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done();

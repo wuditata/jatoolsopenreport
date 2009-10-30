@@ -1,6 +1,7 @@
 package jatools.component.table;
 
 import jatools.component.Component;
+import jatools.designer.App;
 
 
 /**
@@ -57,7 +58,7 @@ public class HeaderTable extends Table {
     * @return DOCUMENT ME!
     */
     public int getRowHeight(int from, int to) {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeight");
+        throw new UnsupportedOperationException(App.messages.getString("res.569"));
     }
 
     /**
@@ -68,7 +69,7 @@ public class HeaderTable extends Table {
      * @return DOCUMENT ME!
      */
     public int getRowHeight(int row) {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeight");
+        throw new UnsupportedOperationException(App.messages.getString("res.569"));
     }
 
     /**
@@ -77,7 +78,7 @@ public class HeaderTable extends Table {
      * @return DOCUMENT ME!
      */
     public int[] getRowHeights() {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+        throw new UnsupportedOperationException(App.messages.getString("res.570"));
     }
 
     /**
@@ -88,7 +89,7 @@ public class HeaderTable extends Table {
      * @return DOCUMENT ME!
      */
     public int getRowY(int row) {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+        throw new UnsupportedOperationException(App.messages.getString("res.570"));
     }
 
     /**
@@ -97,7 +98,7 @@ public class HeaderTable extends Table {
      * @return DOCUMENT ME!
      */
     public int getTotalRowHeights() {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+        throw new UnsupportedOperationException(App.messages.getString("res.570"));
     }
 
     /**
@@ -109,7 +110,7 @@ public class HeaderTable extends Table {
      * @return DOCUMENT ME!
      */
     public int getWidth(int col, int span) {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+        throw new UnsupportedOperationException(App.messages.getString("res.570"));
     }
 
     /**

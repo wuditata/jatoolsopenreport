@@ -1,5 +1,7 @@
 package jatools.db;
 
+import jatools.designer.App;
+
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -208,7 +210,7 @@ class Column {
             return "OBJECT";
 
         default:
-            throw new SQLException("非法类型." + type);
+            throw new SQLException(App.messages.getString("res.543") + type);
         }
     }
 
@@ -292,7 +294,7 @@ class Column {
             return s.getBytes();
 
         default:
-            throw new SQLException("非法类型." + type);
+            throw new SQLException(App.messages.getString("res.543") + type);
         }
     }
 

@@ -8,6 +8,7 @@ package jatools.viewer;
 import jatools.PageFormat;
 import jatools.accessor.ProtectPublic;
 import jatools.core.view.PageView;
+import jatools.designer.App;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -62,7 +63,7 @@ import javax.swing.border.MatteBorder;
 public class rvr extends JPanel implements ProtectPublic{
     static Dimension defaultPageSize = new Dimension(120, 300);
     static Icon printIcon;
-    static String FIT_WIDTH = "适合宽度";
+    static String FIT_WIDTH = App.messages.getString("res.5");
     private Cursor hand0;
     private Cursor hand1;
     protected _PageView view = new _PageView();
@@ -168,7 +169,7 @@ public class rvr extends JPanel implements ProtectPublic{
 
         JButton button = new JButton(printIcon);
         button.setPreferredSize(new Dimension(25, 25));
-        button.setToolTipText( "打印...");
+        button.setToolTipText( App.messages.getString("res.6"));
         button.addActionListener(printAction);
 
         toolbar.add(button);
@@ -684,7 +685,7 @@ public class rvr extends JPanel implements ProtectPublic{
 
     class _PrintAction extends AbstractAction {
         _PrintAction() {
-        	super("打印...", printIcon);
+        	super(App.messages.getString("res.6"), printIcon);
         //    putValue(Action.SMALL_ICON, printIcon);
   
         }

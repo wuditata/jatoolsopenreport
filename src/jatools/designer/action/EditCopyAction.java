@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 import jatools.component.Component;
+import jatools.designer.App;
 import jatools.designer.ClipBoard;
 import jatools.designer.ReportPanel;
 import jatools.designer.SelectionState;
@@ -22,7 +23,7 @@ public class EditCopyAction extends EditClipAction {
      * Creates a new EditCopyAction object.
      */
     public EditCopyAction() {
-        super(null, "¸´ÖÆ", getIcon("/jatools/icons/copy.gif"),
+        super(null, App.messages.getString("res.101"), getIcon("/jatools/icons/copy.gif"),
             getIcon("/jatools/icons/copy2.gif"));
         setStroke(ctrl(KeyEvent.VK_C));
     }
@@ -33,7 +34,7 @@ public class EditCopyAction extends EditClipAction {
      * @param reportPanel DOCUMENT ME!
      */
     public EditCopyAction(ReportPanel reportPanel) {
-        super(reportPanel, "¸´ÖÆ", getIcon("/jatools/icons/copy.gif"),
+        super(reportPanel, App.messages.getString("res.101"), getIcon("/jatools/icons/copy.gif"),
             getIcon("/jatools/icons/copy2.gif"));
         setStroke(ctrl(KeyEvent.VK_C));
     }

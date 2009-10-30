@@ -1,16 +1,12 @@
 package jatools.designer;
 
 import jatools.ReportDocument;
-
 import jatools.designer.property.PropertyPanel;
 
 import java.awt.Component;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeListener;
@@ -50,8 +46,8 @@ public class EditorPanel extends JSplitPane {
         sp.setDividerLocation(200);
         sp.setOneTouchExpandable(true);
 
-        propTab.addTab("设计", propertTable);
-        propTab.addTab("示例报表", sp);
+        propTab.addTab(App.messages.getString("res.90"), propertTable);
+        propTab.addTab(App.messages.getString("res.91"), sp);
 
         setLeftComponent(propTab);
         setRightComponent(tabbedPanel);

@@ -1,12 +1,9 @@
 package jatools.engine.export.html;
 
 import jatools.PageFormat;
-
 import jatools.component.ImageStyle;
 import jatools.component.Size;
-
 import jatools.core.view.AbstractView;
-import jatools.core.view.Border;
 import jatools.core.view.ClipView;
 import jatools.core.view.CompoundView;
 import jatools.core.view.DisplayStyleManager;
@@ -16,30 +13,22 @@ import jatools.core.view.TextLine;
 import jatools.core.view.TextView;
 import jatools.core.view.TransformView;
 import jatools.core.view.View;
-
+import jatools.designer.App;
 import jatools.engine.ReportJob;
 import jatools.engine.System2;
-
 import jatools.engine.export.BasicExport;
-
 import jatools.engine.layout.TableView;
-
 import jatools.engine.protect.PageableStringBuffer;
-
 import jatools.io.ResourceOutputFactory;
-
 import jatools.util.StringUtil;
 import jatools.util.Util;
 
 import java.awt.Color;
 import java.awt.Insets;
 import java.awt.Rectangle;
-
 import java.io.IOException;
 import java.io.Writer;
-
 import java.text.SimpleDateFormat;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -64,7 +53,7 @@ public class HtmlExport extends BasicExport {
     public static final String HTML_VERTICAL_ALIGN_TOP = "top";
     public static final String HTML_VERTICAL_ALIGN_MIDDLE = "middle";
     public static final String HTML_VERTICAL_ALIGN_BOTTOM = "bottom";
-    private static final String title = "¼ò±í(JOR)";
+    private static final String title = App.messages.getString("res.39");
     public static final int colorMask = Integer.parseInt("FFFFFF", 16);
     public static final int INCH = 96;
     public static final double DOTS_PER_MM = (double) INCH / (double) 25.4;

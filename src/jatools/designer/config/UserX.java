@@ -1,6 +1,7 @@
 package jatools.designer.config;
 
 import jatools.accessor.AutoAccessor;
+import jatools.designer.App;
 import jatools.util.Util;
 import jatools.xml.XmlReader;
 import jatools.xml.XmlWriter;
@@ -25,7 +26,7 @@ public class UserX extends AutoAccessor {
     private static String USERX_XML = "userx.xml";
     private static UserX instance;
     boolean showOpenDialogOnStartup;
-    String defaultUIFont = "宋体";
+    String defaultUIFont = App.messages.getString("res.22");
     String defaultJdbcDriver;
     String defaultLookAndFeel;
     ArrayList lookAndFeels = new ArrayList();
@@ -154,9 +155,9 @@ public class UserX extends AutoAccessor {
             ux = (UserX) XmlReader.read(is);
             is.close();
         } catch (FileNotFoundException e) {
-            Util.debug(logger, "读文件错： 文件没找到," + filePath);
+            Util.debug(logger, App.messages.getString("res.503") + filePath);
         } catch (Exception e) {
-            Util.debug(logger, "读文件错：" + Util.toString(e));
+            Util.debug(logger, App.messages.getString("res.504") + Util.toString(e));
         }
 
         return ux;
@@ -175,7 +176,7 @@ public class UserX extends AutoAccessor {
             XmlWriter.write(ux, fo);
             fo.close();
         } catch (Exception ex) {
-            Util.debug(logger, "写文件错：" + USERX_XML + "," + Util.toString(ex));
+            Util.debug(logger, App.messages.getString("res.505") + USERX_XML + "," + Util.toString(ex));
         }
     }
 

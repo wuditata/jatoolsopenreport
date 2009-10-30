@@ -1,35 +1,29 @@
 package jatools.engine.script;
 
-import bsh.Interpreter;
-import bsh.Primitive;
-
 import jatools.accessor.ProtectPublic;
-
+import jatools.designer.App;
 import jatools.engine.ImportFunctions;
 import jatools.engine.System2;
-
 import jatools.engine.script.debug.ScriptDebugger;
-
 import jatools.util.HZUtil;
 
 import java.io.UnsupportedEncodingException;
-
 import java.net.URLEncoder;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-
 import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+
+import bsh.Interpreter;
+import bsh.Primitive;
 
 
 /**
@@ -787,9 +781,9 @@ public class GlobalScripts implements ProtectPublic {
      */
     public static TableModel getTableModel() {
         DefaultTableModel result = new DefaultTableModel(0, 4);
-        result.addRow(new Object[] { "王小鸭", new Integer(16), "女", new Integer(90) });
-        result.addRow(new Object[] { "崔永远", new Integer(17), "男", new Integer(99) });
-        result.addRow(new Object[] { "水均溢", new Integer(18), "男", new Integer(85) });
+        result.addRow(new Object[] { App.messages.getString("res.27"), new Integer(16), App.messages.getString("res.28"), new Integer(90) });
+        result.addRow(new Object[] { App.messages.getString("res.29"), new Integer(17), App.messages.getString("res.30"), new Integer(99) });
+        result.addRow(new Object[] { App.messages.getString("res.31"), new Integer(18), App.messages.getString("res.30"), new Integer(85) });
 
         return result;
     }

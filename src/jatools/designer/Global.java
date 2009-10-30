@@ -28,6 +28,6 @@ class FavouriteDatasetReaderList implements DatasetReaderList {
     }
 
     public String getName() {
-        return "收藏夹数据集";
+        return App.messages.getString("res.93");
     }
 }

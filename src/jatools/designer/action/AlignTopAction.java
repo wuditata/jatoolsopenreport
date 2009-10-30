@@ -1,5 +1,6 @@
 package jatools.designer.action;
 
+import jatools.designer.App;
 import jatools.designer.SelectionState;
 
 import java.awt.Point;
@@ -18,7 +19,7 @@ public class AlignTopAction extends AlignAction {
      * Creates a new AlignTopAction object.
      */
     public AlignTopAction() {
-        super("…œ∂‘∆Î", getIcon("/jatools/icons/aligntop.gif"),
+        super(App.messages.getString("res.520"), getIcon("/jatools/icons/aligntop.gif"),
             getIcon("/jatools/icons/aligntop2.gif"));
     }
 

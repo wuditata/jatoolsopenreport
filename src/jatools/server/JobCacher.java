@@ -1,5 +1,6 @@
 package jatools.server;
 
+import jatools.designer.App;
 import jatools.engine.ReportJob;
 
 import java.util.HashMap;
@@ -33,7 +34,7 @@ public class JobCacher {
         Map params = (Map) session.getAttribute(jobSessionId);
 
         if (params == null) {
-            throw new Exception("该报表缓冲过期,不能访问!");
+            throw new Exception(App.messages.getString("res.18"));
         }
 
         return ReportJob.createJob(params);

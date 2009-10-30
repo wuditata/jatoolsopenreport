@@ -2,6 +2,7 @@ package jatools.designer.property;
 
 
 
+import jatools.designer.App;
 import jatools.designer.ReportEditor;
 import jatools.designer.data.TooltipHelper;
 import jatools.designer.data.VariableTree;
@@ -45,10 +46,10 @@ public class PropertyPanel extends JPanel implements ChangeListener, TooltipHelp
         setLayout(new BorderLayout());
 
         tp = new JTabbedPane();
-        tp.addTab("属性", Util.getIcon("/jatools/icons/properties.gif"),
+        tp.addTab(App.messages.getString("res.274"), Util.getIcon("/jatools/icons/properties.gif"),
             new JScrollPane(propEditor));
-        tp.addTab("事件", Util.getIcon("/jatools/icons/event.gif"), new JScrollPane(eventEditor));
-        tp.addTab("变量", Util.getIcon("/jatools/icons/variable.gif"),
+        tp.addTab(App.messages.getString("res.275"), Util.getIcon("/jatools/icons/event.gif"), new JScrollPane(eventEditor));
+        tp.addTab(App.messages.getString("res.182"), Util.getIcon("/jatools/icons/variable.gif"),
             new JScrollPane(variableTree));
 
         xmlPanel = new XmlPanel();
@@ -85,7 +86,7 @@ public class PropertyPanel extends JPanel implements ChangeListener, TooltipHelp
             if (var.getVariableName() != null) {
                 int type = node.getType();
 
-                text = "拖动此变量到编辑面板,生成文本组件";
+                text = App.messages.getString("res.276");
             }
         }
 

@@ -31,6 +31,8 @@
 
 package jatools.data.rs.filter;
 
+import jatools.designer.App;
+
 import java.io.IOException;
 import java.io.StreamTokenizer;
 
@@ -52,7 +54,7 @@ public class FilterParserException extends IOException { // QueryParserException
 //            state = "find special char '"+(char)tokens.ttype+"'";
 //        }
 
-        return new FilterParserException(msg + " ·¢ÏÖ " + tokens + " in " );
+        return new FilterParserException(msg + App.messages.getString("res.551") + tokens + " in " );
     }
 
 } // QueryParserException

@@ -1,6 +1,7 @@
 package jatools.server;
 
 import jatools.accessor.ProtectPublic;
+import jatools.designer.App;
 import jatools.engine.ReportJob;
 
 import java.io.IOException;
@@ -59,7 +60,7 @@ public class JatoolsReportServlet extends HttpServlet implements ProtectPublic {
         } else if ("tempfile".equals(action)) {
             FileFinder.service(request, response);
         } else {
-            throw new ServletException("不支持的操作" + action + ".");
+            throw new ServletException(App.messages.getString("res.17") + action + ".");
         }
     }
 

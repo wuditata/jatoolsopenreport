@@ -1,5 +1,6 @@
 package jatools.tags;
 
+import jatools.designer.App;
 import jatools.util.StringUtil;
 
 import java.io.IOException;
@@ -89,7 +90,7 @@ public class ContainerTag extends AbstractReportTag {
      */
     public int doStartTag() throws JspException {
         if (!(this.getParent() instanceof ReportTag)) {
-            throw new JspException("请将容器 " + id + " 置于报表节点内.");
+            throw new JspException(App.messages.getString("res.8") + id + App.messages.getString("res.9"));
         }
 
         boolean _candrag = (canDrag == null) || canDrag.equals("true");

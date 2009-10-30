@@ -25,6 +25,7 @@ import jatools.component.table.RowPanel;
 import jatools.component.table.Table;
 import jatools.core.view.Border;
 import jatools.data.reader.DatasetReader;
+import jatools.designer.App;
 import jatools.designer.wizard.BuilderContext;
 import jatools.designer.wizard.CustomSummary;
 import jatools.designer.wizard.ReportBuilder;
@@ -53,7 +54,7 @@ import javax.swing.Icon;
  * @author   java9
  */
 public class TableStyler implements ReportStyler {
-    static final String STYLER_NAME = "表格报表";
+    static final String STYLER_NAME = App.messages.getString("res.205");
     static final String ICON_URL = "/jatools/icons/styletable.gif";
 
     /*
@@ -358,7 +359,7 @@ public class TableStyler implements ReportStyler {
             if (!b || (v.size() < 1)) {
                 //小计
                 if (i < (groupFields.length - 1)) {
-                    Label xiaoji = new Label("小计");
+                    Label xiaoji = new Label(App.messages.getString("res.206"));
                     rowPanel.add(xiaoji, rowSpan, i + 1, groupFields.length - i - 1, 1);
                 }
 
@@ -373,7 +374,7 @@ public class TableStyler implements ReportStyler {
                 int largest = getSameCalcFieldLargestNumber(v);
 
                 if (i < (groupFields.length - 1)) {
-                    Label xiaoji = new Label("小计");
+                    Label xiaoji = new Label(App.messages.getString("res.206"));
                     rowPanel.add(xiaoji, rowSpan - (largest - 1), i + 1,
                         groupFields.length - i - 1, largest);
                 }
@@ -455,7 +456,7 @@ public class TableStyler implements ReportStyler {
             int largest = getSameCalcFieldLargestNumber(vv);
             int rowSpan = ((Integer) rowNumberMap.get(null)).intValue() - 1;
 
-            table.add(label = new Label("总计"), rowSpan - (largest - 1), 0, groupFields.length,
+            table.add(label = new Label(App.messages.getString("res.207")), rowSpan - (largest - 1), 0, groupFields.length,
                 largest);
 
             int disPlayNumber = disPlayField.size();

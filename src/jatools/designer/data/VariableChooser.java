@@ -1,5 +1,6 @@
 package jatools.designer.data;
 
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.swingx.Chooser;
 
@@ -24,7 +25,7 @@ public class VariableChooser implements Chooser {
      * @return DOCUMENT ME!
      */
     public boolean showChooser(JComponent owner, Object value) {
-        VariableExplorer explorer = new VariableExplorer(Main.getInstance(), "±‰¡ø±‡º≠");
+        VariableExplorer explorer = new VariableExplorer(Main.getInstance(), App.messages.getString("res.499"));
         explorer.setLocationRelativeTo(owner);
 
         explorer.setVariable((String) value);

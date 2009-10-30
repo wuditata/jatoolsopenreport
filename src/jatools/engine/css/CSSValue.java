@@ -1,5 +1,6 @@
 package jatools.engine.css;
 
+import jatools.designer.App;
 import jatools.engine.script.Script;
 
 import org.apache.commons.lang.StringUtils;
@@ -46,7 +47,7 @@ public class CSSValue {
      */
     public CSSValue(String csstext) {
         if ((csstext == null) || ((csstext = csstext.trim()).length() == 0)) {
-            throw new IllegalArgumentException("CSSValue.csstext 值为不能为空!");
+            throw new IllegalArgumentException(App.messages.getString("res.40"));
         }
 
         if (csstext.startsWith("${") && csstext.endsWith("}")) {

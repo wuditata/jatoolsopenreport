@@ -1,5 +1,7 @@
 package jatools.designer.wizard;
 
+import jatools.designer.App;
+
 import java.awt.Font;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -32,7 +34,7 @@ public class BuilderContext {
     public static final int ITEM_VERTICAL_MARGIN = 8;
     public static final int ITEM_HORIZONTAL_MARGIN = 4;
     public static final String STATIC_TABLE = "static.table";
-    public static final Font TITLE_FONT = new Font("ËÎÌו", Font.BOLD, 26);
+    public static final Font TITLE_FONT = new Font(App.messages.getString("res.22"), Font.BOLD, 26);
     public static final int ITEM_HEIGHT = 20;
     public static final int ITEM_WIDTH = 90;
     public static final String ALIAS_LOOKER = "alias_looker";

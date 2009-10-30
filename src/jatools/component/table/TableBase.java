@@ -3,6 +3,7 @@ package jatools.component.table;
 import jatools.component.Component;
 import jatools.component.ComponentConstants;
 import jatools.component.Label;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.xml.serializer.XmlWriteListener;
 
@@ -835,15 +836,15 @@ public abstract class TableBase extends Component implements GridComponent {
      */
     public void add(Component child, int row, int column, int width, int height) {
         if (child == null) {
-            throw new NullPointerException("ZTable.add(...): child参数为空了!");
+            throw new NullPointerException(App.messages.getString("res.574"));
         }
 
         if ((row < 0) || (row > getRowCount())) {
-            throw new IllegalArgumentException("ZTable.add(...): row 参数不在界内!");
+            throw new IllegalArgumentException(App.messages.getString("res.575"));
         }
 
         if ((column < 0) || (column > getColumnCount())) {
-            throw new IllegalArgumentException("ZTable.add(...): column 参数不在界内!");
+            throw new IllegalArgumentException(App.messages.getString("res.576"));
         }
 
         child.setCell(new Cell(row, column, width, height));

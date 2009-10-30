@@ -2,6 +2,7 @@ package jatools.designer.action;
 
 import jatools.component.Component;
 import jatools.component.Page;
+import jatools.designer.App;
 import jatools.designer.ReportEditor;
 import jatools.designer.SelectionState;
 import jatools.designer.peer.ComponentPeer;
@@ -22,7 +23,7 @@ public class BringToBackAction extends ReportAction {
      * Creates a new BringToBackAction object.
      */
     public BringToBackAction() {
-        super("÷√∫Û", getIcon("/jatools/icons/toback.gif"),
+        super(App.messages.getString("res.522"), getIcon("/jatools/icons/toback.gif"),
             getIcon("/jatools/icons/toback2.gif"));
     }
 

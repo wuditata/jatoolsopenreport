@@ -2,6 +2,7 @@ package jatools.designer.action;
 
 import jatools.accessor.PropertyDescriptor;
 import jatools.component.ComponentConstants;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.ReportEditor;
 import jatools.designer.SelectionState;
@@ -43,7 +44,7 @@ public class FormatBrushAction extends ReportAction implements Layer, ChangeList
      * Creates a new FormatBrushAction object.
      */
     public FormatBrushAction() {
-        super("∏Ò ΩÀ¢", getIcon("/jatools/icons/brush.gif"),
+        super(App.messages.getString("res.529"), getIcon("/jatools/icons/brush.gif"),
             getIcon("/jatools/icons/formatbrush2.gif"));
     }
 

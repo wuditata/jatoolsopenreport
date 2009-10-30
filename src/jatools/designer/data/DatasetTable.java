@@ -7,6 +7,7 @@ import jatools.dataset.DatasetException;
 import jatools.dataset.Row;
 import jatools.dataset.RowMeta;
 import jatools.db.TypeUtil;
+import jatools.designer.App;
 import jatools.engine.script.ReportContext;
 import jatools.swingx.MessageBox;
 
@@ -264,7 +265,7 @@ public class DatasetTable extends JTable {
                 String cls = TypeUtil.getShortName(this.getColumnClass(i));
 
                 if (cls == null) {
-                    throw new Exception("csv文件不支持类型为 " + this.getColumnClass(i) + " 的数据.");
+                    throw new Exception(App.messages.getString("res.489") + this.getColumnClass(i) + App.messages.getString("res.490"));
                 }
 
                 classes += cls;

@@ -1,6 +1,7 @@
 package jatools.designer.data;
 
 import jatools.data.sum.Sum;
+import jatools.designer.App;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -41,7 +42,7 @@ public class CustomSummaryDialog extends JDialog {
      * @param owner DOCUMENT ME!
      */
     public CustomSummaryDialog(Frame owner) {
-        super(owner, "统计函数定义", true);
+        super(owner, App.messages.getString("res.474"), true);
 
         fieldCombo.setEditable(false);
         byCombo.setEditable(false);
@@ -55,7 +56,7 @@ public class CustomSummaryDialog extends JDialog {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(10, 10, 10, 10);
-        topPanel.add(new JLabel("分组:"), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.173")), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
@@ -63,7 +64,7 @@ public class CustomSummaryDialog extends JDialog {
 
         gbc.gridwidth = 1;
 
-        topPanel.add(new JLabel("计算字段"), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.475")), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
@@ -72,7 +73,7 @@ public class CustomSummaryDialog extends JDialog {
         topPanel.add(fieldCombo, gbc);
         gbc.gridwidth = 1;
         gbc.weightx = 0;
-        topPanel.add(new JLabel("函数类型:"), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.476")), gbc);
 
         gbc.weightx = 100;
 
@@ -80,7 +81,7 @@ public class CustomSummaryDialog extends JDialog {
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
 
-        JButton okButton = new JButton("确定");
+        JButton okButton = new JButton(App.messages.getString("res.3"));
 
         okButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -90,7 +91,7 @@ public class CustomSummaryDialog extends JDialog {
 
         buttonPanel.add(okButton);
 
-        JButton cancelButton = new JButton("取消");
+        JButton cancelButton = new JButton(App.messages.getString("res.4"));
         cancelButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     hide();
@@ -111,7 +112,7 @@ public class CustomSummaryDialog extends JDialog {
         try {
             hide();
         } catch (Exception e1) {
-            JOptionPane.showConfirmDialog(getParent(), e1.getMessage(), "出错了...",
+            JOptionPane.showConfirmDialog(getParent(), e1.getMessage(), App.messages.getString("res.12"),
                 JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
             e1.printStackTrace();
         }

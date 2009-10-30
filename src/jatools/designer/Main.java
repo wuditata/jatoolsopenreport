@@ -1,24 +1,17 @@
 package jatools.designer;
 
 import jatools.ReportDocument;
-
 import jatools.component.ComponentConstants;
-
 import jatools.designer.action.ExitAction;
 import jatools.designer.action.ReportAction;
-
 import jatools.designer.config.Configuration;
 import jatools.designer.config.MruPopupMenu;
-
 import jatools.designer.property.SimplePropertyEditor;
-
 import jatools.designer.toolbox.ComboBorderChooser;
 import jatools.designer.toolbox.Icon25x25ToggleButton;
-
 import jatools.swingx.ComboButton;
 import jatools.swingx.Icon25x25Button;
 import jatools.swingx.SwingUtil;
-
 import jatools.util.Util;
 
 import java.awt.BorderLayout;
@@ -35,9 +28,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import java.io.File;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -72,7 +63,7 @@ public class Main extends JFrame {
     private static Main instance;
     private static String EDITOR_PANEL = "editor";
     private static String PREVIEW_PANEL = "preview";
-    private static String titlePrefix = "简表(JOR) ";
+    private static String titlePrefix = App.messages.getString("res.39");
     private ActionManager am;
     private _IconToggleButton boldButton;
     private _IconToggleButton italicButton;
@@ -307,7 +298,7 @@ public class Main extends JFrame {
             ppm.add(new JMenuItem(am.bringToFrontAction));
             ppm.add(new JMenuItem(am.bringToBackAction));
 
-            ppmAlignMenu = new JMenu("对齐");
+            ppmAlignMenu = new JMenu(App.messages.getString("res.103"));
             ppmAlignMenu.setIcon(ReportAction.EMPTY_ICON);
 
             ppmAlignMenu.add(new JMenuItem(am.leftAlignAction));
@@ -319,7 +310,7 @@ public class Main extends JFrame {
             ppm.add(ppmAlignMenu);
             ppm.add(new JMenuItem(am.centerPageAction));
 
-            ppmSizeMenu = new JMenu("大小");
+            ppmSizeMenu = new JMenu(App.messages.getString("res.104"));
             ppmSizeMenu.setIcon(ReportAction.EMPTY_ICON);
             ppmSizeMenu.add(new JMenuItem(am.sameHeightAction));
             ppmSizeMenu.add(new JMenuItem(am.sameWidthAction));
@@ -333,7 +324,7 @@ public class Main extends JFrame {
     private JMenuBar createMenuBar() {
         JMenuBar mbar = new JMenuBar();
 
-        JMenu fileMenu = new JMenu("文件(F)", true);
+        JMenu fileMenu = new JMenu(App.messages.getString("res.105"), true);
         fileMenu.setMnemonic('F');
         fileMenu.add(new JMenuItem(am.newAction));
         fileMenu.add(new JMenuItem(am.openAction));
@@ -358,7 +349,7 @@ public class Main extends JFrame {
         fileMenu.addSeparator();
         fileMenu.add(new JMenuItem(am.exitAction));
 
-        JMenu editMenu = new JMenu("编辑(E)", true);
+        JMenu editMenu = new JMenu(App.messages.getString("res.106"), true);
         editMenu.setMnemonic('E');
         editMenu.add(new JMenuItem(am.undoAction));
         editMenu.add(new JMenuItem(am.redoAction));
@@ -369,7 +360,7 @@ public class Main extends JFrame {
         editMenu.add(new JMenuItem(am.pasteAction));
         editMenu.add(new JMenuItem(am.deleteAction));
 
-        JMenu newMenu = new JMenu("插入(I)", true);
+        JMenu newMenu = new JMenu(App.messages.getString("res.107"), true);
         newMenu.setMnemonic('I');
         newMenu.add(new JMenuItem(am.newLabelAction));
         newMenu.add(new JMenuItem(am.newTextAction));
@@ -380,12 +371,12 @@ public class Main extends JFrame {
 
         newMenu.add(new JMenuItem(am.newTableAction));
 
-        JMenu formatMenu = new JMenu("格式(O)", true);
+        JMenu formatMenu = new JMenu(App.messages.getString("res.108"), true);
         formatMenu.setMnemonic('O');
         formatMenu.add(new JMenuItem(am.bringToFrontAction));
         formatMenu.add(new JMenuItem(am.bringToBackAction));
 
-        alignMenu = new JMenu("对齐");
+        alignMenu = new JMenu(App.messages.getString("res.103"));
         alignMenu.setIcon(ReportAction.EMPTY_ICON);
         alignMenu.add(new JMenuItem(am.leftAlignAction));
         alignMenu.add(new JMenuItem(am.rightAlignAction));
@@ -396,7 +387,7 @@ public class Main extends JFrame {
         formatMenu.add(alignMenu);
         formatMenu.add(new JMenuItem(am.centerPageAction));
 
-        sizeMenu = new JMenu("大小");
+        sizeMenu = new JMenu(App.messages.getString("res.104"));
 
         sizeMenu.setIcon(ReportAction.EMPTY_ICON);
         sizeMenu.add(new JMenuItem(am.sameHeightAction));
@@ -404,7 +395,7 @@ public class Main extends JFrame {
         sizeMenu.add(new JMenuItem(am.sameBothAction));
         formatMenu.add(sizeMenu);
 
-        JMenu helpMenu = new JMenu("帮助(H)");
+        JMenu helpMenu = new JMenu(App.messages.getString("res.109"));
         helpMenu.setMnemonic('H');
 
         helpMenu.add(am.aboutAction);

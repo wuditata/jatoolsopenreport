@@ -3,6 +3,7 @@ package jatools.designer.variable.dialog;
 import jatools.data.reader.DatasetReader;
 import jatools.dataset.Dataset;
 import jatools.dataset.DatasetException;
+import jatools.designer.App;
 import jatools.dom.src.DatasetNodeSource;
 import jatools.dom.src.IndexNodeSource;
 import jatools.engine.script.ReportContext;
@@ -38,7 +39,7 @@ public class IndexDialog
   private Component c;
   private static boolean exitedOK;
   private JLabel infoLabel;
-  static final String info = "选择索引字段，不能重复，不能为空";
+  static final String info = App.messages.getString("res.241");
 
   private JTextField nameField;
   private IndexDialog(DatasetNodeSource parentSrc, IndexNodeSource indexSource,
@@ -47,7 +48,7 @@ public class IndexDialog
     super( (Frame) javax.swing.SwingUtilities.getWindowAncestor(parent));
     exitedOK = false;
     this.setModal(true);
-    this.setTitle("索引定义");
+    this.setTitle(App.messages.getString("res.252"));
     this.indexSource = indexSource;
     this.c = parent;
     initUI();
@@ -73,7 +74,7 @@ public class IndexDialog
 
     centerPanel.add(center, BorderLayout.CENTER);
 
-    JLabel nameLabel = new JLabel("名称：");
+    JLabel nameLabel = new JLabel(App.messages.getString("res.243"));
     nameField = new JTextField();
     Box nameBox = Box.createHorizontalBox();
     nameBox.add(nameLabel);
@@ -93,9 +94,9 @@ public class IndexDialog
     rightList = new JList();
 
     JTabbedPane leftTab = new JTabbedPane();
-    leftTab.addTab("可选字段", new JScrollPane(leftList));
+    leftTab.addTab(App.messages.getString("res.244"), new JScrollPane(leftList));
     JTabbedPane rightTab = new JTabbedPane();
-    rightTab.addTab("索引字段", new JScrollPane(rightList));
+    rightTab.addTab(App.messages.getString("res.253"), new JScrollPane(rightList));
     leftTab.setPreferredSize(new Dimension(200, 350));
     rightTab.setPreferredSize(new Dimension(200, 350));
 
@@ -103,8 +104,8 @@ public class IndexDialog
     center.add(controlPanel());
     center.add(rightTab);
 
-    JButton ok = new JButton("确定");
-    JButton cancel = new JButton("取消");
+    JButton ok = new JButton(App.messages.getString("res.3"));
+    JButton cancel = new JButton(App.messages.getString("res.4"));
     ok.setActionCommand("ok");
     ok.setPreferredSize(new Dimension(78, 23));
     cancel.setActionCommand("cancel");
@@ -263,14 +264,14 @@ public class IndexDialog
       String indexs[] = new String[rightModel.getSize()];
 
       if (nameField.getText() == null || nameField.getText().trim().equals("")) {
-        JOptionPane.showConfirmDialog(nameField, "名称不能为空！", "提示",
+        JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.247"), App.messages.getString("res.55"),
                                       JOptionPane.CLOSED_OPTION,
                                       JOptionPane.ERROR_MESSAGE);
         return;
 
       }
       if (indexs.length == 0) {
-        JOptionPane.showConfirmDialog(nameField, "索引字段不能为空！", "提示",
+        JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.254"), App.messages.getString("res.55"),
                                       JOptionPane.CLOSED_OPTION,
                                       JOptionPane.ERROR_MESSAGE);
         return;

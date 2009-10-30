@@ -1,5 +1,6 @@
 package jatools.designer.action;
 
+import jatools.designer.App;
 import jatools.designer.SelectionState;
 
 import java.awt.Point;
@@ -18,7 +19,7 @@ public class AlignBottomAction extends AlignAction {
      * Creates a new AlignBottomAction object.
      */
     public AlignBottomAction() {
-        super("ÏÂ¶ÔÆë", getIcon("/jatools/icons/alignbottom.gif"),
+        super(App.messages.getString("res.517"), getIcon("/jatools/icons/alignbottom.gif"),
             getIcon("/jatools/icons/alignbottom2.gif"));
     }
 

@@ -1,5 +1,6 @@
 package jatools.designer.property.editor.printstyle;
 
+import jatools.designer.App;
 import jatools.engine.css.CSSValue;
 import jatools.engine.css.rule.LayoutRule;
 import jatools.swingx.SwingUtil;
@@ -28,20 +29,20 @@ public class LayoutRulePanel extends JPanel {
         };
     private static final String[] hPosition = {
             "",
-            "居左",
-            "居中",
-            "居右"
+            App.messages.getString("res.14"),
+            App.messages.getString("res.15"),
+            App.messages.getString("res.16")
         };
     private static final String[] vPosition = {
             "",
-            "居上",
-            "居中",
-            "居下"
+            App.messages.getString("res.312"),
+            App.messages.getString("res.15"),
+            App.messages.getString("res.313")
         };
     private static final String[] frozenPointPrompts = {
             "",
-            "是",
-            "否"
+            App.messages.getString("res.314"),
+            App.messages.getString("res.315")
         };
     private static final String[] frozenPointValues = {
             "",
@@ -86,7 +87,7 @@ public class LayoutRulePanel extends JPanel {
         gbc.gridheight = 1;
         gbc.insets = new Insets(10, 0, 0, 0);
         gbc.anchor = GridBagConstraints.WEST;
-        add(new JLabel("水平位置:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.316"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100;
         gbc.insets = new Insets(0, 0, 0, 0);
@@ -96,43 +97,43 @@ public class LayoutRulePanel extends JPanel {
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("垂直位置:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.317"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(vTempComb, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("宽度:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.318"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(widthTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("高度:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.319"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(heightTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("上边:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.320"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(topTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("左边:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.321"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(leftTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("底边:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.322"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(bottomTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("右边:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.323"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(rightTextField, gbc);
 

@@ -1,6 +1,7 @@
 package jatools.designer.toolbox;
 
 import jatools.core.view.StyleAttributes;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.action.ReportAction;
 import jatools.swingx.Icon25x25Button;
@@ -231,7 +232,7 @@ class BorderSelectionPanel extends JPanel implements BorderWorker {
         // ´´½¨
         c.gridwidth = 1;
         c.insets = new Insets(1, 1, 1, 1);
-        commandPanel.add(new JLabel("´ÖÏ¸:"), c);
+        commandPanel.add(new JLabel(App.messages.getString("res.262")), c);
 
         c.gridwidth = GridBagConstraints.REMAINDER;
 
@@ -240,7 +241,7 @@ class BorderSelectionPanel extends JPanel implements BorderWorker {
         commandPanel.add(getThicknessChooser(), c);
 
         c.gridwidth = 1;
-        commandPanel.add(new JLabel("ÏßÐÍ: "), c);
+        commandPanel.add(new JLabel(App.messages.getString("res.263")), c);
         c.weightx = 0;
         c.gridwidth = GridBagConstraints.REMAINDER;
 
@@ -248,7 +249,7 @@ class BorderSelectionPanel extends JPanel implements BorderWorker {
 
         c.gridwidth = 1;
 
-        commandPanel.add(new JLabel("ÑÕÉ«:"), c);
+        commandPanel.add(new JLabel(App.messages.getString("res.264")), c);
 
         c.gridwidth = GridBagConstraints.REMAINDER;
 
@@ -272,7 +273,7 @@ class BorderSelectionPanel extends JPanel implements BorderWorker {
 
         javax.swing.border.Border b = BorderFactory.createEtchedBorder();
 
-        Icon25x25Button button = new Icon25x25Button(new BorderAction("Çå³ýËùÓÐ±ß¿ò",
+        Icon25x25Button button = new Icon25x25Button(new BorderAction(App.messages.getString("res.265"),
                     Util.getIcon("/jatools/icons/borderclear.gif"), CLEAR));
 
         button.setActionCommand(CLEAR);
@@ -280,42 +281,42 @@ class BorderSelectionPanel extends JPanel implements BorderWorker {
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(lastAction = new BorderAction("È«²¿±ß¿ò",
+        button = new Icon25x25Button(lastAction = new BorderAction(App.messages.getString("res.266"),
                         Util.getIcon("/jatools/icons/borderall.gif"), ALL));
         button.setActionCommand(ALL);
         button.setBackground(Color.WHITE);
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(new BorderAction("×ó±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.267"),
                     Util.getIcon("/jatools/icons/borderleft.gif"), LEFT));
         button.setActionCommand(LEFT);
         button.setBackground(Color.WHITE);
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(new BorderAction("ÖÐ±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.268"),
                     Util.getIcon("/jatools/icons/borderhcenter.gif"), HCENTER));
         button.setActionCommand(HCENTER);
         button.setBackground(Color.WHITE);
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(new BorderAction("ÓÒ±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.269"),
                     Util.getIcon("/jatools/icons/borderright.gif"), RIGHT));
         button.setActionCommand(RIGHT);
         button.setBackground(Color.WHITE);
         button.setBorder(b);
         p.add(button, c);
         c.gridwidth = GridBagConstraints.REMAINDER;
-        button = new Icon25x25Button(new BorderAction("¿ò¼Ü",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.270"),
                     Util.getIcon("/jatools/icons/borderframe.gif"), FRAME));
         button.setActionCommand(FRAME);
         button.setBackground(Color.WHITE);
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(new BorderAction("ÉÏ±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.271"),
                     Util.getIcon("/jatools/icons/bordertop.gif"), TOP));
         button.setActionCommand(TOP);
         c.gridwidth = 1;
@@ -323,21 +324,21 @@ class BorderSelectionPanel extends JPanel implements BorderWorker {
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(new BorderAction("ÖÐ±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.268"),
                     Util.getIcon("/jatools/icons/bordervcenter.gif"), VCENTER));
         button.setActionCommand(VCENTER);
         button.setBackground(Color.WHITE);
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(new BorderAction("ÏÂ±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.272"),
                     Util.getIcon("/jatools/icons/borderbottom.gif"), BOTTOM));
         button.setActionCommand(BOTTOM);
         button.setBackground(Color.WHITE);
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(new BorderAction("Ê®×Ö±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.273"),
                     Util.getIcon("/jatools/icons/bordercross.gif"), CROSS));
         button.setActionCommand(CROSS);
         button.setBackground(Color.WHITE);
@@ -358,7 +359,7 @@ class BorderSelectionPanel extends JPanel implements BorderWorker {
 
         javax.swing.border.Border b = BorderFactory.createEtchedBorder();
 
-        Icon25x25Button button = new Icon25x25Button(new BorderAction("Çå³ýËùÓÐ±ß¿ò",
+        Icon25x25Button button = new Icon25x25Button(new BorderAction(App.messages.getString("res.265"),
                     Util.getIcon("/jatools/icons/borderclear2.gif"), CLEAR));
 
         button.setActionCommand(CLEAR);
@@ -366,28 +367,28 @@ class BorderSelectionPanel extends JPanel implements BorderWorker {
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(lastAction = new BorderAction("È«²¿±ß¿ò",
+        button = new Icon25x25Button(lastAction = new BorderAction(App.messages.getString("res.266"),
                         Util.getIcon("/jatools/icons/borderall2.gif"), ALL));
         button.setActionCommand(ALL);
         button.setBackground(Color.WHITE);
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(new BorderAction("×ó±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.267"),
                     Util.getIcon("/jatools/icons/borderleft2.gif"), LEFT));
         button.setActionCommand(LEFT);
         button.setBackground(Color.WHITE);
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(new BorderAction("ÓÒ±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.269"),
                     Util.getIcon("/jatools/icons/borderright2.gif"), RIGHT));
         button.setActionCommand(RIGHT);
         button.setBackground(Color.WHITE);
         button.setBorder(b);
         p.add(button, c);
 
-        button = new Icon25x25Button(new BorderAction("ÉÏ±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.271"),
                     Util.getIcon("/jatools/icons/bordertop2.gif"), TOP));
         button.setActionCommand(TOP);
         c.gridwidth = 1;
@@ -396,7 +397,7 @@ class BorderSelectionPanel extends JPanel implements BorderWorker {
         p.add(button, c);
 
         c.gridwidth = GridBagConstraints.REMAINDER;
-        button = new Icon25x25Button(new BorderAction("ÏÂ±ß¿ò",
+        button = new Icon25x25Button(new BorderAction(App.messages.getString("res.272"),
                     Util.getIcon("/jatools/icons/borderbottom2.gif"), BOTTOM));
         button.setActionCommand(BOTTOM);
         button.setBackground(Color.WHITE);

@@ -1,6 +1,7 @@
 package jatools.dom.src;
 
 import jatools.accessor.PropertyDescriptor;
+import jatools.designer.App;
 import jatools.engine.script.Script;
 
 import org.w3c.dom.Node;
@@ -29,7 +30,7 @@ public class DocumentNodeSource extends NodeSource {
      * @return DOCUMENT ME!
      */
     public PropertyDescriptor[] getRegistrableProperties() {
-        throw new IllegalArgumentException("DocumentNodeSource 不支持 getRegistrableProperties() 方法.");
+        throw new IllegalArgumentException(App.messages.getString("res.41"));
     }
 
     /**
@@ -40,7 +41,7 @@ public class DocumentNodeSource extends NodeSource {
     * @return DOCUMENT ME!
     */
     public Node create(Node parent, Script script) {
-        throw new IllegalArgumentException("不能通过create方法创建jatoolsDocument对象:");
+        throw new IllegalArgumentException(App.messages.getString("res.42"));
     }
 
     /**
@@ -61,6 +62,6 @@ public class DocumentNodeSource extends NodeSource {
      * @return DOCUMENT ME!
      */
     public Node[] createNodeList(Node parent, Script script) {
-        throw new IllegalArgumentException("DocumentNodeSource 不支持 createNodeList() 方法.");
+        throw new IllegalArgumentException(App.messages.getString("res.43"));
     }
 }

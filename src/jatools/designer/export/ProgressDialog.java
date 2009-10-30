@@ -1,5 +1,6 @@
 package jatools.designer.export;
 
+import jatools.designer.App;
 import jatools.util.Util;
 
 import java.awt.BorderLayout;
@@ -38,7 +39,7 @@ public class ProgressDialog extends JDialog {
      * @param f DOCUMENT ME!
      */
     public ProgressDialog(Frame frame, String title, File f) {
-        super(frame, "导出", true);
+        super(frame, App.messages.getString("res.391"), true);
 
         pb = new ProgressFan();
 
@@ -47,7 +48,7 @@ public class ProgressDialog extends JDialog {
 
         pp.add(pb, BorderLayout.WEST);
 
-        prompt = new JLabel("正在导出......");
+        prompt = new JLabel(App.messages.getString("res.392"));
 
         pp.add(prompt, BorderLayout.CENTER);
 
@@ -56,7 +57,7 @@ public class ProgressDialog extends JDialog {
         contentPane.add(pp, BorderLayout.CENTER);
 
         JPanel commands = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        openCommand = new JButton("打开导出文件");
+        openCommand = new JButton(App.messages.getString("res.393"));
         openCommand.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     hide();
@@ -66,7 +67,7 @@ public class ProgressDialog extends JDialog {
                 }
             });
         commands.add(openCommand);
-        ok = new JButton("确定");
+        ok = new JButton(App.messages.getString("res.3"));
         ok.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     hide();
@@ -92,7 +93,7 @@ public class ProgressDialog extends JDialog {
      */
     public void done() {
         pb.stop();
-        prompt.setText("报表成功导出到: " + file.getName());
+        prompt.setText(App.messages.getString("res.394") + file.getName());
         ok.setEnabled(true);
         this.openCommand.setEnabled(true);
     }

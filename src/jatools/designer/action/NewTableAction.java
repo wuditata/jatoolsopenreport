@@ -4,6 +4,7 @@ import jatools.component.Component;
 import jatools.component.table.CellStore;
 import jatools.component.table.Table;
 import jatools.core.view.Border;
+import jatools.designer.App;
 import jatools.designer.layer.table.BlankCellLoader;
 
 import java.awt.event.ActionEvent;
@@ -24,7 +25,7 @@ public class NewTableAction extends ReportAction implements NewTable {
      * @param owner DOCUMENT ME!
      */
     public NewTableAction() {
-        super("±í¸ñ", getIcon("/jatools/icons/table.gif"), getIcon("/jatools/icons/table2.gif"));
+        super(App.messages.getString("res.533"), getIcon("/jatools/icons/table.gif"), getIcon("/jatools/icons/table2.gif"));
         putValue(CLASS,Table.class );      
         }
 

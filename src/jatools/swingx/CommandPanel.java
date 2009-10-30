@@ -1,5 +1,7 @@
 package jatools.swingx;
 
+import jatools.designer.App;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
@@ -21,12 +23,12 @@ public class CommandPanel extends JPanel {
     /**
      * DOCUMENT ME!
      */
-    public static final String OK = "确定";
+    public static final String OK = App.messages.getString("res.3");
 
     /**
      * DOCUMENT ME!
      */
-    public static final String CANCEL = "取消";
+    public static final String CANCEL = App.messages.getString("res.4");
     JSeparator separator;
     JPanel buttonsPanel;
 

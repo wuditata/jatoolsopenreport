@@ -8,6 +8,7 @@ import jatools.component.table.Table;
 import jatools.core.view.Border;
 import jatools.data.reader.DatasetReader;
 import jatools.dataset.Dataset;
+import jatools.designer.App;
 import jatools.dom.src.DatasetNodeSource;
 import jatools.dom.src.GroupNodeSource;
 import jatools.dom.src.NodeSource;
@@ -222,7 +223,7 @@ public class GroupTableFactory {
                             groupSourceNumber));
 
                     //总计
-                    Label zjLabel = new Label("总计：");
+                    Label zjLabel = new Label(App.messages.getString("res.358"));
                     zjLabel.setBorder(new Border(1, Color.black));
                     table.add(zjLabel, rows.length - 1, 0, groupsList.size() - 1, 1);
 
@@ -339,7 +340,7 @@ public class GroupTableFactory {
             table.add(rowPanel);
 
             //总计：
-            Label zjLabel = new Label("总计：");
+            Label zjLabel = new Label(App.messages.getString("res.358"));
             zjLabel.setBorder(new Border(1, Color.black));
             table.add(zjLabel, rows.length - 1, 0, 1, 1);
 
@@ -556,7 +557,7 @@ public class GroupTableFactory {
             Label text = null;
 
             Label label = new Label();
-            label.setText("小计：");
+            label.setText(App.messages.getString("res.359"));
             label.setBorder(new Border());
             rowPanel.add(label, offIndex, index + 1, groupsList.size() - (index + 1), 1);
 

@@ -1,6 +1,7 @@
 package jatools.component.table;
 
 import jatools.component.Component;
+import jatools.designer.App;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -92,7 +93,7 @@ public class PowerTableBuilder {
                     Component rowPanel = ltable.getComponentByName("_p" + g);
 
                     if (rowPanel == null) {
-                        throw new Exception("找不到文本对象 " + "_p" + g);
+                        throw new Exception(App.messages.getString("res.571") + "_p" + g);
                     }
 
                     deleteRowPanel(rowPanel);
@@ -104,7 +105,7 @@ public class PowerTableBuilder {
 
                 // 删除合计所在的行
                 if (totalLabel == null) {
-                    System.out.println("找不到文本对象 " + "_p" + g);
+                    System.out.println(App.messages.getString("res.571") + "_p" + g);
                 } else {
                     p.removeRow(totalLabel.getCell().row, totalLabel.getCell().rowSpan);
                 }
@@ -119,19 +120,19 @@ public class PowerTableBuilder {
             p.getLeftHeader().getComponentsByName("_x" + gNames[0], texts);
 
             if (texts.isEmpty()) {
-                throw new Exception("找不到文本对象 " + "_x" + gNames[0]);
+                throw new Exception(App.messages.getString("res.571") + "_x" + gNames[0]);
             }
 
             Component totalLabel = ltable.getComponentByName("_t" + gNames[0]);
 
             if (totalLabel == null) {
-                throw new Exception("找不到合计标签 " + "_t" + gNames[0]);
+                throw new Exception(App.messages.getString("res.572") + "_t" + gNames[0]);
             }
 
             Component rowPanel = ltable.getComponentByName("_p" + gNames[0]);
 
             if (rowPanel == null) {
-                throw new Exception("找不到行板 " + "_p" + gNames[0]);
+                throw new Exception(App.messages.getString("res.573") + "_p" + gNames[0]);
             }
 
             int topRows = p.getTopHeader().getRowCount();
@@ -252,7 +253,7 @@ public class PowerTableBuilder {
             p.getLeftHeader().getComponentsByName("_x" + lName, texts);
 
             if (texts.isEmpty()) {
-                throw new Exception("找不到文本对象 " + "_x" + lName);
+                throw new Exception(App.messages.getString("res.571") + "_x" + lName);
             }
 
             getKeptColumns(keptColumns, texts);
@@ -292,7 +293,7 @@ public class PowerTableBuilder {
             Component totalLabel = ltable.getComponentByName("_t" + lName);
 
             if (totalLabel == null) {
-                throw new Exception("找不到合计标签 " + "_t" + lName);
+                throw new Exception(App.messages.getString("res.572") + "_t" + lName);
             }
 
             cc.put("_t" + lName, totalLabel);
@@ -302,7 +303,7 @@ public class PowerTableBuilder {
             ltable.getComponentsByName("_x" + lName, texts);
 
             if (texts.isEmpty()) {
-                throw new Exception("找不到文本对象 " + "_x" + lName);
+                throw new Exception(App.messages.getString("res.571") + "_x" + lName);
             }
 
             cc.put("_x" + lName, texts);
@@ -312,7 +313,7 @@ public class PowerTableBuilder {
             Component panel = ltable.getComponentByName("_p" + lName);
 
             if (panel == null) {
-                throw new Exception("找不到行板 " + "_p" + lName);
+                throw new Exception(App.messages.getString("res.573") + "_p" + lName);
             }
 
             cc.put("_p" + lName, panel);

@@ -36,7 +36,7 @@ public class TooltipPropertyEditor extends JDialog implements Chooser {
      * Creates a new TooltipPropertyEditor object.
      */
     public TooltipPropertyEditor() {
-        super(Main.getInstance(), "热点提示设置", true);
+        super(Main.getInstance(), App.messages.getString("res.179"), true);
 
         JPanel p = new JPanel(new GridBagLayout());
 
@@ -50,7 +50,7 @@ public class TooltipPropertyEditor extends JDialog implements Chooser {
         gbc.weightx = 0;
 
         gbc.gridwidth = 1;
-        p.add(new JLabel("  提示:"), gbc);
+        p.add(new JLabel(App.messages.getString("res.180")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
         p.add(tooltipField, gbc);
@@ -78,7 +78,7 @@ public class TooltipPropertyEditor extends JDialog implements Chooser {
 
         CommandPanel commandPanel = CommandPanel.createPanel(oklistener, cancellistener);
 
-        commandPanel.addComponent("为空",
+        commandPanel.addComponent(App.messages.getString("res.181"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;

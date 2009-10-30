@@ -1,5 +1,7 @@
 package jatools.swingx;
 
+import jatools.designer.App;
+
 import java.awt.Color;
 
 import javax.swing.JColorChooser;
@@ -24,7 +26,7 @@ public class ColorChooser implements Chooser {
 		Object value) {
 		color = (Color) value;
 		Color selectedColor =
-			JColorChooser.showDialog(owner, "ÑÕÉ«Ñ¡Ôñ", color); 
+			JColorChooser.showDialog(owner, App.messages.getString("res.11"), color); 
 
 		if ((selectedColor != null) && !selectedColor.equals(color)) {
 			color = selectedColor;
