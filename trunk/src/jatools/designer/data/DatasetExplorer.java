@@ -5,6 +5,7 @@ package jatools.designer.data;
 import jatools.data.reader.DatasetReader;
 import jatools.data.reader.sql.SqlReader;
 import jatools.dataset.Dataset;
+import jatools.designer.App;
 import jatools.designer.config.DatasetReaderList;
 import jatools.swingx.MessageBox;
 import jatools.swingx.dnd.Selectable;
@@ -37,7 +38,7 @@ import javax.swing.table.AbstractTableModel;
  * @version $Revision$
   */
 public class DatasetExplorer extends JPanel implements ChangeListener, NameChecker {
-    public static final String NAME = "项目";
+    public static final String NAME = App.messages.getString("res.477");
     JTextField proxySelector = new JTextField();
     JTextField descriptionText = new JTextField();
     JTable fieldsTable;
@@ -104,7 +105,7 @@ public class DatasetExplorer extends JPanel implements ChangeListener, NameCheck
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(2, 2, 2, 2);
         gbc.gridwidth = 1;
-        commandsPane.add(new JLabel("名称:"), gbc);
+        commandsPane.add(new JLabel(App.messages.getString("res.63")), gbc);
 
         gbc.weightx = 100.0f;
 
@@ -130,7 +131,7 @@ public class DatasetExplorer extends JPanel implements ChangeListener, NameCheck
         }
 
         gbc.gridwidth = 1;
-        commandsPane.add(new JLabel("说明:"), gbc);
+        commandsPane.add(new JLabel(App.messages.getString("res.478")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         descriptionText.setEditable(false);
@@ -153,7 +154,7 @@ public class DatasetExplorer extends JPanel implements ChangeListener, NameCheck
      */
     public void setProxyContainer(DatasetReaderList proxyContainer) {
         if (proxyContainer == null) {
-            throw new NullPointerException("ZDataSetExplorer.setProxyContainer(...): 参数不就为空.");
+            throw new NullPointerException(App.messages.getString("res.479"));
         }
 
         if (this.proxyContainer != null) {

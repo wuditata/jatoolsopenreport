@@ -1,6 +1,7 @@
 package jatools.designer.data;
 
 import jatools.data.Formula;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.VariableTreeModel;
 import jatools.engine.AmbiguousNameNodePattern;
@@ -47,7 +48,7 @@ import javax.swing.tree.TreePath;
   */
 public class CustomFormulaDialog extends JDialog implements ActionListener {
     static final String[] FUNCTIONS = new String[] {
-            "数据值型函数", "double abs(double)", "double asin(double)", "double acos(double)",
+            App.messages.getString("res.397"), "double abs(double)", "double asin(double)", "double acos(double)",
             "double atan(double)", "double atan2(double,double)", "double ceil(double)",
             "double cos(double)", "double exp(double)", "double floor(double)",
             
@@ -59,7 +60,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
             "int min(int,int)", "int round(float)", "long abs(long)", "long max(long,long)",
             "long min(long,long)", "long round(double)",
             
-            "字符串函数", "int length(String)", "char charAt(String, int)",
+            App.messages.getString("res.398"), "int length(String)", "char charAt(String, int)",
             
             "boolean startsWith(String, String)", "boolean endsWith(String, String)",
             
@@ -77,19 +78,19 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
             
             "String toUpperCase(String )",
             
-            "日期函数",
+            App.messages.getString("res.399"),
             
             "int getYear(Date )", "int getMonth(Date )", "int getDate(Date )", "int getDay(Date )",
             "int getHours(Date )", "int getMinutes(Date )", "int getSeconds(Date )",
             "boolean before(Date,Date )", "boolean after(Date,Date )",
             
-            "类型转换函数",
+            App.messages.getString("res.400"),
             
             "String toRmbString(double)", "String toHZYear(int)", "String toHZMonth(int)",
             "String toHZDay(int)",
             
             "String format(float,String)", "String format(double,String)",
-            "String format(Date,String)", "其它类型函数", "String p(String )",
+            "String format(Date,String)", App.messages.getString("res.401"), "String p(String )",
             "String clobString(String )"
         };
     static final HashMap tips = new HashMap(FUNCTIONS.length);
@@ -124,7 +125,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
      */
     public CustomFormulaDialog(Frame owner, boolean showVariable, boolean nullPermitted,
         boolean astemp) {
-        super(owner, "公式定义", true);
+        super(owner, App.messages.getString("res.402"), true);
 
         varTree = new VariableTree();
 
@@ -146,98 +147,98 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
 
         JComponent first = null;
 
-        tips.put("double abs(double)", "获取参数变量的绝对值,abs(-12.345)的值为12.345");
-        tips.put("double asin(double)", "获取参数变量的反正弦值 ,asin(1)的值是1.57");
-        tips.put("double acos(double)", "获取参数变量的反余弦值,acos(0)的值是1.57");
-        tips.put("double atan(double)", "获取参数变量的反正切值,atan(1)的值是0.78");
-        tips.put("double atan2(double,double)", "获取参数变量的反余弦值,acos(0)的值是1.57");
-        tips.put("double ceil(double)", "获取不小于参数变量的最大整数,ceil(-12.3)的值是-12.0.");
-        tips.put("double cos(double)", "获取参数变量的余弦值,cos(0)的值是1.0");
-        tips.put("double exp(double)", "获取自然底数e的d次幂方,exp(1)的值是2.71");
-        tips.put("double floor(double)", "获取不大于参数变量的最大整数,floor(12.34)的值是12.0");
-        tips.put("double log(double)", "获取底数为e对数为该参数变量的所得值,log(1.23)的值是0.207");
-        tips.put("double max(double,double)", "获取两个参数变量中较大的一个,max(1.23,1.24)的值是1.24");
-        tips.put("double min(double,double)", "获取两个参数变量中较小的一个,min(1.23,1.24)的值是1.23");
-        tips.put("double pow(double,double)", "获取参数变量1的参数变量2次方之后的值 ,pow(2.5,3)的值是15.625");
-        tips.put("double random()", "获取0.0到1.0之间一个随机数,random()的值是0.12");
-        tips.put("double rint(double)", "获取参数变量四舍五入之后的值,rint(12.34)的值是12.0");
-        tips.put("double sin(double)", "获取参数变量的正弦值,sin(0)的值是0.0");
-        tips.put("double sqrt(double)", "获取参数变量开平方之后的值,sqrt(6.25)的值是2.");
-        tips.put("double tan(double)", "获取参数变量的正切值,tan(1.5)的值是14.10");
-        tips.put("double toDegrees(double)", "获取底数为e对数为该参数变量的所得值,log(1.23)的值是0.207");
-        tips.put("double toRadians(double)", "获取与该参数变量弧度相对应的角度,toDegrees(1.57)的值是89.95");
-        tips.put("float abs(float)", "获取浮点型参数变量的绝对值,abs(-12.345f)的值是12.345");
-        tips.put("float max(float,float)", "获取两个浮点型参数变量中比较大的一个,max(1.23f,1.24f)的值是1 ");
-        tips.put("float min(float,float)", "获取两个浮点型参数变量中比较小的一个, min(1.23f,1.24f)的值是1.23.");
-        tips.put("int abs(int)", "获取两个浮点型参数变量中比较小的一个,min(1.23f,1.24f)的值是1.23.");
-        tips.put("int max(int,int)", "获取两个整型参数变量中比较大的一个,max(23,24)的值是24  .");
-        tips.put("int min(int,int)", "获取两个整型参数变量中比较小的一个,min(23,24).");
-        tips.put("int round(float)", "获取返回大于给定的浮点型参数变量的最小整型变量,round(-12.34f)的值是.");
-        tips.put("long abs(long)", "获取长整型参数变量的绝对值,abs(-12345678.9)的值是1.23456789E7");
-        tips.put("long max(long,long)", "获取两个长整型参数变量中比较大的一个,max(1234,1235)的值是1235");
-        tips.put("long min(long,long)", "获取两个参数变量中比较小的一个,min(1.23f,1.24f)的值是1.23");
-        tips.put("long round(double)", "获取返回大于双精度参数变量的最小整型变量,round(-12.34)的值是-12.");
+        tips.put("double abs(double)", App.messages.getString("res.403"));
+        tips.put("double asin(double)", App.messages.getString("res.404"));
+        tips.put("double acos(double)", App.messages.getString("res.405"));
+        tips.put("double atan(double)", App.messages.getString("res.406"));
+        tips.put("double atan2(double,double)", App.messages.getString("res.405"));
+        tips.put("double ceil(double)", App.messages.getString("res.407"));
+        tips.put("double cos(double)", App.messages.getString("res.408"));
+        tips.put("double exp(double)", App.messages.getString("res.409"));
+        tips.put("double floor(double)", App.messages.getString("res.410"));
+        tips.put("double log(double)", App.messages.getString("res.411"));
+        tips.put("double max(double,double)", App.messages.getString("res.412"));
+        tips.put("double min(double,double)", App.messages.getString("res.413"));
+        tips.put("double pow(double,double)", App.messages.getString("res.414"));
+        tips.put("double random()", App.messages.getString("res.415"));
+        tips.put("double rint(double)", App.messages.getString("res.416"));
+        tips.put("double sin(double)", App.messages.getString("res.417"));
+        tips.put("double sqrt(double)", App.messages.getString("res.418"));
+        tips.put("double tan(double)", App.messages.getString("res.419"));
+        tips.put("double toDegrees(double)", App.messages.getString("res.411"));
+        tips.put("double toRadians(double)", App.messages.getString("res.420"));
+        tips.put("float abs(float)", App.messages.getString("res.421"));
+        tips.put("float max(float,float)", App.messages.getString("res.422"));
+        tips.put("float min(float,float)", App.messages.getString("res.423"));
+        tips.put("int abs(int)", App.messages.getString("res.424"));
+        tips.put("int max(int,int)", App.messages.getString("res.425"));
+        tips.put("int min(int,int)", App.messages.getString("res.426"));
+        tips.put("int round(float)", App.messages.getString("res.427"));
+        tips.put("long abs(long)", App.messages.getString("res.428"));
+        tips.put("long max(long,long)", App.messages.getString("res.429"));
+        tips.put("long min(long,long)", App.messages.getString("res.430"));
+        tips.put("long round(double)", App.messages.getString("res.431"));
 
-        tips.put("int length(String)", "获取字符串参数变量的长度,length(\"abc\")的值为3,length(\"大家好\")的值为6");
+        tips.put("int length(String)", App.messages.getString("res.432"));
         tips.put("char charAt(String, int)",
-            "获取字符串参数变量中位于i+1位置的字符,charAt(\"abcdefg\",3)的值为d,charAt(\"abcdefg\",0)的值为a.");
+            App.messages.getString("res.433"));
         tips.put("boolean startsWith(String, String)",
-            "获取参数变量1是否以参数变量2为开头内容的布尔值,startsWith(\"afc\",\"b\")的值为false,startsWith(\"afc\",\"a\")的值为true");
+            App.messages.getString("res.434"));
         tips.put("boolean endsWith(String, String)",
-            "获取参数变量1是否以参数变量2为结尾内容的布尔值,endsWith(\"afcccb\",\"asb\")的值为false,endsWith(\"acccb\",\"ccb\")的值为true");
+            App.messages.getString("res.435"));
         tips.put("int indexOf(String, String)",
-            "获取字符串2在字符串1中出现的第一个位置,indexOf(\"abcdefg\",\"de\")的值为3.");
+            App.messages.getString("res.436"));
         tips.put("int lastIndexOf(String, String)",
-            "获取字符串2在字符串1中出现的最后一个位置,lastIndexOf(\"abcdabcdefg\",\"ab\")的值为4");
+            App.messages.getString("res.437"));
         tips.put("String substring(String, int)",
-            "获取字符串中从第i+1位开始的字符串,substring(\"abcdefg\",2)的值为\"cdefg\".");
+            App.messages.getString("res.438"));
         tips.put("String substring(String, int,int)",
-            "获取字符串参数变量的长度,length(\"abc\")的值为3,length(\"大家好\")的值为6");
+            App.messages.getString("res.432"));
         tips.put("String replaceAll(String, String , String )",
-            "获取用字符串3代替字符串1之中的所有字符串2所得到的新字符串,\nreplaceAll(\"abcdeabcdeabcde\",\"bc\",\"xy\")的值为\"axydeaxydeaxyde\".");
+            App.messages.getString("res.439"));
         tips.put("String[] split(String, String)",
-            "把字符串1从有字符串2的地方开始进行分割，得到一个字符串数组,String str =\"xd::abc::cde\",String [] r= str.split(\"::\"),r就是{\"xd\",\"abc\",\"cde\"}");
+            App.messages.getString("res.440"));
         tips.put("String toLowerCase(String)",
-            "用给定的位置规则,把该字符串中的所有字符转换为小写,toLowerCase(\"aBcDeFg\",Locale.PRC);的值为\"abcdefg\".");
-        tips.put("String toUpperCase(String )", "获取把字符串转为大写后的字符串,toUpperCase(\"acdEfg\")的值为ACDEFG.");
+            App.messages.getString("res.441"));
+        tips.put("String toUpperCase(String )", App.messages.getString("res.442"));
 
-        tips.put("int getYear(Date )", "获取日期d中的年,若日期d值为1970-12-31 00:00:00.0，getYear(d)的值为1970.");
-        tips.put("int getMonth(Date )", "获取日期d中的月,d的值为1970-12-31 00:00:00.0,getMonth(d)的值为12 .");
-        tips.put("int getDate(Date )", "获取日期d中的日,d的值为1970-12-31 00:00:00.0，getDate(d)的值为31.");
-        tips.put("int getDay(Date )", "获取日期d为一个星期的第几天,d的值为1970-12-31 00:00:00.0，getDay(d)的值为4 .");
-        tips.put("int getHours(Date )", "获取日期d中的小时,d的值为1970-12-31 00:00:00.0，getHours(d)的值为0.");
-        tips.put("int getMinutes(Date )", "获取日期d中的分钟,d的值为1970-12-31 00:00:00.0，getMinutes(d)的值为0 .");
-        tips.put("int getSeconds(Date )", "获取日期d中的秒,d的值为1970-12-31 00:00:00.0，getSeconds(d)的值为0.");
+        tips.put("int getYear(Date )", App.messages.getString("res.443"));
+        tips.put("int getMonth(Date )", App.messages.getString("res.444"));
+        tips.put("int getDate(Date )", App.messages.getString("res.445"));
+        tips.put("int getDay(Date )", App.messages.getString("res.446"));
+        tips.put("int getHours(Date )", App.messages.getString("res.447"));
+        tips.put("int getMinutes(Date )", App.messages.getString("res.448"));
+        tips.put("int getSeconds(Date )", App.messages.getString("res.449"));
         tips.put("boolean before(Date,Date )",
-            "获取日期d是否比日期p早的布尔值,d的值为1970-12-31 00:00:00.0，p的值为1981-10-10 00:00:00.0 before(d,p)的值为true.");
-        tips.put("int getYear(Date )", "获取日期d中的年,若日期d值为1970-12-31 00:00:00.0，getYear(d)的值为1970.");
+            App.messages.getString("res.450"));
+        tips.put("int getYear(Date )", App.messages.getString("res.443"));
         tips.put("boolean after(Date,Date )",
-            "获取日期d是否比日期p晚的布尔值,d的值为1970-12-31 00:00:00.0，p的值为1981-10-10 00:00:00.0after(d,p)的值为false .");
+            App.messages.getString("res.451"));
 
-        tips.put("String toRmbString(double)", "获取双精度参数变量d的人民币大写,toRmbString(12.34)的值为￥ 壹拾贰元叁角肆分 .");
-        tips.put("String toHZYear(int)", "获取年份的汉字大写,toHZYear(2005)的值为贰零零伍 .");
-        tips.put("String toHZMonth(int)", "获取汉字大写的月份,toHZMonth(12)的值为壹拾贰 .");
-        tips.put("String toHZDay(int)", "获取汉字大写的日期,toHZDay(12)的值为壹拾贰.");
+        tips.put("String toRmbString(double)", App.messages.getString("res.452"));
+        tips.put("String toHZYear(int)", App.messages.getString("res.453"));
+        tips.put("String toHZMonth(int)", App.messages.getString("res.454"));
+        tips.put("String toHZDay(int)", App.messages.getString("res.455"));
         tips.put("String format(float,String)",
-            "获取以字符串参数变量s形式表示的单精度参数变量f的值,format(123456.789f,\"###,##0.000\")的值为123,456.789 .");
+            App.messages.getString("res.456"));
         tips.put("String format(double,String)",
-            "获取以字符串参数变量s形式表示的双精度变量d的值,format(123.456,\"###,##0.00\")的值为123.46.");
+            App.messages.getString("res.457"));
         tips.put("String format(Date,String)",
-            "获取以字符串参数变量s形式表示的日期变量d的值,d的值为1970-12-31 00:00:00.0，format(d,\"yyyy-MM-dd\")的值为1970-12-31.");
+            App.messages.getString("res.458"));
 
-        tips.put("String p(String )", "获取简表属性文件jatools.properties中的属性值,p(\"userid\")的值为875704628");
+        tips.put("String p(String )", App.messages.getString("res.459"));
         tips.put("String clobString(String )",
-            "取得数据集中的某一类型为该参数变量的字段的值,String memo = clobString(\"mydata.my_memo\"),表示将从数据集中的my_memo字段中，取得一个字符串值，$my_memo字段类型为 BLOB");
+            App.messages.getString("res.460"));
 
         JPanel scrollPanel = new JPanel(new BorderLayout());
-        tipLabel = new JLabel("单击相应函数，显示该函数的用法及有关示例", JLabel.LEFT);
+        tipLabel = new JLabel(App.messages.getString("res.461"), JLabel.LEFT);
         tipLabel.setHorizontalAlignment(JLabel.LEFT);
         tipLabel.setVerticalAlignment(JLabel.TOP);
         tipLabel.setPreferredSize(new Dimension(20, 50));
 
         if (varTree != null) {
             JTabbedPane tab = new JTabbedPane();
-            tab.addTab("变量", new JScrollPane(varTree));
+            tab.addTab(App.messages.getString("res.182"), new JScrollPane(varTree));
 
             jatools.designer.variable.XmlSourceTree tree = new jatools.designer.variable.XmlSourceTree();
             tree.setToggleClickCount(10000);
@@ -257,11 +258,11 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
                         }
                     }
                 });
-            tab.addTab("数据集变量", new JScrollPane(tree));
+            tab.addTab(App.messages.getString("res.462"), new JScrollPane(tree));
 
             scrollPanel.add(new JScrollPane(functionTree), "Center");
             scrollPanel.add(tipLabel, "South");
-            tab.add("函数", scrollPanel);
+            tab.add(App.messages.getString("res.463"), scrollPanel);
 
             first = tab;
         } else {
@@ -270,7 +271,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
 
         JPanel formulaTextPanel = new JPanel(new BorderLayout());
 
-        JLabel formulaLabel = new JLabel("公式:", JLabel.LEFT);
+        JLabel formulaLabel = new JLabel(App.messages.getString("res.464"), JLabel.LEFT);
         formulaTextPanel.add(formulaLabel, BorderLayout.NORTH);
         textArea = new ScriptEditor(astemp);
 
@@ -289,11 +290,11 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
 
         CommandPanel rightButtonPanel = CommandPanel.createPanel(false);
 
-        check = new JButton(" 验证 ");
-        ok = new JButton("确定");
-        cancel = new JButton("取消");
+        check = new JButton(App.messages.getString("res.465"));
+        ok = new JButton(App.messages.getString("res.3"));
+        cancel = new JButton(App.messages.getString("res.4"));
 
-        JButton empty = new JButton("为空");
+        JButton empty = new JButton(App.messages.getString("res.181"));
 
         ok.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -341,7 +342,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
     private IconTree createFunctionTree() {
         Icon icon = Util.getIcon("/jatools/icons/function.gif");
 
-        SimpleTreeNode rootNode = new SimpleTreeNode("函数", icon);
+        SimpleTreeNode rootNode = new SimpleTreeNode(App.messages.getString("res.463"), icon);
 
         SimpleTreeNode parentNode = rootNode;
 
@@ -509,7 +510,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
         boolean isNull = (txt == null) || txt.trim().equals("");
 
         if (isNull && !nullPermitted) {
-            MessageBox.error(CustomFormulaDialog.this, "公式表达式不能为空.");
+            MessageBox.error(CustomFormulaDialog.this, App.messages.getString("res.466"));
             textArea.requestFocus();
 
             return;
@@ -517,7 +518,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
                 (!txt.trim().equals(PrintConstants.TOTAL_PAGE_NUMBER))) {
             if (AmbiguousNameNodePattern.matches(txt, PrintConstants.TOTAL_PAGE_NUMBER)) {
                 MessageBox.error(CustomFormulaDialog.this,
-                    "总页数变量:" + PrintConstants.TOTAL_PAGE_NUMBER + ",不能参与运算.");
+                    App.messages.getString("res.467") + PrintConstants.TOTAL_PAGE_NUMBER + App.messages.getString("res.468"));
 
                 textArea.requestFocus();
 

@@ -1,6 +1,7 @@
 package jatools.designer.data;
 
 import jatools.data.reader.sql.Connection;
+import jatools.designer.App;
 import jatools.swingx.wizard.WizardCellEditor;
 
 import java.awt.Component;
@@ -247,7 +248,7 @@ public class ConnectionPanel extends JPanel implements WizardCellEditor {
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         JButton prelist = new JButton("...");
-        prelist.setToolTipText("预定义连接模板");
+        prelist.setToolTipText(App.messages.getString("res.396"));
         prelist.setPreferredSize(new Dimension(24, 24));
         add(prelist, gbc);
 

@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.util.Util;
 
@@ -18,7 +19,7 @@ public class ShowPreviewerAction extends ReportAction {
      * Creates a new ShowPreviewerAction object.
      */
     public ShowPreviewerAction() {
-        super("‘§¿¿", Util.getIcon("/jatools/icons/preview.gif"),
+        super(App.messages.getString("res.163"), Util.getIcon("/jatools/icons/preview.gif"),
             Util.getIcon("/jatools/icons/preview2.gif"));
         caches.remove(this);
     }

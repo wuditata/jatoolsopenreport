@@ -2,6 +2,7 @@ package jatools.designer.action;
 
 import jatools.component.Component;
 import jatools.component.Page;
+import jatools.designer.App;
 import jatools.designer.ReportEditor;
 import jatools.designer.SelectionState;
 import jatools.designer.peer.ComponentPeer;
@@ -22,7 +23,7 @@ public class BringToFrontAction extends ReportAction {
      * Creates a new BringToFrontAction object.
      */
     public BringToFrontAction() {
-        super("÷√«∞", getIcon("/jatools/icons/tofront.gif"),
+        super(App.messages.getString("res.523"), getIcon("/jatools/icons/tofront.gif"),
             getIcon("/jatools/icons/tofront2.gif"));
     }
 

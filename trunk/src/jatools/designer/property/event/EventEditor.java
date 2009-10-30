@@ -7,6 +7,7 @@
 package jatools.designer.property.event;
 
 import jatools.accessor.PropertyAccessorWrapper;
+import jatools.designer.App;
 import jatools.designer.EditorView;
 import jatools.designer.ReportEditor;
 import jatools.designer.property.PropertyEditor;
@@ -172,8 +173,8 @@ class _TableModel extends DefaultTableModel {
 
     _TableModel() {
         super(new Object[] {
-                "事件名",
-                "属性值"
+                App.messages.getString("res.281"),
+                App.messages.getString("res.278")
             }, 3); // //$NON-NLS-2$
 
         //    this.setRowCount(50);

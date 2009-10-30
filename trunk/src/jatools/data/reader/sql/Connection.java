@@ -5,23 +5,20 @@
  */
 package jatools.data.reader.sql;
 
-import bsh.Interpreter;
-
 import jatools.accessor.PropertyAccessor;
 import jatools.accessor.PropertyDescriptor;
-
 import jatools.component.ComponentConstants;
-
 import jatools.engine.ValueIfClosed;
-
 import jatools.engine.script.ReportContext;
 import jatools.engine.script.Script;
-
-import org.apache.log4j.Logger;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.apache.log4j.Logger;
+
+import bsh.Interpreter;
 
 
 /**

@@ -1,36 +1,31 @@
 package jatools.core.view;
 
-import jatools.engine.export.html.HtmlExport;
-
+import jatools.designer.App;
 import jatools.formatter.DecimalFormat;
 import jatools.formatter.Format2;
 
-import jxl.biff.DisplayFormat;
+import java.awt.Color;
+import java.awt.Font;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
+import jxl.biff.DisplayFormat;
 import jxl.format.Alignment;
 import jxl.format.Border;
 import jxl.format.BorderLineStyle;
 import jxl.format.Colour;
 import jxl.format.UnderlineStyle;
 import jxl.format.VerticalAlignment;
-
 import jxl.write.DateFormat;
 import jxl.write.NumberFormat;
 import jxl.write.WritableCellFormat;
 import jxl.write.WritableFont;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
-
-import java.awt.Color;
-import java.awt.Font;
-
-import java.io.IOException;
-import java.io.Writer;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 
 /**
@@ -166,7 +161,7 @@ public class DisplayStyleManager {
         if ((i > -1) && (i < xlsCSS.length)) {
             return xlsCSS[i];
         } else {
-            System.out.println("Ô½½çÁË,[0," + (xlsCSS.length - 1) + "] " + i);
+            System.out.println(App.messages.getString("res.561") + (xlsCSS.length - 1) + "] " + i);
 
             return null;
         }

@@ -3,6 +3,7 @@ package jatools.designer.data.jdbc;
 import jatools.VariableContext;
 import jatools.data.reader.DatasetReader;
 import jatools.data.reader.sql.SqlReader;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.SqlReaderDialog;
 import jatools.designer.data.DatasetReaderFactory;
@@ -31,7 +32,7 @@ public class SqlReaderFactory implements DatasetReaderFactory {
     public DatasetReader create(Component parent, NameChecker checker) {
         SqlReader result = new SqlReader();
 
-        SqlReaderDialog editor = new SqlReaderDialog("创建jdbc数据集", Main.getInstance(),
+        SqlReaderDialog editor = new SqlReaderDialog(App.messages.getString("res.501"), Main.getInstance(),
                 (SqlReader) result, (NameChecker) checker);
         editor.show();
 
@@ -54,7 +55,7 @@ public class SqlReaderFactory implements DatasetReaderFactory {
      * @return DOCUMENT ME!
      */
     public boolean edit(DatasetReader reader, Component parent, NameChecker checker) {
-        SqlReaderDialog editor = new SqlReaderDialog("编辑jdbc数据集", Main.getInstance(),
+        SqlReaderDialog editor = new SqlReaderDialog(App.messages.getString("res.502"), Main.getInstance(),
                 (SqlReader) reader, (NameChecker) checker);
         editor.show();
 

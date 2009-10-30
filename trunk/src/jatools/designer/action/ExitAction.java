@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 import jatools.ReportDocument;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.ReportEditor;
 import jatools.designer.chooser.ReportChooser;
@@ -25,7 +26,7 @@ public class ExitAction extends ReportAction {
      * Creates a new ExitAction object.
      */
     public ExitAction() {
-        super("退出");
+        super(App.messages.getString("res.526"));
     }
 
     /**
@@ -68,8 +69,8 @@ public class ExitAction extends ReportAction {
             if (count == 1) {
                 closed = query(dirtyeditor);
             } else {
-                int answer = MessageBox.show(Main.getInstance(), "提示...",
-                        "存在未保存的修改,关闭程序将取消保存,是否保存?", MessageBox.YES_NO);
+                int answer = MessageBox.show(Main.getInstance(), App.messages.getString("res.389"),
+                        App.messages.getString("res.527"), MessageBox.YES_NO);
 
                 if (answer == MessageBox.YES) {
                     closed = false;
@@ -81,7 +82,7 @@ public class ExitAction extends ReportAction {
     }
 
     private boolean query(ReportEditor dirtyeditor) {
-        int answer = MessageBox.show(Main.getInstance(), "提示...", "当前报表已经修改,是否保存?",
+        int answer = MessageBox.show(Main.getInstance(), App.messages.getString("res.389"), App.messages.getString("res.524"),
                 MessageBox.YES_NO_CANCEL);
 
         if (answer == MessageBox.YES) {

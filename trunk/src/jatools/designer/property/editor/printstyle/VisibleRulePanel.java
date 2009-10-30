@@ -1,5 +1,6 @@
 package jatools.designer.property.editor.printstyle;
 
+import jatools.designer.App;
 import jatools.engine.css.CSSValue;
 import jatools.engine.css.rule.VisibleRule;
 import jatools.swingx.SwingUtil;
@@ -25,13 +26,13 @@ import org.apache.commons.lang.ArrayUtils;
 public class VisibleRulePanel extends JPanel {
     private String[] printMode = {
             "",
-            "每页打印",
-            "跟随打印"
+            App.messages.getString("res.352"),
+            App.messages.getString("res.353")
         };
     private String[] visible = {
             "",
-            "可见",
-            "不可见"
+            App.messages.getString("res.354"),
+            App.messages.getString("res.355")
         };
     private TemplateComboBox printModeTempCombo = null;
     private TemplateComboBox visibleTempCombo = null;
@@ -54,14 +55,14 @@ public class VisibleRulePanel extends JPanel {
         gbc.insets = new Insets(0, 0, 0, 0);
 
         gbc.fill = GridBagConstraints.NONE;
-        add(new JLabel("打印方式:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.356"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100;
         add(printModeTempCombo, gbc);
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("是否可见:", JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.357"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(visibleTempCombo, gbc);
 

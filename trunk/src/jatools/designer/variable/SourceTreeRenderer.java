@@ -1,5 +1,6 @@
 package jatools.designer.variable;
 
+import jatools.designer.App;
 import jatools.dom.src.CrossIndexNodeSource;
 import jatools.dom.src.DatasetNodeSource;
 import jatools.dom.src.IndexNodeSource;
@@ -80,7 +81,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
             setBackground(Color.white);
 
             if (nodeValue instanceof Boolean) {
-                return new JLabel("正在加载...");
+                return new JLabel(App.messages.getString("res.232"));
             }
 
             if (nodeValue instanceof TreeNodeValue) {
@@ -124,7 +125,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                         JLabel button = new JLabel(index[i]);
                         button.setOpaque(true);
                         button.setBackground(labelColor);
-                        button.setFont(new Font("宋体", Font.PLAIN, 12));
+                        button.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 12));
                         button.setBorder(labelBorder);
 
                         button.putClientProperty(NODE, "[" + row + "]" + "index1" + index[i]);
@@ -139,7 +140,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                         JLabel button = new JLabel(index2[i]);
                         button.setOpaque(true);
                         button.setBackground(labelColor);
-                        button.setFont(new Font("宋体", Font.PLAIN, 12));
+                        button.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 12));
                         button.setBorder(labelBorder);
 
                         button.putClientProperty(NODE, "[" + row + "]" + "index2" + index2[i]);
@@ -172,7 +173,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                         JLabel button = new JLabel(index[i]);
                         button.setOpaque(true);
                         button.setBackground(labelColor);
-                        button.setFont(new Font("宋体", Font.PLAIN, 12));
+                        button.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 12));
                         button.setBorder(labelBorder);
 
                         button.putClientProperty(NODE, "[" + row + "]" + index[i]);
@@ -203,7 +204,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                             JLabel button = new JLabel(fields[i]);
                             button.setOpaque(true);
                             button.setBackground(labelColor);
-                            button.setFont(new Font("宋体", Font.PLAIN, 12));
+                            button.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 12));
                             button.setBorder(labelBorder);
                             button.putClientProperty(NODE, "[" + row + "]" + fields[i]);
                             add(button);
@@ -309,7 +310,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                         }
                     };
 
-            textLabel.setFont(new Font("宋体", Font.PLAIN, 12));
+            textLabel.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 12));
             textLabel.setOpaque(true);
             textLabel.setBackground(Color.white);
             this.add(iconLabel, BorderLayout.WEST);

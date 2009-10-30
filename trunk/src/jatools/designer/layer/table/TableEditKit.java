@@ -10,6 +10,7 @@ import jatools.component.table.CellStore;
 import jatools.component.table.PanelStore;
 import jatools.component.table.Table;
 import jatools.component.table.TableBase;
+import jatools.designer.App;
 import jatools.designer.ClipBoard;
 import jatools.designer.InplaceEditor;
 import jatools.designer.Main;
@@ -554,7 +555,7 @@ public class TableEditKit implements ActionListener {
 
         ReportPanel panel = tablePeer.getOwner();
 
-        JMenu menu = new JMenu("单元格类型");
+        JMenu menu = new JMenu(App.messages.getString("res.360"));
 
         Action[] inserts = Main.getInstance().getNewableActions();
 
@@ -570,11 +571,11 @@ public class TableEditKit implements ActionListener {
 
         pop.addSeparator();
 
-        _PopAction mergeAction = new _PopAction("合并单元格  ");
+        _PopAction mergeAction = new _PopAction(App.messages.getString("res.361"));
         mergeAction.putValue(Action.ACTION_COMMAND_KEY, UNITE_CELL);
         pop.add(mergeAction);
 
-        _PopAction unmergeAction = new _PopAction("撤消合并格  ");
+        _PopAction unmergeAction = new _PopAction(App.messages.getString("res.362"));
         unmergeAction.putValue(Action.ACTION_COMMAND_KEY, UN_UNITE_CELL);
         pop.add(unmergeAction);
 
@@ -582,37 +583,37 @@ public class TableEditKit implements ActionListener {
 
         AbstractAction action = null;
 
-        menu = new JMenu("插入行");
+        menu = new JMenu(App.messages.getString("res.363"));
         pop.add(menu);
 
-        action = new _PopAction("在上方");
+        action = new _PopAction(App.messages.getString("res.364"));
         action.putValue(Action.ACTION_COMMAND_KEY, INSERT_ROW_BEFORE);
         menu.add(action);
 
-        action = new _PopAction("在下方");
+        action = new _PopAction(App.messages.getString("res.365"));
         action.putValue(Action.ACTION_COMMAND_KEY, INSERT_ROW_AFTER);
         menu.add(action);
 
         pop.add(menu);
 
-        menu = new JMenu("插入列");
+        menu = new JMenu(App.messages.getString("res.366"));
         pop.add(menu);
 
-        action = new _PopAction("在左侧");
+        action = new _PopAction(App.messages.getString("res.367"));
         action.putValue(Action.ACTION_COMMAND_KEY, INSERT_COL_BEFORE);
         menu.add(action);
 
-        action = new _PopAction("在右侧");
+        action = new _PopAction(App.messages.getString("res.368"));
         action.putValue(Action.ACTION_COMMAND_KEY, INSERT_COL_AFTER);
         menu.add(action);
 
-        menu = new JMenu("批量插入行");
+        menu = new JMenu(App.messages.getString("res.369"));
         pop.add(menu);
 
-        JMenu tmp0 = new JMenu("在上方");
+        JMenu tmp0 = new JMenu(App.messages.getString("res.364"));
         menu.add(tmp0);
 
-        JMenu tmp1 = new JMenu("在下方");
+        JMenu tmp1 = new JMenu(App.messages.getString("res.365"));
 
         menu.add(tmp1);
 
@@ -633,12 +634,12 @@ public class TableEditKit implements ActionListener {
             tmp1.add(mi);
         }
 
-        menu = new JMenu("批量插入列");
+        menu = new JMenu(App.messages.getString("res.370"));
         pop.add(menu);
 
-        tmp0 = new JMenu("在左侧");
+        tmp0 = new JMenu(App.messages.getString("res.367"));
         menu.add(tmp0);
-        tmp1 = new JMenu("在右侧");
+        tmp1 = new JMenu(App.messages.getString("res.368"));
 
         menu.add(tmp1);
 
@@ -659,15 +660,15 @@ public class TableEditKit implements ActionListener {
             tmp1.add(mi);
         }
 
-        action = new _PopAction("删除行");
+        action = new _PopAction(App.messages.getString("res.371"));
         action.putValue(Action.ACTION_COMMAND_KEY, REMOVE_ROW);
         pop.add(action);
 
-        action = new _PopAction("删除列  ");
+        action = new _PopAction(App.messages.getString("res.372"));
         action.putValue(Action.ACTION_COMMAND_KEY, REMOVE_COL);
         pop.add(action);
 
-        action = new _PopAction("行高...");
+        action = new _PopAction(App.messages.getString("res.373"));
         action.putValue(Action.ACTION_COMMAND_KEY, RESIZE_ROW_HEIGHTS);
 
         if (!panel.simple) {
@@ -675,14 +676,14 @@ public class TableEditKit implements ActionListener {
             pop.add(action);
         }
 
-        action = new _PopAction("列宽...");
+        action = new _PopAction(App.messages.getString("res.374"));
         action.putValue(Action.ACTION_COMMAND_KEY, RESIZE_COL_WIDTHS);
 
         if (!panel.simple) {
             pop.add(action);
         }
 
-        action = new _PopAction("显示网格线");
+        action = new _PopAction(App.messages.getString("res.375"));
         action.putValue(Action.ACTION_COMMAND_KEY, SHOW_GRID);
 
         JCheckBoxMenuItem gridVisible = new JCheckBoxMenuItem(action);
@@ -1348,7 +1349,7 @@ public class TableEditKit implements ActionListener {
         TableBase t = (TableBase) getTable();
 
         if (t.getColumnCount() == count) {
-            MessageBox.error(tablePeer.getOwner().getTopLevelAncestor(), "表格至少保留一列,不能删除!");
+            MessageBox.error(tablePeer.getOwner().getTopLevelAncestor(), App.messages.getString("res.376"));
 
             return false;
         }
@@ -1381,7 +1382,7 @@ public class TableEditKit implements ActionListener {
         }
 
         if (t.getRowCount() == count) {
-            MessageBox.error(tablePeer.getOwner().getTopLevelAncestor(), "表格至少保留一行,不应删除!");
+            MessageBox.error(tablePeer.getOwner().getTopLevelAncestor(), App.messages.getString("res.377"));
 
             return false;
         }
@@ -1412,7 +1413,7 @@ public class TableEditKit implements ActionListener {
         int width = table.getColumnWidth(selection.x);
 
         SizeDialog input = new SizeDialog((Frame) tablePeer.getOwner().getTopLevelAncestor(),
-                "列宽...", "列宽:", width);
+                App.messages.getString("res.374"), App.messages.getString("res.378"), width);
         input.show();
 
         if (!input.xok) {
@@ -1440,7 +1441,7 @@ public class TableEditKit implements ActionListener {
         int height = table.getRowHeight(selection.y);
 
         SizeDialog input = new SizeDialog((Frame) tablePeer.getOwner().getTopLevelAncestor(),
-                "行高...", "行高:", height);
+                App.messages.getString("res.373"), App.messages.getString("res.379"), height);
 
         input.show();
 
@@ -1696,8 +1697,8 @@ class SizeDialog extends JDialog {
         center.add(editor, gbc);
 
         JPanel commandPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        JButton doneCommand = new JButton("确定");
-        JButton cancelCommand = new JButton("取消");
+        JButton doneCommand = new JButton(App.messages.getString("res.3"));
+        JButton cancelCommand = new JButton(App.messages.getString("res.4"));
         doneCommand.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     xok = true;

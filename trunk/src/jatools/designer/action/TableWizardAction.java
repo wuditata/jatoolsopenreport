@@ -1,5 +1,7 @@
 package jatools.designer.action;
 
+import jatools.designer.App;
+
 import java.awt.event.ActionEvent;
 
 
@@ -14,7 +16,7 @@ public class TableWizardAction extends ReportAction {
      * Creates a new TableWizardAction object.
      */
     public TableWizardAction() {
-        super("数据表向导...", getIcon("/jatools/icons/dbtablew.gif"));
+        super(App.messages.getString("res.541"), getIcon("/jatools/icons/dbtablew.gif"));
     }
 
     /**

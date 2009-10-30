@@ -1,23 +1,12 @@
 package jatools.engine.script.debug;
 
-import bsh.EvalError;
-import bsh.Interpreter;
-
+import jatools.designer.App;
 import jatools.designer.Main;
-
 import jatools.engine.System2;
-
-import org.jdesktop.swingx.JXTreeTable;
-import org.jdesktop.swingx.decorator.AbstractHighlighter;
-import org.jdesktop.swingx.decorator.ComponentAdapter;
-import org.jdesktop.swingx.treetable.DefaultMutableTreeTableNode;
-import org.jdesktop.swingx.treetable.DefaultTreeTableModel;
 
 import java.awt.Component;
 import java.awt.Dimension;
-
 import java.lang.reflect.Field;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,6 +21,15 @@ import javax.swing.JScrollPane;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
 import javax.swing.tree.DefaultTreeCellRenderer;
+
+import org.jdesktop.swingx.JXTreeTable;
+import org.jdesktop.swingx.decorator.AbstractHighlighter;
+import org.jdesktop.swingx.decorator.ComponentAdapter;
+import org.jdesktop.swingx.treetable.DefaultMutableTreeTableNode;
+import org.jdesktop.swingx.treetable.DefaultTreeTableModel;
+
+import bsh.EvalError;
+import bsh.Interpreter;
 
 
 /**
@@ -50,12 +48,12 @@ public class ScriptDebugger extends JDialog {
      * @param it DOCUMENT ME!
      */
     public ScriptDebugger(Interpreter it) {
-        super(Main.getInstance(), "½Å±¾µ÷ÊÔ", true);
+        super(Main.getInstance(), App.messages.getString("res.37"), true);
 
         this.it = it;
 
         ArrayList vars = new ArrayList();
-        it.getNameSpace().getVariableNames(vars);
+        it.getNameSpace().getVariableNames();//(vars);
 
         Map root = new HashMap();
         Collections.sort(vars);

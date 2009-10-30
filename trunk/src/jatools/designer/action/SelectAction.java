@@ -1,5 +1,7 @@
 package jatools.designer.action;
 
+import jatools.designer.App;
+
 import java.awt.event.ActionEvent;
 
 
@@ -14,7 +16,7 @@ public class SelectAction extends ReportAction {
      * Creates a new SelectAction object.
      */
     public SelectAction() {
-        super("Ñ¡Ôñ", getIcon("/jatools/icons/arrow.gif"),
+        super(App.messages.getString("res.540"), getIcon("/jatools/icons/arrow.gif"),
             getIcon("/jatools/icons/arrow2.gif"));
     }
 

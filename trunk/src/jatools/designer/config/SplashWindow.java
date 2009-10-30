@@ -1,5 +1,6 @@
 package jatools.designer.config;
 
+import jatools.designer.App;
 import jatools.util.Util;
 
 import java.awt.BorderLayout;
@@ -25,7 +26,7 @@ public class SplashWindow extends JDialog {
      * @param icon DOCUMENT ME!
      */
     public SplashWindow(Icon icon) {
-        super(getDummyFrame(), "¼ò±í(JOR)");
+        super(getDummyFrame(), App.messages.getString("res.39"));
 
         JLabel l = new JLabel(icon);
         getContentPane().add(l, BorderLayout.CENTER);

@@ -2,6 +2,7 @@ package jatools.engine.script;
 
 import jatools.ReportDocument;
 import jatools.dataset.Dataset;
+import jatools.designer.App;
 import jatools.dom.NodeStack;
 import jatools.engine.PrintConstants;
 import jatools.engine.System2;
@@ -167,7 +168,7 @@ public class ReportContext implements PrintConstants, Script {
                         }
                     }
                 } else {
-                    System.out.println("不匹配!");
+                    System.out.println(App.messages.getString("res.32"));
 
                     return copy;
                 }
@@ -175,7 +176,7 @@ public class ReportContext implements PrintConstants, Script {
         }
 
         if (!stack.isEmpty()) {
-            System.out.println("不匹配!");
+            System.out.println(App.messages.getString("res.32"));
 
             return copy;
         } else {
@@ -218,7 +219,7 @@ public class ReportContext implements PrintConstants, Script {
             if (MessageDigest.isEqual(di, _key)) {
                 return Base64Util.decode(new String(_user, "UTF-8"));
             } else {
-                throw new Exception("取用户名出错.");
+                throw new Exception(App.messages.getString("res.33"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -243,7 +244,7 @@ public class ReportContext implements PrintConstants, Script {
 
             if (errors < THROW_ERR_MAX_COUNT) {
                 try {
-                    Util.debug(logger, "脚本解析错误[" + it.get("file") + "]:\n" + Util.toString(e));
+                    Util.debug(logger, App.messages.getString("res.34") + it.get("file") + "]:\n" + Util.toString(e));
                 } catch (EvalError e1) {
                     // TODO Auto-generated catch block
                     e1.printStackTrace();
@@ -329,7 +330,7 @@ public class ReportContext implements PrintConstants, Script {
             }
         } catch (EvalError ex) {
             ex.printStackTrace();
-            Util.debug(logger, "取不到参数:" + name);
+            Util.debug(logger, App.messages.getString("res.35") + name);
         }
 
         return null;
@@ -368,7 +369,7 @@ public class ReportContext implements PrintConstants, Script {
 
         Collections.sort(vars);
 
-        System.out.println("变量列表       ..............");
+        System.out.println(App.messages.getString("res.36"));
 
         for (int i = 0; i < vars.size(); i++) {
             String name = (String) vars.get(i);

@@ -6,6 +6,7 @@ package jatools.designer.data;
 
 import jatools.data.Parameter;
 import jatools.db.TypeUtil;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.swingx.CommandPanel;
 import jatools.swingx.GridBagConstraints2;
@@ -53,11 +54,11 @@ public class CustomParameterDialog extends JDialog {
      * Creates a new CustomParameterDialog object.
      */
     public CustomParameterDialog() {
-        super(Main.getInstance(), "参数定义", true);
+        super(Main.getInstance(), App.messages.getString("res.469"), true);
 
         CommandPanel buttonPanel = CommandPanel.createPanel();
 
-        JButton okButton = new JButton("确定");
+        JButton okButton = new JButton(App.messages.getString("res.3"));
         okButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done();
@@ -66,7 +67,7 @@ public class CustomParameterDialog extends JDialog {
 
         buttonPanel.addComponent(okButton);
 
-        JButton cancelButton = new JButton("取消");
+        JButton cancelButton = new JButton(App.messages.getString("res.4"));
         cancelButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     hide();
@@ -91,7 +92,7 @@ public class CustomParameterDialog extends JDialog {
         GridBagConstraints2 gbc = new GridBagConstraints2(result);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.WEST;
-        result.add(new JLabel("名称:"), gbc);
+        result.add(new JLabel(App.messages.getString("res.63")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         gbc.weightx = 100;
@@ -100,7 +101,7 @@ public class CustomParameterDialog extends JDialog {
         gbc.weightx = 0;
         gbc.gridwidth = 1;
 
-        result.add(new JLabel("参数类型:"), gbc);
+        result.add(new JLabel(App.messages.getString("res.470")), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
@@ -111,7 +112,7 @@ public class CustomParameterDialog extends JDialog {
 
         gbc.gridwidth = 1;
 
-        result.add(new JLabel("默认值:"), gbc);
+        result.add(new JLabel(App.messages.getString("res.471")), gbc);
 
         defaultField = new TemplateTextField();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
@@ -129,7 +130,7 @@ public class CustomParameterDialog extends JDialog {
             parameter = createParameter();
             hide();
         } catch (Exception e1) {
-            JOptionPane.showMessageDialog(getParent(), e1.getMessage(), "出错了...",
+            JOptionPane.showMessageDialog(getParent(), e1.getMessage(), App.messages.getString("res.12"),
                 JOptionPane.ERROR_MESSAGE);
             e1.printStackTrace();
         }
@@ -197,14 +198,14 @@ public class CustomParameterDialog extends JDialog {
 
         if (isEmpty(type)) {
             typeCombo.requestFocus();
-            throw new Exception("参数类型不能为空.");
+            throw new Exception(App.messages.getString("res.472"));
         }
 
         String def = defaultField.getText().trim();
 
         if (isEmpty(def)) {
             defaultField.requestFocus();
-            throw new Exception("缺省值不能为空.");
+            throw new Exception(App.messages.getString("res.473"));
         }
 
         Parameter parameter = new Parameter(name, TypeUtil.getClassName(type), null, def);

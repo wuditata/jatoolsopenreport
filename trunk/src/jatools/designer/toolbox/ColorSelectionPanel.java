@@ -1,5 +1,6 @@
 package jatools.designer.toolbox;
 
+import jatools.designer.App;
 import jatools.swingx.ColorIcon;
 import jatools.util.Util;
 
@@ -142,7 +143,7 @@ public class ColorSelectionPanel extends JPanel {
 
         p = new JPanel(new GridBagLayout());
 
-        transparent = new JButton("透明", new ColorIcon(10, 10));
+        transparent = new JButton(App.messages.getString("res.135"), new ColorIcon(10, 10));
         transparent.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     select(null);
@@ -162,7 +163,7 @@ public class ColorSelectionPanel extends JPanel {
         gbc.gridwidth = 1;
         p.add(transparent, gbc);
 
-        JButton more = new JButton("更多...");
+        JButton more = new JButton(App.messages.getString("res.260"));
         gbc.gridwidth = gbc.REMAINDER;
         p.add(more, gbc);
         dim = new Dimension(50, 22);
@@ -180,7 +181,7 @@ public class ColorSelectionPanel extends JPanel {
         if (empty) {
             p.add(new JSeparator(), gbc);
 
-            JButton empty2 = new JButton("设为空");
+            JButton empty2 = new JButton(App.messages.getString("res.261"));
             p.add(empty2, gbc);
             dim = new Dimension(100, 22);
             empty2.setSize(dim);
@@ -208,7 +209,7 @@ public class ColorSelectionPanel extends JPanel {
         DropDownComponent ddc = (DropDownComponent) this.getClientProperty("ddc");
         ddc.locked = true;
 
-        Color color = JColorChooser.showDialog(this.getTopLevelAncestor(), "颜色选择", null);
+        Color color = JColorChooser.showDialog(this.getTopLevelAncestor(), App.messages.getString("res.11"), null);
         ddc.locked = false;
 
         if (color != null) {

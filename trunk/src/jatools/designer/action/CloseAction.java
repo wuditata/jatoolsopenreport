@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 import jatools.ReportDocument;
+import jatools.designer.App;
 import jatools.designer.EditorTabPanel;
 import jatools.designer.Main;
 import jatools.designer.ReportEditor;
@@ -23,7 +24,7 @@ public class CloseAction extends ReportAction {
      * Creates a new CloseAction object.
      */
     public CloseAction() {
-        this("关闭");
+        this(App.messages.getString("res.139"));
     }
 
     /**
@@ -67,7 +68,7 @@ public class CloseAction extends ReportAction {
             return true;
         }
 
-        int answer = MessageBox.show(Main.getInstance(), "提示...", "当前报表已经修改,是否保存?",
+        int answer = MessageBox.show(Main.getInstance(), App.messages.getString("res.389"), App.messages.getString("res.524"),
                 MessageBox.YES_NO_CANCEL);
 
         if (answer == MessageBox.YES) {

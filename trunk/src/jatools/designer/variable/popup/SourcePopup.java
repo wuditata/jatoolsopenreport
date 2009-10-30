@@ -1,6 +1,7 @@
 package jatools.designer.variable.popup;
 
 
+import jatools.designer.App;
 import jatools.designer.variable.SourceType;
 import jatools.designer.variable.TreeNodeValue;
 import jatools.designer.variable.action.CrossSourceAction;
@@ -61,47 +62,47 @@ public class SourcePopup extends JPopupMenu implements SourceType {
 
         TreeNodeValue nodeValue = (TreeNodeValue) defaultMutableTreeNode.getUserObject();
         this.nodeSource = nodeValue.getNodeSource();
-        addDatasetMenu = new JMenu("Ìí¼ÓÊý¾Ý¼¯");
-        addJdbcItem = new JMenuItem(new DataSourceAction("JDBCÊý¾Ý¼¯", c, defaultMutableTreeNode,
+        addDatasetMenu = new JMenu(App.messages.getString("res.235"));
+        addJdbcItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.236"), c, defaultMutableTreeNode,
                     DataSourceAction.ADD_JDBC));
 
         addDatasetMenu.add(addJdbcItem);
 
-        delDatasetItem = new JMenuItem(new DataSourceAction("É¾³ý", c, defaultMutableTreeNode,
+        delDatasetItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.69"), c, defaultMutableTreeNode,
                     DataSourceAction.DELETE));
 
-        modifyDatasetItem = new JMenuItem(new DataSourceAction("±à¼­", c, defaultMutableTreeNode,
+        modifyDatasetItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.68"), c, defaultMutableTreeNode,
                     DataSourceAction.MODIFY));
 
-        addView = new JMenu("Ìí¼ÓÊÓÍ¼");
-        addIndexItem = new JMenuItem(new IndexSourceAction("Ë÷Òý", c, defaultMutableTreeNode,
+        addView = new JMenu(App.messages.getString("res.237"));
+        addIndexItem = new JMenuItem(new IndexSourceAction(App.messages.getString("res.238"), c, defaultMutableTreeNode,
                     IndexSourceAction.ADD));
-        delIndexItem = new JMenuItem(new IndexSourceAction("É¾³ý", c, defaultMutableTreeNode,
+        delIndexItem = new JMenuItem(new IndexSourceAction(App.messages.getString("res.69"), c, defaultMutableTreeNode,
                     IndexSourceAction.DELETE));
 
-        addCrossItem = new JMenuItem(new CrossSourceAction("½»²æË÷Òý", c, defaultMutableTreeNode,
+        addCrossItem = new JMenuItem(new CrossSourceAction(App.messages.getString("res.239"), c, defaultMutableTreeNode,
                     CrossSourceAction.ADD));
-        delCrossItem = new JMenuItem(new CrossSourceAction("É¾³ý", c, defaultMutableTreeNode,
+        delCrossItem = new JMenuItem(new CrossSourceAction(App.messages.getString("res.69"), c, defaultMutableTreeNode,
                     CrossSourceAction.DELETE));
-        modifyCrossItem = new JMenuItem(new CrossSourceAction("±à¼­", c, defaultMutableTreeNode,
+        modifyCrossItem = new JMenuItem(new CrossSourceAction(App.messages.getString("res.68"), c, defaultMutableTreeNode,
                     CrossSourceAction.MODIFY));
 
-        addRowItem = new JMenuItem(new RowSourceAction("Row(ÐÐ)", c, defaultMutableTreeNode,
+        addRowItem = new JMenuItem(new RowSourceAction(App.messages.getString("res.240"), c, defaultMutableTreeNode,
                     RowSourceAction.ADD_ROW));
 
         addRowItem.setEnabled(!hasRowChild());
 
-        delRowItem = new JMenuItem(new RowSourceAction("É¾³ý", c, defaultMutableTreeNode,
+        delRowItem = new JMenuItem(new RowSourceAction(App.messages.getString("res.69"), c, defaultMutableTreeNode,
                     RowSourceAction.DELETE_ROW));
 
-        addGroupItem = new JMenuItem(new GroupSourceAction("·Ö×é", c, defaultMutableTreeNode,
+        addGroupItem = new JMenuItem(new GroupSourceAction(App.messages.getString("res.202"), c, defaultMutableTreeNode,
                     GroupSourceAction.ADD_GROUP));
-        delGroupItem = new JMenuItem(new GroupSourceAction("É¾³ý", c, defaultMutableTreeNode,
+        delGroupItem = new JMenuItem(new GroupSourceAction(App.messages.getString("res.69"), c, defaultMutableTreeNode,
                     GroupSourceAction.DELETE_GROUP));
-        modifyGroupItem = new JMenuItem(new GroupSourceAction("±à¼­", c, defaultMutableTreeNode,
+        modifyGroupItem = new JMenuItem(new GroupSourceAction(App.messages.getString("res.68"), c, defaultMutableTreeNode,
                     GroupSourceAction.MODIFY_GROUP));
 
-        dataPreviewItem = new JMenuItem(new DataSourceAction("Ô¤ÀÀ", c, defaultMutableTreeNode,
+        dataPreviewItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.163"), c, defaultMutableTreeNode,
                     DataSourceAction.PREVIEW));
 
         switch (popupType) {

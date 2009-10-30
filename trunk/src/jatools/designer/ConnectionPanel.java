@@ -39,7 +39,7 @@ import javax.swing.JToolBar;
   */
 public class ConnectionPanel {
     static JFileChooser chooser;
-    static final String DEFAULT_SUFFIX = " (默认)";
+    static final String DEFAULT_SUFFIX = App.messages.getString("res.48");
     static final String JDBC_PROVIDERS_CONFIG = "jdbcproviders.xml";
     static JdbcProvider[] jdbcProviders;
     private JComboBox suggestionsCombo;
@@ -89,14 +89,14 @@ public class ConnectionPanel {
         DropDownButton ddb = new DropDownButton(null, Util.getIcon("/jatools/icons/tree.gif"));
         ddb.setPreferredSize(new Dimension(23, 23));
 
-        JMenuItem mi = new JMenuItem("收藏当前设置...");
+        JMenuItem mi = new JMenuItem(App.messages.getString("res.49"));
         mi.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     addToFavourites();
                 }
             });
         ddb.getPopupMenu().add(mi);
-        mi = new JMenuItem("删除当前收藏项");
+        mi = new JMenuItem(App.messages.getString("res.50"));
         mi.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     removeFromFavourites();
@@ -105,7 +105,7 @@ public class ConnectionPanel {
 
         ddb.getPopupMenu().add(mi);
 
-        mi = new JMenuItem("当前收藏项为默认");
+        mi = new JMenuItem(App.messages.getString("res.51"));
         mi.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     setDefault();
@@ -114,7 +114,7 @@ public class ConnectionPanel {
         ddb.getPopupMenu().add(mi);
         ddb.getPopupMenu().addSeparator();
 
-        mi = new JMenuItem("导出收藏项...");
+        mi = new JMenuItem(App.messages.getString("res.52"));
         mi.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     exportProviders();
@@ -122,7 +122,7 @@ public class ConnectionPanel {
             });
         ddb.getPopupMenu().add(mi);
 
-        mi = new JMenuItem("导入收藏项...");
+        mi = new JMenuItem(App.messages.getString("res.53"));
         mi.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     importProviders();
@@ -186,7 +186,7 @@ public class ConnectionPanel {
         bar = new JToolBar();
         bar.addSeparator();
 
-        JButton b = new JButton("测试连接", Util.getIcon("/jatools/icons/conn.gif"));
+        JButton b = new JButton(App.messages.getString("res.54"), Util.getIcon("/jatools/icons/conn.gif"));
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     testConnection();
@@ -228,11 +228,11 @@ public class ConnectionPanel {
     protected void testConnection() {
         try {
             getConnection().getConnection();
-            MessageBox.show(this.urlText.getTopLevelAncestor(), "提示", "恭喜,测试连接成功.");
+            MessageBox.show(this.urlText.getTopLevelAncestor(), App.messages.getString("res.55"), App.messages.getString("res.56"));
             this.setConnectable(true);
         } catch (Exception e) {
             //e.printStackTrace() ;
-            MessageBox.error(null, "连接失败.", e);
+            MessageBox.error(null, App.messages.getString("res.57"), e);
             this.setConnectable(false);
         }
     }
@@ -252,7 +252,7 @@ public class ConnectionPanel {
             try {
                 providers = getJdbcProviders(file);
             } catch (Exception e) {
-                MessageBox.error(this.passwordText.getTopLevelAncestor(), "导入收收藏夹失败,可能文件格式不对.");
+                MessageBox.error(this.passwordText.getTopLevelAncestor(), App.messages.getString("res.58"));
             }
 
             if (providers.length > 0) {
@@ -274,8 +274,8 @@ public class ConnectionPanel {
                 refreshSugguestion();
                 this.suggestionsCombo.setSelectedIndex(0);
                 updateProviders();
-                MessageBox.show(this.passwordText.getTopLevelAncestor(), "提示",
-                    "已经从文件" + file.getAbsolutePath() + " 导入" + providers.length + " 收藏项.");
+                MessageBox.show(this.passwordText.getTopLevelAncestor(), App.messages.getString("res.55"),
+                    App.messages.getString("res.59") + file.getAbsolutePath() + App.messages.getString("res.60") + providers.length + App.messages.getString("res.61"));
             }
         }
     }
@@ -291,8 +291,8 @@ public class ConnectionPanel {
 
         if (file != null) {
             saveProviders(file);
-            MessageBox.show(this.passwordText.getTopLevelAncestor(), "提示",
-                "成功导出到" + file.getAbsolutePath());
+            MessageBox.show(this.passwordText.getTopLevelAncestor(), App.messages.getString("res.55"),
+                App.messages.getString("res.62") + file.getAbsolutePath());
         }
     }
 
@@ -338,7 +338,7 @@ public class ConnectionPanel {
 
     protected void addToFavourites() {
         String results = JOptionPane.showInputDialog(this.passwordText.getTopLevelAncestor(),
-                "名称:", "输入收藏名称", JOptionPane.OK_CANCEL_OPTION);
+                App.messages.getString("res.63"), App.messages.getString("res.64"), JOptionPane.OK_CANCEL_OPTION);
 
         if (results != null) {
             JdbcProvider provider = new JdbcProvider(this.getConnection());

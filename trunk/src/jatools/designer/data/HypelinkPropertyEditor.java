@@ -2,6 +2,7 @@ package jatools.designer.data;
 
 
 
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.swingx.Chooser;
 import jatools.swingx.CommandPanel;
@@ -41,7 +42,7 @@ public class HypelinkPropertyEditor extends JDialog implements Chooser {
      * Creates a new HypelinkPropertyEditor object.
      */
     public HypelinkPropertyEditor() {
-        super(Main.getInstance(), "超链接设置", true);
+        super(Main.getInstance(), App.messages.getString("res.491"), true);
 
         JPanel p = new JPanel(new GridBagLayout());
 
@@ -55,14 +56,14 @@ public class HypelinkPropertyEditor extends JDialog implements Chooser {
         gbc.weightx = 0;
 
         gbc.gridwidth = 1;
-        p.add(new JLabel("超链接:"), gbc);
+        p.add(new JLabel(App.messages.getString("res.492")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
         p.add(urlField, gbc);
         gbc.weightx = 0;
 
         gbc.gridwidth = 1;
-        p.add(new JLabel("目标:"), gbc);
+        p.add(new JLabel(App.messages.getString("res.493")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.NONE;
         p.add(targetCombo, gbc);
@@ -90,7 +91,7 @@ public class HypelinkPropertyEditor extends JDialog implements Chooser {
 
         CommandPanel commandPanel = CommandPanel.createPanel(oklistener, cancellistener);
 
-        commandPanel.addComponent("为空",
+        commandPanel.addComponent(App.messages.getString("res.181"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;

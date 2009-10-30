@@ -8,6 +8,7 @@ import jatools.dataset.DatasetException;
 import jatools.dataset.Row;
 import jatools.dataset.RowMeta;
 import jatools.dataset.StreamService;
+import jatools.designer.App;
 import jatools.engine.printer.ReportPrinter;
 import jatools.engine.script.ReportContext;
 import jatools.engine.script.Script;
@@ -33,7 +34,7 @@ import org.apache.log4j.Logger;
   */
 public class SqlReader extends AbstractDatasetReader {
     private static Logger logger = Logger.getLogger("ZSqlReader");
-    public static final String TYPE = "jdbc 数据集";
+    public static final String TYPE = App.messages.getString("res.552");
     public static final int QUERY = 0;
     public static final int STORED_PROCEDURE = 1;
     public final static int DONE = -1;
@@ -170,7 +171,7 @@ public class SqlReader extends AbstractDatasetReader {
 
         try {
             if (sql == null) {
-                throw new IllegalArgumentException(Util.debug(logger, "sql 语句不应为空"));
+                throw new IllegalArgumentException(Util.debug(logger, App.messages.getString("res.553")));
             }
 
             String sqlcopy = sql;
@@ -237,11 +238,11 @@ public class SqlReader extends AbstractDatasetReader {
                 return new SqlRowInfo(columnInfos);
             } else {
                 throw new jatools.dataset.DatasetException(Util.debug(logger,
-                        "数据集列数为空!" + "\n" + sqlcopy));
+                        App.messages.getString("res.554") + "\n" + sqlcopy));
             }
         } catch (Exception e) {
             throw new jatools.dataset.DatasetException(Util.debug(logger,
-                    "sql 出错." + Util.toString(e)), e);
+                    App.messages.getString("res.555") + Util.toString(e)), e);
         }
     }
 
@@ -296,7 +297,7 @@ public class SqlReader extends AbstractDatasetReader {
     public java.sql.Connection getConnection2(Script paraProvider)
         throws Exception {
         if (connection == null) {
-            throw new jatools.dataset.DatasetException(Util.debug(logger, "connection 参数不能为空!"));
+            throw new jatools.dataset.DatasetException(Util.debug(logger, App.messages.getString("res.556")));
         }
 
         return connection.getConnection(paraProvider);
@@ -313,7 +314,7 @@ public class SqlReader extends AbstractDatasetReader {
      */
     public Row readRow(RowMeta rowInfo) throws jatools.dataset.DatasetException {
         if (results == null) {
-            throw new jatools.dataset.DatasetException(Util.debug(logger, "数据集为空,不能导入rowset中!"));
+            throw new jatools.dataset.DatasetException(Util.debug(logger, App.messages.getString("res.557")));
         }
 
         try {
@@ -334,10 +335,10 @@ public class SqlReader extends AbstractDatasetReader {
                 }
             } else {
                 throw new jatools.dataset.DatasetException(
-                    "ZSQLReadEngine::readRow(...): 参数行对象不应为空!");
+                    App.messages.getString("res.558"));
             }
         } catch (SQLException e) {
-            throw new jatools.dataset.DatasetException("ZSQLReadEngine::readRow(...): sql语法不正确.", e);
+            throw new jatools.dataset.DatasetException(App.messages.getString("res.559"), e);
         }
     }
 

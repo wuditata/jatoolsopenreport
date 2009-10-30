@@ -1,6 +1,7 @@
 package jatools.designer.variable;
 
 
+import jatools.designer.App;
 import jatools.designer.EditorView;
 import jatools.designer.Main;
 import jatools.designer.ReportEditor;
@@ -39,7 +40,7 @@ public class XmlPanel extends JPanel implements EditorView {
 
         JScrollPane scrollPane = new JScrollPane(variableTree);
 
-        tabbedPane.addTab("模型定义", Util.getIcon("/jatools/icons/srctree.gif"), scrollPane);
+        tabbedPane.addTab(App.messages.getString("res.233"), Util.getIcon("/jatools/icons/srctree.gif"), scrollPane);
         add(tabbedPane, BorderLayout.CENTER);
     }
 

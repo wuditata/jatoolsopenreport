@@ -4,6 +4,7 @@ package jatools.designer.property.editor;
 
 import jatools.core.view.Border;
 import jatools.core.view.BorderStyle;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.toolbox.ComboColorChooser;
 import jatools.designer.toolbox.ComboStyleChooser;
@@ -60,7 +61,7 @@ public class BorderPropertyEditor extends JDialog implements Chooser {
      * Creates a new BorderPropertyEditor object.
      */
     public BorderPropertyEditor() {
-        super(Main.getInstance(), "边框设置", true);
+        super(Main.getInstance(), App.messages.getString("res.305"), true);
 
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
@@ -160,17 +161,17 @@ public class BorderPropertyEditor extends JDialog implements Chooser {
         c.insets = new Insets(1, 2, 1, 2);
         c.gridwidth = 1;
         c.gridheight = 1;
-        topPanel.add(new JLabel("粗细"), c);
+        topPanel.add(new JLabel(App.messages.getString("res.306")), c);
         c.gridwidth = GridBagConstraints.REMAINDER;
         topPanel.add(thicknessChooser, c);
         c.gridwidth = 1;
         c.gridheight = 1;
-        topPanel.add(new JLabel("线型"), c);
+        topPanel.add(new JLabel(App.messages.getString("res.148")), c);
         c.gridwidth = GridBagConstraints.REMAINDER;
         topPanel.add(styleChooser, c);
         c.gridwidth = 1;
         c.gridheight = 1;
-        topPanel.add(new JLabel("颜色"), c);
+        topPanel.add(new JLabel(App.messages.getString("res.307")), c);
         c.gridwidth = GridBagConstraints.REMAINDER;
         topPanel.add(colorChooser, c);
         c.weighty = 100;
@@ -195,7 +196,7 @@ public class BorderPropertyEditor extends JDialog implements Chooser {
             };
 
         CommandPanel bottomPanel = CommandPanel.createPanel(oklistener, cancellistener);
-        bottomPanel.addComponent("为空",
+        bottomPanel.addComponent(App.messages.getString("res.181"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;

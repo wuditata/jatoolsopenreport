@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 
+import jatools.designer.App;
 import jatools.designer.SelectionState;
 
 import java.awt.Point;
@@ -18,7 +19,7 @@ public class SameBothAction extends ResizeAction {
      * Creates a new SameBothAction object.
      */
     public SameBothAction() {
-        super("µÈ¸ß¿í", getIcon("/jatools/icons/sameboth.gif"),
+        super(App.messages.getString("res.536"), getIcon("/jatools/icons/sameboth.gif"),
             getIcon("/jatools/icons/sameboth2.gif"));
     }
 

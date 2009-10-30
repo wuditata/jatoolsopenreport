@@ -6,6 +6,8 @@
  */
 package jatools.viewer;
 
+import jatools.designer.App;
+
 import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.awt.GridBagConstraints;
@@ -32,7 +34,7 @@ public class ed extends JDialog implements ActionListener {
     boolean xok = false;
 
     ed() {
-        super((Frame) null, "选择导出格式", true);
+        super((Frame) null, App.messages.getString("res.1"), true);
 
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -70,12 +72,12 @@ public class ed extends JDialog implements ActionListener {
         check.addActionListener(this);
         group.add(check);
 
-        panel.setBorder(BorderFactory.createTitledBorder("导出格式 "));
+        panel.setBorder(BorderFactory.createTitledBorder(App.messages.getString("res.2")));
         ((JPanel) getContentPane()).setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         JPanel commandPanel = new JPanel(new BorderLayout());
         JPanel commandPanel0 = new JPanel(new GridBagLayout());
-        JButton doneCommand = new JButton("确定");
+        JButton doneCommand = new JButton(App.messages.getString("res.3"));
         doneCommand.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     xok = true;
@@ -83,7 +85,7 @@ public class ed extends JDialog implements ActionListener {
                 }
             });
 
-        JButton cancelCommand = new JButton("取消");
+        JButton cancelCommand = new JButton(App.messages.getString("res.4"));
         cancelCommand.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     hide();

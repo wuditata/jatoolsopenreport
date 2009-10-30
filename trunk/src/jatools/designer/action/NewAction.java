@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 import jatools.ReportDocument;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.chooser.ReportChooser;
 import jatools.swingx.MessageBox;
@@ -23,7 +24,7 @@ public class NewAction extends ReportAction {
      * @param owner DOCUMENT ME!
      */
     public NewAction() {
-        super("新建...   ", getIcon("/jatools/icons/new.gif")); // //$NON-NLS-2$
+        super(App.messages.getString("res.508") + "...   ", getIcon("/jatools/icons/new.gif")); 
         setStroke(ctrl(KeyEvent.VK_N));
     }
 
@@ -36,20 +37,20 @@ public class NewAction extends ReportAction {
     public void actionPerformed(ActionEvent e) {
         ReportChooser chooser = ReportChooser.getInstance();
 
-        if (chooser.showDialog("新建", ReportChooser.SHOW_NEW)) { //
+        if (chooser.showDialog(App.messages.getString("res.508"), ReportChooser.SHOW_NEW)) { 
 
             ReportDocument doc = chooser.getDocument();
 
             if (doc != null) {
            
-                Main.getInstance().createEditor(doc, "未命名", null);
+                Main.getInstance().createEditor(doc, App.messages.getString("res.531"), null);
             }
         }
     }
 
     protected boolean saveAs() {
-        int answer = MessageBox.show(getEditor(), "提示...",
-                "是否保存对当前报表的修改?", MessageBox.YES_NO_CANCEL); // //$NON-NLS-2$
+        int answer = MessageBox.show(getEditor(), App.messages.getString("res.389"),
+        		App.messages.getString("res.save"), MessageBox.YES_NO_CANCEL); 
 
         if (answer == MessageBox.YES) {
             ReportDocument doc = getEditor().getDocument();

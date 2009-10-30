@@ -4,6 +4,7 @@ import jatools.VariableContext;
 import jatools.data.Formula;
 import jatools.data.Parameter;
 import jatools.data.reader.DatasetReader;
+import jatools.designer.App;
 import jatools.designer.DataTreeUtil;
 import jatools.designer.DocumentVariableNameChecker;
 import jatools.designer.DocumentVariableNamePicker;
@@ -183,7 +184,7 @@ public class VariableTree extends IconTree implements ActionListener, ChangeList
     }
 
     protected void delete() {
-        if (MessageBox.show(this.getTopLevelAncestor(), "提示...", "变量删除后不能恢复,是否继续?",
+        if (MessageBox.show(this.getTopLevelAncestor(), App.messages.getString("res.389"), App.messages.getString("res.500"),
                     MessageBox.OK_CANCEL) == MessageBox.OK) {
             SimpleTreeNode selected = (SimpleTreeNode) this.getSelectionModel().getSelectionPath()
                                                            .getLastPathComponent();
@@ -497,7 +498,7 @@ public class VariableTree extends IconTree implements ActionListener, ChangeList
 
     class _AddAction extends AbstractAction {
         _AddAction() {
-            super("新增");
+            super(App.messages.getString("res.66"));
         }
 
         public void actionPerformed(ActionEvent e) {
@@ -507,7 +508,7 @@ public class VariableTree extends IconTree implements ActionListener, ChangeList
 
     class _DeleteAction extends AbstractAction {
         _DeleteAction() {
-            super("删除");
+            super(App.messages.getString("res.69"));
         }
 
         public void actionPerformed(ActionEvent e) {
@@ -517,7 +518,7 @@ public class VariableTree extends IconTree implements ActionListener, ChangeList
 
     class _EditAction extends AbstractAction {
         _EditAction() {
-            super("编辑");
+            super(App.messages.getString("res.68"));
         }
 
         public void actionPerformed(ActionEvent e) {
@@ -527,7 +528,7 @@ public class VariableTree extends IconTree implements ActionListener, ChangeList
 
     class _PreviewAction extends AbstractAction {
         _PreviewAction() {
-            super("预览数据集");
+            super(App.messages.getString("res.70"));
         }
 
         public void actionPerformed(ActionEvent e) {

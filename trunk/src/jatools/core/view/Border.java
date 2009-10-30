@@ -2,6 +2,7 @@ package jatools.core.view;
 
 import jatools.accessor.PropertyAccessor;
 import jatools.accessor.PropertyDescriptor;
+import jatools.designer.App;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -217,7 +218,7 @@ public class Border implements Serializable, PropertyAccessor, BorderBase {
             } else if (BorderStyle.BORDER_STYLE_DOTTED.equals(style)) {
                 stroke = getDottedStroke(edge.getThickness());
             } else {
-                throw new IllegalStateException("风格不对: " + style);
+                throw new IllegalStateException(App.messages.getString("res.560") + style);
             }
 
             g2d.setStroke(stroke);

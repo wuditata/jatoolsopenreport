@@ -1,6 +1,7 @@
 package jatools.designer.export;
 
 import jatools.ReportDocument;
+import jatools.designer.App;
 import jatools.designer.PageProvider;
 import jatools.designer.ReportPreviewer;
 import jatools.swingx.JatoolsFileFilter;
@@ -108,7 +109,7 @@ public class ExportPanel extends JPanel implements ActionListener {
      */
     public void showDialog(Frame owner, PageProvider provider) {
         this.provider = provider;
-        dialog = new JDialog(owner, "导出文件选择...", true);
+        dialog = new JDialog(owner, App.messages.getString("res.386"), true);
         dialog.getContentPane().add(this, BorderLayout.CENTER);
         dialog.setSize(480, 380);
         dialog.setLocationRelativeTo(owner);
@@ -170,13 +171,13 @@ public class ExportPanel extends JPanel implements ActionListener {
 
             if (f.exists()) {
                 if (JOptionPane.showConfirmDialog(dialog,
-                            new JLabel("文件: " + f.getName() + "已经存在,是否覆盖?"), "提示...",
+                            new JLabel(App.messages.getString("res.387") + f.getName() + App.messages.getString("res.388")), App.messages.getString("res.389"),
                             JOptionPane.OK_CANCEL_OPTION) == JOptionPane.CANCEL_OPTION) {
                     return;
                 }
             }
 
-            pd = new ProgressDialog((Frame) dialog.getOwner(), "正在导出...", f);
+            pd = new ProgressDialog((Frame) dialog.getOwner(), App.messages.getString("res.390"), f);
 
             Thread exportTask = new Thread(new Runnable() {
                         public void run() {

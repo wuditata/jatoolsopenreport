@@ -1,9 +1,7 @@
 package jatools.designer;
 
 import jatools.ReportDocument;
-
 import jatools.engine.System2;
-
 import jatools.util.Util;
 
 import java.awt.event.ActionEvent;
@@ -11,7 +9,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import java.io.File;
 
 import javax.swing.JMenuItem;
@@ -41,7 +38,7 @@ public class DefaultReportsTreePanel extends JScrollPane {
     }
 
     private JTree getDefaultReportsTree() {
-        JMenuItem jmenuItem = new JMenuItem("´ò¿ª");
+        JMenuItem jmenuItem = new JMenuItem(App.messages.getString("res.65"));
         jmenuItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     String path = getSelectedPath();

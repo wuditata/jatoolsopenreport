@@ -3,6 +3,7 @@ package jatools.designer.variable.dialog;
 import jatools.data.reader.DatasetReader;
 import jatools.dataset.Dataset;
 import jatools.dataset.DatasetException;
+import jatools.designer.App;
 import jatools.dom.src.CrossIndexNodeSource;
 import jatools.dom.src.DatasetNodeSource;
 import jatools.engine.script.ReportContext;
@@ -37,7 +38,7 @@ import javax.swing.JTextField;
 public class CrossIndexDialog extends JDialog implements ActionListener {
     private static CrossIndexNodeSource crossSource;
     private static boolean exitedOK;
-    static final String info = "选择索引字段，不能重复，不能为空";
+    static final String info = App.messages.getString("res.241");
 
     private JTextField nameField;
     private JList leftList;
@@ -55,7 +56,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
         super((Frame) javax.swing.SwingUtilities.getWindowAncestor(parent));
         exitedOK = false;
         this.setModal(true);
-        this.setTitle("交叉索引定义");
+        this.setTitle(App.messages.getString("res.242"));
         this.crossSource = crossSource;
         this.c = parent;
         initUI();
@@ -80,7 +81,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
 
         centerPanel.add(center,BorderLayout.CENTER);
 
-        JLabel nameLabel=new JLabel("名称：");
+        JLabel nameLabel=new JLabel(App.messages.getString("res.243"));
         nameField=new JTextField();
         Box nameBox=Box.createHorizontalBox();
         nameBox.add(nameLabel);
@@ -101,10 +102,10 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
         columnList = new JList();
 
         leftTab = new JTabbedPane();
-        leftTab.addTab("可选字段", new JScrollPane(leftList));
+        leftTab.addTab(App.messages.getString("res.244"), new JScrollPane(leftList));
         rightTab = new JTabbedPane();
-        rightTab.addTab("行索引", new JScrollPane(rowList));
-        rightTab.addTab("列索引", new JScrollPane(columnList));
+        rightTab.addTab(App.messages.getString("res.245"), new JScrollPane(rowList));
+        rightTab.addTab(App.messages.getString("res.246"), new JScrollPane(columnList));
 
         leftTab.setPreferredSize(new Dimension(200, 350));
         rightTab.setPreferredSize(new Dimension(200, 350));
@@ -113,8 +114,8 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
         center.add(controlPanel());
         center.add(rightTab);
 
-        JButton ok = new JButton("确定");
-        JButton cancel = new JButton("取消");
+        JButton ok = new JButton(App.messages.getString("res.3"));
+        JButton cancel = new JButton(App.messages.getString("res.4"));
         ok.setActionCommand("ok");
         ok.setPreferredSize(new Dimension(78, 23));
         cancel.setActionCommand("cancel");
@@ -306,7 +307,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
             String[] columnIndexs = new String[columnModel.getSize()];
 
             if(nameField.getText()==null||nameField.getText().trim().equals("")){
-              JOptionPane.showConfirmDialog(nameField, "名称不能为空！", "提示", JOptionPane.CLOSED_OPTION,
+              JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.247"), App.messages.getString("res.55"), JOptionPane.CLOSED_OPTION,
                    JOptionPane.ERROR_MESSAGE);
                return;
 
@@ -314,7 +315,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
 
 
             if ((rowIndexs.length == 0) || (columnIndexs.length == 0)) {
-                JOptionPane.showConfirmDialog(nameField, "行索引和列索引字段不能为空！", "提示", JOptionPane.CLOSED_OPTION,
+                JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.248"), App.messages.getString("res.55"), JOptionPane.CLOSED_OPTION,
                     JOptionPane.ERROR_MESSAGE);
 
                 return;

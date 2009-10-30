@@ -65,7 +65,7 @@ public class SummaryFieldDialog extends JDialog {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.anchor = GridBagConstraints.WEST;
 
-        topPanel.add(new JLabel("名称:"), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.63")), gbc);
 
         Column[] columns = null;
 
@@ -81,7 +81,7 @@ public class SummaryFieldDialog extends JDialog {
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         topPanel.add(nameText, gbc);
         gbc.gridwidth = 1;
-        topPanel.add(new JLabel("计算字段:"), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.165")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
         topPanel.add(fieldCombo, gbc);
@@ -91,7 +91,7 @@ public class SummaryFieldDialog extends JDialog {
 
         gbc.weightx = 0.0;
         gbc.gridwidth = 1;
-        topPanel.add(new JLabel("统计方法:"), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.166")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         topPanel.add(funcCombo, gbc);
 
@@ -102,7 +102,7 @@ public class SummaryFieldDialog extends JDialog {
         gbc.gridwidth = 1;
         gbc.weighty = 1.0;
 
-        JLabel label = new JLabel("分组依据:");
+        JLabel label = new JLabel(App.messages.getString("res.167"));
         label.setVerticalAlignment(JLabel.TOP);
         topPanel.add(label, gbc);
 
@@ -116,7 +116,7 @@ public class SummaryFieldDialog extends JDialog {
             });
         gbc.weighty = 0.0;
         gbc.gridx = 1;
-        this.byParentChecker = new JCheckBox("自动定位分组.");
+        this.byParentChecker = new JCheckBox(App.messages.getString("res.168"));
         this.byParentChecker.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     setLocateByParent();
@@ -185,7 +185,7 @@ public class SummaryFieldDialog extends JDialog {
     }
 
     private JTable createGroupFieldsTable(Object[] columns) {
-        JTable table = new JTable(new DefaultTableModel(new String[] { "分组字段", "定位变量" }, 0) {
+        JTable table = new JTable(new DefaultTableModel(new String[] { App.messages.getString("res.169"), App.messages.getString("res.170") }, 0) {
                     public boolean isCellEditable(int row, int column) {
                         return (column == 0) || !byParentChecker.isSelected();
                     }

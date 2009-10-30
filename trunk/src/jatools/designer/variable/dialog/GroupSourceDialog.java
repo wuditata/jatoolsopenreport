@@ -2,6 +2,7 @@ package jatools.designer.variable.dialog;
 
 import jatools.data.reader.DatasetReader;
 import jatools.dataset.Dataset;
+import jatools.designer.App;
 import jatools.dom.Group;
 import jatools.dom.src.DatasetNodeSource;
 import jatools.dom.src.GroupNodeSource;
@@ -44,7 +45,7 @@ public class GroupSourceDialog extends JDialog implements ActionListener {
         super((Frame) javax.swing.SwingUtilities.getWindowAncestor(c));
         exitedOk = false;
         this.setModal(true);
-        this.setTitle("分组定义");
+        this.setTitle(App.messages.getString("res.249"));
         this.parent = source;
         this.c = c;
         initUI();
@@ -62,7 +63,7 @@ public class GroupSourceDialog extends JDialog implements ActionListener {
         }
 
         JPanel center = new JPanel();
-        JLabel label = new JLabel("字段：");
+        JLabel label = new JLabel(App.messages.getString("res.250"));
         fieldsBox = new JComboBox();
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -75,15 +76,15 @@ public class GroupSourceDialog extends JDialog implements ActionListener {
         center.add(fieldsBox, gbc);
         gbc.weightx = 0;
 
-        label = new JLabel("排序：");
+        label = new JLabel(App.messages.getString("res.251"));
         ordersBox = new JComboBox();
         gbc.gridwidth = 1;
         center.add(label, gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         center.add(ordersBox, gbc);
 
-        JButton ok = new JButton("确定");
-        JButton cancel = new JButton("取消");
+        JButton ok = new JButton(App.messages.getString("res.3"));
+        JButton cancel = new JButton(App.messages.getString("res.4"));
         ok.setPreferredSize(new Dimension(78, 23));
         cancel.setPreferredSize(new Dimension(78, 23));
         ok.setActionCommand("ok");
@@ -111,9 +112,9 @@ public class GroupSourceDialog extends JDialog implements ActionListener {
         fieldsBox.setModel(filed_model);
 
         Object[] orders = {
-                new Order("升序", Group.ASCEND),
-                new Order("降序", Group.DESEND),
-                new Order("原序", Group.ORIGINAL)
+                new Order(App.messages.getString("res.94"), Group.ASCEND),
+                new Order(App.messages.getString("res.95"), Group.DESEND),
+                new Order(App.messages.getString("res.96"), Group.ORIGINAL)
             };
         DefaultComboBoxModel orer_model = new DefaultComboBoxModel(orders);
         ordersBox.setModel(orer_model);

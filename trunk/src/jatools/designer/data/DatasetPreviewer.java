@@ -2,6 +2,7 @@ package jatools.designer.data;
 
 
 import jatools.data.reader.DatasetReader;
+import jatools.designer.App;
 import jatools.swingx.CommandPanel;
 import jatools.swingx.JatoolsFileFilter;
 import jatools.swingx.MessageBox;
@@ -51,7 +52,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
      * @param owner DOCUMENT ME!
      */
     public DatasetPreviewer(Frame owner) {
-        super(owner, "数据集预览", true);
+        super(owner, App.messages.getString("res.480"), true);
 
         buildUI();
 
@@ -113,7 +114,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
         toolbar.add(cancelCmd);
         toolbar.add(refreshCmd);
 
-        JButton tocsv = new JButton("导出成csv");
+        JButton tocsv = new JButton(App.messages.getString("res.481"));
 
         toolbar.add(tocsv);
         tocsv.addActionListener(new ActionListener() {
@@ -137,7 +138,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
 
         CommandPanel buttonPanel = CommandPanel.createPanel(false);
 
-        JButton okButton = new JButton("确定");
+        JButton okButton = new JButton(App.messages.getString("res.3"));
         okButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     hide();
@@ -156,7 +157,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
         if (chooser == null) {
             chooser = new JFileChooser();
             chooser.setAcceptAllFileFilterUsed(false);
-            filter = new JatoolsFileFilter(new String[] { "txt" }, "Csv文件");
+            filter = new JatoolsFileFilter(new String[] { "txt" }, App.messages.getString("res.482"));
 
             chooser.addChoosableFileFilter(filter);
         }
@@ -168,7 +169,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
         if (f != null) {
             try {
                 table.saveAsCsv(f);
-                MessageBox.show(this, "提示", "导出成功.");
+                MessageBox.show(this, App.messages.getString("res.55"), App.messages.getString("res.483"));
             } catch (Exception e) {
                 MessageBox.error(this, e.getMessage());
             }
@@ -208,7 +209,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
      */
     public void stateChanged(ChangeEvent e) {
         if (e == DatasetTable.ADD_ROW) {
-            pageNumber.setText("记录数: " + table.getRowCount());
+            pageNumber.setText(App.messages.getString("res.484") + table.getRowCount());
             repaint();
         } else if (e == DatasetTable.START) {
             refreshCmd.setEnabled(false);

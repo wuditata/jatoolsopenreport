@@ -40,7 +40,7 @@ public class Stretcher {
      */
     public void strech(int ori, CompoundEdit edit) throws Exception {
         if ((peers == null) || (peers.length == 0)) {
-            throw new Exception("必须先选择至少一个被移动对象.");
+            throw new Exception(App.messages.getString("res.164"));
         }
 
         if (edit != null) {

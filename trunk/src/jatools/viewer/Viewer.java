@@ -1,6 +1,7 @@
 package jatools.viewer;
 
 import jatools.core.view.PageView;
+import jatools.designer.App;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -46,7 +47,7 @@ public class Viewer extends JApplet {
     String sessionID;
     private String files;
     private ed e;
-    JFrame frame = new JFrame("¥Ú”°");
+    JFrame frame = new JFrame(App.messages.getString("res.7"));
 	private String call_cache;
 
     /**

@@ -5,6 +5,7 @@ import jatools.data.reader.DatasetCursor;
 import jatools.data.reader.DatasetReader;
 import jatools.data.reader.ScrollableField;
 import jatools.data.sum.Sum;
+import jatools.designer.App;
 import jatools.engine.script.ReportContext;
 
 import java.io.ByteArrayOutputStream;
@@ -418,7 +419,7 @@ public class Dataset implements DatasetBase, ProtectPublic {
      */
     public String getColumnName(int index) {
         if (rowInfo == null) {
-            throw new ArrayIndexOutOfBoundsException("没有列信息!");
+            throw new ArrayIndexOutOfBoundsException(App.messages.getString("res.544"));
         }
 
         return rowInfo.getColumnName(index);

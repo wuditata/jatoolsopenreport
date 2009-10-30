@@ -35,7 +35,7 @@ public class PropertyTableModel extends DefaultTableModel {
     private Object[] selections;
 
     PropertyTableModel() {
-        super(new Object[] { "属性名", "属性值" }, 0);
+        super(new Object[] { App.messages.getString("res.277"), App.messages.getString("res.278") }, 0);
     }
 
     /**
@@ -302,8 +302,8 @@ public class PropertyTableModel extends DefaultTableModel {
      */
     public static ArrayList editablePropertyDescriptors(Object object) {
         if (!(object instanceof PropertyAccessorWrapper)) {
-            throw new java.lang.IllegalArgumentException("类" + object.getClass().getName() +
-                "找不到对应的可编辑属性.");
+            throw new java.lang.IllegalArgumentException(App.messages.getString("res.279") + object.getClass().getName() +
+                App.messages.getString("res.280"));
         }
 
         PropertyAccessorWrapper wrapper = (PropertyAccessorWrapper) object;
@@ -350,8 +350,8 @@ public class PropertyTableModel extends DefaultTableModel {
      */
     public static ArrayList _editablePropertyDescriptors(Object object) {
         if (!(object instanceof PropertyAccessorWrapper)) {
-            throw new java.lang.IllegalArgumentException("类" + object.getClass().getName() +
-                "找不到对应的可编辑属性.");
+            throw new java.lang.IllegalArgumentException(App.messages.getString("res.279") + object.getClass().getName() +
+                App.messages.getString("res.280"));
         }
 
         PropertyAccessorWrapper wrapper = (PropertyAccessorWrapper) object;

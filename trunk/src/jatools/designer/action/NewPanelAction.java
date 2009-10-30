@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 import jatools.component.Panel;
+import jatools.designer.App;
 
 import java.awt.event.ActionEvent;
 
@@ -18,7 +19,7 @@ public class NewPanelAction extends ReportAction {
      * @param owner DOCUMENT ME!
      */
     public NewPanelAction() {
-        super("°å", getIcon("/jatools/icons/panel.gif"), getIcon("/jatools/icons/panel2.gif"));
+        super(App.messages.getString("res.532"), getIcon("/jatools/icons/panel.gif"), getIcon("/jatools/icons/panel2.gif"));
         putValue(CLASS,Panel.class );
         
     }

@@ -4,6 +4,7 @@ package jatools.designer.data;
 
 
 import jatools.data.reader.DatasetReader;
+import jatools.designer.App;
 import jatools.designer.DatasetReaderConfigureTree;
 import jatools.designer.config.DatasetReaderList;
 import jatools.swingx.CommandPanel;
@@ -43,7 +44,7 @@ public class ReaderChooser extends JDialog implements ChangeListener {
      * @param proxyContainer DOCUMENT ME!
      */
     public ReaderChooser(Frame owner, DatasetReaderList proxyContainer) {
-        super(owner, " 数据集选择 ", true);
+        super(owner, App.messages.getString("res.494"), true);
 
         datasetTree = new DatasetReaderConfigureTree();
 
@@ -53,14 +54,14 @@ public class ReaderChooser extends JDialog implements ChangeListener {
 
         this.getContentPane().add(scrollPane, BorderLayout.CENTER);
 
-        previewButton = new JButton("预览");
+        previewButton = new JButton(App.messages.getString("res.163"));
         previewButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     preview();
                 }
             });
 
-        addButton = new JButton(" 确定 ");
+        addButton = new JButton(App.messages.getString("res.3"));
         addButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     exitOk = true;
@@ -68,7 +69,7 @@ public class ReaderChooser extends JDialog implements ChangeListener {
                 }
             });
 
-        JButton removeButton = new JButton(" 取消 ");
+        JButton removeButton = new JButton(App.messages.getString("res.4"));
         removeButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     exitOk = false;

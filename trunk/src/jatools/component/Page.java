@@ -4,6 +4,7 @@ import jatools.PageFormat;
 import jatools.ReportDocument;
 import jatools.accessor.PropertyDescriptor;
 import jatools.component.layout.LayoutManager;
+import jatools.designer.App;
 import jatools.designer.PageFormatParser;
 
 import java.awt.Dimension;
@@ -109,7 +110,7 @@ public class Page extends Component {
      * @param padding DOCUMENT ME!
      */
     public void setPadding(Insets padding) {
-        throw new UnsupportedOperationException("不支持setPadding,请使用setPageFormat方法");
+        throw new UnsupportedOperationException(App.messages.getString("res.562"));
     }
 
     /**
@@ -118,7 +119,7 @@ public class Page extends Component {
      * @param height DOCUMENT ME!
      */
     public void setHeight(int height) {
-        throw new UnsupportedOperationException("不支持setHeight,请使用setPageFormat方法");
+        throw new UnsupportedOperationException(App.messages.getString("res.563"));
     }
 
     /**
@@ -127,7 +128,7 @@ public class Page extends Component {
      * @param width DOCUMENT ME!
      */
     public void setWidth(int width) {
-        throw new UnsupportedOperationException("不支持setWidth,请使用setPageFormat方法");
+        throw new UnsupportedOperationException(App.messages.getString("res.564"));
     }
 
     /**
@@ -136,7 +137,7 @@ public class Page extends Component {
      * @param x DOCUMENT ME!
      */
     public void setX(int x) {
-        throw new UnsupportedOperationException("不支持setX,请使用setPageFormat方法");
+        throw new UnsupportedOperationException(App.messages.getString("res.565"));
     }
 
     /**

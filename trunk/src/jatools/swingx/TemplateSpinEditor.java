@@ -1,6 +1,7 @@
 package jatools.swingx;
 
 import jatools.data.Formula;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.data.CustomFormulaDialog;
 import jatools.util.Util;
@@ -95,7 +96,7 @@ public class TemplateSpinEditor extends JPanel {
         } catch (Exception e) {
         }
 
-        JFrame frame = new JFrame("²¼¾Ö");
+        JFrame frame = new JFrame(App.messages.getString("res.13"));
         frame.setResizable(true);
 
         TemplateSpinEditor lp = new TemplateSpinEditor();

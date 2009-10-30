@@ -1,5 +1,7 @@
 package jatools.designer.ruler;
 
+import jatools.designer.App;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -120,7 +122,7 @@ public class Ruler extends JComponent {
         g.setColor(Color.white);
         g.fillRect(drawHere.x, drawHere.y, drawHere.width, drawHere.height);
 
-        g.setFont(new Font("ËÎÌו", Font.PLAIN, 9));
+        g.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 9));
         g.setColor(Color.black);
 
         int end = 0;

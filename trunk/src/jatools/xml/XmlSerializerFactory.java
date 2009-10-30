@@ -1,6 +1,7 @@
 package jatools.xml;
 
 import jatools.accessor.AccessorBase;
+import jatools.designer.App;
 import jatools.util.Map;
 import jatools.xml.serializer.AccessorSerializer;
 import jatools.xml.serializer.ArraySerializer;
@@ -78,7 +79,7 @@ public class XmlSerializerFactory {
                 }
             }
 
-            throw new Exception("ZNodeDelegateFactory.createInstance(...):不存在此节点的node 代理 [" + valueType.getName() +
+            throw new Exception(App.messages.getString("res.0") + valueType.getName() +
                 "]");
         }
     }

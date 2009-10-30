@@ -5,6 +5,7 @@ import jatools.PageFormat;
 import jatools.ReportDocument;
 import jatools.component.ComponentConstants;
 import jatools.component.PagePanel;
+import jatools.designer.App;
 import jatools.designer.PageSetupPanel;
 import jatools.designer.peer.ComponentPeer;
 import jatools.designer.peer.ComponentPeerFactory;
@@ -29,7 +30,7 @@ public class PageSetupAction extends ReportAction {
      * Creates a new PageSetupAction object.
      */
     public PageSetupAction() {
-        super("“≥√Ê…Ë÷√...", getIcon("/jatools/icons/pageformat.gif"));
+        super(App.messages.getString("res.134"), getIcon("/jatools/icons/pageformat.gif"));
     }
 
     /**

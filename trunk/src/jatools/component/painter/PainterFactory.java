@@ -12,6 +12,7 @@ import jatools.component.table.PowerTable;
 import jatools.component.table.RowPanel;
 import jatools.component.table.Table;
 import jatools.component.table.TableBase;
+import jatools.designer.App;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -68,7 +69,7 @@ public class PainterFactory {
         Painter p = (Painter) painters.get(class1);
 
         if (p == null) {
-            throw new IllegalArgumentException("没有相应的绘画器:" + class1.getName());
+            throw new IllegalArgumentException(App.messages.getString("res.577") + class1.getName());
         }
 
         return p;

@@ -1,14 +1,9 @@
 package jatools.tags;
 
+import jatools.designer.App;
 import jatools.engine.ReportJob;
-
 import jatools.io.DefaultResourceOutputFactory;
-
 import jatools.server.JobCacher;
-
-import jatools.util.StringUtil;
-
-import org.apache.log4j.Logger;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -17,7 +12,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Writer;
-
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -25,6 +19,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
+
+import org.apache.log4j.Logger;
 
 
 /**
@@ -139,7 +135,7 @@ public class ReportTag extends AbstractReportTag {
                     Object val = this.parametersCache.get(key);
 
                     if (logger.isDebugEnabled()) {
-                        logger.debug("导入参数:" + key + " = " + val);
+                        logger.debug(App.messages.getString("res.10") + key + " = " + val);
                     }
 
                     job.setParameter(key, val);

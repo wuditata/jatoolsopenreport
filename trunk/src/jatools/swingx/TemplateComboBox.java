@@ -1,6 +1,7 @@
 package jatools.swingx;
 
 import jatools.data.Formula;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.data.CustomFormulaDialog;
 import jatools.util.Util;
@@ -114,13 +115,13 @@ public class TemplateComboBox extends JPanel {
         } catch (Exception e) {
         }
 
-        JFrame frame = new JFrame("≤ºæ÷");
+        JFrame frame = new JFrame(App.messages.getString("res.13"));
         frame.setResizable(true);
 
         String[] hPosition = {
-                "æ”◊Û",
-                "æ”÷–",
-                "æ””“"
+                App.messages.getString("res.14"),
+                App.messages.getString("res.15"),
+                App.messages.getString("res.16")
             };
         TemplateComboBox lp = new TemplateComboBox(hPosition);
         frame.setSize(new Dimension(350, 250)); //new Dimension(200,100)

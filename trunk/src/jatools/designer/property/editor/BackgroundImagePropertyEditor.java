@@ -5,6 +5,7 @@ package jatools.designer.property.editor;
 
 import jatools.component.BackgroundImageStyle;
 import jatools.component.Image;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.swingx.Chooser;
 import jatools.swingx.CommandPanel;
@@ -45,11 +46,11 @@ import org.apache.commons.lang.ArrayUtils;
   */
 public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
     final static String[] typeValues = { "builtin", "url", "file", "classpath", "field" };
-    final static String[] typePropmts = { "内建", "网络文件", "本地文件", "类路径", "数据集字段" };
+    final static String[] typePropmts = { App.messages.getString("res.282"), App.messages.getString("res.283"), App.messages.getString("res.284"), App.messages.getString("res.285"), App.messages.getString("res.286") };
     final static String[] alignValues = { "0%", "50%", "100%" };
-    final static String[] halignPrompts = { "居左对齐", "居中对齐", "居右对齐" };
-    final static String[] valignPrompts = { "顶端对齐", "居中对齐", "底端对齐" };
-    final static String[] repeatPrompts = { "不重复", "重复", "横向平铺", "纵向平铺" };
+    final static String[] halignPrompts = { App.messages.getString("res.287"), App.messages.getString("res.288"), App.messages.getString("res.289") };
+    final static String[] valignPrompts = { App.messages.getString("res.290"), App.messages.getString("res.288"), App.messages.getString("res.291") };
+    final static String[] repeatPrompts = { App.messages.getString("res.292"), App.messages.getString("res.293"), App.messages.getString("res.294"), App.messages.getString("res.295") };
     final static String[] repeatValues = { "no-repeat", "repeat", "repeat-x", "repeat-y" };
     JComboBox typeCombo = null;
     JTextField pathText = null;
@@ -65,7 +66,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
      * Creates a new BackgroundImagePropertyEditor object.
      */
     public BackgroundImagePropertyEditor() {
-        super(Main.getInstance(), "图片背景设置", true);
+        super(Main.getInstance(), App.messages.getString("res.296"), true);
         pathText = new JTextField(13);
 
         typeCombo = new JComboBox(typePropmts);
@@ -92,10 +93,10 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.WEST;
 
-        p.add(new TitledSeparator("图片源文件"), gbc);
+        p.add(new TitledSeparator(App.messages.getString("res.297")), gbc);
         gbc.gridwidth = 1;
 
-        JLabel label = new JLabel("类型:");
+        JLabel label = new JLabel(App.messages.getString("res.298"));
         label.setPreferredSize(new Dimension(30, 23));
         p.add(label, gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
@@ -104,7 +105,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         gbc.gridwidth = 1;
-        p.add(new JLabel("路径:"), gbc);
+        p.add(new JLabel(App.messages.getString("res.299")), gbc);
         gbc.weightx = 100;
 
         p.add(this.pathText, gbc);
@@ -120,15 +121,15 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
 
         p.add(moreButton, gbc);
         p.add(Box.createVerticalStrut(20), gbc);
-        p.add(new TitledSeparator("位置:"), gbc);
+        p.add(new TitledSeparator(App.messages.getString("res.300")), gbc);
         gbc.gridwidth = 1;
-        p.add(new JLabel("水平:"), gbc);
+        p.add(new JLabel(App.messages.getString("res.301")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.NONE;
         p.add(hCombo, gbc);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridwidth = 1;
-        p.add(new JLabel("垂直:"), gbc);
+        p.add(new JLabel(App.messages.getString("res.302")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.NONE;
         p.add(vCombo, gbc);
@@ -136,7 +137,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
         p.add(Box.createVerticalStrut(20), gbc);
 
         gbc.gridwidth = 1;
-        p.add(new JLabel("重复:"), gbc);
+        p.add(new JLabel(App.messages.getString("res.303")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.NONE;
         p.add(repeatCombo, gbc);
@@ -164,7 +165,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
 
         CommandPanel commandPanel = CommandPanel.createPanel(oklistener, cancellistener);
 
-        commandPanel.addComponent("为空",
+        commandPanel.addComponent(App.messages.getString("res.181"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;
@@ -203,7 +204,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
                         if (ii != null) {
                             base64 = Base64Util.encode(scratch);
 
-                            pathText.setText("<内建>");
+                            pathText.setText(App.messages.getString("res.304"));
                         }
                     } else {
                         pathText.setText(f.getAbsolutePath());
@@ -251,7 +252,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
                 this.typeCombo.setSelectedIndex(index);
 
                 if (index == 0) {
-                    this.pathText.setText("<内建>");
+                    this.pathText.setText(App.messages.getString("res.304"));
                     this.base64 = src.substring(Image.SOURCE_BUILT_IN.length() + 1);
                 } else {
                     this.pathText.setText(src.substring(src.indexOf(":") + 1));

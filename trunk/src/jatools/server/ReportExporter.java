@@ -4,6 +4,7 @@ import jatools.ReportDocument;
 import jatools.VariableContext;
 import jatools.data.Formula;
 import jatools.data.Parameter;
+import jatools.designer.App;
 import jatools.engine.ReportJob;
 import jatools.engine.System2;
 import jatools.engine.printer.ReportPrinter;
@@ -81,7 +82,7 @@ public class ReportExporter extends ReportActionBase {
 
             ba.writeTo(os);
         } else {
-            throw new Exception("不支持的导出格式" + as);
+            throw new Exception(App.messages.getString("res.19") + as);
         }
 
         os.close();
@@ -206,7 +207,7 @@ public class ReportExporter extends ReportActionBase {
             String as = (String) request.getParameter(ReportJob.AS_PARAM);
 
             if ((as == null) && (formats.indexOf(as + ";") == 1)) {
-                throw new Exception("请指定正确的输出格式.");
+                throw new Exception(App.messages.getString("res.20"));
             }
 
             ReportJob job = null;

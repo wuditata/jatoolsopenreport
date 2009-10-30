@@ -5,6 +5,7 @@ package jatools.component;
 import jatools.accessor.PropertyDescriptor;
 import jatools.core.view.DisplayStyle;
 import jatools.core.view.TextView;
+import jatools.designer.App;
 import jatools.engine.script.Script;
 import jatools.formatter.Format2;
 import jatools.util.Util;
@@ -28,7 +29,7 @@ public class Label extends Component {
 
     static {
         try {
-            DEFAULT_FONT = new Font("ËÎÌו", 0, 12);
+            DEFAULT_FONT = new Font(App.messages.getString("res.22"), 0, 12);
         } catch (Exception e) {
             Util.debug("ZLabel", e);
         } catch (Error e) {

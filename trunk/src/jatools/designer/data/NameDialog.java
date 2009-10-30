@@ -1,6 +1,8 @@
 package jatools.designer.data;
 
 
+import jatools.designer.App;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -37,7 +39,7 @@ public class NameDialog extends JDialog {
      * @param owner DOCUMENT ME!
      */
     public NameDialog(Frame owner) {
-        super(owner, "参数定义", true);
+        super(owner, App.messages.getString("res.469"), true);
 
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createEmptyBorder(1, 10, 1, 10));
@@ -47,7 +49,7 @@ public class NameDialog extends JDialog {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(25, 10, 10, 10);
-        topPanel.add(new JLabel("名称:"), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.63")), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100;
@@ -57,7 +59,7 @@ public class NameDialog extends JDialog {
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
 
-        JButton okButton = new JButton("确定");
+        JButton okButton = new JButton(App.messages.getString("res.3"));
 
         okButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -67,7 +69,7 @@ public class NameDialog extends JDialog {
 
         buttonPanel.add(okButton);
 
-        JButton cancelButton = new JButton("取消");
+        JButton cancelButton = new JButton(App.messages.getString("res.4"));
         cancelButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     variableName = null;
@@ -92,7 +94,7 @@ public class NameDialog extends JDialog {
 
             hide();
         } catch (Exception e1) {
-            JOptionPane.showMessageDialog(getParent(), e1.getMessage(), "出错了...",
+            JOptionPane.showMessageDialog(getParent(), e1.getMessage(), App.messages.getString("res.12"),
                 JOptionPane.ERROR_MESSAGE);
 
             nameField.requestFocus();

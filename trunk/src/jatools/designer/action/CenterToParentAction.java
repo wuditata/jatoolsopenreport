@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 import jatools.component.Component;
+import jatools.designer.App;
 import jatools.designer.ReportEditor;
 import jatools.designer.SelectionState;
 import jatools.designer.peer.ComponentPeer;
@@ -23,7 +24,7 @@ public class CenterToParentAction extends ReportAction {
      * Creates a new CenterToParentAction object.
      */
     public CenterToParentAction() {
-        super("æ”÷–", getIcon("/jatools/icons/center.gif"),
+        super(App.messages.getString("res.15"), getIcon("/jatools/icons/center.gif"),
             getIcon("/jatools/icons/center2.gif"));
     }
 

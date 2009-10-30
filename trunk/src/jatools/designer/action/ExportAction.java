@@ -1,5 +1,6 @@
 package jatools.designer.action;
 
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.PageProvider;
 import jatools.designer.export.ExportPanel;
@@ -23,7 +24,7 @@ public class ExportAction extends ReportAction {
      * @param provider DOCUMENT ME!
      */
     public ExportAction(PageProvider provider) {
-        super("µ¼³ö...", getIcon("/jatools/icons/export.gif"));
+        super(App.messages.getString("res.528"), getIcon("/jatools/icons/export.gif"));
         this.provider = provider;
 
         caches.remove(this);

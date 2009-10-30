@@ -1,5 +1,6 @@
 package jatools.designer.property.editor.printstyle;
 
+import jatools.designer.App;
 import jatools.engine.css.CSSValue;
 import jatools.engine.css.rule.CrossTabRule;
 import jatools.swingx.SwingUtil;
@@ -25,8 +26,8 @@ import org.apache.commons.lang.ArrayUtils;
 public class CrossTabRulePanel extends JPanel {
     private static final String[] headerVisiblePrompts = {
             "",
-            "首页可见",
-            "每页可见"
+            App.messages.getString("res.208"),
+            App.messages.getString("res.209")
         };
     private static final String[] headerVisibleValues = {
             "",
@@ -35,8 +36,8 @@ public class CrossTabRulePanel extends JPanel {
         };
     private static final String[] pageWrapPrompts = {
             "",
-            "折页",
-            "不折页"
+            App.messages.getString("res.210"),
+            App.messages.getString("res.211")
         };
     private static final String[] pageWrapValues = {
             "",
@@ -62,7 +63,7 @@ public class CrossTabRulePanel extends JPanel {
         gbc.gridheight = 1;
         gbc.insets = new Insets(10, 2, 2, 2);
         gbc.anchor = GridBagConstraints.WEST;
-        add(new JLabel("列标题:"), gbc);
+        add(new JLabel(App.messages.getString("res.218")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         gbc.weightx = 100;
@@ -72,13 +73,13 @@ public class CrossTabRulePanel extends JPanel {
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("行标题:"), gbc);
+        add(new JLabel(App.messages.getString("res.217")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(leftHeaderVisibleCombo, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel("自动折页:"), gbc);
+        add(new JLabel(App.messages.getString("res.311")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(pageWrapCombo, gbc);
 

@@ -1,5 +1,7 @@
 package jatools.imageio;
 
+import jatools.designer.App;
+
 import java.awt.Image;
 import java.io.OutputStream;
 
@@ -62,7 +64,7 @@ public class ImageWriter {
             JpegEncoder en = new JpegEncoder(image, 100, os);
             en.encode();
         } else {
-            throw new Exception("不支持的图形格式: " + type);
+            throw new Exception(App.messages.getString("res.21") + type);
         }
     }
 

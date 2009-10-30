@@ -1,8 +1,7 @@
 package jatools.data.reader;
 
-import bsh.Interpreter;
-
 import jatools.engine.ValueIfClosed;
+import bsh.Interpreter;
 
 public class ScrollableField implements ValueIfClosed {
 	/**

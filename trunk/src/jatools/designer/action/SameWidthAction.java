@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 
+import jatools.designer.App;
 import jatools.designer.SelectionState;
 
 import java.awt.Point;
@@ -18,7 +19,7 @@ public class SameWidthAction extends ResizeAction {
      * Creates a new SameWidthAction object.
      */
     public SameWidthAction() {
-        super("µÈ¿í", getIcon("/jatools/icons/samewidth.gif"),
+        super(App.messages.getString("res.538"), getIcon("/jatools/icons/samewidth.gif"),
             getIcon("/jatools/icons/samewidth2.gif"));
     }
 

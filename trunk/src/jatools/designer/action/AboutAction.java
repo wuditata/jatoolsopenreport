@@ -1,9 +1,8 @@
 package jatools.designer.action;
 
+import jatools.designer.App;
 import jatools.designer.Main;
-
 import jatools.swingx.CommandPanel;
-
 import jatools.util.Util;
 
 import java.awt.BorderLayout;
@@ -32,7 +31,7 @@ public class AboutAction extends ReportAction {
 	 * Creates a new AboutAction object.
 	 */
 	public AboutAction() {
-		super("I8N:关于设计器...");
+		super(App.messages.getString("res.514"));
 	}
 
 	/**
@@ -47,7 +46,7 @@ public class AboutAction extends ReportAction {
 
 	class _AboutDialog extends JDialog {
 		_AboutDialog() {
-			super(Main.getInstance(), "关于设计器", true);
+			super(Main.getInstance(), App.messages.getString("res.515"), true);
 
 			JPanel panel = new JPanel(new GridBagLayout());
 			JLabel label = new JLabel(Util.getIcon("/jatools/icons/about.jpg"));
@@ -67,13 +66,13 @@ public class AboutAction extends ReportAction {
 
 			gbc.weightx = 100.0;
 
-			String html = "<html>简表(JOR)<br>授权用户:DEMO";
+			String html = App.messages.getString("res.516");
 
 			html += "<br><br>杭州杰创软件有限公司,版权所有  <a href='http://www.jatools.com'>www.jatools.com</a><br>销售咨询:0571-88254255/57-18<br>技术支持:0571-88254255/57-13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MSN: <a href='#' >jatools0571@hotmail.com</a><br>北京办事处:010-51297501";
 			panel.add(new JLabel(html), gbc);
 
 			CommandPanel commandPanel = CommandPanel.createPanel();
-			JButton doneCommand = new JButton("确定");
+			JButton doneCommand = new JButton(App.messages.getString("res.3"));
 			doneCommand.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					hide();

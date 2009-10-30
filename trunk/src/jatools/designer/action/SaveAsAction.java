@@ -2,6 +2,7 @@ package jatools.designer.action;
 
 
 import jatools.ReportDocument;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.chooser.ReportChooser;
 
@@ -20,7 +21,7 @@ public class SaveAsAction extends ReportAction {
      * Creates a new SaveAsAction object.
      */
     public SaveAsAction() {
-        super("Áí´æÎª...");
+        super(App.messages.getString("res.539"));
     }
 
     /**

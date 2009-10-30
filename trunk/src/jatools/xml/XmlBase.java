@@ -13,8 +13,8 @@ import java.util.Map;
 /*
  *
  <?xml version="1.0"?>
- <Field CLASS="Player">   <-------------------OBJECT_FIELD.LOAD----------------- ObjectNode 可在开始位置，也可在FieldNode之后，
- <Field NAME="Number">12</Field>    <--------SIMPLE_FIELD.LOAD--------------- FieldNode  此结点一定在FieldsNode之后，不能在开始位置
+ <Field CLASS="Player"
+ <Field NAME="Number"
  <Field NAME="HighSchool">Eaton</Field>
  <Field NAME="Name" CLASS="PersonName">           OBJECT_FIELD.LOAD
  <Field NAME="First">Jonas</Field>   SIMPLE_FIELD_PRINT
@@ -51,14 +51,14 @@ import java.util.Map;
  </Fields>
  </Object>
  </Field>
- <Field NAME="Border">     <------多行属性
- <Object CLASS="ZBorder">   <-  由ZRectangleNodeDelegate 处理
+ <Field NAME="Border"
+ <Object CLASS="ZBorder"
  <Fields>
- <Field NAME="x">1997</Field>    <-- 单行属性 (primitive)
- <Field NAME="y">69</Field>      <-- 单行属性     ...
+ <Field NAME="x"
+ <Field NAME="y"
  <Field NAME="width">31</Field>
  <Field NAME="height">30</Field>
- <Field NAME="color">512330</Field>   <-- 单行属性 (non primitive) 由 delegate 处理
+ <Field NAME="color"
 
  </Fields>
  </Object>

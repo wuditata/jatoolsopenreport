@@ -114,7 +114,7 @@ public class PropertyEditorAndRendererSupport {
                         icon.setColor((Color) value);
 
                         if (value == null) {
-                            super.setValue("透明");
+                            super.setValue(App.messages.getString("res.135"));
                         } else {
                             Color color = (Color) value;
                             super.setValue("RGB[" + color.getRed() + "," + color.getGreen() + "," +
@@ -261,18 +261,18 @@ public class PropertyEditorAndRendererSupport {
                 new Integer(2)
             };
         Object[] texts = new Object[] {
-                "左",
-                "中",
-                "右"
+                App.messages.getString("res.131"),
+                App.messages.getString("res.136"),
+                App.messages.getString("res.133")
             };
         alignX = new RadioButtonsCellEditorRX(values, texts);
         pe.registerPropertyEditor(ComponentConstants.PROPERTY_HORIZONTAL_ALIGNMENT, alignX);
         pe.registerPropertyRenderer(ComponentConstants.PROPERTY_HORIZONTAL_ALIGNMENT, alignX);
 
         texts = new Object[] {
-                "上",
-                "中",
-                "下"
+                App.messages.getString("res.130"),
+                App.messages.getString("res.136"),
+                App.messages.getString("res.132")
             };
         alignY = new RadioButtonsCellEditorRX(values, texts);
         pe.registerPropertyEditor(ComponentConstants.PROPERTY_VERTICAL_ALIGNMENT, alignY);

@@ -1,5 +1,6 @@
 package jatools.designer.action;
 
+import jatools.designer.App;
 import jatools.designer.SelectionState;
 
 import java.awt.Point;
@@ -18,7 +19,7 @@ public class AlignVerticalCenterAction extends AlignAction {
      * Creates a new AlignVerticalCenterAction object.
      */
     public AlignVerticalCenterAction() {
-        super("¥π÷±æ”÷–", getIcon("/jatools/icons/alignvcenter.gif"),
+        super(App.messages.getString("res.521"), getIcon("/jatools/icons/alignvcenter.gif"),
             getIcon("/jatools/icons/alignvcenter2.gif"));
     }
 

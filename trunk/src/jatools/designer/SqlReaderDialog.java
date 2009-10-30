@@ -105,19 +105,19 @@ public class SqlReaderDialog extends JDialog {
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.WEST;
-        north.add(new JLabel("名称:"), gbc);
+        north.add(new JLabel(App.messages.getString("res.63")), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.add(nameText, 150);
 
         north.add(Box.createVerticalStrut(10), gbc);
-        north.add(new TitledSeparator("连接属性"), gbc);
+        north.add(new TitledSeparator(App.messages.getString("res.161")), gbc);
         connectionPane = new ConnectionPanel(north, gbc);
 
         gbc.fill = GridBagConstraints.BOTH;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         north.add(Box.createVerticalStrut(10), gbc);
-        north.add(new TitledSeparator("SQL 属性"), gbc);
+        north.add(new TitledSeparator(App.messages.getString("res.162")), gbc);
         gbc.gridwidth = 1;
 
         gbc.weighty = 1.0;
@@ -137,7 +137,7 @@ public class SqlReaderDialog extends JDialog {
         gbc.gridwidth = 1;
         north.add(Box.createVerticalStrut(10));
 
-        JButton b = new JButton("预览");
+        JButton b = new JButton(App.messages.getString("res.163"));
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     preview();
@@ -159,8 +159,8 @@ public class SqlReaderDialog extends JDialog {
         CommandPanel cp = CommandPanel.createPanel();
         cp.addComponent(b);
 
-        cp.addComponent("确定", lok);
-        cp.addComponent("取消", cok);
+        cp.addComponent(App.messages.getString("res.3"), lok);
+        cp.addComponent(App.messages.getString("res.4"), cok);
 
         getContentPane().add(north, BorderLayout.CENTER);
         getContentPane().add(cp, BorderLayout.SOUTH);

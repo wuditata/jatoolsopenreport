@@ -1,15 +1,14 @@
 package jatools.designer;
 
+import jatools.ReportDocument;
+import jatools.util.Util;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
-import java.util.TreeMap;
-
-import jatools.ReportDocument;
-import jatools.util.Util;
 
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
@@ -31,7 +30,7 @@ public class CurrentReportsTreePanel extends JScrollPane {
 		this.setViewportView(this.createCurrentReportsTree());
 	}
 	public JTree createCurrentReportsTree(){
-		JMenuItem jmenuItem = new JMenuItem("´ò¿ª");
+		JMenuItem jmenuItem = new JMenuItem(App.messages.getString("res.65"));
         jmenuItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     String path = getSelectedPath();

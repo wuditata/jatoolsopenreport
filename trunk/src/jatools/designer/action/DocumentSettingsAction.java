@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 import jatools.ReportDocument;
+import jatools.designer.App;
 import jatools.designer.DocumentSettingsDialog;
 
 import java.awt.event.ActionEvent;
@@ -18,7 +19,7 @@ public class DocumentSettingsAction extends ReportAction {
      * Creates a new DocumentSettingsAction object.
      */
     public DocumentSettingsAction() {
-        super("±®±Ì Ù–‘...");
+        super(App.messages.getString("res.525"));
     }
 
     /**

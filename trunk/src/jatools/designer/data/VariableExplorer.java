@@ -1,6 +1,7 @@
 package jatools.designer.data;
 
 
+import jatools.designer.App;
 import jatools.designer.Main;
 
 import java.awt.BasicStroke;
@@ -82,12 +83,12 @@ public class VariableExplorer extends JDialog {
         JButton editCommand = new JButton(variableTree.getEditAction());
         JButton deleteCommand = new JButton(variableTree.getDeleteAction());
 
-        okCommand = new JButton("确定");
+        okCommand = new JButton(App.messages.getString("res.3"));
         okCommand.setEnabled(false);
 
-        JButton cancelCommand = new JButton("取消");
+        JButton cancelCommand = new JButton(App.messages.getString("res.4"));
 
-        JButton applyNull = new JButton("设为空");
+        JButton applyNull = new JButton(App.messages.getString("res.261"));
 
         applyNull.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {

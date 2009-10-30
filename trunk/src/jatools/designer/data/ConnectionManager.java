@@ -1,6 +1,7 @@
 package jatools.designer.data;
 
 import jatools.data.reader.sql.Connection;
+import jatools.designer.App;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -46,7 +47,7 @@ public class ConnectionManager extends JDialog {
      * @param conns DOCUMENT ME!
      */
     public ConnectionManager(Frame owner, ArrayList conns) {
-        super(owner, "数据集管理", true);
+        super(owner, App.messages.getString("res.395"), true);
         this.proxyContainer = conns;
         buildUI();
     }
@@ -78,7 +79,7 @@ public class ConnectionManager extends JDialog {
         JScrollPane scrollPane = new JScrollPane(proxyTable);
         datasourcesPane.add(scrollPane, BorderLayout.CENTER);
 
-        JButton addButton = new JButton("新增");
+        JButton addButton = new JButton(App.messages.getString("res.66"));
         addButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     if (add()) {
@@ -90,7 +91,7 @@ public class ConnectionManager extends JDialog {
                 }
             });
 
-        removeButton = new JButton("删除");
+        removeButton = new JButton(App.messages.getString("res.69"));
         removeButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     remove();
@@ -98,14 +99,14 @@ public class ConnectionManager extends JDialog {
                 }
             });
 
-        editButton = new JButton("编辑");
+        editButton = new JButton(App.messages.getString("res.68"));
         editButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     edit();
                 }
             });
 
-        JButton ok = new JButton("确定");
+        JButton ok = new JButton(App.messages.getString("res.3"));
         ok.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     hide();
@@ -158,7 +159,7 @@ public class ConnectionManager extends JDialog {
                 }
 
                 public String getColumnName(int index) {
-                    return ((index == 0) ? "名称" : null);
+                    return ((index == 0) ? App.messages.getString("res.81") : null);
                 }
             };
 

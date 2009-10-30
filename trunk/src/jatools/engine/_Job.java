@@ -5,6 +5,7 @@ import jatools.ReportDocument;
 import jatools.core.view.DisplayStyleManager;
 import jatools.core.view.PageView;
 import jatools.data.reader.sql.Connection;
+import jatools.designer.App;
 import jatools.engine.export.html.HtmlExport;
 import jatools.engine.export.pdf.PdfExport1;
 import jatools.engine.export.runnable.ExportRunnable;
@@ -88,7 +89,7 @@ public class _Job {
         ResourceOutputFactory factory, Map paramValues)
         throws Exception {
         if (factory == null) {
-            throw new Exception("请指定字节数组注册器参数! ZReportJob.BYTE_ARRAY_REGISTER");
+            throw new Exception(App.messages.getString("res.24"));
         }
 
         HtmlExport exp = null;
@@ -150,7 +151,7 @@ public class _Job {
         }
 
         if (count == 0) {
-            throw new Exception("不存在任何可用的页.");
+            throw new Exception(App.messages.getString("res.25"));
         }
     }
 
@@ -194,7 +195,7 @@ public class _Job {
 
         if (!pages.isEmpty()) {
             if (pages.isEmpty()) {
-                throw new Exception("没有可打印的页");
+                throw new Exception(App.messages.getString("res.26"));
             } else {
                 PageView[] pps = (PageView[]) pages.toArray(new PageView[0]);
                 job.setPrintable(new PagePrintable(pps), pps[0].getPageFormat().toAwtFormat(true));

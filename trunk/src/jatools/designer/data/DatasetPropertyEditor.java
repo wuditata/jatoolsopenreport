@@ -2,6 +2,7 @@ package jatools.designer.data;
 
 
 
+import jatools.designer.App;
 import jatools.swingx.MessageBox;
 
 import java.awt.BorderLayout;
@@ -44,7 +45,7 @@ public class DatasetPropertyEditor extends JDialog {
      * @param types DOCUMENT ME!
      */
     public DatasetPropertyEditor(Frame owner, String name, Object type, Object[] types) {
-        super(owner, "数据集属性...");
+        super(owner, App.messages.getString("res.485"));
         buildUI(name, type, types);
         setModal(true);
 
@@ -73,20 +74,20 @@ public class DatasetPropertyEditor extends JDialog {
 
         JPanel center = new JPanel(new GridBagLayout());
 
-        center.add(new JLabel("名称:"), gbc);
+        center.add(new JLabel(App.messages.getString("res.63")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 70;
         center.add(nameText, gbc);
         gbc.weightx = 0;
 
         gbc.gridwidth = 1;
-        center.add(new JLabel("数据集类型:"), gbc);
+        center.add(new JLabel(App.messages.getString("res.486")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         center.add(typeSelector, gbc);
         typeSelector.setPreferredSize(new Dimension(200, 25));
 
         JPanel south = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        JButton b = new JButton(" 确认 ");
+        JButton b = new JButton(App.messages.getString("res.487"));
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     if (validateInput()) {
@@ -97,7 +98,7 @@ public class DatasetPropertyEditor extends JDialog {
             });
 
         south.add(b);
-        b = new JButton(" 取消 ");
+        b = new JButton(App.messages.getString("res.4"));
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     setVisible(false);
@@ -128,7 +129,7 @@ public class DatasetPropertyEditor extends JDialog {
 
         if ((focus == null) && (typeSelector.getSelectedIndex() == -1)) {
             focus = typeSelector;
-            error = "请选择数据集类型.";
+            error = App.messages.getString("res.488");
         }
 
         if (error != null) {

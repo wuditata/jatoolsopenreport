@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 import jatools.component.Component;
+import jatools.designer.App;
 import jatools.designer.ClipBoard;
 import jatools.designer.ReportPanel;
 import jatools.designer.SelectionState;
@@ -26,7 +27,7 @@ public class EditCutAction extends EditClipAction {
      * Creates a new EditCutAction object.
      */
     public EditCutAction() {
-        super(null, "ºÙ«–", getIcon("/jatools/icons/cut.gif"),
+        super(null, App.messages.getString("res.98"), getIcon("/jatools/icons/cut.gif"),
             getIcon("/jatools/icons/cut2.gif"));
         setStroke(ctrl(KeyEvent.VK_X));
     }
@@ -37,7 +38,7 @@ public class EditCutAction extends EditClipAction {
      * @param panel DOCUMENT ME!
      */
     public EditCutAction(ReportPanel panel) {
-        super(panel, "ºÙ«–", getIcon("/jatools/icons/cut.gif"),
+        super(panel, App.messages.getString("res.98"), getIcon("/jatools/icons/cut.gif"),
             getIcon("/jatools/icons/cut2.gif"));
         setStroke(ctrl(KeyEvent.VK_X));
     }

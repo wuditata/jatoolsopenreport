@@ -12,6 +12,7 @@ import jatools.data.Formula;
 import jatools.data.Parameter;
 import jatools.data.reader.sql.SqlReader;
 import jatools.dataset.Dataset;
+import jatools.designer.App;
 import jatools.dom.ReportDataModel;
 import jatools.engine.PrintConstants;
 import jatools.engine.PrinterListener;
@@ -239,7 +240,7 @@ public class ReportPrinter implements PrintConstants, ProtectPublic {
      */
     public void print() throws Exception {
         if (context.uo == 0) {
-            throw new Exception("´íÎó: 1009");
+            throw new Exception(App.messages.getString("res.38"));
         }
 
         int c = 0;

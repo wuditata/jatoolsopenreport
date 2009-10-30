@@ -3,6 +3,7 @@ package jatools.designer.action;
 
 
 import jatools.ReportDocument;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.chooser.ReportChooser;
 import jatools.swingx.MessageBox;
@@ -24,7 +25,7 @@ public class SaveAction extends ReportAction {
      * Creates a new SaveAction object.
      */
     public SaveAction() {
-        super("保存", getIcon("/jatools/icons/save.gif"), getIcon("/jatools/icons/save2.gif"));
+        super(App.messages.getString("res.511"), getIcon("/jatools/icons/save.gif"), getIcon("/jatools/icons/save2.gif"));
         setStroke(ctrl(KeyEvent.VK_S));
     }
 
@@ -49,7 +50,7 @@ public class SaveAction extends ReportAction {
                 try {
                     ReportDocument.save(doc, docFile, false);
                 } catch (Exception e) {
-                    MessageBox.error(Main.getInstance(), "保存模板出错:\n\n" + Util.toString(e));
+                    MessageBox.error(Main.getInstance(), App.messages.getString("res.513") + Util.toString(e));
                     Util.debug("ZSaveAction", e);
                 }
             }

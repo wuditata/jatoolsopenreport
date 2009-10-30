@@ -58,7 +58,7 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
         if (commandMenu == null) {
             commandMenu = new JPopupMenu();
 
-            JMenu menu = new JMenu("新增");
+            JMenu menu = new JMenu(App.messages.getString("res.66"));
             menu.add(this.getCommands()[NEW_JDBC]);
 
             commandMenu.add(menu);
@@ -74,11 +74,11 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
     Action[] getCommands() {
         if (this.commands == null) {
             this.commands = new Action[7];
-            this.commands[NEW_JDBC] = new Command("JDBC 数据集", NEW_JDBC);
+            this.commands[NEW_JDBC] = new Command(App.messages.getString("res.67"), NEW_JDBC);
 
-            this.commands[EDIT] = new Command("编辑", EDIT);
-            this.commands[DELETE] = new Command("删除", DELETE);
-            this.commands[PREVIEW] = new Command("预览数据集", PREVIEW);
+            this.commands[EDIT] = new Command(App.messages.getString("res.68"), EDIT);
+            this.commands[DELETE] = new Command(App.messages.getString("res.69"), DELETE);
+            this.commands[PREVIEW] = new Command(App.messages.getString("res.70"), PREVIEW);
         }
 
         return this.commands;
@@ -110,7 +110,7 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
      * @param root DOCUMENT ME!
      */
     public void addWizardNode(SimpleTreeNode root) {
-        SimpleTreeNode node = new SimpleTreeNode("新建数据集...", wizardIcon, 999);
+        SimpleTreeNode node = new SimpleTreeNode(App.messages.getString("res.71"), wizardIcon, 999);
         ((DefaultTreeModel) getModel()).insertNodeInto(node, root, root.getChildCount());
     }
 
@@ -123,7 +123,7 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
      */
     public void check(String source) throws Exception {
         if ((source == null) || source.toString().trim().equals("")) {
-            throw new Exception("数据集名不应为空.请重新命名.");
+            throw new Exception(App.messages.getString("res.72"));
         }
 
         String name = ((String) source).trim();
@@ -132,7 +132,7 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
 
         for (int i = 0; i < count; i++) {
             if (name.equals(proxyContainer.getDatasetReader(i).getName())) {
-                throw new Exception("该数据集名已存在.请重新命名.");
+                throw new Exception(App.messages.getString("res.73"));
             }
         }
     }
@@ -172,7 +172,7 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
      * DOCUMENT ME!
      */
     public void delete() {
-        int result = JOptionPane.showConfirmDialog(null, "删除后将无法恢复，确定要删除？", "删除",
+        int result = JOptionPane.showConfirmDialog(null, App.messages.getString("res.74"), App.messages.getString("res.69"),
                 JOptionPane.YES_NO_OPTION);
 
         if (result != JOptionPane.YES_OPTION) {
