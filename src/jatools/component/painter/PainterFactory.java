@@ -69,7 +69,7 @@ public class PainterFactory {
         Painter p = (Painter) painters.get(class1);
 
         if (p == null) {
-            throw new IllegalArgumentException(App.messages.getString("res.577") + class1.getName());
+            throw new IllegalArgumentException(App.messages.getString("res.648") + class1.getName());
         }
 
         return p;

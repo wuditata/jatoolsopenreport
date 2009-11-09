@@ -24,7 +24,7 @@ public class CloseAction extends ReportAction {
      * Creates a new CloseAction object.
      */
     public CloseAction() {
-        this(App.messages.getString("res.139"));
+        this(App.messages.getString("res.164"));
     }
 
     /**
@@ -68,7 +68,7 @@ public class CloseAction extends ReportAction {
             return true;
         }
 
-        int answer = MessageBox.show(Main.getInstance(), App.messages.getString("res.389"), App.messages.getString("res.524"),
+        int answer = MessageBox.show(Main.getInstance(), App.messages.getString("res.437"), App.messages.getString("res.579"),
                 MessageBox.YES_NO_CANCEL);
 
         if (answer == MessageBox.YES) {

@@ -161,7 +161,7 @@ public class DisplayStyleManager {
         if ((i > -1) && (i < xlsCSS.length)) {
             return xlsCSS[i];
         } else {
-            System.out.println(App.messages.getString("res.561") + (xlsCSS.length - 1) + "] " + i);
+            System.out.println(App.messages.getString("res.631") + (xlsCSS.length - 1) + "] " + i);
 
             return null;
         }

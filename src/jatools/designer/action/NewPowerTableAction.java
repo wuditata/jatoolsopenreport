@@ -6,6 +6,7 @@ import jatools.component.table.PowerTable;
 import jatools.component.table.Table;
 import jatools.component.table.TableBase;
 import jatools.core.view.Border;
+import jatools.designer.App;
 import jatools.designer.layer.table.BlankCellLoader;
 
 import java.awt.event.ActionEvent;
@@ -25,7 +26,7 @@ public class NewPowerTableAction extends ReportAction implements NewTable  {
      * @param owner DOCUMENT ME!
      */
     public NewPowerTableAction() {
-        super("超级表格(交叉表)", getIcon("/jatools/icons/crosstab16.gif"), getIcon("/jatools/icons/crosstab2.gif")); // //$NON-NLS-2$
+        super(App.messages.getString("res.592"), getIcon("/jatools/icons/crosstab16.gif"), getIcon("/jatools/icons/crosstab2.gif")); // //$NON-NLS-2$
         putValue(CLASS,PowerTable.class );
     }
 
@@ -43,7 +44,7 @@ public class NewPowerTableAction extends ReportAction implements NewTable  {
 
         BlankCellLoader.load(power);
 
-        // 给所有文本及标签加上边框
+        
         setBorder(power);
 
         this.getEditor().getReportPanel().setBaby(power);

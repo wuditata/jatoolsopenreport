@@ -836,15 +836,15 @@ public abstract class TableBase extends Component implements GridComponent {
      */
     public void add(Component child, int row, int column, int width, int height) {
         if (child == null) {
-            throw new NullPointerException(App.messages.getString("res.574"));
+            throw new NullPointerException(App.messages.getString("res.645"));
         }
 
         if ((row < 0) || (row > getRowCount())) {
-            throw new IllegalArgumentException(App.messages.getString("res.575"));
+            throw new IllegalArgumentException(App.messages.getString("res.646"));
         }
 
         if ((column < 0) || (column > getColumnCount())) {
-            throw new IllegalArgumentException(App.messages.getString("res.576"));
+            throw new IllegalArgumentException(App.messages.getString("res.647"));
         }
 
         child.setCell(new Cell(row, column, width, height));

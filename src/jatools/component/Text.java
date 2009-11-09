@@ -92,7 +92,7 @@ public class Text extends Label implements Var {
                 if (dataProvider != null) {
                     data = dataProvider.eval(variable.substring(1));
                 } else {
-                    System.out.println(App.messages.getString("res.566") + variable);
+                    System.out.println(App.messages.getString("res.636") + variable);
                 }
             } else {
                 data = dataProvider.get(variable);

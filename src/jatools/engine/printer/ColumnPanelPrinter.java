@@ -125,15 +125,15 @@ public class ColumnPanelPrinter extends AbstractPrinter {
 
         boolean result = false;
         if (/*(repeater.col < repeater.getMaxCol()) &&*/ childrenDone) {
-         //   if (layout.containsX(c, 0 /*为tableLayout,忽略此参数*/)) {
+         
                 result = true;
 //            }
 
             // else
-            // 执行下面新增一列的代码
+            
         }
 
-        // 右移一列
+        
         repeater.col = 0;
         result = result && cursor.hasNext() ;
         

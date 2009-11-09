@@ -39,7 +39,7 @@ public class NameDialog extends JDialog {
      * @param owner DOCUMENT ME!
      */
     public NameDialog(Frame owner) {
-        super(owner, App.messages.getString("res.469"), true);
+        super(owner, App.messages.getString("res.525"), true);
 
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createEmptyBorder(1, 10, 1, 10));
@@ -49,7 +49,7 @@ public class NameDialog extends JDialog {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(25, 10, 10, 10);
-        topPanel.add(new JLabel(App.messages.getString("res.63")), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.90")), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100;
@@ -94,7 +94,7 @@ public class NameDialog extends JDialog {
 
             hide();
         } catch (Exception e1) {
-            JOptionPane.showMessageDialog(getParent(), e1.getMessage(), App.messages.getString("res.12"),
+            JOptionPane.showMessageDialog(getParent(), e1.getMessage(), App.messages.getString("res.26"),
                 JOptionPane.ERROR_MESSAGE);
 
             nameField.requestFocus();

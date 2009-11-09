@@ -781,9 +781,9 @@ public class GlobalScripts implements ProtectPublic {
      */
     public static TableModel getTableModel() {
         DefaultTableModel result = new DefaultTableModel(0, 4);
-        result.addRow(new Object[] { App.messages.getString("res.27"), new Integer(16), App.messages.getString("res.28"), new Integer(90) });
-        result.addRow(new Object[] { App.messages.getString("res.29"), new Integer(17), App.messages.getString("res.30"), new Integer(99) });
-        result.addRow(new Object[] { App.messages.getString("res.31"), new Integer(18), App.messages.getString("res.30"), new Integer(85) });
+        result.addRow(new Object[] { App.messages.getString("res.51"), new Integer(16), App.messages.getString("res.52"), new Integer(90) });
+        result.addRow(new Object[] { App.messages.getString("res.53"), new Integer(17), App.messages.getString("res.54"), new Integer(99) });
+        result.addRow(new Object[] { App.messages.getString("res.55"), new Integer(18), App.messages.getString("res.54"), new Integer(85) });
 
         return result;
     }

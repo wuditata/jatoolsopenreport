@@ -36,7 +36,7 @@ public class DataTreeUtil {
      * @return DOCUMENT ME!
      */
     public static SimpleTreeNode asTree(Configuration context) {
-        SimpleTreeNode rootNode = new SimpleTreeNode(App.messages.getString("res.80"), sqlIcon);
+        SimpleTreeNode rootNode = new SimpleTreeNode(App.messages.getString("res.107"), sqlIcon);
 
         if (context != null) {
             for (Iterator iter = context.getReaders().iterator(); iter.hasNext();) {

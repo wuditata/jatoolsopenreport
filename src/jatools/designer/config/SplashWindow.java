@@ -26,7 +26,7 @@ public class SplashWindow extends JDialog {
      * @param icon DOCUMENT ME!
      */
     public SplashWindow(Icon icon) {
-        super(getDummyFrame(), App.messages.getString("res.39"));
+        super(getDummyFrame(), App.messages.getString("res.63"));
 
         JLabel l = new JLabel(icon);
         getContentPane().add(l, BorderLayout.CENTER);

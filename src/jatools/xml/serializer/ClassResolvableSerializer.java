@@ -37,7 +37,7 @@ public class ClassResolvableSerializer extends ContainerSerializer {
 		try {
 			XmlSerializer delegate = XmlSerializerFactory.createInstance(innerClass);
 
-			// 还是返回 ZAutoObject 对象，容易维护理解
+			
 			return new ClassResolvable(delegate.read(e, innerClass)).getObject();
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -55,7 +55,7 @@ public class ClassResolvableSerializer extends ContainerSerializer {
 	public void write(Element e, Object object) {
 		object = ((ClassResolvable) object).getObject();
 
-		setClass(e, object); // 保存的是内部类信息，而不是 ZAutoObject 类信息
+		setClass(e, object); 
 
 		try {
 			XmlSerializer delegate = XmlSerializerFactory.createInstance(object

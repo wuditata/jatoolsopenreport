@@ -62,7 +62,7 @@ public class MessageBox {
         errText.setOpaque(false);
  //       p.add(new JScrollPane(errText));
 
-        JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(owner), errText, App.messages.getString("res.12"),
+        JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(owner), errText, App.messages.getString("res.26"),
             JOptionPane.ERROR_MESSAGE);
     }
 
@@ -104,7 +104,7 @@ public class MessageBox {
 
         p.setPreferredSize(new Dimension(350, 150));
 
-        JOptionPane.showMessageDialog(owner, p, App.messages.getString("res.12"), JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(owner, p, App.messages.getString("res.26"), JOptionPane.ERROR_MESSAGE);
     }
 
     /**

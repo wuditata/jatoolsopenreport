@@ -24,7 +24,7 @@ public class ExportAction extends ReportAction {
      * @param provider DOCUMENT ME!
      */
     public ExportAction(PageProvider provider) {
-        super(App.messages.getString("res.528"), getIcon("/jatools/icons/export.gif"));
+        super(App.messages.getString("res.583"), getIcon("/jatools/icons/export.gif"));
         this.provider = provider;
 
         caches.remove(this);

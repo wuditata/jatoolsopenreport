@@ -12,6 +12,8 @@ package jatools.swingx;
  * To change the template for this generated type comment go to Window -
  * Preferences - Java - Code Generation - Code and Comments
  */
+import jatools.designer.App;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -346,8 +348,8 @@ public class FileExplorer extends JPanel implements TreeSelectionListener {
 		class DetailTableModel extends DefaultTableModel {
 			public DetailTableModel() {
 				addColumn("name"); //
-				addColumn("大小"); //
-				addColumn("日期"); //
+				addColumn(App.messages.getString("res.15")); //
+				addColumn(App.messages.getString("res.16")); //
 			}
 			public void addFile(File f) {
 				addRow(

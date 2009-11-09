@@ -136,7 +136,7 @@ public class DataSourceAction extends AbstractAction {
     }
 
     private void deleteAction() {
-        //        int option = JOptionPane.showConfirmDialog(c, "删除之后不能恢复，确定删除？", "提示",
+        
         //                JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
         //
         //        if (option == JOptionPane.OK_OPTION) {
@@ -149,7 +149,7 @@ public class DataSourceAction extends AbstractAction {
 
     private void modifyAction() {
         //        if (containOwnGroup(nodeSource)) {
-        //            int option = JOptionPane.showConfirmDialog(c, "修改将影响子节点Group，确定修改？", "提示",
+        
         //                    JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
         //
         //            if (option != JOptionPane.OK_OPTION) {

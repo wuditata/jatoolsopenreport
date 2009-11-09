@@ -1,5 +1,7 @@
 package jatools.designer.export;
 
+import jatools.designer.App;
+
 import java.awt.Point;
 import java.util.ArrayList;
 
@@ -22,7 +24,7 @@ public class ProcessorManager implements InputProcessor {
     */
     public ProcessorManager(InputProcessor defaultProcessor) {
         if (defaultProcessor == null) {
-            throw new NullPointerException("ZProcessorManager.ZProcessorManager(...):默认处理器不能为零 "); //
+            throw new NullPointerException(App.messages.getString("res.439")); //
         }
 
         this.defaultProcessor = defaultProcessor;
@@ -104,7 +106,7 @@ public class ProcessorManager implements InputProcessor {
         }
 
         if (processor == null) {
-            throw new NullPointerException("ZProcessorManager.loadProcessor(...):processor 参数不能为空!"); //
+            throw new NullPointerException(App.messages.getString("res.440")); //
         }
 
         activeProcessor.stopped();
@@ -140,7 +142,7 @@ public class ProcessorManager implements InputProcessor {
     */
     public void appendProcessor(InputProcessor processor) {
         if (processor == null) {
-            throw new NullPointerException("ZProcessorManager.appendProcessor(...):processor 参数不能为空！"); //
+            throw new NullPointerException(App.messages.getString("res.441")); //
         }
 
         if (processorList == null) {

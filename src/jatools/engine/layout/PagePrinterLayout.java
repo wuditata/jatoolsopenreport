@@ -37,7 +37,7 @@ public class PagePrinterLayout extends FreePrinterLayout {
      * @return DOCUMENT ME!
      */
     public int getMaxBottom(Component c) {
-        // 页脚,页眉,主体,低下,即是c下边
+        
         return onepage ? this.getImageable().height : c.getHeight();
     }
 }

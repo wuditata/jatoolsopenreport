@@ -46,7 +46,7 @@ public class CustomComparator implements Comparator {
         int columnCount = row1.getColumnCount();
 
         for (int i = 0; i < columns.length; i++) {
-            // 对错误的行号忽略之
+            
             if ((columns[i] >= 0) && (columns[i] <= (columnCount - 1))) {
                 int value = this.comparators[i].compare(row1.getValueAt(columns[i]),
                         row2.getValueAt(columns[i]));

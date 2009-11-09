@@ -36,7 +36,7 @@ public class TooltipPropertyEditor extends JDialog implements Chooser {
      * Creates a new TooltipPropertyEditor object.
      */
     public TooltipPropertyEditor() {
-        super(Main.getInstance(), App.messages.getString("res.179"), true);
+        super(Main.getInstance(), App.messages.getString("res.203"), true);
 
         JPanel p = new JPanel(new GridBagLayout());
 
@@ -50,7 +50,7 @@ public class TooltipPropertyEditor extends JDialog implements Chooser {
         gbc.weightx = 0;
 
         gbc.gridwidth = 1;
-        p.add(new JLabel(App.messages.getString("res.180")), gbc);
+        p.add(new JLabel(App.messages.getString("res.204")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
         p.add(tooltipField, gbc);
@@ -78,7 +78,7 @@ public class TooltipPropertyEditor extends JDialog implements Chooser {
 
         CommandPanel commandPanel = CommandPanel.createPanel(oklistener, cancellistener);
 
-        commandPanel.addComponent(App.messages.getString("res.181"),
+        commandPanel.addComponent(App.messages.getString("res.23"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;

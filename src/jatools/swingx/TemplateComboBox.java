@@ -115,13 +115,13 @@ public class TemplateComboBox extends JPanel {
         } catch (Exception e) {
         }
 
-        JFrame frame = new JFrame(App.messages.getString("res.13"));
+        JFrame frame = new JFrame(App.messages.getString("res.29"));
         frame.setResizable(true);
 
         String[] hPosition = {
-                App.messages.getString("res.14"),
-                App.messages.getString("res.15"),
-                App.messages.getString("res.16")
+                App.messages.getString("res.30"),
+                App.messages.getString("res.31"),
+                App.messages.getString("res.32")
             };
         TemplateComboBox lp = new TemplateComboBox(hPosition);
         frame.setSize(new Dimension(350, 250)); //new Dimension(200,100)

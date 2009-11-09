@@ -26,7 +26,7 @@ public class UserX extends AutoAccessor {
     private static String USERX_XML = "userx.xml";
     private static UserX instance;
     boolean showOpenDialogOnStartup;
-    String defaultUIFont = App.messages.getString("res.22");
+    String defaultUIFont = App.messages.getString("res.21");
     String defaultJdbcDriver;
     String defaultLookAndFeel;
     ArrayList lookAndFeels = new ArrayList();
@@ -155,9 +155,9 @@ public class UserX extends AutoAccessor {
             ux = (UserX) XmlReader.read(is);
             is.close();
         } catch (FileNotFoundException e) {
-            Util.debug(logger, App.messages.getString("res.503") + filePath);
+            Util.debug(logger, App.messages.getString("res.558") + filePath);
         } catch (Exception e) {
-            Util.debug(logger, App.messages.getString("res.504") + Util.toString(e));
+            Util.debug(logger, App.messages.getString("res.559") + Util.toString(e));
         }
 
         return ux;
@@ -176,7 +176,7 @@ public class UserX extends AutoAccessor {
             XmlWriter.write(ux, fo);
             fo.close();
         } catch (Exception ex) {
-            Util.debug(logger, App.messages.getString("res.505") + USERX_XML + "," + Util.toString(ex));
+            Util.debug(logger, App.messages.getString("res.560") + USERX_XML + "," + Util.toString(ex));
         }
     }
 

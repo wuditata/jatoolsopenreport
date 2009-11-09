@@ -120,7 +120,7 @@ public class RowBuffer extends Row implements PropertyGetter, PropertySetter, Sc
         if (action == DELETE) {
             result = DELETE;
         } else {
-            if (isChanged()) // Èç¹û
+            if (isChanged()) 
              {
                 if (isNew()) {
                     result = RowBuffer.INSERT;

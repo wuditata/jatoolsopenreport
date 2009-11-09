@@ -19,7 +19,7 @@ public class SameHeightAction extends ResizeAction {
      * Creates a new SameHeightAction object.
      */
     public SameHeightAction() {
-        super(App.messages.getString("res.537"), getIcon("/jatools/icons/sameheight.gif"),
+        super(App.messages.getString("res.597"), getIcon("/jatools/icons/sameheight.gif"),
             getIcon("/jatools/icons/sameheight2.gif"));
     }
 

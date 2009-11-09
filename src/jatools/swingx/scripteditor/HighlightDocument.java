@@ -226,13 +226,13 @@ public class HighlightDocument extends DefaultStyledDocument  {
                         }
                     }
                 } else {
-                    //System.out.println("≤ª∆•≈‰!");
+                    
                 }
             }
         }
 
         if (!stack.isEmpty()) {
-            //System.out.println("≤ª∆•≈‰!");
+            
         } else {
             Iterator it1 = macros.iterator();
 

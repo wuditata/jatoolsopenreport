@@ -46,11 +46,11 @@ import org.apache.commons.lang.ArrayUtils;
   */
 public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
     final static String[] typeValues = { "builtin", "url", "file", "classpath", "field" };
-    final static String[] typePropmts = { App.messages.getString("res.282"), App.messages.getString("res.283"), App.messages.getString("res.284"), App.messages.getString("res.285"), App.messages.getString("res.286") };
+    final static String[] typePropmts = { App.messages.getString("res.308"), App.messages.getString("res.309"), App.messages.getString("res.310"), App.messages.getString("res.311"), App.messages.getString("res.312") };
     final static String[] alignValues = { "0%", "50%", "100%" };
-    final static String[] halignPrompts = { App.messages.getString("res.287"), App.messages.getString("res.288"), App.messages.getString("res.289") };
-    final static String[] valignPrompts = { App.messages.getString("res.290"), App.messages.getString("res.288"), App.messages.getString("res.291") };
-    final static String[] repeatPrompts = { App.messages.getString("res.292"), App.messages.getString("res.293"), App.messages.getString("res.294"), App.messages.getString("res.295") };
+    final static String[] halignPrompts = { App.messages.getString("res.313"), App.messages.getString("res.314"), App.messages.getString("res.315") };
+    final static String[] valignPrompts = { App.messages.getString("res.316"), App.messages.getString("res.314"), App.messages.getString("res.317") };
+    final static String[] repeatPrompts = { App.messages.getString("res.318"), App.messages.getString("res.319"), App.messages.getString("res.320"), App.messages.getString("res.321") };
     final static String[] repeatValues = { "no-repeat", "repeat", "repeat-x", "repeat-y" };
     JComboBox typeCombo = null;
     JTextField pathText = null;
@@ -66,7 +66,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
      * Creates a new BackgroundImagePropertyEditor object.
      */
     public BackgroundImagePropertyEditor() {
-        super(Main.getInstance(), App.messages.getString("res.296"), true);
+        super(Main.getInstance(), App.messages.getString("res.322"), true);
         pathText = new JTextField(13);
 
         typeCombo = new JComboBox(typePropmts);
@@ -93,10 +93,10 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.WEST;
 
-        p.add(new TitledSeparator(App.messages.getString("res.297")), gbc);
+        p.add(new TitledSeparator(App.messages.getString("res.323")), gbc);
         gbc.gridwidth = 1;
 
-        JLabel label = new JLabel(App.messages.getString("res.298"));
+        JLabel label = new JLabel(App.messages.getString("res.324"));
         label.setPreferredSize(new Dimension(30, 23));
         p.add(label, gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
@@ -105,7 +105,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         gbc.gridwidth = 1;
-        p.add(new JLabel(App.messages.getString("res.299")), gbc);
+        p.add(new JLabel(App.messages.getString("res.325")), gbc);
         gbc.weightx = 100;
 
         p.add(this.pathText, gbc);
@@ -121,15 +121,15 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
 
         p.add(moreButton, gbc);
         p.add(Box.createVerticalStrut(20), gbc);
-        p.add(new TitledSeparator(App.messages.getString("res.300")), gbc);
+        p.add(new TitledSeparator(App.messages.getString("res.326")), gbc);
         gbc.gridwidth = 1;
-        p.add(new JLabel(App.messages.getString("res.301")), gbc);
+        p.add(new JLabel(App.messages.getString("res.327")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.NONE;
         p.add(hCombo, gbc);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridwidth = 1;
-        p.add(new JLabel(App.messages.getString("res.302")), gbc);
+        p.add(new JLabel(App.messages.getString("res.328")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.NONE;
         p.add(vCombo, gbc);
@@ -137,7 +137,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
         p.add(Box.createVerticalStrut(20), gbc);
 
         gbc.gridwidth = 1;
-        p.add(new JLabel(App.messages.getString("res.303")), gbc);
+        p.add(new JLabel(App.messages.getString("res.329")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.NONE;
         p.add(repeatCombo, gbc);
@@ -165,7 +165,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
 
         CommandPanel commandPanel = CommandPanel.createPanel(oklistener, cancellistener);
 
-        commandPanel.addComponent(App.messages.getString("res.181"),
+        commandPanel.addComponent(App.messages.getString("res.23"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;
@@ -204,7 +204,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
                         if (ii != null) {
                             base64 = Base64Util.encode(scratch);
 
-                            pathText.setText(App.messages.getString("res.304"));
+                            pathText.setText(App.messages.getString("res.330"));
                         }
                     } else {
                         pathText.setText(f.getAbsolutePath());
@@ -252,7 +252,7 @@ public class BackgroundImagePropertyEditor extends JDialog implements Chooser {
                 this.typeCombo.setSelectedIndex(index);
 
                 if (index == 0) {
-                    this.pathText.setText(App.messages.getString("res.304"));
+                    this.pathText.setText(App.messages.getString("res.330"));
                     this.base64 = src.substring(Image.SOURCE_BUILT_IN.length() + 1);
                 } else {
                     this.pathText.setText(src.substring(src.indexOf(":") + 1));

@@ -45,7 +45,7 @@ public class GroupSourceDialog extends JDialog implements ActionListener {
         super((Frame) javax.swing.SwingUtilities.getWindowAncestor(c));
         exitedOk = false;
         this.setModal(true);
-        this.setTitle(App.messages.getString("res.249"));
+        this.setTitle(App.messages.getString("res.275"));
         this.parent = source;
         this.c = c;
         initUI();
@@ -63,7 +63,7 @@ public class GroupSourceDialog extends JDialog implements ActionListener {
         }
 
         JPanel center = new JPanel();
-        JLabel label = new JLabel(App.messages.getString("res.250"));
+        JLabel label = new JLabel(App.messages.getString("res.276"));
         fieldsBox = new JComboBox();
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -76,7 +76,7 @@ public class GroupSourceDialog extends JDialog implements ActionListener {
         center.add(fieldsBox, gbc);
         gbc.weightx = 0;
 
-        label = new JLabel(App.messages.getString("res.251"));
+        label = new JLabel(App.messages.getString("res.277"));
         ordersBox = new JComboBox();
         gbc.gridwidth = 1;
         center.add(label, gbc);
@@ -112,9 +112,9 @@ public class GroupSourceDialog extends JDialog implements ActionListener {
         fieldsBox.setModel(filed_model);
 
         Object[] orders = {
-                new Order(App.messages.getString("res.94"), Group.ASCEND),
-                new Order(App.messages.getString("res.95"), Group.DESEND),
-                new Order(App.messages.getString("res.96"), Group.ORIGINAL)
+                new Order(App.messages.getString("res.121"), Group.ASCEND),
+                new Order(App.messages.getString("res.122"), Group.DESEND),
+                new Order(App.messages.getString("res.123"), Group.ORIGINAL)
             };
         DefaultComboBoxModel orer_model = new DefaultComboBoxModel(orders);
         ordersBox.setModel(orer_model);

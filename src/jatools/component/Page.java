@@ -110,7 +110,7 @@ public class Page extends Component {
      * @param padding DOCUMENT ME!
      */
     public void setPadding(Insets padding) {
-        throw new UnsupportedOperationException(App.messages.getString("res.562"));
+        throw new UnsupportedOperationException(App.messages.getString("res.632"));
     }
 
     /**
@@ -119,7 +119,7 @@ public class Page extends Component {
      * @param height DOCUMENT ME!
      */
     public void setHeight(int height) {
-        throw new UnsupportedOperationException(App.messages.getString("res.563"));
+        throw new UnsupportedOperationException(App.messages.getString("res.633"));
     }
 
     /**
@@ -128,7 +128,7 @@ public class Page extends Component {
      * @param width DOCUMENT ME!
      */
     public void setWidth(int width) {
-        throw new UnsupportedOperationException(App.messages.getString("res.564"));
+        throw new UnsupportedOperationException(App.messages.getString("res.634"));
     }
 
     /**
@@ -137,7 +137,7 @@ public class Page extends Component {
      * @param x DOCUMENT ME!
      */
     public void setX(int x) {
-        throw new UnsupportedOperationException(App.messages.getString("res.565"));
+        throw new UnsupportedOperationException(App.messages.getString("res.635"));
     }
 
     /**
@@ -146,7 +146,7 @@ public class Page extends Component {
      * @param y DOCUMENT ME!
      */
     public void setY(int y) {
-        //  throw new UnsupportedOperationException("不支持setY,请使用setPageFormat方法");
+        
     }
 
     /**

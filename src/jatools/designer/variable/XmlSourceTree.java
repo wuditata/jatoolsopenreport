@@ -623,7 +623,7 @@ public class XmlSourceTree extends JTree implements NameChecker, DragSourceListe
                                 if ((nodeValue.getNodeSource().getParent() == null) ||
                                         !nodeValue.getNodeSource().getParent()
                                                       .equals(tnv.getNodeSource().getParent())) {
-                                    JOptionPane.showConfirmDialog(this, App.messages.getString("res.234"), App.messages.getString("res.55"),
+                                    JOptionPane.showConfirmDialog(this, App.messages.getString("res.260"), App.messages.getString("res.82"),
                                         JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE);
 
                                     return;

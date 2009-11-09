@@ -16,7 +16,7 @@ public class TableWizardAction extends ReportAction {
      * Creates a new TableWizardAction object.
      */
     public TableWizardAction() {
-        super(App.messages.getString("res.541"), getIcon("/jatools/icons/dbtablew.gif"));
+        super(App.messages.getString("res.601"), getIcon("/jatools/icons/dbtablew.gif"));
     }
 
     /**

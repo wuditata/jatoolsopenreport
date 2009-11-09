@@ -77,7 +77,7 @@ public class TablePanelEditLayer extends AbstractLayer implements Painter {
     private JPopupMenu pop;
     private Point start;
     private Table hot;
-    private _PopAction deleteAll = new _PopAction(App.messages.getString("res.380"));
+    private _PopAction deleteAll = new _PopAction(App.messages.getString("res.428"));
     private JMenuItem deleteAllItem = new JMenuItem(deleteAll);
     private Point selectedPoint;
     private int dragMoveWidth = 1;
@@ -889,11 +889,11 @@ public class TablePanelEditLayer extends AbstractLayer implements Painter {
         if (pop == null) {
             pop = new JPopupMenu();
 
-            _PopAction a = new _PopAction(App.messages.getString("res.381"));
+            _PopAction a = new _PopAction(App.messages.getString("res.429"));
             a.putValue(Action.ACTION_COMMAND_KEY, INSERT_LIST_BY_SELECT);
             pop.add(a);
 
-            a = new _PopAction(App.messages.getString("res.382"));
+            a = new _PopAction(App.messages.getString("res.430"));
             a.putValue(Action.ACTION_COMMAND_KEY, DELETE_LIST);
             pop.add(a);
 

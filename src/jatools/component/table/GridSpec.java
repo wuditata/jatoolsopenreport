@@ -25,7 +25,7 @@ public class GridSpec {
     */
     public void setColumnWidth(int column, int width) {
         if ((column < 0) || (column >= columns.length())) {
-            throw new IllegalArgumentException(App.messages.getString("res.567") + column);
+            throw new IllegalArgumentException(App.messages.getString("res.638") + column);
         }
 
         columns.setSize(column, width);
@@ -57,7 +57,7 @@ public class GridSpec {
      */
     public void setRowHeight(int row, int height) {
         if ((row < 0) || (row >= rows.length())) {
-            throw new IllegalArgumentException(App.messages.getString("res.568") + row);
+            throw new IllegalArgumentException(App.messages.getString("res.639") + row);
         }
 
         rows.setSize(row, height);
@@ -72,7 +72,7 @@ public class GridSpec {
      */
     public int getRowHeight(int row) {
         if ((row < 0) || (row >= rows.length())) {
-            throw new IllegalArgumentException(App.messages.getString("res.568") + row);
+            throw new IllegalArgumentException(App.messages.getString("res.639") + row);
         }
 
         return rows.getSize(row);
@@ -87,7 +87,7 @@ public class GridSpec {
      */
     public int getColumnWidth(int column) {
         if ((column < 0) || (column >= columns.length())) {
-            throw new IllegalArgumentException(App.messages.getString("res.567") + column);
+            throw new IllegalArgumentException(App.messages.getString("res.638") + column);
         }
 
         return columns.getSize(column);

@@ -80,16 +80,16 @@ public class VariableTreeModel extends DefaultTreeModel implements TreeModelList
     }
 
     private static SimpleTreeNode asTree1(VariableContext context) {
-        SimpleTreeNode rootNode = new SimpleTreeNode(new _Variable(App.messages.getString("res.182"), 0), variableIcon);
+        SimpleTreeNode rootNode = new SimpleTreeNode(new _Variable(App.messages.getString("res.205"), 0), variableIcon);
 
-        SimpleTreeNode catagory = new SimpleTreeNode(new _Variable(App.messages.getString("res.183"), INSERTABLE),
+        SimpleTreeNode catagory = new SimpleTreeNode(new _Variable(App.messages.getString("res.206"), INSERTABLE),
                 parameterIcon, VariableTree.PARAMETER_CATAGORY);
 
         addVariableNodes(catagory, context, parameterIcon, VariableContext.PARAMETER,
             REMOVABLE | EDITABLE | SETTABLE);
 
         rootNode.add(catagory);
-        catagory = new SimpleTreeNode(new _Variable(App.messages.getString("res.184"), INSERTABLE), formulaIcon,
+        catagory = new SimpleTreeNode(new _Variable(App.messages.getString("res.207"), INSERTABLE), formulaIcon,
                 VariableTree.FORMULA_CATAGORY);
 
         addVariableNodes(catagory, context, formulaIcon, VariableContext.FORMULA,
@@ -97,7 +97,7 @@ public class VariableTreeModel extends DefaultTreeModel implements TreeModelList
 
         rootNode.add(catagory);
 
-        commandNode = new SimpleTreeNode(new _Variable(App.messages.getString("res.185"), INSERTABLE), commandIcon,
+        commandNode = new SimpleTreeNode(new _Variable(App.messages.getString("res.208"), INSERTABLE), commandIcon,
                 VariableTree.COMMAND_CATAGORY);
 
         addVariableNodes(commandNode, context, commandIcon, VariableContext.COMMAND,
@@ -105,13 +105,13 @@ public class VariableTreeModel extends DefaultTreeModel implements TreeModelList
 
         rootNode.add(commandNode);
 
-        catagory = new SimpleTreeNode(new _Variable(App.messages.getString("res.186"), 0), componentIcon,
+        catagory = new SimpleTreeNode(new _Variable(App.messages.getString("res.209"), 0), componentIcon,
                 VariableTree.COMPONENT_CATAGORY);
 
         addVariableNodes(catagory, context, componentIcon, VariableContext.COMPONENT, SETTABLE);
         rootNode.add(catagory);
 
-        SimpleTreeNode sytemCatagory = new SimpleTreeNode(new _Variable(App.messages.getString("res.187"), 0), sysIcon,
+        SimpleTreeNode sytemCatagory = new SimpleTreeNode(new _Variable(App.messages.getString("res.210"), 0), sysIcon,
                 SYSTEM_CATAGORY);
         String[] vars = VariableContext.getSystemVariables();
 

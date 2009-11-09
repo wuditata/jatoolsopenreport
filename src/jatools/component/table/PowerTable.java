@@ -98,8 +98,8 @@ public class PowerTable extends TableBase implements PowerTableBase, GLayout {
     * @return DOCUMENT ME!
     */
     public static PowerTable create(Table leftTable, Table topTable) {
-        // 计算行数  = left.rows + top.rows;
-        // 列数 = left.columns + top.columns
+        
+        
         int[] leftRows = leftTable.getRowHeights();
         int[] leftColumns = leftTable.getColumnWidths();
         int[] topRows = topTable.getRowHeights();

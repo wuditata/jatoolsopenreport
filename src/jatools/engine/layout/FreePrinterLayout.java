@@ -28,7 +28,7 @@ public class FreePrinterLayout extends AbstractPrinterLayout {
     final static int WRAPPED_COLUMN_COPY = 4;
     PrintableArea printableArea;
 
-    // 上一次 copy的起始点
+    
     int x0;
     int y0;
     int dx;
@@ -62,7 +62,7 @@ public class FreePrinterLayout extends AbstractPrinterLayout {
     //        printableArea.moveTo(printableArea.getX(),
     //            printableArea.getY() + rootView.getBounds().height + copyRule.gapy);
     //
-    //        // 如果新增成功,则可能的下边应该是 maxy
+    
     //        if (printableArea.canBottomAppend(copyRule.gapy + mincopy.height)) {
     //            imageable.height -= (rootView.getBounds().height - copyRule.gapy);
     //
@@ -70,14 +70,14 @@ public class FreePrinterLayout extends AbstractPrinterLayout {
     //            CompoundView newView = ((AbstractContainerPrinter) this.getPrinter()).createView(context);
     //            newView.getBounds().setLocation(printableArea.getX(), printableArea.getY());
     //
-    //            // 如果resultView为空,则
+    
     //
-    //            // 需要创建一个容器,
+    
     //            //            if (resultView == null) {
     //            //                resultView = newView;
     //            //            } else {
     //            if (resultView == null) {
-    //                // 需要新建一个resultView;并将rootView加入
+    
     //                resultView = new CompoundView();
     //                resultView.add(rootView);
     //                resultView.setBounds((Rectangle) rootView.getBounds().clone());
@@ -105,7 +105,7 @@ public class FreePrinterLayout extends AbstractPrinterLayout {
     */
     public void add(View view) {
         if (view != null) {
-            // 如果view的bottom,大于root.bottom ,则 root.bottom = view.bottom
+            
             AbstractView av = (AbstractView) view;
 
             if (av.isAutoSize()) {
@@ -142,9 +142,9 @@ public class FreePrinterLayout extends AbstractPrinterLayout {
         //        Printer brokenPrinter = (Printer) printer.getProperty(BROKEN_PRINTER);
         //
         //        if (brokenPrinter != null) {
-        //            // 打印机的 y
+        
         //            offy = brokenPrinter.getComponent().getY();
-        //            // 可打印区域增 y ;
+        
         //            getImageable().height -= offy;
         //            getRootView().add(new TransformView(0, -offy));
         //            printer.setProperty(BROKEN_PRINTER, null);

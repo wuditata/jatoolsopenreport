@@ -61,7 +61,7 @@ public class BorderPropertyEditor extends JDialog implements Chooser {
      * Creates a new BorderPropertyEditor object.
      */
     public BorderPropertyEditor() {
-        super(Main.getInstance(), App.messages.getString("res.305"), true);
+        super(Main.getInstance(), App.messages.getString("res.331"), true);
 
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
@@ -161,17 +161,17 @@ public class BorderPropertyEditor extends JDialog implements Chooser {
         c.insets = new Insets(1, 2, 1, 2);
         c.gridwidth = 1;
         c.gridheight = 1;
-        topPanel.add(new JLabel(App.messages.getString("res.306")), c);
+        topPanel.add(new JLabel(App.messages.getString("res.332")), c);
         c.gridwidth = GridBagConstraints.REMAINDER;
         topPanel.add(thicknessChooser, c);
         c.gridwidth = 1;
         c.gridheight = 1;
-        topPanel.add(new JLabel(App.messages.getString("res.148")), c);
+        topPanel.add(new JLabel(App.messages.getString("res.172")), c);
         c.gridwidth = GridBagConstraints.REMAINDER;
         topPanel.add(styleChooser, c);
         c.gridwidth = 1;
         c.gridheight = 1;
-        topPanel.add(new JLabel(App.messages.getString("res.307")), c);
+        topPanel.add(new JLabel(App.messages.getString("res.333")), c);
         c.gridwidth = GridBagConstraints.REMAINDER;
         topPanel.add(colorChooser, c);
         c.weighty = 100;
@@ -196,7 +196,7 @@ public class BorderPropertyEditor extends JDialog implements Chooser {
             };
 
         CommandPanel bottomPanel = CommandPanel.createPanel(oklistener, cancellistener);
-        bottomPanel.addComponent(App.messages.getString("res.181"),
+        bottomPanel.addComponent(App.messages.getString("res.23"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;

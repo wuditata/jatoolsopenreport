@@ -218,7 +218,7 @@ public class Border implements Serializable, PropertyAccessor, BorderBase {
             } else if (BorderStyle.BORDER_STYLE_DOTTED.equals(style)) {
                 stroke = getDottedStroke(edge.getThickness());
             } else {
-                throw new IllegalStateException(App.messages.getString("res.560") + style);
+                throw new IllegalStateException(App.messages.getString("res.630") + style);
             }
 
             g2d.setStroke(stroke);

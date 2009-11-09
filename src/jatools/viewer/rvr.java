@@ -245,7 +245,7 @@ public class rvr extends JPanel implements ProtectPublic{
         scaleCombo.setSelectedIndex(3);
         toolbar.add(scaleCombo);
 
-        // 让继承的子类,有机会增加按钮,
+        
         toolbar = this.getToolbar2(toolbar);
 
         return toolbar;
@@ -481,10 +481,10 @@ public class rvr extends JPanel implements ProtectPublic{
                 return;
             }
 
-            // 取得打印任务项
+            
             PrinterJob job = PrinterJob.getPrinterJob();
 
-            // 设置打印对象及页面格式
+            
             PageView pp0 = ((PageCanvas) this.getComponent(0)).getPage();
             java.awt.print.PageFormat pf = pp0.getPageFormat().toAwtFormat(true);
             job.setPrintable(this, pf);

@@ -19,7 +19,7 @@ public class AlignLeftAction extends AlignAction {
      * Creates a new AlignLeftAction object.
      */
     public AlignLeftAction() {
-        super(App.messages.getString("res.518"), getIcon("/jatools/icons/alignleft.gif"),
+        super(App.messages.getString("res.573"), getIcon("/jatools/icons/alignleft.gif"),
             getIcon("/jatools/icons/alignleft2.gif"));
     }
 

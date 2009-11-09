@@ -33,7 +33,7 @@ public class PasteAction extends EditClipAction {
      * Creates a new PasteAction object.
      */
     public PasteAction() {
-        super(null, App.messages.getString("res.99"), getIcon("/jatools/icons/paste.gif"),
+        super(null, App.messages.getString("res.126"), getIcon("/jatools/icons/paste.gif"),
             getIcon("/jatools/icons/paste2.gif"));
         setStroke(ctrl(KeyEvent.VK_V));
     }
@@ -44,7 +44,7 @@ public class PasteAction extends EditClipAction {
      * @param panel DOCUMENT ME!
      */
     public PasteAction(ReportPanel panel) {
-        super(panel, App.messages.getString("res.99"), getIcon("/jatools/icons/paste.gif"),
+        super(panel, App.messages.getString("res.126"), getIcon("/jatools/icons/paste.gif"),
             getIcon("/jatools/icons/paste2.gif"));
         setStroke(ctrl(KeyEvent.VK_V));
     }

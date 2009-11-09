@@ -44,7 +44,7 @@ public class ReaderChooser extends JDialog implements ChangeListener {
      * @param proxyContainer DOCUMENT ME!
      */
     public ReaderChooser(Frame owner, DatasetReaderList proxyContainer) {
-        super(owner, App.messages.getString("res.494"), true);
+        super(owner, App.messages.getString("res.549"), true);
 
         datasetTree = new DatasetReaderConfigureTree();
 
@@ -54,7 +54,7 @@ public class ReaderChooser extends JDialog implements ChangeListener {
 
         this.getContentPane().add(scrollPane, BorderLayout.CENTER);
 
-        previewButton = new JButton(App.messages.getString("res.163"));
+        previewButton = new JButton(App.messages.getString("res.187"));
         previewButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     preview();

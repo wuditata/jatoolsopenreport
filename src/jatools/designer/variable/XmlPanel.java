@@ -40,7 +40,7 @@ public class XmlPanel extends JPanel implements EditorView {
 
         JScrollPane scrollPane = new JScrollPane(variableTree);
 
-        tabbedPane.addTab(App.messages.getString("res.233"), Util.getIcon("/jatools/icons/srctree.gif"), scrollPane);
+        tabbedPane.addTab(App.messages.getString("res.259"), Util.getIcon("/jatools/icons/srctree.gif"), scrollPane);
         add(tabbedPane, BorderLayout.CENTER);
     }
 

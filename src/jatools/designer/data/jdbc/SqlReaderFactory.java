@@ -32,7 +32,7 @@ public class SqlReaderFactory implements DatasetReaderFactory {
     public DatasetReader create(Component parent, NameChecker checker) {
         SqlReader result = new SqlReader();
 
-        SqlReaderDialog editor = new SqlReaderDialog(App.messages.getString("res.501"), Main.getInstance(),
+        SqlReaderDialog editor = new SqlReaderDialog(App.messages.getString("res.556"), Main.getInstance(),
                 (SqlReader) result, (NameChecker) checker);
         editor.show();
 
@@ -55,7 +55,7 @@ public class SqlReaderFactory implements DatasetReaderFactory {
      * @return DOCUMENT ME!
      */
     public boolean edit(DatasetReader reader, Component parent, NameChecker checker) {
-        SqlReaderDialog editor = new SqlReaderDialog(App.messages.getString("res.502"), Main.getInstance(),
+        SqlReaderDialog editor = new SqlReaderDialog(App.messages.getString("res.557"), Main.getInstance(),
                 (SqlReader) reader, (NameChecker) checker);
         editor.show();
 

@@ -35,7 +35,7 @@ public class PropertyTableModel extends DefaultTableModel {
     private Object[] selections;
 
     PropertyTableModel() {
-        super(new Object[] { App.messages.getString("res.277"), App.messages.getString("res.278") }, 0);
+        super(new Object[] { App.messages.getString("res.303"), App.messages.getString("res.304") }, 0);
     }
 
     /**
@@ -302,8 +302,8 @@ public class PropertyTableModel extends DefaultTableModel {
      */
     public static ArrayList editablePropertyDescriptors(Object object) {
         if (!(object instanceof PropertyAccessorWrapper)) {
-            throw new java.lang.IllegalArgumentException(App.messages.getString("res.279") + object.getClass().getName() +
-                App.messages.getString("res.280"));
+            throw new java.lang.IllegalArgumentException(App.messages.getString("res.305") + object.getClass().getName() +
+                App.messages.getString("res.306"));
         }
 
         PropertyAccessorWrapper wrapper = (PropertyAccessorWrapper) object;
@@ -350,8 +350,8 @@ public class PropertyTableModel extends DefaultTableModel {
      */
     public static ArrayList _editablePropertyDescriptors(Object object) {
         if (!(object instanceof PropertyAccessorWrapper)) {
-            throw new java.lang.IllegalArgumentException(App.messages.getString("res.279") + object.getClass().getName() +
-                App.messages.getString("res.280"));
+            throw new java.lang.IllegalArgumentException(App.messages.getString("res.305") + object.getClass().getName() +
+                App.messages.getString("res.306"));
         }
 
         PropertyAccessorWrapper wrapper = (PropertyAccessorWrapper) object;

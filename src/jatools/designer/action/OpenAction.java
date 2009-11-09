@@ -24,7 +24,7 @@ public class OpenAction extends ReportAction {
      * Creates a new OpenAction object.
      */
     public OpenAction() {
-        super(App.messages.getString("res.65"), getIcon("/jatools/icons/open.gif"));
+        super(App.messages.getString("res.92"), getIcon("/jatools/icons/open.gif"));
         setStroke(ctrl(KeyEvent.VK_O));
     }
 
@@ -45,7 +45,7 @@ public class OpenAction extends ReportAction {
     public void actionPerformed(ActionEvent e) {
         ReportChooser chooser = ReportChooser.getInstance();
 
-        if (chooser.showDialog(App.messages.getString("res.65"), ReportChooser.SHOW_OPEN)) {
+        if (chooser.showDialog(App.messages.getString("res.92"), ReportChooser.SHOW_OPEN)) {
             ReportDocument doc = chooser.getDocument();
             Main.getInstance()
                 .createEditor(doc, ReportDocument.getCachedFile(doc).getName(),
@@ -56,7 +56,7 @@ public class OpenAction extends ReportAction {
     }
 
     protected boolean saveAs() {
-        int answer = MessageBox.show(getEditor(), App.messages.getString("res.389"), App.messages.getString("res.534"), MessageBox.YES_NO_CANCEL);
+        int answer = MessageBox.show(getEditor(), App.messages.getString("res.437"), App.messages.getString("res.588"), MessageBox.YES_NO_CANCEL);
 
         if (answer == MessageBox.YES) {
             ReportDocument doc = getEditor().getDocument();
@@ -80,7 +80,7 @@ public class OpenAction extends ReportAction {
     protected ReportDocument getDocument1() {
         ReportChooser chooser = ReportChooser.getInstance();
 
-        if (chooser.showDialog(App.messages.getString("res.65"), ReportChooser.SHOW_OPEN)) {
+        if (chooser.showDialog(App.messages.getString("res.92"), ReportChooser.SHOW_OPEN)) {
             return chooser.getDocument();
         } else {
             return null;

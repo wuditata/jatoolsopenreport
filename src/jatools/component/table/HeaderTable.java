@@ -58,7 +58,7 @@ public class HeaderTable extends Table {
     * @return DOCUMENT ME!
     */
     public int getRowHeight(int from, int to) {
-        throw new UnsupportedOperationException(App.messages.getString("res.569"));
+        throw new UnsupportedOperationException(App.messages.getString("res.640"));
     }
 
     /**
@@ -69,7 +69,7 @@ public class HeaderTable extends Table {
      * @return DOCUMENT ME!
      */
     public int getRowHeight(int row) {
-        throw new UnsupportedOperationException(App.messages.getString("res.569"));
+        throw new UnsupportedOperationException(App.messages.getString("res.640"));
     }
 
     /**
@@ -78,7 +78,7 @@ public class HeaderTable extends Table {
      * @return DOCUMENT ME!
      */
     public int[] getRowHeights() {
-        throw new UnsupportedOperationException(App.messages.getString("res.570"));
+        throw new UnsupportedOperationException(App.messages.getString("res.641"));
     }
 
     /**
@@ -89,7 +89,7 @@ public class HeaderTable extends Table {
      * @return DOCUMENT ME!
      */
     public int getRowY(int row) {
-        throw new UnsupportedOperationException(App.messages.getString("res.570"));
+        throw new UnsupportedOperationException(App.messages.getString("res.641"));
     }
 
     /**
@@ -98,7 +98,7 @@ public class HeaderTable extends Table {
      * @return DOCUMENT ME!
      */
     public int getTotalRowHeights() {
-        throw new UnsupportedOperationException(App.messages.getString("res.570"));
+        throw new UnsupportedOperationException(App.messages.getString("res.641"));
     }
 
     /**
@@ -110,7 +110,7 @@ public class HeaderTable extends Table {
      * @return DOCUMENT ME!
      */
     public int getWidth(int col, int span) {
-        throw new UnsupportedOperationException(App.messages.getString("res.570"));
+        throw new UnsupportedOperationException(App.messages.getString("res.641"));
     }
 
     /**

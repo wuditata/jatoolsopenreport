@@ -29,7 +29,7 @@ public class Label extends Component {
 
     static {
         try {
-            DEFAULT_FONT = new Font(App.messages.getString("res.22"), 0, 12);
+            DEFAULT_FONT = new Font(App.messages.getString("res.21"), 0, 12);
         } catch (Exception e) {
             Util.debug("ZLabel", e);
         } catch (Error e) {

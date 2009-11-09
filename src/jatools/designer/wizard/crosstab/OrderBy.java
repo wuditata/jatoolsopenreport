@@ -12,9 +12,9 @@ import jatools.designer.App;
  * @version 1.0
  */
 public class OrderBy {
-    public static final String ASC = App.messages.getString("res.94");
-    public static final String DESC = App.messages.getString("res.95");
-    public static final String ORIGINAL = App.messages.getString("res.96");
+    public static final String ASC = App.messages.getString("res.121");
+    public static final String DESC = App.messages.getString("res.122");
+    public static final String ORIGINAL = App.messages.getString("res.123");
     String orderby;
 
     /**

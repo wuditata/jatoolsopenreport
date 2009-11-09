@@ -47,7 +47,7 @@ public class CSSValue {
      */
     public CSSValue(String csstext) {
         if ((csstext == null) || ((csstext = csstext.trim()).length() == 0)) {
-            throw new IllegalArgumentException(App.messages.getString("res.40"));
+            throw new IllegalArgumentException(App.messages.getString("res.64"));
         }
 
         if (csstext.startsWith("${") && csstext.endsWith("}")) {

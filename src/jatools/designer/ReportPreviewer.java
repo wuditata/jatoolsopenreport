@@ -165,7 +165,7 @@ public class ReportPreviewer extends rvr implements ChangeListener, PropertyChan
         cancelCmd.setEnabled(false);
         refreshCmd.setEnabled(false);
         cancelCmd.setToolTipText(App.messages.getString("res.4"));
-        refreshCmd.setToolTipText(App.messages.getString("res.137"));
+        refreshCmd.setToolTipText(App.messages.getString("res.162"));
 
         clearPage();
 
@@ -193,7 +193,7 @@ public class ReportPreviewer extends rvr implements ChangeListener, PropertyChan
                                             view.revalidate();
 
                                             if (pageNumber != null) {
-                                                pageNumber.setText(App.messages.getString("res.138") +
+                                                pageNumber.setText(App.messages.getString("res.163") +
                                                     view.getComponentCount());
                                             }
                                         }
@@ -303,7 +303,7 @@ public class ReportPreviewer extends rvr implements ChangeListener, PropertyChan
 
         toolbar.add(pageNumber);
 
-        this.closeAction = new AbstractAction(App.messages.getString("res.139")) {
+        this.closeAction = new AbstractAction(App.messages.getString("res.164")) {
                     public void actionPerformed(ActionEvent e) {
                         Main.getInstance().hidePreviewer();
                     }
@@ -322,7 +322,7 @@ public class ReportPreviewer extends rvr implements ChangeListener, PropertyChan
         if (this.menus == null) {
             menus = new JMenuBar();
 
-            JMenu fileMenu = new JMenu(App.messages.getString("res.140"), true);
+            JMenu fileMenu = new JMenu(App.messages.getString("res.165"), true);
             Action[] previewActions = getActions();
 
             for (int i = 0; i < previewActions.length; i++) {

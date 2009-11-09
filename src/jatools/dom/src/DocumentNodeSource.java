@@ -30,7 +30,7 @@ public class DocumentNodeSource extends NodeSource {
      * @return DOCUMENT ME!
      */
     public PropertyDescriptor[] getRegistrableProperties() {
-        throw new IllegalArgumentException(App.messages.getString("res.41"));
+        throw new IllegalArgumentException(App.messages.getString("res.65"));
     }
 
     /**
@@ -41,7 +41,7 @@ public class DocumentNodeSource extends NodeSource {
     * @return DOCUMENT ME!
     */
     public Node create(Node parent, Script script) {
-        throw new IllegalArgumentException(App.messages.getString("res.42"));
+        throw new IllegalArgumentException(App.messages.getString("res.66"));
     }
 
     /**
@@ -62,6 +62,6 @@ public class DocumentNodeSource extends NodeSource {
      * @return DOCUMENT ME!
      */
     public Node[] createNodeList(Node parent, Script script) {
-        throw new IllegalArgumentException(App.messages.getString("res.43"));
+        throw new IllegalArgumentException(App.messages.getString("res.67"));
     }
 }

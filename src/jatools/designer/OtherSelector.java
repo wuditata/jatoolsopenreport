@@ -85,7 +85,7 @@ public class OtherSelector extends javax.swing.JPanel {
 
             this.add(jPanel1, gbc);
 
-            jLabel1.setText(App.messages.getString("res.86"));
+            jLabel1.setText(App.messages.getString("res.113"));
 
             jPanel1.add(jLabel1, BorderLayout.WEST);
 
@@ -99,11 +99,11 @@ public class OtherSelector extends javax.swing.JPanel {
             jPanel2.setLayout(jPanel2Layout);
 
             jPanel2.setPreferredSize(new java.awt.Dimension(332, 109));
-            jPanel2.setBorder(BorderFactory.createTitledBorder(App.messages.getString("res.110")));
+            jPanel2.setBorder(BorderFactory.createTitledBorder(App.messages.getString("res.136")));
 
             jPanel2.setBounds(new java.awt.Rectangle(66, 109, 332, 109));
             this.add(jPanel2, gbc);
-            showPage.setText(App.messages.getString("res.111"));
+            showPage.setText(App.messages.getString("res.137"));
             showPage.setSelected(true);
             showPage.setVisible(true);
             showPage.setPreferredSize(new java.awt.Dimension(302, 64));
@@ -111,7 +111,7 @@ public class OtherSelector extends javax.swing.JPanel {
             showPage.setBounds(new java.awt.Rectangle(5, 5, 322, 49));
             jPanel2.add(showPage);
 
-            tableMode = new JCheckBox(App.messages.getString("res.112"));
+            tableMode = new JCheckBox(App.messages.getString("res.138"));
             tableMode.setSelected(true);
             tableMode.setVisible(false);
             tableMode.setPreferredSize(new java.awt.Dimension(302, 64));
@@ -126,10 +126,10 @@ public class OtherSelector extends javax.swing.JPanel {
             jPanel3.setBorder(new EmptyBorder(new Insets(0, 0, 100, 0)));
             jPanel3.setBounds(new java.awt.Rectangle(5, 5, 322, 128));
             jPanel2.add(jPanel3);
-            onHeader.setText(App.messages.getString("res.113"));
+            onHeader.setText(App.messages.getString("res.139"));
             onHeader.setVisible(true);
             jPanel3.add(onHeader);
-            onFooter.setText(App.messages.getString("res.114"));
+            onFooter.setText(App.messages.getString("res.140"));
             onFooter.setSelected(true);
             onFooter.setVisible(true);
             showPage.addActionListener(new ActionListener() {

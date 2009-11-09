@@ -28,6 +28,6 @@ class FavouriteDatasetReaderList implements DatasetReaderList {
     }
 
     public String getName() {
-        return App.messages.getString("res.93");
+        return App.messages.getString("res.120");
     }
 }

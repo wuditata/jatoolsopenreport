@@ -23,7 +23,7 @@ public class BringToBackAction extends ReportAction {
      * Creates a new BringToBackAction object.
      */
     public BringToBackAction() {
-        super(App.messages.getString("res.522"), getIcon("/jatools/icons/toback.gif"),
+        super(App.messages.getString("res.577"), getIcon("/jatools/icons/toback.gif"),
             getIcon("/jatools/icons/toback2.gif"));
     }
 

@@ -2,6 +2,7 @@ package jatools.dataset;
 
 import jatools.accessor.PropertyDescriptor;
 import jatools.data.reader.AbstractDatasetReader;
+import jatools.designer.App;
 import jatools.engine.script.Script;
 
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class SimpleReader extends AbstractDatasetReader {
             return new RowMeta(columnInfos);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new jatools.dataset.DatasetException("实始化表格数据集时出错.", e); //
+            throw new jatools.dataset.DatasetException(App.messages.getString("res.611"), e); //
         }
     }
 
@@ -90,10 +91,10 @@ public class SimpleReader extends AbstractDatasetReader {
                     return Row.NO_MORE_ROWS;
                 }
             } else {
-                throw new jatools.dataset.DatasetException("ZSQLReadEngine::readRow(...): 参数行对象不应为空!"); //
+                throw new jatools.dataset.DatasetException(App.messages.getString("res.612")); //
             }
         } catch (Exception e) {
-            throw new jatools.dataset.DatasetException("ZSQLReadEngine::readRow(...): sql语法不正确.", //
+            throw new jatools.dataset.DatasetException(App.messages.getString("res.613"), //
                 e);
         }
     }

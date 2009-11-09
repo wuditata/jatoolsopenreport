@@ -67,13 +67,13 @@ public class RowSetBuilder {
             int _from = from;
             int _to = row - 1;
 
-            // 建立索引项
+            
             Object[] vals = thisRow.values(fields);
             Key key = new Key(vals);
 
             RowSet item = getIndex(key, _from, _to);
 
-            // 加入缓冲
+            
             result.add(item);
 
             from = row;

@@ -42,7 +42,7 @@ public class CustomSummaryDialog extends JDialog {
      * @param owner DOCUMENT ME!
      */
     public CustomSummaryDialog(Frame owner) {
-        super(owner, App.messages.getString("res.474"), true);
+        super(owner, App.messages.getString("res.530"), true);
 
         fieldCombo.setEditable(false);
         byCombo.setEditable(false);
@@ -56,7 +56,7 @@ public class CustomSummaryDialog extends JDialog {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(10, 10, 10, 10);
-        topPanel.add(new JLabel(App.messages.getString("res.173")), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.197")), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
@@ -64,7 +64,7 @@ public class CustomSummaryDialog extends JDialog {
 
         gbc.gridwidth = 1;
 
-        topPanel.add(new JLabel(App.messages.getString("res.475")), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.531")), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
@@ -73,7 +73,7 @@ public class CustomSummaryDialog extends JDialog {
         topPanel.add(fieldCombo, gbc);
         gbc.gridwidth = 1;
         gbc.weightx = 0;
-        topPanel.add(new JLabel(App.messages.getString("res.476")), gbc);
+        topPanel.add(new JLabel(App.messages.getString("res.532")), gbc);
 
         gbc.weightx = 100;
 
@@ -112,7 +112,7 @@ public class CustomSummaryDialog extends JDialog {
         try {
             hide();
         } catch (Exception e1) {
-            JOptionPane.showConfirmDialog(getParent(), e1.getMessage(), App.messages.getString("res.12"),
+            JOptionPane.showConfirmDialog(getParent(), e1.getMessage(), App.messages.getString("res.26"),
                 JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
             e1.printStackTrace();
         }

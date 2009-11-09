@@ -66,7 +66,7 @@ public class MruPopupMenu implements ChangeListener {
      * @param e DOCUMENT ME!
      */
     public void stateChanged(ChangeEvent e) {
-        //清空全部菜单项
+        
         clearMruMenuItem();
 
         MruManager mm = (MruManager) e.getSource();

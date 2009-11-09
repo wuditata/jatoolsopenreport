@@ -58,11 +58,11 @@ public class DNDManager implements DragSourceListener, DragGestureListener,
     Component comp = source.getSourceComponent();
 
 
-    // 把FRAME登记为可以用作拖动的数据集
+    
     DragSource.getDefaultDragSource()
-        .createDefaultDragGestureRecognizer(comp, // list 注册成拖动源
+        .createDefaultDragGestureRecognizer(comp, 
         DnDConstants.ACTION_COPY_OR_MOVE, //
-        this // 听list 拖动源事件
+        this 
         );
 
     sources.put(comp, source);
@@ -75,9 +75,9 @@ public class DNDManager implements DragSourceListener, DragGestureListener,
    */
   public void registerTarget(JatoolsDropTarget target) {
     Component comp = target.getTargetComponent();
-    new DropTarget(comp, // 拖动的组件为 ZCheckBoxList
+    new DropTarget(comp, 
                    DnDConstants.ACTION_COPY_OR_MOVE, //
-                   this, // 听 list 拖动目标事件
+                   this, 
                    true);
     targets.put(comp, target);
   }

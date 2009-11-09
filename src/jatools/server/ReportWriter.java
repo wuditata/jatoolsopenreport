@@ -74,7 +74,7 @@ public class ReportWriter extends ReportActionBase {
                 String as = (String) request.getParameter(ReportJob.AS_PARAM);
 
                 if ((as == null) && (formats.indexOf(as + ";") == 1)) {
-                    throw new Exception(App.messages.getString("res.20"));
+                    throw new Exception(App.messages.getString("res.45"));
                 }
 
                 job = createJob(request);

@@ -54,7 +54,7 @@ import javax.swing.tree.TreePath;
  * @version $Revision$
   */
 public class SummarySelector extends JPanel implements ChangeListener, ListSelectionListener {
-    public static final String GROUP_FOR_ALL = App.messages.getString("res.171");
+    public static final String GROUP_FOR_ALL = App.messages.getString("res.195");
     JButton selectCommand;
     JButton unselectCommand;
     JButton unselectAllCommand;
@@ -86,7 +86,7 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.BOTH;
         gbc.anchor = GridBagConstraints.WEST;
-        add(new TitledSeparator(App.messages.getString("res.172")), gbc);
+        add(new TitledSeparator(App.messages.getString("res.196")), gbc);
 
         groupByChooser = new JComboBox();
         groupByChooser.addItemListener(new ItemListener() {
@@ -98,12 +98,12 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
         groupByChooser.setPreferredSize(new Dimension(200, 23));
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEADING));
-        p.add(new JLabel(App.messages.getString("res.173")));
+        p.add(new JLabel(App.messages.getString("res.197")));
         p.add(groupByChooser);
 
         add(p, gbc);
         gbc.insets.top = 20;
-        add(new TitledSeparator(App.messages.getString("res.174")), gbc);
+        add(new TitledSeparator(App.messages.getString("res.198")), gbc);
         gbc.insets.top = 0;
         gbc.gridwidth = 1;
 
@@ -124,7 +124,7 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
     }
 
     private JPanel getTargetPanel() {
-        table = new CustomTable(new String[] { App.messages.getString("res.81"), App.messages.getString("res.175") });
+        table = new CustomTable(new String[] { App.messages.getString("res.108"), App.messages.getString("res.199") });
 
         table.getSelectionModel().addListSelectionListener(this);
 
@@ -137,7 +137,7 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
 
         JComboBox sortTypeChooser = new JComboBox(new _FunctionModel(
                     CustomSummary.SUPPORT_FUNCTIONS));
-        table.getColumn(App.messages.getString("res.175")).setCellEditor(new DefaultCellEditor(sortTypeChooser));
+        table.getColumn(App.messages.getString("res.199")).setCellEditor(new DefaultCellEditor(sortTypeChooser));
 
         table.setEditable(1, true);
 
@@ -165,7 +165,7 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 1.0;
-        result.add(new JLabel(App.messages.getString("res.83")), gbc);
+        result.add(new JLabel(App.messages.getString("res.110")), gbc);
         gbc.weightx = 0;
         result.add(upCommand, gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
@@ -249,7 +249,7 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
         gbc.fill = GridBagConstraints.BOTH;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
-        result.add(new JLabel(App.messages.getString("res.84")), gbc);
+        result.add(new JLabel(App.messages.getString("res.111")), gbc);
         gbc.weighty = 1.0;
         result.add(new JScrollPane(sourceTree), gbc);
 
@@ -397,8 +397,8 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
                 Column calcField = (Column) v.get(0);
                 String calcType = (String) v.get(1);
 
-                if (calcType.equals(App.messages.getString("res.176"))) {
-                    calcType = App.messages.getString("res.177");
+                if (calcType.equals(App.messages.getString("res.200"))) {
+                    calcType = App.messages.getString("res.201");
                 }
 
                 CustomSummary summary = new CustomSummary(null,
@@ -437,8 +437,8 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
                 Column calcField = (Column) v.get(0);
                 String calcType = (String) v.get(1);
 
-                if (calcType.equals(App.messages.getString("res.176"))) {
-                    calcType = App.messages.getString("res.177");
+                if (calcType.equals(App.messages.getString("res.200"))) {
+                    calcType = App.messages.getString("res.201");
                 }
 
                 CustomSummary summary = new CustomSummary(null,
@@ -467,7 +467,7 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
                 (anObject == CustomSummary.AVERAGE));
 
             if (numeric && (cls != null) && (!(Number.class.isAssignableFrom(cls)))) {
-                MessageBox.error(SummarySelector.this, App.messages.getString("res.178"));
+                MessageBox.error(SummarySelector.this, App.messages.getString("res.202"));
 
                 return;
             }

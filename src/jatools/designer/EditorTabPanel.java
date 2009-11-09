@@ -78,13 +78,13 @@ public class EditorTabPanel extends CloseableTabbedPane implements CloseableTabb
     public void resetTitle() {
         int index = this.getSelectedIndex();
 
-        String title = App.messages.getString("res.39");
+        String title = App.messages.getString("res.63");
 
         if (index > -1) {
             String tip = this.getToolTipTextAt(index);
 
             if (tip == null) {
-                title += App.messages.getString("res.92");
+                title += App.messages.getString("res.119");
             } else {
                 title += (" - " + tip);
             }

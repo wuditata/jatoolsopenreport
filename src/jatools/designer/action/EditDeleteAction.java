@@ -25,7 +25,7 @@ public class EditDeleteAction extends EditClipAction {
      * Creates a new EditDeleteAction object.
      */
     public EditDeleteAction() {
-        super(null, App.messages.getString("res.69"), getIcon("/jatools/icons/delete.gif"),
+        super(null, App.messages.getString("res.96"), getIcon("/jatools/icons/delete.gif"),
             getIcon("/jatools/icons/delete2.gif"));
         setStroke(key(KeyEvent.VK_DELETE));
     }
@@ -36,7 +36,7 @@ public class EditDeleteAction extends EditClipAction {
      * @param panel DOCUMENT ME!
      */
     public EditDeleteAction(ReportPanel panel) {
-        super(panel, App.messages.getString("res.69"), getIcon("/jatools/icons/delete.gif"),
+        super(panel, App.messages.getString("res.96"), getIcon("/jatools/icons/delete.gif"),
             getIcon("/jatools/icons/delete2.gif"));
         setStroke(key(KeyEvent.VK_DELETE));
     }

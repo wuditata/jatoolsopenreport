@@ -173,8 +173,8 @@ class _TableModel extends DefaultTableModel {
 
     _TableModel() {
         super(new Object[] {
-                App.messages.getString("res.281"),
-                App.messages.getString("res.278")
+                App.messages.getString("res.307"),
+                App.messages.getString("res.304")
             }, 3); // //$NON-NLS-2$
 
         //    this.setRowCount(50);

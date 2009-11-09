@@ -64,7 +64,7 @@ public class ImageWriter {
             JpegEncoder en = new JpegEncoder(image, 100, os);
             en.encode();
         } else {
-            throw new Exception(App.messages.getString("res.21") + type);
+            throw new Exception(App.messages.getString("res.46") + type);
         }
     }
 

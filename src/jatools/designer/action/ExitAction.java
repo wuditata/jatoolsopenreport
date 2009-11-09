@@ -26,7 +26,7 @@ public class ExitAction extends ReportAction {
      * Creates a new ExitAction object.
      */
     public ExitAction() {
-        super(App.messages.getString("res.526"));
+        super(App.messages.getString("res.581"));
     }
 
     /**
@@ -69,8 +69,8 @@ public class ExitAction extends ReportAction {
             if (count == 1) {
                 closed = query(dirtyeditor);
             } else {
-                int answer = MessageBox.show(Main.getInstance(), App.messages.getString("res.389"),
-                        App.messages.getString("res.527"), MessageBox.YES_NO);
+                int answer = MessageBox.show(Main.getInstance(), App.messages.getString("res.437"),
+                        App.messages.getString("res.582"), MessageBox.YES_NO);
 
                 if (answer == MessageBox.YES) {
                     closed = false;
@@ -82,7 +82,7 @@ public class ExitAction extends ReportAction {
     }
 
     private boolean query(ReportEditor dirtyeditor) {
-        int answer = MessageBox.show(Main.getInstance(), App.messages.getString("res.389"), App.messages.getString("res.524"),
+        int answer = MessageBox.show(Main.getInstance(), App.messages.getString("res.437"), App.messages.getString("res.579"),
                 MessageBox.YES_NO_CANCEL);
 
         if (answer == MessageBox.YES) {

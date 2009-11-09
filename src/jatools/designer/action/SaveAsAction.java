@@ -21,7 +21,7 @@ public class SaveAsAction extends ReportAction {
      * Creates a new SaveAsAction object.
      */
     public SaveAsAction() {
-        super(App.messages.getString("res.539"));
+        super(App.messages.getString("res.599"));
     }
 
     /**

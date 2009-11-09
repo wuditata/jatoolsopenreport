@@ -7,6 +7,7 @@ package jatools.component.table;
 
 import jatools.accessor.PropertyAccessor;
 import jatools.accessor.PropertyDescriptor;
+import jatools.designer.App;
 
 import java.awt.Rectangle;
 
@@ -257,7 +258,7 @@ public class Cell implements Comparable, PropertyAccessor, Cloneable {
      */
     public int compareTo(Object o) {
         if (!(o instanceof Cell)) {
-            throw new IllegalArgumentException("ZCell.compareTo(...): 被对比对象参数为空或类型不符!"); //
+            throw new IllegalArgumentException(App.messages.getString("res.637")); //
         }
 
         Cell that = (Cell) o;

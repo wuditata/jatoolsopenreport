@@ -40,7 +40,7 @@ public class Stretcher {
      */
     public void strech(int ori, CompoundEdit edit) throws Exception {
         if ((peers == null) || (peers.length == 0)) {
-            throw new Exception(App.messages.getString("res.164"));
+            throw new Exception(App.messages.getString("res.188"));
         }
 
         if (edit != null) {

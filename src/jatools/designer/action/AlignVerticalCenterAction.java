@@ -19,7 +19,7 @@ public class AlignVerticalCenterAction extends AlignAction {
      * Creates a new AlignVerticalCenterAction object.
      */
     public AlignVerticalCenterAction() {
-        super(App.messages.getString("res.521"), getIcon("/jatools/icons/alignvcenter.gif"),
+        super(App.messages.getString("res.576"), getIcon("/jatools/icons/alignvcenter.gif"),
             getIcon("/jatools/icons/alignvcenter2.gif"));
     }
 

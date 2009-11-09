@@ -25,7 +25,7 @@ public class NewTableAction extends ReportAction implements NewTable {
      * @param owner DOCUMENT ME!
      */
     public NewTableAction() {
-        super(App.messages.getString("res.533"), getIcon("/jatools/icons/table.gif"), getIcon("/jatools/icons/table2.gif"));
+        super(App.messages.getString("res.593"), getIcon("/jatools/icons/table.gif"), getIcon("/jatools/icons/table2.gif"));
         putValue(CLASS,Table.class );      
         }
 

@@ -43,8 +43,8 @@ public class Dataset implements DatasetBase, ProtectPublic {
     private RowSet rowset;
     private String globalID;
     private FilterSet filterSet;
-    private ArrayList series; // 有多少条线
-    private ArrayList uniquData; // 有多少个x轴上的数据点
+    private ArrayList series; 
+    private ArrayList uniquData; 
     private Map uniqueMaps;
 
     /**
@@ -419,7 +419,7 @@ public class Dataset implements DatasetBase, ProtectPublic {
      */
     public String getColumnName(int index) {
         if (rowInfo == null) {
-            throw new ArrayIndexOutOfBoundsException(App.messages.getString("res.544"));
+            throw new ArrayIndexOutOfBoundsException(App.messages.getString("res.604"));
         }
 
         return rowInfo.getColumnName(index);

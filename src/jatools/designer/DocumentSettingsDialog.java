@@ -35,14 +35,14 @@ public class DocumentSettingsDialog extends JDialog {
      * @param doc DOCUMENT ME!
      */
     public DocumentSettingsDialog(ReportDocument doc) {
-        super(Main.getInstance(), App.messages.getString("res.85"), true);
+        super(Main.getInstance(), App.messages.getString("res.112"), true);
 
         JPanel p = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.fill = GridBagConstraints.BOTH;
         gbc.anchor = GridBagConstraints.WEST;
-        p.add(new JLabel(App.messages.getString("res.86")), gbc);
+        p.add(new JLabel(App.messages.getString("res.113")), gbc);
         gbc.weightx = 1.0;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 

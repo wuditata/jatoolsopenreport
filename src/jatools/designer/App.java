@@ -48,7 +48,7 @@ public class App implements ProtectPublic {
 
         if ("1.4.1".compareTo(jre) > 0) {
             JOptionPane.showMessageDialog(null,
-                App.messages.getString("res.45") + jre + App.messages.getString("res.46"), App.messages.getString("res.47"),
+                App.messages.getString("res.69") + jre + App.messages.getString("res.70"), App.messages.getString("res.71"),
                 JOptionPane.ERROR_MESSAGE);
 
             throw new RuntimeException("invalid jre version");

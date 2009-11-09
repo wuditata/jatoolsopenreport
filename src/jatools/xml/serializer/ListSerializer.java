@@ -129,7 +129,7 @@ public class ListSerializer extends ContainerSerializer {
          </Fields>
          */
 
-        // 是否得相同的class,如果相同打上标志 ITEM_CLASS
+        
         List list = (List) object;
         Class itemClass = getItemClass(list);
 

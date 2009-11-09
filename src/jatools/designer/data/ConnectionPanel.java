@@ -207,11 +207,11 @@ public class ConnectionPanel extends JPanel implements WizardCellEditor {
      * DOCUMENT ME!
      */
     private void buildUI() {
-        JLabel suggestionLabel = new JLabel("数据库:"); //
+        JLabel suggestionLabel = new JLabel(App.messages.getString("res.73")); //
         JLabel driverLabel = new JLabel("Driver:"); //
         JLabel urlLabel = new JLabel("URL:"); //
-        JLabel userLabel = new JLabel("用户名:"); //
-        JLabel passwordLabel = new JLabel("密码:"); //
+        JLabel userLabel = new JLabel(App.messages.getString("res.74")); //
+        JLabel passwordLabel = new JLabel(App.messages.getString("res.75")); //
 
         //  driverLabel.setPreferredSize(new Dimension(526, 20));
         //  driverLabel.setMaximumSize(driverLabel.getPreferredSize() );
@@ -248,7 +248,7 @@ public class ConnectionPanel extends JPanel implements WizardCellEditor {
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         JButton prelist = new JButton("...");
-        prelist.setToolTipText(App.messages.getString("res.396"));
+        prelist.setToolTipText(App.messages.getString("res.453"));
         prelist.setPreferredSize(new Dimension(24, 24));
         add(prelist, gbc);
 

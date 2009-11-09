@@ -53,14 +53,14 @@ public class PageSetupPanel extends JPanel {
             { "A5", new Dimension(148, 210) },
             { "B5 (JIS)", new Dimension(182, 257) },
             { "Folio", new Dimension(216, 330) },
-            { App.messages.getString("res.115"), new Dimension(105, 241) },
-            { App.messages.getString("res.116"), new Dimension(110, 220) },
-            { App.messages.getString("res.117"), new Dimension(162, 229) },
-            { App.messages.getString("res.118"), new Dimension(114, 162) },
-            { App.messages.getString("res.119"), new Dimension(176, 250) },
+            { App.messages.getString("res.141"), new Dimension(105, 241) },
+            { App.messages.getString("res.142"), new Dimension(110, 220) },
+            { App.messages.getString("res.143"), new Dimension(162, 229) },
+            { App.messages.getString("res.144"), new Dimension(114, 162) },
+            { App.messages.getString("res.145"), new Dimension(176, 250) },
             { "Envelope Monarch", new Dimension(98, 191) },
             { "A6", new Dimension(105, 148) },
-            { App.messages.getString("res.120"), new Dimension(0, 0) }
+            { App.messages.getString("res.146"), new Dimension(0, 0) }
         };
     private JPanel iconPanel;
     private CardLayout card;
@@ -70,13 +70,13 @@ public class PageSetupPanel extends JPanel {
     SpinEditor leftText = new SpinEditor(DEFAULT_MARGIN);
     SpinEditor rightText = new SpinEditor(DEFAULT_MARGIN);
     SpinEditor bottomText = new SpinEditor(DEFAULT_MARGIN);
-    JRadioButton portraitButton = new JRadioButton(App.messages.getString("res.121"));
-    JRadioButton landscapeButton = new JRadioButton(App.messages.getString("res.122"));
+    JRadioButton portraitButton = new JRadioButton(App.messages.getString("res.147"));
+    JRadioButton landscapeButton = new JRadioButton(App.messages.getString("res.148"));
     PageFormat format;
     JDialog dialog;
     JComboBox typeComboBox;
-    JCheckBox headButton = new JCheckBox(App.messages.getString("res.123"));
-    JCheckBox tailButton = new JCheckBox(App.messages.getString("res.124"));
+    JCheckBox headButton = new JCheckBox(App.messages.getString("res.149"));
+    JCheckBox tailButton = new JCheckBox(App.messages.getString("res.150"));
 
     /**
      * Creates a new PageSetupPanel object.
@@ -91,14 +91,14 @@ public class PageSetupPanel extends JPanel {
         gbc.anchor = gbc.WEST;
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        add(new TitledSeparator(App.messages.getString("res.125")), gbc);
+        add(new TitledSeparator(App.messages.getString("res.151")), gbc);
         gbc.fill = GridBagConstraints.NONE;
         gbc.insets = new Insets(0, 20, 15, 2);
         add(getPaperPanel(), gbc);
         gbc.insets = new Insets(0, 2, 0, 2);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        add(new TitledSeparator(App.messages.getString("res.126")), gbc);
+        add(new TitledSeparator(App.messages.getString("res.152")), gbc);
         gbc.fill = GridBagConstraints.NONE;
         gbc.insets = new Insets(0, 20, 15, 2);
         add(getOrentationPanel(), gbc);
@@ -106,14 +106,14 @@ public class PageSetupPanel extends JPanel {
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        add(new TitledSeparator(App.messages.getString("res.127")), gbc);
+        add(new TitledSeparator(App.messages.getString("res.153")), gbc);
         gbc.insets = new Insets(0, 20, 15, 2);
         gbc.fill = GridBagConstraints.NONE;
         add(getMarginPanel(), gbc);
 
         gbc.insets = new Insets(0, 2, 0, 2);
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        add(new TitledSeparator(App.messages.getString("res.128")), gbc);
+        add(new TitledSeparator(App.messages.getString("res.154")), gbc);
         gbc.insets = new Insets(0, 20, 15, 2);
         gbc.fill = GridBagConstraints.NONE;
         add(getHeadTailPanel(), gbc);
@@ -132,7 +132,7 @@ public class PageSetupPanel extends JPanel {
             typeComboBox.addItem(sizes[i][0]);
         }
 
-        p.add(new JLabel(App.messages.getString("res.129")), gbc);
+        p.add(new JLabel(App.messages.getString("res.155")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100;
         gbc.anchor = GridBagConstraints.WEST;
@@ -209,22 +209,22 @@ public class PageSetupPanel extends JPanel {
 
     private JPanel getMarginPanel() {
         JPanel topPanel = new JPanel();
-        topPanel.add(new JLabel(App.messages.getString("res.130")));
+        topPanel.add(new JLabel(App.messages.getString("res.156")));
         topPanel.add(topText);
         topPanel.add(new JLabel("mm"));
 
         JPanel leftPanel = new JPanel();
-        leftPanel.add(new JLabel(App.messages.getString("res.131")));
+        leftPanel.add(new JLabel(App.messages.getString("res.157")));
         leftPanel.add(leftText);
         leftPanel.add(new JLabel("mm"));
 
         JPanel bottomPanel = new JPanel();
-        bottomPanel.add(new JLabel(App.messages.getString("res.132")));
+        bottomPanel.add(new JLabel(App.messages.getString("res.158")));
         bottomPanel.add(bottomText);
         bottomPanel.add(new JLabel("mm"));
 
         JPanel rightPanel = new JPanel();
-        rightPanel.add(new JLabel(App.messages.getString("res.133")));
+        rightPanel.add(new JLabel(App.messages.getString("res.159")));
         rightPanel.add(rightText);
         rightPanel.add(new JLabel("mm"));
 
@@ -277,7 +277,7 @@ public class PageSetupPanel extends JPanel {
             tailButton.setSelected(page.getFooter() != null);
         }
 
-        dialog = new JDialog(owner, App.messages.getString("res.134"), true);
+        dialog = new JDialog(owner, App.messages.getString("res.160"), true);
 
         dialog.getContentPane().add(this, BorderLayout.CENTER);
 

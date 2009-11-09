@@ -41,15 +41,15 @@ public class StyleParser {
     }
 
     private void templateParse(String styleText, Properties styles) {
-        // 先取得最近一次冒号
-        // 值是否 ${ 开始, 是,则找到结束位置
+        
+        
         // 
         while (true) {
             int i = styleText.indexOf(':');
 
             if (i > -1) {
                 String name = styleText.substring(0, i).trim();
-                // 忽略值前的所有空格
+                
                 styleText = styleText.substring(i + 1).trim();
 
                 int from = 0;

@@ -56,7 +56,7 @@ public abstract class AbstractImageLoader implements ImageLoader {
     //                //            result = loadImage(path);
     //            }
     //
-    //            // ²»»º³å,¶Ô×Ö¶ÎÍ¼Æ¬
+    
     //            if ((result != null) && !path.startsWith(Image.SOURCE_DATASET_FIELD)) {
     //                this.images.put(src, result);
     //            }

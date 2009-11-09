@@ -68,7 +68,7 @@ public class TableLayout implements LayoutManager {
                                 child.getMinHeight();
 
                             if (d < 0) {
-                                // 不足部分,加到第一行
+                                
                                 size.setSize(r, size.getSize(r) - d);
                             }
                         }

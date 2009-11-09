@@ -48,7 +48,7 @@ public class ScriptDebugger extends JDialog {
      * @param it DOCUMENT ME!
      */
     public ScriptDebugger(Interpreter it) {
-        super(Main.getInstance(), App.messages.getString("res.37"), true);
+        super(Main.getInstance(), App.messages.getString("res.61"), true);
 
         this.it = it;
 

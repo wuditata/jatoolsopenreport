@@ -34,7 +34,7 @@ import org.apache.log4j.Logger;
   */
 public class SqlReader extends AbstractDatasetReader {
     private static Logger logger = Logger.getLogger("ZSqlReader");
-    public static final String TYPE = App.messages.getString("res.552");
+    public static final String TYPE = App.messages.getString("res.619");
     public static final int QUERY = 0;
     public static final int STORED_PROCEDURE = 1;
     public final static int DONE = -1;
@@ -171,7 +171,7 @@ public class SqlReader extends AbstractDatasetReader {
 
         try {
             if (sql == null) {
-                throw new IllegalArgumentException(Util.debug(logger, App.messages.getString("res.553")));
+                throw new IllegalArgumentException(Util.debug(logger, App.messages.getString("res.620")));
             }
 
             String sqlcopy = sql;
@@ -238,11 +238,11 @@ public class SqlReader extends AbstractDatasetReader {
                 return new SqlRowInfo(columnInfos);
             } else {
                 throw new jatools.dataset.DatasetException(Util.debug(logger,
-                        App.messages.getString("res.554") + "\n" + sqlcopy));
+                        App.messages.getString("res.621") + "\n" + sqlcopy));
             }
         } catch (Exception e) {
             throw new jatools.dataset.DatasetException(Util.debug(logger,
-                    App.messages.getString("res.555") + Util.toString(e)), e);
+                    App.messages.getString("res.622") + Util.toString(e)), e);
         }
     }
 
@@ -297,7 +297,7 @@ public class SqlReader extends AbstractDatasetReader {
     public java.sql.Connection getConnection2(Script paraProvider)
         throws Exception {
         if (connection == null) {
-            throw new jatools.dataset.DatasetException(Util.debug(logger, App.messages.getString("res.556")));
+            throw new jatools.dataset.DatasetException(Util.debug(logger, App.messages.getString("res.623")));
         }
 
         return connection.getConnection(paraProvider);
@@ -314,7 +314,7 @@ public class SqlReader extends AbstractDatasetReader {
      */
     public Row readRow(RowMeta rowInfo) throws jatools.dataset.DatasetException {
         if (results == null) {
-            throw new jatools.dataset.DatasetException(Util.debug(logger, App.messages.getString("res.557")));
+            throw new jatools.dataset.DatasetException(Util.debug(logger, App.messages.getString("res.624")));
         }
 
         try {
@@ -335,10 +335,10 @@ public class SqlReader extends AbstractDatasetReader {
                 }
             } else {
                 throw new jatools.dataset.DatasetException(
-                    App.messages.getString("res.558"));
+                    App.messages.getString("res.612"));
             }
         } catch (SQLException e) {
-            throw new jatools.dataset.DatasetException(App.messages.getString("res.559"), e);
+            throw new jatools.dataset.DatasetException(App.messages.getString("res.613"), e);
         }
     }
 

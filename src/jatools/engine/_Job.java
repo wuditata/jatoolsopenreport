@@ -89,7 +89,7 @@ public class _Job {
         ResourceOutputFactory factory, Map paramValues)
         throws Exception {
         if (factory == null) {
-            throw new Exception(App.messages.getString("res.24"));
+            throw new Exception(App.messages.getString("res.48"));
         }
 
         HtmlExport exp = null;
@@ -151,7 +151,7 @@ public class _Job {
         }
 
         if (count == 0) {
-            throw new Exception(App.messages.getString("res.25"));
+            throw new Exception(App.messages.getString("res.49"));
         }
     }
 
@@ -195,7 +195,7 @@ public class _Job {
 
         if (!pages.isEmpty()) {
             if (pages.isEmpty()) {
-                throw new Exception(App.messages.getString("res.26"));
+                throw new Exception(App.messages.getString("res.50"));
             } else {
                 PageView[] pps = (PageView[]) pages.toArray(new PageView[0]);
                 job.setPrintable(new PagePrintable(pps), pps[0].getPageFormat().toAwtFormat(true));

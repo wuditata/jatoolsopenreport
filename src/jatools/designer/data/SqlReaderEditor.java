@@ -41,7 +41,7 @@ public class SqlReaderEditor extends JDialog implements Chooser {
     String oldName;
 
     private SqlReaderEditor(Frame owner) {
-        super(owner, App.messages.getString("res.497"), true);
+        super(owner, App.messages.getString("res.552"), true);
         buildUI(false);
         pack();
         setSize(new Dimension(545, 500));
@@ -54,7 +54,7 @@ public class SqlReaderEditor extends JDialog implements Chooser {
      * @param proxy DOCUMENT ME!
      */
     public SqlReaderEditor(Frame owner, SqlReader proxy) {
-        super(owner, App.messages.getString("res.497"), true);
+        super(owner, App.messages.getString("res.552"), true);
         buildUI(true);
         pack();
         setSize(new Dimension(545, 500));
@@ -117,7 +117,7 @@ public class SqlReaderEditor extends JDialog implements Chooser {
         if (needProperty) {
             JPanel propertyPane = new JPanel(new GridBagLayout());
             GridBagConstraints gbc = new GridBagConstraints();
-            JLabel nameLabel = new JLabel(App.messages.getString("res.63"));
+            JLabel nameLabel = new JLabel(App.messages.getString("res.90"));
             nameLabel.setPreferredSize(new Dimension(56, 20));
             gbc.fill = GridBagConstraints.BOTH;
             propertyPane.add(nameLabel, gbc);
@@ -130,7 +130,7 @@ public class SqlReaderEditor extends JDialog implements Chooser {
             gbc.weightx = 0.0f;
             gbc.gridwidth = 1;
 
-            propertyPane.add(new JLabel(App.messages.getString("res.478")), gbc);
+            propertyPane.add(new JLabel(App.messages.getString("res.534")), gbc);
             gbc.gridwidth = GridBagConstraints.REMAINDER;
             descriptionText = new JTextField();
             propertyPane.add(descriptionText, gbc);
@@ -152,7 +152,7 @@ public class SqlReaderEditor extends JDialog implements Chooser {
 
         JPanel commandPane = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
-        JButton b = new JButton(App.messages.getString("res.163"));
+        JButton b = new JButton(App.messages.getString("res.187"));
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     dataPreview();
@@ -161,7 +161,7 @@ public class SqlReaderEditor extends JDialog implements Chooser {
 
         commandPane.add(b);
 
-        b = new JButton(App.messages.getString("res.487"));
+        b = new JButton(App.messages.getString("res.352"));
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     try {
@@ -183,7 +183,7 @@ public class SqlReaderEditor extends JDialog implements Chooser {
 
         commandPane.add(b);
 
-        b = new JButton(App.messages.getString("res.498"));
+        b = new JButton(App.messages.getString("res.553"));
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     exitOK = false;

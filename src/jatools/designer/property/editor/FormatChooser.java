@@ -1,5 +1,6 @@
 package jatools.designer.property.editor;
 import jatools.accessor.PropertyDescriptor;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.formatter.DateFormat;
 import jatools.formatter.DecimalFormat;
@@ -48,15 +49,15 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 	static final int DATE = 5;
 	static final int TIME = 6;
 
-	// 预览板卡片名称
+	
 	static final String NULL_CARD = "null"; //
 	static final String DECIMAL_CARD = "decimal"; //
 	static final String DATE_CARD = "date"; //
 	static final String TIME_CARD = "time"; //
 
-	// 每一类格式化对象可选属性
+	
 	static final String SELECTABLE = "selectable"; //
-	static String[] patterns = new String[]{//普通
+	static String[] patterns = new String[]{
 			"0", // //
 			"0.0", // //
 			"0.00", // //
@@ -67,24 +68,24 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 			"#,##0.00", // //
 			"#,##0.000", // //
 			"#,##0.0000", // //
-			null, //货币
-			"￥0", // //
-			"￥0.0", // //
-			"￥0.00", // //
-			"￥0.000", // //
-			"￥0.0000", // //
-			"￥#,##0", // //
-			"￥#,##0.0", // //
-			"￥#,##0.00", // //
-			"￥#,##0.000", // //
-			"￥#,##0.0000", // //
-			null, //百分比
+			null, 
+			App.messages.getString("res.334"), // //
+			App.messages.getString("res.335"), // //
+			App.messages.getString("res.336"), // //
+			App.messages.getString("res.337"), // //
+			App.messages.getString("res.338"), // //
+			App.messages.getString("res.339"), // //
+			App.messages.getString("res.340"), // //
+			App.messages.getString("res.341"), // //
+			App.messages.getString("res.342"), // //
+			App.messages.getString("res.343"), // //
+			null, 
 			"0%", // //
 			"0.0%", // //
 			"0.00%", // //
 			"0.000%", // //
 			"0.0000%", // //
-			null, // 科学计数法
+			null, 
 			"0.##E0", "0.00E0", null}; // //$NON-NLS-2$
 	static Format2 NULL_FORMAT = new Format2() {
 		public String format(Object o) {
@@ -100,7 +101,7 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 		}
 
 		public String toString() {
-			return "无格式"; //
+			return App.messages.getString("res.344"); //
 		}
 
 		public Object clone() {
@@ -133,7 +134,7 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 	 * Creates a new ZFormatChooser object.
 	 */
 	public FormatChooser(Frame owner, boolean needui) {
-		super(owner, "格式", true); //
+		super(owner, App.messages.getString("res.170"), true); //
 		if (needui) {
 			buildUI();
 			instance = this;
@@ -148,7 +149,7 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 
 	//
 	public void actionPerformed(ActionEvent e) {
-		// 显示面板
+		
 		int i = Integer.parseInt(e.getActionCommand());
 		String cardId = null;
 
@@ -191,12 +192,12 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 		if (formats == null) {
 			formats = new Format2[TIME + 1][];
 
-			//建立无格式
+			
 			int j = 0;
 			formats[j] = new Format2[]{NULL_FORMAT};
 			j++;
 
-			//建立ZDecimalFormat
+			
 			ArrayList tmp = new ArrayList();
 
 			for (int i = 0; i < patterns.length; i++) {
@@ -210,7 +211,7 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 				}
 			}
 
-			//建立日期格式
+			
 			for (int i = 0; i < 4; i++) {
 				tmp.add(new DateFormat(DateFormat.DATE, i));
 			}
@@ -233,18 +234,18 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 	 * DOCUMENT ME!
 	 */
 	private void buildUI() {
-		patternSelector = new ListEditor(new Object[]{NULL_FORMAT}, "格式选择:", false); //
+		patternSelector = new ListEditor(new Object[]{NULL_FORMAT}, App.messages.getString("res.345"), false); //
 		card = new CardLayout();
 		preview = new JPanel(card);
 
 		options = new JRadioButton[]{
-				new JRadioButton("无"), //
-				new JRadioButton("数值"), //
-				new JRadioButton("货币"), //
-				new JRadioButton("百分比"), //
-				new JRadioButton("科学计数法"), //
-				new JRadioButton("日期"), //
-				new JRadioButton("时间")}; //
+				new JRadioButton(App.messages.getString("res.346")), //
+				new JRadioButton(App.messages.getString("res.347")), //
+				new JRadioButton(App.messages.getString("res.348")), //
+				new JRadioButton(App.messages.getString("res.349")), //
+				new JRadioButton(App.messages.getString("res.350")), //
+				new JRadioButton(App.messages.getString("res.16")), //
+				new JRadioButton(App.messages.getString("res.351"))}; //
 		JPanel optionPane = new JPanel(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
@@ -255,7 +256,7 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 		Format2[][] formats = getFormats();
 
 		for (int i = 0; i < options.length; i++) {
-			//选择扭,使其对应相应的可选格式对象
+			
 			options[i].putClientProperty(SELECTABLE, formats[i]);
 			options[i].setActionCommand(i + ""); //
 			options[i].addActionListener(this);
@@ -263,10 +264,10 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 			group.add(options[i]);
 		}
 
-		// 组装上边的面板, option + pattern + preview
+		
 		JPanel content = new JPanel(new BorderLayout());
 		preview.setPreferredSize(new Dimension(10, 70));
-		preview.setBorder(BorderFactory.createTitledBorder("预览")); //
+		preview.setBorder(BorderFactory.createTitledBorder(App.messages.getString("res.187"))); //
 		patternSelector.setBorder(BorderFactory
 				.createEmptyBorder(10, 10, 10, 0));
 		patternSelector.addChangeListener(new ChangeListener() {
@@ -279,7 +280,7 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 		content.add(optionPane, BorderLayout.WEST);
 		content.add(patternSelector, BorderLayout.CENTER);
 
-		// 在预览面板中加入四张卡片
+		
 		preview.add(NULL_CARD, new ZNullPreview());
 		preview.add(DECIMAL_CARD, new ZDecimalPreview());
 		preview.add(DATE_CARD, new ZDatePreview());
@@ -290,10 +291,10 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 
 		JPanel commandPane = new JPanel(
 				new FlowLayout(FlowLayout.RIGHT, 10, 10));
-		JButton ok = new JButton("确认"); //
+		JButton ok = new JButton(App.messages.getString("res.352")); //
 		commandPane.add(ok);
 
-		JButton cancel = new JButton("取消"); //
+		JButton cancel = new JButton(App.messages.getString("res.4")); //
 		commandPane.add(cancel);
 		ok.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -328,7 +329,7 @@ public class FormatChooser extends JDialog implements Chooser, ActionListener {
 			return;
 		}
 
-		//找到当前可见的预览板,设置格式化器
+		
 		Component[] c = preview.getComponents();
 
 		for (int i = 0; i < c.length; i++) {
@@ -543,7 +544,7 @@ class ZDatePreview extends ZFormatPreview {
 	 * @return DOCUMENT ME!
 	 */
 	public JComponent getEditor() {
-		return new JLabel("  今天是:"); //
+		return new JLabel(App.messages.getString("res.353")); //
 	}
 }
 
@@ -569,7 +570,7 @@ class ZTimePreview extends ZFormatPreview {
 	 * @return DOCUMENT ME!
 	 */
 	public JComponent getEditor() {
-		return new JLabel("  现在时间是:"); //
+		return new JLabel(App.messages.getString("res.354")); //
 	}
 }
 
@@ -595,6 +596,6 @@ class ZNullPreview extends ZFormatPreview {
 	 * @return DOCUMENT ME!
 	 */
 	public JComponent getEditor() {
-		return new JLabel("  不指定格式"); //
+		return new JLabel(App.messages.getString("res.355")); //
 	}
 }

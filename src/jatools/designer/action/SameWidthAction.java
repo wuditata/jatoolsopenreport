@@ -19,7 +19,7 @@ public class SameWidthAction extends ResizeAction {
      * Creates a new SameWidthAction object.
      */
     public SameWidthAction() {
-        super(App.messages.getString("res.538"), getIcon("/jatools/icons/samewidth.gif"),
+        super(App.messages.getString("res.598"), getIcon("/jatools/icons/samewidth.gif"),
             getIcon("/jatools/icons/samewidth2.gif"));
     }
 

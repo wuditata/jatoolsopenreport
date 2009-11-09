@@ -54,7 +54,7 @@ public class CustomParameterDialog extends JDialog {
      * Creates a new CustomParameterDialog object.
      */
     public CustomParameterDialog() {
-        super(Main.getInstance(), App.messages.getString("res.469"), true);
+        super(Main.getInstance(), App.messages.getString("res.525"), true);
 
         CommandPanel buttonPanel = CommandPanel.createPanel();
 
@@ -92,7 +92,7 @@ public class CustomParameterDialog extends JDialog {
         GridBagConstraints2 gbc = new GridBagConstraints2(result);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.WEST;
-        result.add(new JLabel(App.messages.getString("res.63")), gbc);
+        result.add(new JLabel(App.messages.getString("res.90")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         gbc.weightx = 100;
@@ -101,7 +101,7 @@ public class CustomParameterDialog extends JDialog {
         gbc.weightx = 0;
         gbc.gridwidth = 1;
 
-        result.add(new JLabel(App.messages.getString("res.470")), gbc);
+        result.add(new JLabel(App.messages.getString("res.526")), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
@@ -112,7 +112,7 @@ public class CustomParameterDialog extends JDialog {
 
         gbc.gridwidth = 1;
 
-        result.add(new JLabel(App.messages.getString("res.471")), gbc);
+        result.add(new JLabel(App.messages.getString("res.527")), gbc);
 
         defaultField = new TemplateTextField();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
@@ -130,7 +130,7 @@ public class CustomParameterDialog extends JDialog {
             parameter = createParameter();
             hide();
         } catch (Exception e1) {
-            JOptionPane.showMessageDialog(getParent(), e1.getMessage(), App.messages.getString("res.12"),
+            JOptionPane.showMessageDialog(getParent(), e1.getMessage(), App.messages.getString("res.26"),
                 JOptionPane.ERROR_MESSAGE);
             e1.printStackTrace();
         }
@@ -198,14 +198,14 @@ public class CustomParameterDialog extends JDialog {
 
         if (isEmpty(type)) {
             typeCombo.requestFocus();
-            throw new Exception(App.messages.getString("res.472"));
+            throw new Exception(App.messages.getString("res.528"));
         }
 
         String def = defaultField.getText().trim();
 
         if (isEmpty(def)) {
             defaultField.requestFocus();
-            throw new Exception(App.messages.getString("res.473"));
+            throw new Exception(App.messages.getString("res.529"));
         }
 
         Parameter parameter = new Parameter(name, TypeUtil.getClassName(type), null, def);

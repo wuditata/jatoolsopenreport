@@ -38,7 +38,7 @@ public class Viewer extends JApplet {
      * @param pageViewer DOCUMENT ME!
      */
 
-    // 已经被装载的页数;
+    
     int loadedPages;
     int totalPages;
     rvr v = new rvr();

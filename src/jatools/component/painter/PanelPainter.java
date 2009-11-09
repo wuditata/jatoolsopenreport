@@ -42,16 +42,16 @@ public class PanelPainter extends SimplePainter {
             //            int x1 = (b.x + b.width) - is.right;
             //            int y1 = (b.y + b.height) - is.top;
             //
-            //            // вСио╫г
+            
             //            g2.drawLine(x0, y0, x0 + PADDING_FLAG_SIZE, y0);
             //            g2.drawLine(x0, y0, x0, y0 + PADDING_FLAG_SIZE);
-            //            // вСоб╫г
+            
             //            g2.drawLine(x0, y1, x0 + PADDING_FLAG_SIZE, y1);
             //            g2.drawLine(x0, y1, x0, y1 - PADDING_FLAG_SIZE);
-            //            // сроб╫г
+            
             //            g2.drawLine(x1, y1, x1 - PADDING_FLAG_SIZE, y1);
             //            g2.drawLine(x1, y1, x1, y1 - PADDING_FLAG_SIZE);
-            //            // срио╫г
+            
             //            g2.drawLine(x1, y0, x1 - PADDING_FLAG_SIZE, y0);
             //            g2.drawLine(x1, y0, x1, y0 + PADDING_FLAG_SIZE);
             Panel p = (Panel) c;

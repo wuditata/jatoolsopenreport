@@ -96,9 +96,9 @@ public class GroupNodeSource extends NodeSource {
         Node[] result = new Node[rowsets.length];
 
         for (int i = 0; i < rowsets.length; i++) {
-            // 从 groupview 得到的rowset.key.elements 只有一个元素,
-            // 而node需要合并父级的key,作为groupnode的key
-            // 合并key
+            
+            
+            
             Object[] newkeys = new Object[parentKeys.length + 1];
             System.arraycopy(parentKeys, 0, newkeys, 0, parentKeys.length);
             newkeys[parentKeys.length] = rowsets[i].key().elements[0];

@@ -1,5 +1,7 @@
 package jatools.dataset;
 
+import jatools.designer.App;
+
 import java.util.Comparator;
 
 
@@ -8,7 +10,7 @@ final class RowsComparator implements Comparator {
 
     public RowsComparator(Comparator comparator) {
         if (comparator == null) {
-            throw new NullPointerException("ZDataSetComparator::ZDataSetComparator(...) ,对比器参数不能为null"); //
+            throw new NullPointerException(App.messages.getString("res.610")); //
         }
 
         this.comparator = comparator;

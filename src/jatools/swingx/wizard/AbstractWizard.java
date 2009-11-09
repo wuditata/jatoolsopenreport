@@ -1,5 +1,7 @@
 package jatools.swingx.wizard;
 
+import jatools.designer.App;
+
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -74,7 +76,7 @@ public abstract class AbstractWizard implements WizardInput, WizardOutput, Wizar
      * @throws Exception DOCUMENT ME!
      */
     public final void enter() throws Exception {
-        // 取得所有输入项
+        
         WizardOutput[] wos = getOutputWizard();
 
         String error = null;
@@ -99,7 +101,7 @@ public abstract class AbstractWizard implements WizardInput, WizardOutput, Wizar
             throw new Exception(error);
         }
 
-        // 如果都可用，则就允许进入了
+        
         if (upperLinkChanged) {
             initEditor();
             getCellEditor().applyChange();
@@ -214,7 +216,7 @@ public abstract class AbstractWizard implements WizardInput, WizardOutput, Wizar
      */
     public final void checkAvailable() throws Exception {
         if (upperLinkChanged) {
-            throw new Exception("你必须先选择一个数据库表"); //
+            throw new Exception(App.messages.getString("res.39")); //
         }
 
         getCellEditor().checkAvailable();

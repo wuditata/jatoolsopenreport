@@ -45,7 +45,7 @@ public class DatasetPropertyEditor extends JDialog {
      * @param types DOCUMENT ME!
      */
     public DatasetPropertyEditor(Frame owner, String name, Object type, Object[] types) {
-        super(owner, App.messages.getString("res.485"));
+        super(owner, App.messages.getString("res.541"));
         buildUI(name, type, types);
         setModal(true);
 
@@ -74,20 +74,20 @@ public class DatasetPropertyEditor extends JDialog {
 
         JPanel center = new JPanel(new GridBagLayout());
 
-        center.add(new JLabel(App.messages.getString("res.63")), gbc);
+        center.add(new JLabel(App.messages.getString("res.90")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 70;
         center.add(nameText, gbc);
         gbc.weightx = 0;
 
         gbc.gridwidth = 1;
-        center.add(new JLabel(App.messages.getString("res.486")), gbc);
+        center.add(new JLabel(App.messages.getString("res.542")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         center.add(typeSelector, gbc);
         typeSelector.setPreferredSize(new Dimension(200, 25));
 
         JPanel south = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        JButton b = new JButton(App.messages.getString("res.487"));
+        JButton b = new JButton(App.messages.getString("res.352"));
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     if (validateInput()) {
@@ -129,7 +129,7 @@ public class DatasetPropertyEditor extends JDialog {
 
         if ((focus == null) && (typeSelector.getSelectedIndex() == -1)) {
             focus = typeSelector;
-            error = App.messages.getString("res.488");
+            error = App.messages.getString("res.543");
         }
 
         if (error != null) {

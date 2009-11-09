@@ -25,16 +25,16 @@ public abstract class AbstractPrinterLayout implements PrinterLayout {
     protected CompoundView rootView;
     protected CompoundView resultView;
 
-    // 分别给本容器的所有可打印区域
-    // 一般左上角为本容器的左上解座标
-    // 右下角为,本容器组件
+    
+    
+    
     // imageable.x = c.inset.left;
     // imageable.y = c.inset.top
-    // 如果是自由布局,height = parent.height - c.y - c.is.top - c.is.bottom
-    // 如果是行布局,height = parent.imageable.height - parent.lastY
+    
+    
     // 
     // imageable.width = c.width;
-    Rectangle imageable; // 该容器,除去 inset后的区域,
+    Rectangle imageable; 
     Rectangle lastcopy;
     private Printer printer;
 
@@ -67,7 +67,7 @@ public abstract class AbstractPrinterLayout implements PrinterLayout {
      * @return DOCUMENT ME!
      */
     public boolean bottomContained(int ymax) {
-        // 容器的高度 imageable.y
+        
         return imageable.contains(imageable.y + 1, ymax);
     }
 

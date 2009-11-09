@@ -1,6 +1,7 @@
 package jatools.designer.editor.border;
 
 import jatools.core.view.Border;
+import jatools.designer.App;
 
 import java.awt.BorderLayout;
 
@@ -28,7 +29,7 @@ public class EmptyBorderPane extends JPanel implements BorderPane {
      * DOCUMENT ME!
      */
     public String toString() {
-        return "нч"; //
+        return App.messages.getString("res.346"); //
     }
 
     /**
@@ -37,7 +38,7 @@ public class EmptyBorderPane extends JPanel implements BorderPane {
     private void buildUI() {
         setLayout(new BorderLayout());
 
-        JLabel prompt = new JLabel("нч╠ъ©Р"); //
+        JLabel prompt = new JLabel(App.messages.getString("res.446")); //
         prompt.setHorizontalAlignment(JLabel.CENTER);
         this.add(prompt, BorderLayout.CENTER);
     }

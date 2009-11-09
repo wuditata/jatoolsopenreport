@@ -42,7 +42,7 @@ public class HypelinkPropertyEditor extends JDialog implements Chooser {
      * Creates a new HypelinkPropertyEditor object.
      */
     public HypelinkPropertyEditor() {
-        super(Main.getInstance(), App.messages.getString("res.491"), true);
+        super(Main.getInstance(), App.messages.getString("res.546"), true);
 
         JPanel p = new JPanel(new GridBagLayout());
 
@@ -56,14 +56,14 @@ public class HypelinkPropertyEditor extends JDialog implements Chooser {
         gbc.weightx = 0;
 
         gbc.gridwidth = 1;
-        p.add(new JLabel(App.messages.getString("res.492")), gbc);
+        p.add(new JLabel(App.messages.getString("res.547")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
         p.add(urlField, gbc);
         gbc.weightx = 0;
 
         gbc.gridwidth = 1;
-        p.add(new JLabel(App.messages.getString("res.493")), gbc);
+        p.add(new JLabel(App.messages.getString("res.548")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.NONE;
         p.add(targetCombo, gbc);
@@ -91,7 +91,7 @@ public class HypelinkPropertyEditor extends JDialog implements Chooser {
 
         CommandPanel commandPanel = CommandPanel.createPanel(oklistener, cancellistener);
 
-        commandPanel.addComponent(App.messages.getString("res.181"),
+        commandPanel.addComponent(App.messages.getString("res.23"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;

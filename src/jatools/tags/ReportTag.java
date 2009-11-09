@@ -135,7 +135,7 @@ public class ReportTag extends AbstractReportTag {
                     Object val = this.parametersCache.get(key);
 
                     if (logger.isDebugEnabled()) {
-                        logger.debug(App.messages.getString("res.10") + key + " = " + val);
+                        logger.debug(App.messages.getString("res.11") + key + " = " + val);
                     }
 
                     job.setParameter(key, val);

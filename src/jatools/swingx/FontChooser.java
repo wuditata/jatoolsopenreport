@@ -1,5 +1,6 @@
 package jatools.swingx;
 
+import jatools.designer.App;
 import jatools.designer.Main;
 
 import java.awt.BorderLayout;
@@ -39,7 +40,7 @@ public class FontChooser extends JPanel implements Chooser, ChangeListener {
     private ListEditor sizeSelector;
     private String sampleText = SAMPLE_TEXT;
     private JLabel sampleLabel = new JLabel(sampleText);
-    Object[] styles = { "常规", "粗体", "斜体", "粗体+斜体" }; // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    Object[] styles = { App.messages.getString("res.17"), App.messages.getString("res.18"), App.messages.getString("res.19"), App.messages.getString("res.20") }; // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
     boolean exitOK = false;
     Object result = null;
@@ -111,7 +112,7 @@ public class FontChooser extends JPanel implements Chooser, ChangeListener {
     */
     public void setValue(Object value) {
         Font f = (Font) value;
-        String face = (f == null) ? "宋体" : f.getName(); //
+        String face = (f == null) ? App.messages.getString("res.21") : f.getName(); //
         int style = (f == null) ? 0 : f.getStyle();
         int size = (f == null) ? 12 : f.getSize();
 
@@ -135,7 +136,7 @@ public class FontChooser extends JPanel implements Chooser, ChangeListener {
         try {
             size = Integer.parseInt((String) sizeSelector.getSelectedValue());
         } catch (NumberFormatException ex) {
-            // 不能转换成数字
+            
         }
 
         return new Font((String) faceSelector.getSelectedValue(),
@@ -150,8 +151,8 @@ public class FontChooser extends JPanel implements Chooser, ChangeListener {
     public boolean showChooser(JComponent owner) {
         exitOK = false;
         result = null;
-        JButton okButton = new JButton("确定"); //
-        JButton cancelButton = new JButton("取消"); //
+        JButton okButton = new JButton(App.messages.getString("res.3")); //
+        JButton cancelButton = new JButton(App.messages.getString("res.4")); //
         okButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 exitOK = true;
@@ -165,7 +166,7 @@ public class FontChooser extends JPanel implements Chooser, ChangeListener {
                
             }
         });
-        shareInstance = new JDialog((Frame) Main.getInstance() , "选择字体"); //
+        shareInstance = new JDialog((Frame) Main.getInstance() , App.messages.getString("res.22")); //
         shareInstance.setModal(true);
 
        
@@ -175,7 +176,7 @@ public class FontChooser extends JPanel implements Chooser, ChangeListener {
         
         if(this.empty)
         {
-        	JButton emptyButton = new JButton("为空"); //
+        	JButton emptyButton = new JButton(App.messages.getString("res.23")); //
         	emptyButton.addActionListener(new ActionListener() {
                   public void actionPerformed(ActionEvent e) {
                       exitOK = true;
@@ -202,18 +203,18 @@ public class FontChooser extends JPanel implements Chooser, ChangeListener {
     private void buildDialog() {
         Object[] faces = GraphicsEnvironment.getLocalGraphicsEnvironment()
                                             .getAvailableFontFamilyNames();
-        faceSelector = new ListEditor(faces, "字体", false); //
+        faceSelector = new ListEditor(faces, App.messages.getString("res.24"), false); //
 
         faceSelector.setPreferredSize(new Dimension(120, 10));
 
-        styleSelector = new ListEditor(styles, "字型", false); //
+        styleSelector = new ListEditor(styles, App.messages.getString("res.25"), false); //
         styleSelector.setPreferredSize(new Dimension(90, 10));
 
         Object[] sizes = {
             "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "32", "48", // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$ //$NON-NLS-10$ //$NON-NLS-11$ //$NON-NLS-12$ //$NON-NLS-13$
             "72" //
         };
-        sizeSelector = new ListEditor(sizes, "大小", true); //
+        sizeSelector = new ListEditor(sizes, App.messages.getString("res.15"), true); //
         sizeSelector.setPreferredSize(new Dimension(60, 10));
         setLayout(new GridBagLayout());
 

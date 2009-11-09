@@ -24,7 +24,7 @@ public class CenterToParentAction extends ReportAction {
      * Creates a new CenterToParentAction object.
      */
     public CenterToParentAction() {
-        super(App.messages.getString("res.15"), getIcon("/jatools/icons/center.gif"),
+        super(App.messages.getString("res.31"), getIcon("/jatools/icons/center.gif"),
             getIcon("/jatools/icons/center2.gif"));
     }
 

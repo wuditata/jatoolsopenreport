@@ -38,7 +38,7 @@ public class PrintStylePropertyEditor extends JDialog implements Chooser {
      * Creates a new BackgroundImageEditor object.
      */
     public PrintStylePropertyEditor() {
-        super(Main.getInstance(), App.messages.getString("res.328"), true);
+        super(Main.getInstance(), App.messages.getString("res.376"), true);
 
         this.getContentPane().add(this.getTabbedPanel(), BorderLayout.CENTER);
 
@@ -62,7 +62,7 @@ public class PrintStylePropertyEditor extends JDialog implements Chooser {
         commandPanel.addComponent(App.messages.getString("res.3"), oklistener);
         commandPanel.addComponent(App.messages.getString("res.4"), cancellistener);
 
-        commandPanel.addComponent(App.messages.getString("res.181"),
+        commandPanel.addComponent(App.messages.getString("res.23"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;
@@ -88,14 +88,14 @@ public class PrintStylePropertyEditor extends JDialog implements Chooser {
         repeatPanel = new RepeatRulePanel();
         pagePanel = new PageRulePanel();
         layoutPanel = new LayoutRulePanel();
-        tab.addTab(App.messages.getString("res.143"), textPanel);
-        tab.addTab(App.messages.getString("res.227"), crossTabPanel);
+        tab.addTab(App.messages.getString("res.168"), textPanel);
+        tab.addTab(App.messages.getString("res.253"), crossTabPanel);
    
         
-        tab.addTab(App.messages.getString("res.329"), visiblePanel);
-        tab.addTab(App.messages.getString("res.330"), repeatPanel);
-        tab.addTab(App.messages.getString("res.331"), pagePanel);
-        tab.addTab(App.messages.getString("res.332"), layoutPanel);
+        tab.addTab(App.messages.getString("res.377"), visiblePanel);
+        tab.addTab(App.messages.getString("res.378"), repeatPanel);
+        tab.addTab(App.messages.getString("res.379"), pagePanel);
+        tab.addTab(App.messages.getString("res.380"), layoutPanel);
 
         return tab;
     }

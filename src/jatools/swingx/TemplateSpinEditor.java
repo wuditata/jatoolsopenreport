@@ -96,7 +96,7 @@ public class TemplateSpinEditor extends JPanel {
         } catch (Exception e) {
         }
 
-        JFrame frame = new JFrame(App.messages.getString("res.13"));
+        JFrame frame = new JFrame(App.messages.getString("res.29"));
         frame.setResizable(true);
 
         TemplateSpinEditor lp = new TemplateSpinEditor();

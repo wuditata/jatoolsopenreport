@@ -1299,7 +1299,7 @@ public abstract class Component implements PropertyAccessor, ListenToXmlWrite {
         //new String[]{
         //    	Name
         //
-        //    	数据集
+        
         //
         //    	Variable
         //    	ImageSrc
@@ -1307,12 +1307,12 @@ public abstract class Component implements PropertyAccessor, ListenToXmlWrite {
         //    	Text
         //
         //
-        //    	格式.通用
+        
         //    	BackColor
         //    	ForeColor
         //    	Border
         //
-        //    	格式.文本
+        
         //
         //    	Font
         //    	HorizontalAlignment
@@ -1322,41 +1322,41 @@ public abstract class Component implements PropertyAccessor, ListenToXmlWrite {
         //    	CharWidth
         //
         //
-        //    	格式.条形码
+        
         //    	CodeType
         //
-        //    	格式.图片
+        
         //    	Stretches
         //
-        //    	格式.线
+        
         //    	LinePattern
         //    	LineSize
         //
         //
-        //    	html属性
+        
         //
         //    	RequiredHtmlImageFormat
         //    	BackgroundImageStyle
         //    	Hyperlink
         //    	TooltipText
         //
-        //    	样式
+        
         //    	PrintStyle
         //    	DisplayStyleRef
         //
         //
-        //    	位置
+        
         //    	X
         //    	Y
         //    	Width
         //    	Height
         //
-        //    	事件
+        
         //    	AfterPrint
         //    	BeforePrint
         //
         //
-        //    	不可见属性
+        
         //    	Children
         //
         //    	ColumnWidths

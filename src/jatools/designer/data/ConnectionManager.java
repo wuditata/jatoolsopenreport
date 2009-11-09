@@ -47,7 +47,7 @@ public class ConnectionManager extends JDialog {
      * @param conns DOCUMENT ME!
      */
     public ConnectionManager(Frame owner, ArrayList conns) {
-        super(owner, App.messages.getString("res.395"), true);
+        super(owner, App.messages.getString("res.452"), true);
         this.proxyContainer = conns;
         buildUI();
     }
@@ -79,7 +79,7 @@ public class ConnectionManager extends JDialog {
         JScrollPane scrollPane = new JScrollPane(proxyTable);
         datasourcesPane.add(scrollPane, BorderLayout.CENTER);
 
-        JButton addButton = new JButton(App.messages.getString("res.66"));
+        JButton addButton = new JButton(App.messages.getString("res.93"));
         addButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     if (add()) {
@@ -91,7 +91,7 @@ public class ConnectionManager extends JDialog {
                 }
             });
 
-        removeButton = new JButton(App.messages.getString("res.69"));
+        removeButton = new JButton(App.messages.getString("res.96"));
         removeButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     remove();
@@ -99,7 +99,7 @@ public class ConnectionManager extends JDialog {
                 }
             });
 
-        editButton = new JButton(App.messages.getString("res.68"));
+        editButton = new JButton(App.messages.getString("res.95"));
         editButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     edit();
@@ -159,7 +159,7 @@ public class ConnectionManager extends JDialog {
                 }
 
                 public String getColumnName(int index) {
-                    return ((index == 0) ? App.messages.getString("res.81") : null);
+                    return ((index == 0) ? App.messages.getString("res.108") : null);
                 }
             };
 

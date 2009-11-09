@@ -21,7 +21,7 @@ public class JFileTree extends JTree {
     public static final boolean DIRECTORY_AND_FILE = true;
     public static final boolean DIRECTORY_NO_FILE = false;
     private static final String DESKTOP_EN = "Desktop";
-    private static final String DESKTOP_ZH = App.messages.getString("res.102");
+    private static final String DESKTOP_ZH = App.messages.getString("res.129");
     private static final String DISK_EN = "Disk";
     private JFileTreeNode systemNode = null;
     private JFileTreeNode rootNode;

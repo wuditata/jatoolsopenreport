@@ -20,7 +20,7 @@ public class DocumentVariableNamePicker {
 
                 break;
             } catch (Exception e) {
-                // 可能重名了
+                
             }
         }
 

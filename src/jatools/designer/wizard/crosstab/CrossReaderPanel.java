@@ -89,12 +89,12 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
      *            计算函数 ,参考本类常量定义
      */
     public CrossReaderPanel() {
-        // 西部上半部分
+        
         JPanel west = new JPanel(new GridLayout(2, 1));
         JPanel leftTopPanel = new JPanel(new BorderLayout());
         leftTopPanel.setBorder(new EmptyBorder(20, 20, 20, 3));
 
-        JLabel dataLabel = new JLabel(App.messages.getString("res.84"), JLabel.LEFT);
+        JLabel dataLabel = new JLabel(App.messages.getString("res.111"), JLabel.LEFT);
         leftTopPanel.add(dataLabel, BorderLayout.NORTH);
         dataTree = new DataTree(null);
 
@@ -102,12 +102,12 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
         leftTopPanel.add(sp);
         west.add(leftTopPanel);
 
-        // 西部下半部分
+        
         JPanel leftBottomPanel = new JPanel(new BorderLayout());
         leftBottomPanel.setBorder(new EmptyBorder(20, 20, 0, 3));
 
         JPanel rowPanel = new JPanel(new BorderLayout());
-        JLabel rowLabel = new JLabel(App.messages.getString("res.217"), JLabel.LEFT);
+        JLabel rowLabel = new JLabel(App.messages.getString("res.239"), JLabel.LEFT);
         rowPanel.add(rowLabel, BorderLayout.WEST);
         rdeleteButton = createReleteButton();
 
@@ -143,14 +143,14 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
             });
         rowTable.getSelectionModel().addListSelectionListener(this);
 
-        // 东部
+        
         JPanel east = new JPanel(new GridLayout(2, 1));
         JPanel rightTopPanel = new JPanel(new BorderLayout());
         rightTopPanel.setBorder(new EmptyBorder(20, 3, 20, 20));
 
-        // 东部上半部分
+        
         JPanel columnPanel = new JPanel(new BorderLayout());
-        JLabel columnLabel = new JLabel(App.messages.getString("res.218"), JLabel.LEFT);
+        JLabel columnLabel = new JLabel(App.messages.getString("res.240"), JLabel.LEFT);
         columnPanel.add(columnLabel, BorderLayout.WEST);
         cdeleteButton = createCdeleteButton();
 
@@ -183,12 +183,12 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
             });
         columnTable.getSelectionModel().addListSelectionListener(this);
 
-        // 东部下半部分
+        
         JPanel rightBottomPanel = new JPanel(new BorderLayout());
         rightBottomPanel.setBorder(new EmptyBorder(20, 3, 0, 20));
 
         JPanel aggregationPanel = new JPanel(new BorderLayout());
-        JLabel aggregationLabel = new JLabel(App.messages.getString("res.219"), JLabel.LEFT);
+        JLabel aggregationLabel = new JLabel(App.messages.getString("res.241"), JLabel.LEFT);
         aggregationPanel.add(aggregationLabel, BorderLayout.WEST);
         adeleteButton = createAdeleteButton();
         aggregationPanel.add(adeleteButton, BorderLayout.EAST);
@@ -198,8 +198,8 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
         rightBottomPanel.add(new JScrollPane(calcTable));
         east.add(rightBottomPanel);
 
-        // rightBottomPanel.add( new JCheckBox("计算值横向排列"),BorderLayout.SOUTH );
-        // 中部
+        
+        
         JPanel middle = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(0, 0, 0, 0);
@@ -240,11 +240,11 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
 
         this.add(dataPanel, BorderLayout.CENTER);
 
-        chkFlowlayout = new JCheckBox(App.messages.getString("res.220"));
+        chkFlowlayout = new JCheckBox(App.messages.getString("res.242"));
         chkFlowlayout.setEnabled(false);
-        chkTopSummary = new JCheckBox(App.messages.getString("res.221"));
+        chkTopSummary = new JCheckBox(App.messages.getString("res.243"));
         chkTopSummary.setSelected(false);
-        chkLeftSummary = new JCheckBox(App.messages.getString("res.222"));
+        chkLeftSummary = new JCheckBox(App.messages.getString("res.244"));
         chkLeftSummary.setSelected(false);
 
         JPanel tmp = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -287,8 +287,8 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
      */
     private CustomTable createRowTabel() {
         CustomTable table = new CustomTable(new String[] {
-                    App.messages.getString("res.81"),
-                    App.messages.getString("res.97")
+                    App.messages.getString("res.108"),
+                    App.messages.getString("res.124")
                 });
 
         table.getModel().addTableModelListener(new TableModelListener() {
@@ -304,7 +304,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
                     new OrderBy(OrderBy.DESC),
                     new OrderBy(OrderBy.ORIGINAL)
                 });
-        table.getColumn("排序").setCellEditor( //
+        table.getColumn(App.messages.getString("res.124")).setCellEditor( //
             new DefaultCellEditor(sortTypeChooser));
         table.setEditable(1, true);
 
@@ -338,8 +338,8 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
      */
     private CustomTable createColumnTable() {
         CustomTable table = new CustomTable(new String[] {
-                    App.messages.getString("res.81"),
-                    App.messages.getString("res.97")
+                    App.messages.getString("res.108"),
+                    App.messages.getString("res.124")
                 });
 
         table.getModel().addTableModelListener(new TableModelListener() {
@@ -355,7 +355,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
                     new OrderBy(OrderBy.ORIGINAL)
                 });
 
-        table.getColumn(App.messages.getString("res.97")).setCellEditor(new DefaultCellEditor(sortTypeChooser));
+        table.getColumn(App.messages.getString("res.124")).setCellEditor(new DefaultCellEditor(sortTypeChooser));
         table.setEditable(1, true);
 
         return table;
@@ -388,8 +388,8 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
      */
     private CustomTable createcalcTable() {
         CustomTable table = new CustomTable(new String[] {
-                    "计算列", // //$NON-NLS-2$
-                "函数" //
+                    App.messages.getString("res.245"), // //$NON-NLS-2$
+                App.messages.getString("res.246") //
                 }); // //$NON-NLS-2$
 
         table.getModel().addTableModelListener(new TableModelListener() {
@@ -402,7 +402,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
         table.setBackground(Color.white);
 
         JComboBox sortTypeChooser = new JComboBox(CustomSummary.SUPPORT_FUNCTIONS);
-        table.getColumn("函数").setCellEditor( //
+        table.getColumn(App.messages.getString("res.246")).setCellEditor( //
             new DefaultCellEditor(sortTypeChooser));
         table.setEditable(1, true);
         table.setEditable(0, true);
@@ -654,7 +654,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
      */
     public void stateChanged(ChangeEvent e) {
         if (e.getSource() == dataTree) {
-            // 可用数据集列表，选取发生变化，应使选择按钮变灰
+            
             TreePath path = dataTree.getSelectionPath();
 
             if (path != null) {

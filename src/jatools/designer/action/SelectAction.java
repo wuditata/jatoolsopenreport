@@ -16,7 +16,7 @@ public class SelectAction extends ReportAction {
      * Creates a new SelectAction object.
      */
     public SelectAction() {
-        super(App.messages.getString("res.540"), getIcon("/jatools/icons/arrow.gif"),
+        super(App.messages.getString("res.600"), getIcon("/jatools/icons/arrow.gif"),
             getIcon("/jatools/icons/arrow2.gif"));
     }
 

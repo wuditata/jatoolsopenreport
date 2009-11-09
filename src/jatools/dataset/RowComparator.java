@@ -72,7 +72,7 @@ public class RowComparator implements Comparator {
             int columnCount = row1.getColumnCount();
 
             for (int i = 0; i < sortOrder.length; i++) {
-                // 对错误的行号忽略之
+                
                 if ((sortOrder[i] >= 0) && (sortOrder[i] <= (columnCount - 1))) {
                     int value = RowsService.compareComparables((Comparable) row1.getValueAt(
                                 sortOrder[i]), 

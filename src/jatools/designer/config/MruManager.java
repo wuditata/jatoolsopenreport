@@ -39,11 +39,11 @@ public class MruManager {
 			elements.add(0,toOpen);
         } else {
             if (elements.size() < capacity) {
-				elements.add(0,toOpen); //增加当前项，在头部
+				elements.add(0,toOpen); 
 
             } else {
-				elements.remove(capacity - 1); //删除最后一项
-				elements.add(0,toOpen); //增加当前项
+				elements.remove(capacity - 1); 
+				elements.add(0,toOpen); 
             }
         }
 

@@ -12,19 +12,19 @@ import jatools.engine.script.Script;
  * @version $Revision$
   */
 public class Repeater {
-    // RepeatRule设置
+    
 
-    // 本列最宽
+    
     int maxwidth = 0;
 
-    // 本行最高
+    
     int maxheight = 0;
 
-    // c 重复前的座标
+    
     int x0 = 0;
     int y0 = 0;
 
-    // 当前行,列
+    
     int row = 0;
     int col = 0;
     private RepeatRule rule;

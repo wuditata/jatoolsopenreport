@@ -19,7 +19,7 @@ import sun.misc.BASE64Decoder;
 
 public class Base64Util {
 
-	// 将 s 进行 BASE64 编码
+	
 	public static String encode(byte[] ba) {
 		if (ba == null) {
 			return null;
@@ -28,7 +28,7 @@ public class Base64Util {
 		return (new sun.misc.BASE64Encoder()).encode(ba);
 	}
 
-	// 将 BASE64 编码的字符串 s 进行解码
+	
 	public static byte[] decode(String s) {
 		if (s == null) {
 			return null;

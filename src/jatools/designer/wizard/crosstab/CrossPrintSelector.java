@@ -26,9 +26,9 @@ public class CrossPrintSelector extends JPanel{
   private JComboBox columnHeaderBox;
   private JComboBox rowHeaderBox;
   private JComboBox pagewrapBox;
-  static final String[] values={App.messages.getString("res.208"),App.messages.getString("res.209")};
+  static final String[] values={App.messages.getString("res.230"),App.messages.getString("res.231")};
   static final String[] css={"firstpage","everypage"};
-  static final String[] pagewrap={App.messages.getString("res.210"),App.messages.getString("res.211")};
+  static final String[] pagewrap={App.messages.getString("res.232"),App.messages.getString("res.233")};
   static final String[] wrapCss={ "true","false"};
 
   public CrossPrintSelector() {
@@ -41,11 +41,11 @@ public class CrossPrintSelector extends JPanel{
     pagewrapBox=new JComboBox(pagewrap);
 
     this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
-    TitledSeparator titleSeparator = new TitledSeparator(App.messages.getString("res.212"));
+    TitledSeparator titleSeparator = new TitledSeparator(App.messages.getString("res.234"));
     titleSeparator.setMaximumSize(new Dimension(4000, 20));
     add(titleSeparator);
     JPanel panel=new JPanel(new FlowLayout(FlowLayout.LEFT,0,0));
-    JLabel label=new JLabel(App.messages.getString("res.213"));
+    JLabel label=new JLabel(App.messages.getString("res.235"));
     panel.add(label);
     panel.add(columnHeaderBox);
     columnHeaderBox.setPreferredSize(new Dimension(120, 23));
@@ -54,7 +54,7 @@ public class CrossPrintSelector extends JPanel{
     add(panel);
 
     panel=new JPanel(new FlowLayout(FlowLayout.LEFT,0,0));
-    label=new JLabel(App.messages.getString("res.214"));
+    label=new JLabel(App.messages.getString("res.236"));
     panel.add(label);
     panel.add(rowHeaderBox);
     rowHeaderBox.setPreferredSize(new Dimension(120, 23));
@@ -63,11 +63,11 @@ public class CrossPrintSelector extends JPanel{
     add(panel);
 
 
-    TitledSeparator wrapSeparator = new TitledSeparator(App.messages.getString("res.215"));
+    TitledSeparator wrapSeparator = new TitledSeparator(App.messages.getString("res.237"));
     wrapSeparator.setMaximumSize(new Dimension(4000, 20));
     add(wrapSeparator);
     panel=new JPanel(new FlowLayout(FlowLayout.LEFT,0,0));
-    label=new JLabel(App.messages.getString("res.216"));
+    label=new JLabel(App.messages.getString("res.238"));
     panel.add(label);
     panel.add(pagewrapBox);
     pagewrapBox.setPreferredSize(new Dimension(120, 23));

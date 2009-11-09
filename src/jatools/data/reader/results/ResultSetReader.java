@@ -14,6 +14,7 @@ import jatools.dataset.Dataset;
 import jatools.dataset.DatasetException;
 import jatools.dataset.Row;
 import jatools.dataset.RowMeta;
+import jatools.designer.App;
 import jatools.engine.script.Script;
 
 import java.sql.ResultSet;
@@ -77,7 +78,7 @@ public class ResultSetReader extends AbstractDatasetReader {
             return new RowMeta(columnInfos);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new jatools.dataset.DatasetException("初始化表格数据集时出错!", e); //
+            throw new jatools.dataset.DatasetException(App.messages.getString("res.627"), e); //
         }
     }
 
@@ -103,10 +104,10 @@ public class ResultSetReader extends AbstractDatasetReader {
                     return Row.NO_MORE_ROWS;
                 }
             } else {
-                throw new jatools.dataset.DatasetException("参数行对象不应为空! (ResultSetReader.readRow)"); //
+                throw new jatools.dataset.DatasetException(App.messages.getString("res.628")); //
             }
         } catch (SQLException e) {
-            throw new jatools.dataset.DatasetException("SQL语法不正确! (ResultSetReader.readRow)", //
+            throw new jatools.dataset.DatasetException(App.messages.getString("res.629"), //
                 e);
         }
     }

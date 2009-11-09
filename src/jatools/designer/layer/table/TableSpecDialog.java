@@ -39,7 +39,7 @@ public class TableSpecDialog extends JDialog {
      * @param col DOCUMENT ME!
      */
     public TableSpecDialog(Frame owner, int row, int col) {
-        super(owner, App.messages.getString("res.383"), true);
+        super(owner, App.messages.getString("res.431"), true);
 
         rowEditor = new SpinEditor(new Integer(row), new Integer(1), new Integer(100),
                 new Integer(1));
@@ -54,14 +54,14 @@ public class TableSpecDialog extends JDialog {
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 5, 5, 5);
-        panel.add(new JLabel(App.messages.getString("res.384")), gbc);
+        panel.add(new JLabel(App.messages.getString("res.432")), gbc);
         panel.add(rowEditor, gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100;
         panel.add(Box.createHorizontalGlue(), gbc);
         gbc.weightx = 0;
         gbc.gridwidth = 1;
-        panel.add(new JLabel(App.messages.getString("res.385")), gbc);
+        panel.add(new JLabel(App.messages.getString("res.433")), gbc);
 
         panel.add(colEditor, gbc);
 

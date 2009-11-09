@@ -27,7 +27,7 @@ public class EditCutAction extends EditClipAction {
      * Creates a new EditCutAction object.
      */
     public EditCutAction() {
-        super(null, App.messages.getString("res.98"), getIcon("/jatools/icons/cut.gif"),
+        super(null, App.messages.getString("res.125"), getIcon("/jatools/icons/cut.gif"),
             getIcon("/jatools/icons/cut2.gif"));
         setStroke(ctrl(KeyEvent.VK_X));
     }
@@ -38,7 +38,7 @@ public class EditCutAction extends EditClipAction {
      * @param panel DOCUMENT ME!
      */
     public EditCutAction(ReportPanel panel) {
-        super(panel, App.messages.getString("res.98"), getIcon("/jatools/icons/cut.gif"),
+        super(panel, App.messages.getString("res.125"), getIcon("/jatools/icons/cut.gif"),
             getIcon("/jatools/icons/cut2.gif"));
         setStroke(ctrl(KeyEvent.VK_X));
     }
