@@ -58,7 +58,7 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
         if (commandMenu == null) {
             commandMenu = new JPopupMenu();
 
-            JMenu menu = new JMenu(App.messages.getString("res.66"));
+            JMenu menu = new JMenu(App.messages.getString("res.93"));
             menu.add(this.getCommands()[NEW_JDBC]);
 
             commandMenu.add(menu);
@@ -74,11 +74,11 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
     Action[] getCommands() {
         if (this.commands == null) {
             this.commands = new Action[7];
-            this.commands[NEW_JDBC] = new Command(App.messages.getString("res.67"), NEW_JDBC);
+            this.commands[NEW_JDBC] = new Command(App.messages.getString("res.94"), NEW_JDBC);
 
-            this.commands[EDIT] = new Command(App.messages.getString("res.68"), EDIT);
-            this.commands[DELETE] = new Command(App.messages.getString("res.69"), DELETE);
-            this.commands[PREVIEW] = new Command(App.messages.getString("res.70"), PREVIEW);
+            this.commands[EDIT] = new Command(App.messages.getString("res.95"), EDIT);
+            this.commands[DELETE] = new Command(App.messages.getString("res.96"), DELETE);
+            this.commands[PREVIEW] = new Command(App.messages.getString("res.97"), PREVIEW);
         }
 
         return this.commands;
@@ -110,7 +110,7 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
      * @param root DOCUMENT ME!
      */
     public void addWizardNode(SimpleTreeNode root) {
-        SimpleTreeNode node = new SimpleTreeNode(App.messages.getString("res.71"), wizardIcon, 999);
+        SimpleTreeNode node = new SimpleTreeNode(App.messages.getString("res.98"), wizardIcon, 999);
         ((DefaultTreeModel) getModel()).insertNodeInto(node, root, root.getChildCount());
     }
 
@@ -123,7 +123,7 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
      */
     public void check(String source) throws Exception {
         if ((source == null) || source.toString().trim().equals("")) {
-            throw new Exception(App.messages.getString("res.72"));
+            throw new Exception(App.messages.getString("res.99"));
         }
 
         String name = ((String) source).trim();
@@ -132,7 +132,7 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
 
         for (int i = 0; i < count; i++) {
             if (name.equals(proxyContainer.getDatasetReader(i).getName())) {
-                throw new Exception(App.messages.getString("res.73"));
+                throw new Exception(App.messages.getString("res.100"));
             }
         }
     }
@@ -172,7 +172,7 @@ public class DatasetReaderConfigureTree extends DataTree implements NameChecker 
      * DOCUMENT ME!
      */
     public void delete() {
-        int result = JOptionPane.showConfirmDialog(null, App.messages.getString("res.74"), App.messages.getString("res.69"),
+        int result = JOptionPane.showConfirmDialog(null, App.messages.getString("res.101"), App.messages.getString("res.96"),
                 JOptionPane.YES_NO_OPTION);
 
         if (result != JOptionPane.YES_OPTION) {

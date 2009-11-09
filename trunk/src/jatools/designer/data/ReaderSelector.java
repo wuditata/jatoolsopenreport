@@ -89,7 +89,7 @@ public class ReaderSelector extends javax.swing.JPanel implements ChangeListener
     }
 
     private JPanel getTargetPanel() {
-        table = new CustomTable(new String[] { App.messages.getString("res.81") });
+        table = new CustomTable(new String[] { App.messages.getString("res.108") });
 
         table.getModel().addTableModelListener(this);
 
@@ -99,7 +99,7 @@ public class ReaderSelector extends javax.swing.JPanel implements ChangeListener
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
 
-        result.add(new JLabel(App.messages.getString("res.495")), gbc);
+        result.add(new JLabel(App.messages.getString("res.550")), gbc);
         gbc.weighty = 1.0;
 
         JScrollPane scroll = new JScrollPane(table);
@@ -150,14 +150,14 @@ public class ReaderSelector extends javax.swing.JPanel implements ChangeListener
 
     private JPanel getSourceTreePanel() {
         datasetTree = new DatasetReaderConfigureTree();
-        table = new CustomTable(new String[] { App.messages.getString("res.81") });
+        table = new CustomTable(new String[] { App.messages.getString("res.108") });
 
         JPanel result = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
-        result.add(new JLabel(App.messages.getString("res.496")), gbc);
+        result.add(new JLabel(App.messages.getString("res.551")), gbc);
         gbc.weighty = 1.0;
 
         result.add(new JScrollPane(datasetTree), gbc);

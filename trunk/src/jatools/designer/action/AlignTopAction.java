@@ -19,7 +19,7 @@ public class AlignTopAction extends AlignAction {
      * Creates a new AlignTopAction object.
      */
     public AlignTopAction() {
-        super(App.messages.getString("res.520"), getIcon("/jatools/icons/aligntop.gif"),
+        super(App.messages.getString("res.575"), getIcon("/jatools/icons/aligntop.gif"),
             getIcon("/jatools/icons/aligntop2.gif"));
     }
 

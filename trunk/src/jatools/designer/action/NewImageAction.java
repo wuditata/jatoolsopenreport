@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 import jatools.component.Image;
+import jatools.designer.App;
 import jatools.designer.Main;
 import jatools.designer.property.editor.ImageSrcPropertyEditor;
 import jatools.engine.imgloader.ImageLoader;
@@ -22,7 +23,7 @@ public class NewImageAction extends ReportAction {
      * @param owner DOCUMENT ME!
      */
     public NewImageAction() {
-        super("м╪пн", getIcon("/jatools/icons/image.gif"), getIcon("/jatools/icons/image2.gif")); // //$NON-NLS-2$
+        super(App.messages.getString("res.589"), getIcon("/jatools/icons/image.gif"), getIcon("/jatools/icons/image2.gif")); // //$NON-NLS-2$
         putValue(CLASS,Image.class );
        }
 

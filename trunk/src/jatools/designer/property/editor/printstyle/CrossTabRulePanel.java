@@ -26,8 +26,8 @@ import org.apache.commons.lang.ArrayUtils;
 public class CrossTabRulePanel extends JPanel {
     private static final String[] headerVisiblePrompts = {
             "",
-            App.messages.getString("res.208"),
-            App.messages.getString("res.209")
+            App.messages.getString("res.230"),
+            App.messages.getString("res.231")
         };
     private static final String[] headerVisibleValues = {
             "",
@@ -36,8 +36,8 @@ public class CrossTabRulePanel extends JPanel {
         };
     private static final String[] pageWrapPrompts = {
             "",
-            App.messages.getString("res.210"),
-            App.messages.getString("res.211")
+            App.messages.getString("res.232"),
+            App.messages.getString("res.233")
         };
     private static final String[] pageWrapValues = {
             "",
@@ -63,7 +63,7 @@ public class CrossTabRulePanel extends JPanel {
         gbc.gridheight = 1;
         gbc.insets = new Insets(10, 2, 2, 2);
         gbc.anchor = GridBagConstraints.WEST;
-        add(new JLabel(App.messages.getString("res.218")), gbc);
+        add(new JLabel(App.messages.getString("res.240")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         gbc.weightx = 100;
@@ -73,13 +73,13 @@ public class CrossTabRulePanel extends JPanel {
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.217")), gbc);
+        add(new JLabel(App.messages.getString("res.239")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(leftHeaderVisibleCombo, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.311")), gbc);
+        add(new JLabel(App.messages.getString("res.359")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(pageWrapCombo, gbc);
 

@@ -143,7 +143,7 @@ public class ColorSelectionPanel extends JPanel {
 
         p = new JPanel(new GridBagLayout());
 
-        transparent = new JButton(App.messages.getString("res.135"), new ColorIcon(10, 10));
+        transparent = new JButton(App.messages.getString("res.13"), new ColorIcon(10, 10));
         transparent.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     select(null);
@@ -163,7 +163,7 @@ public class ColorSelectionPanel extends JPanel {
         gbc.gridwidth = 1;
         p.add(transparent, gbc);
 
-        JButton more = new JButton(App.messages.getString("res.260"));
+        JButton more = new JButton(App.messages.getString("res.286"));
         gbc.gridwidth = gbc.REMAINDER;
         p.add(more, gbc);
         dim = new Dimension(50, 22);
@@ -177,11 +177,11 @@ public class ColorSelectionPanel extends JPanel {
                 }
             });
 
-        //   JButton empty2 = new JButton("ÉèÎª¿Õ");
+        
         if (empty) {
             p.add(new JSeparator(), gbc);
 
-            JButton empty2 = new JButton(App.messages.getString("res.261"));
+            JButton empty2 = new JButton(App.messages.getString("res.287"));
             p.add(empty2, gbc);
             dim = new Dimension(100, 22);
             empty2.setSize(dim);
@@ -209,7 +209,7 @@ public class ColorSelectionPanel extends JPanel {
         DropDownComponent ddc = (DropDownComponent) this.getClientProperty("ddc");
         ddc.locked = true;
 
-        Color color = JColorChooser.showDialog(this.getTopLevelAncestor(), App.messages.getString("res.11"), null);
+        Color color = JColorChooser.showDialog(this.getTopLevelAncestor(), App.messages.getString("res.12"), null);
         ddc.locked = false;
 
         if (color != null) {

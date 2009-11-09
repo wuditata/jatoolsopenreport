@@ -1,5 +1,7 @@
 package jatools.util;
 
+import jatools.designer.App;
+
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Point;
@@ -120,13 +122,13 @@ public class CursorUtil {
         int colors = tool.getMaximumCursorColors();
 
         if (cursorSize.equals(new Dimension(0, 0)) || (colors == 0)) {
-            // System.out.println("光标16X16的光标不支持! ");
+            
             return null;
         }
 
         try {
             if (icon == null) {
-                throw new Exception("不能创建光标! "); //
+                throw new Exception(App.messages.getString("res.8")); //
             }
 
             return tool.createCustomCursor(icon.getImage(), new Point(x, y),

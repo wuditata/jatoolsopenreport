@@ -93,7 +93,7 @@ public class MapSerializer extends ContainerSerializer {
 		 * NAME="Item5"> 2 </Field><Field NAME="Item6"> 15 </Field> </Fields>
 		 */
 
-		// 是否得相同的class,如果相同打上标志 ITEM_CLASS
+		
 		Map m = (Map) object;
 
 		int i = 0;

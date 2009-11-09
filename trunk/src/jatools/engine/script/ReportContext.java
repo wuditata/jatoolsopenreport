@@ -168,7 +168,7 @@ public class ReportContext implements PrintConstants, Script {
                         }
                     }
                 } else {
-                    System.out.println(App.messages.getString("res.32"));
+                    System.out.println(App.messages.getString("res.56"));
 
                     return copy;
                 }
@@ -176,7 +176,7 @@ public class ReportContext implements PrintConstants, Script {
         }
 
         if (!stack.isEmpty()) {
-            System.out.println(App.messages.getString("res.32"));
+            System.out.println(App.messages.getString("res.56"));
 
             return copy;
         } else {
@@ -219,7 +219,7 @@ public class ReportContext implements PrintConstants, Script {
             if (MessageDigest.isEqual(di, _key)) {
                 return Base64Util.decode(new String(_user, "UTF-8"));
             } else {
-                throw new Exception(App.messages.getString("res.33"));
+                throw new Exception(App.messages.getString("res.57"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -244,7 +244,7 @@ public class ReportContext implements PrintConstants, Script {
 
             if (errors < THROW_ERR_MAX_COUNT) {
                 try {
-                    Util.debug(logger, App.messages.getString("res.34") + it.get("file") + "]:\n" + Util.toString(e));
+                    Util.debug(logger, App.messages.getString("res.58") + it.get("file") + "]:\n" + Util.toString(e));
                 } catch (EvalError e1) {
                     // TODO Auto-generated catch block
                     e1.printStackTrace();
@@ -330,7 +330,7 @@ public class ReportContext implements PrintConstants, Script {
             }
         } catch (EvalError ex) {
             ex.printStackTrace();
-            Util.debug(logger, App.messages.getString("res.35") + name);
+            Util.debug(logger, App.messages.getString("res.59") + name);
         }
 
         return null;
@@ -369,7 +369,7 @@ public class ReportContext implements PrintConstants, Script {
 
         Collections.sort(vars);
 
-        System.out.println(App.messages.getString("res.36"));
+        System.out.println(App.messages.getString("res.60"));
 
         for (int i = 0; i < vars.size(); i++) {
             String name = (String) vars.get(i);

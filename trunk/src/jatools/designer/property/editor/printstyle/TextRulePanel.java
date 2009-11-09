@@ -43,9 +43,9 @@ public class TextRulePanel extends JPanel {
         };
     private static final String[] autoSizePrompts = {
             "",
-            App.messages.getString("res.344"),
-            App.messages.getString("res.345"),
-            App.messages.getString("res.346")
+            App.messages.getString("res.392"),
+            App.messages.getString("res.393"),
+            App.messages.getString("res.394")
         };
     private static final String[] autoSizeValues = {
             "",
@@ -55,8 +55,8 @@ public class TextRulePanel extends JPanel {
         };
     private String[] lineEditablePrompts = {
             "",
-            App.messages.getString("res.347"),
-            App.messages.getString("res.348")
+            App.messages.getString("res.395"),
+            App.messages.getString("res.396")
         };
     TemplateComboBox levelCombo;
     TemplateComboBox autoWidthCombo = new TemplateComboBox(autoSizePrompts);
@@ -77,7 +77,7 @@ public class TextRulePanel extends JPanel {
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
         //        gbc.insets = new Insets(10, 0, 0, 0);
-        add(new JLabel(App.messages.getString("res.349"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.397"), JLabel.LEFT), gbc);
         //gbc.fill=gbc.HORIZONTAL;
         gbc.gridwidth = gbc.REMAINDER;
         gbc.gridheight = 1;
@@ -87,13 +87,13 @@ public class TextRulePanel extends JPanel {
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.350"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.398"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(autoWidthCombo, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.351"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.399"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(maxWidthCombo, gbc);
 
@@ -187,7 +187,7 @@ public class TextRulePanel extends JPanel {
         } catch (Exception e) {
         }
 
-        JFrame frame = new JFrame(App.messages.getString("res.143"));
+        JFrame frame = new JFrame(App.messages.getString("res.168"));
         frame.setResizable(true);
 
         TextRulePanel p = new TextRulePanel();

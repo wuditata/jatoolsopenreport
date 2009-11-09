@@ -19,7 +19,7 @@ public class AlignBottomAction extends AlignAction {
      * Creates a new AlignBottomAction object.
      */
     public AlignBottomAction() {
-        super(App.messages.getString("res.517"), getIcon("/jatools/icons/alignbottom.gif"),
+        super(App.messages.getString("res.572"), getIcon("/jatools/icons/alignbottom.gif"),
             getIcon("/jatools/icons/alignbottom2.gif"));
     }
 

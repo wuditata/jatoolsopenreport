@@ -20,7 +20,7 @@ public class RedoAction extends ReportAction {
      * Creates a new RedoAction object.
      */
     public RedoAction() {
-        super(App.messages.getString("res.535"), getIcon("/jatools/icons/redo.gif"), getIcon("/jatools/icons/redo2.gif"));
+        super(App.messages.getString("res.595"), getIcon("/jatools/icons/redo.gif"), getIcon("/jatools/icons/redo2.gif"));
         setStroke(ctrl(KeyEvent.VK_Y));
         setEnabled(false);
     }

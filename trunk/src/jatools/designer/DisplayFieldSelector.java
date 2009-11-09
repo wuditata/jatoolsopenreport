@@ -205,7 +205,7 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
     }
 
     private JPanel getTargetPanel() {
-        table = new CustomTable(new String[] { App.messages.getString("res.81"), App.messages.getString("res.82") });
+        table = new CustomTable(new String[] { App.messages.getString("res.108"), App.messages.getString("res.109") });
         table.setEditable(1, true);
 
         downCommand = new JButton(Util.getIcon("/jatools/icons/download.gif"));
@@ -236,7 +236,7 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 1.0;
-        result.add(new JLabel(App.messages.getString("res.83")), gbc);
+        result.add(new JLabel(App.messages.getString("res.110")), gbc);
         gbc.weightx = 0;
         result.add(upCommand, gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
@@ -317,7 +317,7 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
         gbc.fill = GridBagConstraints.BOTH;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
-        result.add(new JLabel(App.messages.getString("res.84")), gbc);
+        result.add(new JLabel(App.messages.getString("res.111")), gbc);
         gbc.weighty = 1.0;
         result.add(new JScrollPane(sourceTree), gbc);
 

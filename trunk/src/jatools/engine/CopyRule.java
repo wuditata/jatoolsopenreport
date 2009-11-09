@@ -51,9 +51,9 @@ public class CopyRule {
     //    }
     //
     //    private boolean columnCopy(PrinterLayout layout) {
-    //        // 取得最后一次打印的区域,
-    //        // 取得本组件大小
-    //        // 在本组件下面,试着加,不能加,则退出
+    
+    
+    
     //        Rectangle lastcopy = layout.getLastCopyBounds();
     //        Rectangle mincopy = layout.getMinCopyBounds();
     //

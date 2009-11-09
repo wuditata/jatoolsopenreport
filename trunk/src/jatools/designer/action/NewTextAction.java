@@ -1,6 +1,7 @@
 package jatools.designer.action;
 
 import jatools.component.Text;
+import jatools.designer.App;
 
 import java.awt.event.ActionEvent;
 
@@ -18,7 +19,7 @@ public class NewTextAction extends ReportAction {
      * @param owner DOCUMENT ME!
      */
     public NewTextAction() {
-        super("нд╠╬©Р", getIcon("/jatools/icons/text.gif")); // //$NON-NLS-2$
+        super(App.messages.getString("res.594"), getIcon("/jatools/icons/text.gif")); // //$NON-NLS-2$
         putValue(CLASS, Text.class);
     }
 

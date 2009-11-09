@@ -292,7 +292,7 @@ public class TablePrinterLayout extends AbstractPrinterLayout {
         //
         //            int i = rows.length() - 1;
         //
-        //            // 找出最后一个合法的行
+        
         //            for (; (i >= 0) && (rows.getPosition(i) > this.imageable.height); i--)
         //                ;
         //

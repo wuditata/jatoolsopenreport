@@ -29,20 +29,20 @@ public class LayoutRulePanel extends JPanel {
         };
     private static final String[] hPosition = {
             "",
-            App.messages.getString("res.14"),
-            App.messages.getString("res.15"),
-            App.messages.getString("res.16")
+            App.messages.getString("res.30"),
+            App.messages.getString("res.31"),
+            App.messages.getString("res.32")
         };
     private static final String[] vPosition = {
             "",
-            App.messages.getString("res.312"),
-            App.messages.getString("res.15"),
-            App.messages.getString("res.313")
+            App.messages.getString("res.360"),
+            App.messages.getString("res.31"),
+            App.messages.getString("res.361")
         };
     private static final String[] frozenPointPrompts = {
             "",
-            App.messages.getString("res.314"),
-            App.messages.getString("res.315")
+            App.messages.getString("res.362"),
+            App.messages.getString("res.363")
         };
     private static final String[] frozenPointValues = {
             "",
@@ -87,7 +87,7 @@ public class LayoutRulePanel extends JPanel {
         gbc.gridheight = 1;
         gbc.insets = new Insets(10, 0, 0, 0);
         gbc.anchor = GridBagConstraints.WEST;
-        add(new JLabel(App.messages.getString("res.316"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.364"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100;
         gbc.insets = new Insets(0, 0, 0, 0);
@@ -97,43 +97,43 @@ public class LayoutRulePanel extends JPanel {
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.317"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.365"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(vTempComb, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.318"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.366"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(widthTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.319"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.367"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(heightTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.320"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.368"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(topTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.321"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.369"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(leftTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.322"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.370"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(bottomTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.323"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.371"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(rightTextField, gbc);
 

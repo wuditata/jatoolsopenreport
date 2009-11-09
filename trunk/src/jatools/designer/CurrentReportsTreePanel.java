@@ -30,7 +30,7 @@ public class CurrentReportsTreePanel extends JScrollPane {
 		this.setViewportView(this.createCurrentReportsTree());
 	}
 	public JTree createCurrentReportsTree(){
-		JMenuItem jmenuItem = new JMenuItem(App.messages.getString("res.65"));
+		JMenuItem jmenuItem = new JMenuItem(App.messages.getString("res.92"));
         jmenuItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     String path = getSelectedPath();

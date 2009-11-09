@@ -1,5 +1,7 @@
 package jatools.dataset;
 
+import jatools.designer.App;
+
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -115,7 +117,7 @@ public class Row implements Cloneable {
 
             return i;
         } else {
-            throw new ArrayIndexOutOfBoundsException("列号" + i + " 不存在!#!"); // //$NON-NLS-2$
+            throw new ArrayIndexOutOfBoundsException(App.messages.getString("res.605") + i + App.messages.getString("res.606")); // //$NON-NLS-2$
         }
     }
 
@@ -131,7 +133,7 @@ public class Row implements Cloneable {
         if ((i >= 0) && (i < valueCache.size())) {
             return valueCache.get(i);
         } else {
-            throw new ArrayIndexOutOfBoundsException("列号" + i + " 不存在!#!"); // //$NON-NLS-2$
+            throw new ArrayIndexOutOfBoundsException(App.messages.getString("res.605") + i + App.messages.getString("res.606")); // //$NON-NLS-2$
         }
     }
 

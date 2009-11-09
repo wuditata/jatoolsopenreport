@@ -41,7 +41,7 @@ public class NodePathPropertyEditor extends JDialog implements Chooser {
      * Creates a new BorderPropertyEditor object.
      */
     public NodePathPropertyEditor() {
-        super(Main.getInstance(), App.messages.getString("res.309"), true);
+        super(Main.getInstance(), App.messages.getString("res.357"), true);
 
         JPanel p = new JPanel(new GridBagLayout());
 
@@ -67,7 +67,7 @@ public class NodePathPropertyEditor extends JDialog implements Chooser {
         p.add(new JScrollPane(srcTree), gbc);
         gbc.weighty = 0;
         gbc.gridwidth = 1;
-        p.add(new JLabel(App.messages.getString("res.310")), gbc);
+        p.add(new JLabel(App.messages.getString("res.358")), gbc);
         gbc.weightx = 100;
         p.add(pathText, gbc);
 
@@ -95,7 +95,7 @@ public class NodePathPropertyEditor extends JDialog implements Chooser {
             };
 
         CommandPanel bottomPanel = CommandPanel.createPanel(oklistener, cancellistener);
-        bottomPanel.addComponent(App.messages.getString("res.181"),
+        bottomPanel.addComponent(App.messages.getString("res.23"),
             new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done = true;

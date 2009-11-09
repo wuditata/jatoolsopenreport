@@ -48,7 +48,7 @@ import javax.swing.tree.TreePath;
   */
 public class CustomFormulaDialog extends JDialog implements ActionListener {
     static final String[] FUNCTIONS = new String[] {
-            App.messages.getString("res.397"), "double abs(double)", "double asin(double)", "double acos(double)",
+            App.messages.getString("res.454"), "double abs(double)", "double asin(double)", "double acos(double)",
             "double atan(double)", "double atan2(double,double)", "double ceil(double)",
             "double cos(double)", "double exp(double)", "double floor(double)",
             
@@ -60,7 +60,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
             "int min(int,int)", "int round(float)", "long abs(long)", "long max(long,long)",
             "long min(long,long)", "long round(double)",
             
-            App.messages.getString("res.398"), "int length(String)", "char charAt(String, int)",
+            App.messages.getString("res.455"), "int length(String)", "char charAt(String, int)",
             
             "boolean startsWith(String, String)", "boolean endsWith(String, String)",
             
@@ -78,19 +78,19 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
             
             "String toUpperCase(String )",
             
-            App.messages.getString("res.399"),
+            App.messages.getString("res.456"),
             
             "int getYear(Date )", "int getMonth(Date )", "int getDate(Date )", "int getDay(Date )",
             "int getHours(Date )", "int getMinutes(Date )", "int getSeconds(Date )",
             "boolean before(Date,Date )", "boolean after(Date,Date )",
             
-            App.messages.getString("res.400"),
+            App.messages.getString("res.457"),
             
             "String toRmbString(double)", "String toHZYear(int)", "String toHZMonth(int)",
             "String toHZDay(int)",
             
             "String format(float,String)", "String format(double,String)",
-            "String format(Date,String)", App.messages.getString("res.401"), "String p(String )",
+            "String format(Date,String)", App.messages.getString("res.458"), "String p(String )",
             "String clobString(String )"
         };
     static final HashMap tips = new HashMap(FUNCTIONS.length);
@@ -125,7 +125,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
      */
     public CustomFormulaDialog(Frame owner, boolean showVariable, boolean nullPermitted,
         boolean astemp) {
-        super(owner, App.messages.getString("res.402"), true);
+        super(owner, App.messages.getString("res.459"), true);
 
         varTree = new VariableTree();
 
@@ -147,98 +147,98 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
 
         JComponent first = null;
 
-        tips.put("double abs(double)", App.messages.getString("res.403"));
-        tips.put("double asin(double)", App.messages.getString("res.404"));
-        tips.put("double acos(double)", App.messages.getString("res.405"));
-        tips.put("double atan(double)", App.messages.getString("res.406"));
-        tips.put("double atan2(double,double)", App.messages.getString("res.405"));
-        tips.put("double ceil(double)", App.messages.getString("res.407"));
-        tips.put("double cos(double)", App.messages.getString("res.408"));
-        tips.put("double exp(double)", App.messages.getString("res.409"));
-        tips.put("double floor(double)", App.messages.getString("res.410"));
-        tips.put("double log(double)", App.messages.getString("res.411"));
-        tips.put("double max(double,double)", App.messages.getString("res.412"));
-        tips.put("double min(double,double)", App.messages.getString("res.413"));
-        tips.put("double pow(double,double)", App.messages.getString("res.414"));
-        tips.put("double random()", App.messages.getString("res.415"));
-        tips.put("double rint(double)", App.messages.getString("res.416"));
-        tips.put("double sin(double)", App.messages.getString("res.417"));
-        tips.put("double sqrt(double)", App.messages.getString("res.418"));
-        tips.put("double tan(double)", App.messages.getString("res.419"));
-        tips.put("double toDegrees(double)", App.messages.getString("res.411"));
-        tips.put("double toRadians(double)", App.messages.getString("res.420"));
-        tips.put("float abs(float)", App.messages.getString("res.421"));
-        tips.put("float max(float,float)", App.messages.getString("res.422"));
-        tips.put("float min(float,float)", App.messages.getString("res.423"));
-        tips.put("int abs(int)", App.messages.getString("res.424"));
-        tips.put("int max(int,int)", App.messages.getString("res.425"));
-        tips.put("int min(int,int)", App.messages.getString("res.426"));
-        tips.put("int round(float)", App.messages.getString("res.427"));
-        tips.put("long abs(long)", App.messages.getString("res.428"));
-        tips.put("long max(long,long)", App.messages.getString("res.429"));
-        tips.put("long min(long,long)", App.messages.getString("res.430"));
-        tips.put("long round(double)", App.messages.getString("res.431"));
+        tips.put("double abs(double)", App.messages.getString("res.460"));
+        tips.put("double asin(double)", App.messages.getString("res.461"));
+        tips.put("double acos(double)", App.messages.getString("res.462"));
+        tips.put("double atan(double)", App.messages.getString("res.463"));
+        tips.put("double atan2(double,double)", App.messages.getString("res.462"));
+        tips.put("double ceil(double)", App.messages.getString("res.464"));
+        tips.put("double cos(double)", App.messages.getString("res.465"));
+        tips.put("double exp(double)", App.messages.getString("res.466"));
+        tips.put("double floor(double)", App.messages.getString("res.467"));
+        tips.put("double log(double)", App.messages.getString("res.468"));
+        tips.put("double max(double,double)", App.messages.getString("res.469"));
+        tips.put("double min(double,double)", App.messages.getString("res.470"));
+        tips.put("double pow(double,double)", App.messages.getString("res.471"));
+        tips.put("double random()", App.messages.getString("res.472"));
+        tips.put("double rint(double)", App.messages.getString("res.473"));
+        tips.put("double sin(double)", App.messages.getString("res.474"));
+        tips.put("double sqrt(double)", App.messages.getString("res.475"));
+        tips.put("double tan(double)", App.messages.getString("res.476"));
+        tips.put("double toDegrees(double)", App.messages.getString("res.468"));
+        tips.put("double toRadians(double)", App.messages.getString("res.477"));
+        tips.put("float abs(float)", App.messages.getString("res.478"));
+        tips.put("float max(float,float)", App.messages.getString("res.479"));
+        tips.put("float min(float,float)", App.messages.getString("res.480"));
+        tips.put("int abs(int)", App.messages.getString("res.481"));
+        tips.put("int max(int,int)", App.messages.getString("res.482"));
+        tips.put("int min(int,int)", App.messages.getString("res.483"));
+        tips.put("int round(float)", App.messages.getString("res.484"));
+        tips.put("long abs(long)", App.messages.getString("res.485"));
+        tips.put("long max(long,long)", App.messages.getString("res.486"));
+        tips.put("long min(long,long)", App.messages.getString("res.487"));
+        tips.put("long round(double)", App.messages.getString("res.488"));
 
-        tips.put("int length(String)", App.messages.getString("res.432"));
+        tips.put("int length(String)", App.messages.getString("res.489"));
         tips.put("char charAt(String, int)",
-            App.messages.getString("res.433"));
+            App.messages.getString("res.490"));
         tips.put("boolean startsWith(String, String)",
-            App.messages.getString("res.434"));
+            App.messages.getString("res.491"));
         tips.put("boolean endsWith(String, String)",
-            App.messages.getString("res.435"));
+            App.messages.getString("res.492"));
         tips.put("int indexOf(String, String)",
-            App.messages.getString("res.436"));
+            App.messages.getString("res.493"));
         tips.put("int lastIndexOf(String, String)",
-            App.messages.getString("res.437"));
+            App.messages.getString("res.494"));
         tips.put("String substring(String, int)",
-            App.messages.getString("res.438"));
+            App.messages.getString("res.495"));
         tips.put("String substring(String, int,int)",
-            App.messages.getString("res.432"));
+            App.messages.getString("res.489"));
         tips.put("String replaceAll(String, String , String )",
-            App.messages.getString("res.439"));
+            App.messages.getString("res.496"));
         tips.put("String[] split(String, String)",
-            App.messages.getString("res.440"));
+            App.messages.getString("res.497"));
         tips.put("String toLowerCase(String)",
-            App.messages.getString("res.441"));
-        tips.put("String toUpperCase(String )", App.messages.getString("res.442"));
+            App.messages.getString("res.498"));
+        tips.put("String toUpperCase(String )", App.messages.getString("res.499"));
 
-        tips.put("int getYear(Date )", App.messages.getString("res.443"));
-        tips.put("int getMonth(Date )", App.messages.getString("res.444"));
-        tips.put("int getDate(Date )", App.messages.getString("res.445"));
-        tips.put("int getDay(Date )", App.messages.getString("res.446"));
-        tips.put("int getHours(Date )", App.messages.getString("res.447"));
-        tips.put("int getMinutes(Date )", App.messages.getString("res.448"));
-        tips.put("int getSeconds(Date )", App.messages.getString("res.449"));
+        tips.put("int getYear(Date )", App.messages.getString("res.500"));
+        tips.put("int getMonth(Date )", App.messages.getString("res.501"));
+        tips.put("int getDate(Date )", App.messages.getString("res.502"));
+        tips.put("int getDay(Date )", App.messages.getString("res.503"));
+        tips.put("int getHours(Date )", App.messages.getString("res.504"));
+        tips.put("int getMinutes(Date )", App.messages.getString("res.505"));
+        tips.put("int getSeconds(Date )", App.messages.getString("res.506"));
         tips.put("boolean before(Date,Date )",
-            App.messages.getString("res.450"));
-        tips.put("int getYear(Date )", App.messages.getString("res.443"));
+            App.messages.getString("res.507"));
+        tips.put("int getYear(Date )", App.messages.getString("res.500"));
         tips.put("boolean after(Date,Date )",
-            App.messages.getString("res.451"));
+            App.messages.getString("res.508"));
 
-        tips.put("String toRmbString(double)", App.messages.getString("res.452"));
-        tips.put("String toHZYear(int)", App.messages.getString("res.453"));
-        tips.put("String toHZMonth(int)", App.messages.getString("res.454"));
-        tips.put("String toHZDay(int)", App.messages.getString("res.455"));
+        tips.put("String toRmbString(double)", App.messages.getString("res.509"));
+        tips.put("String toHZYear(int)", App.messages.getString("res.510"));
+        tips.put("String toHZMonth(int)", App.messages.getString("res.511"));
+        tips.put("String toHZDay(int)", App.messages.getString("res.512"));
         tips.put("String format(float,String)",
-            App.messages.getString("res.456"));
+            App.messages.getString("res.513"));
         tips.put("String format(double,String)",
-            App.messages.getString("res.457"));
+            App.messages.getString("res.514"));
         tips.put("String format(Date,String)",
-            App.messages.getString("res.458"));
+            App.messages.getString("res.515"));
 
-        tips.put("String p(String )", App.messages.getString("res.459"));
+        tips.put("String p(String )", App.messages.getString("res.516"));
         tips.put("String clobString(String )",
-            App.messages.getString("res.460"));
+            App.messages.getString("res.517"));
 
         JPanel scrollPanel = new JPanel(new BorderLayout());
-        tipLabel = new JLabel(App.messages.getString("res.461"), JLabel.LEFT);
+        tipLabel = new JLabel(App.messages.getString("res.518"), JLabel.LEFT);
         tipLabel.setHorizontalAlignment(JLabel.LEFT);
         tipLabel.setVerticalAlignment(JLabel.TOP);
         tipLabel.setPreferredSize(new Dimension(20, 50));
 
         if (varTree != null) {
             JTabbedPane tab = new JTabbedPane();
-            tab.addTab(App.messages.getString("res.182"), new JScrollPane(varTree));
+            tab.addTab(App.messages.getString("res.205"), new JScrollPane(varTree));
 
             jatools.designer.variable.XmlSourceTree tree = new jatools.designer.variable.XmlSourceTree();
             tree.setToggleClickCount(10000);
@@ -258,11 +258,11 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
                         }
                     }
                 });
-            tab.addTab(App.messages.getString("res.462"), new JScrollPane(tree));
+            tab.addTab(App.messages.getString("res.519"), new JScrollPane(tree));
 
             scrollPanel.add(new JScrollPane(functionTree), "Center");
             scrollPanel.add(tipLabel, "South");
-            tab.add(App.messages.getString("res.463"), scrollPanel);
+            tab.add(App.messages.getString("res.246"), scrollPanel);
 
             first = tab;
         } else {
@@ -271,7 +271,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
 
         JPanel formulaTextPanel = new JPanel(new BorderLayout());
 
-        JLabel formulaLabel = new JLabel(App.messages.getString("res.464"), JLabel.LEFT);
+        JLabel formulaLabel = new JLabel(App.messages.getString("res.520"), JLabel.LEFT);
         formulaTextPanel.add(formulaLabel, BorderLayout.NORTH);
         textArea = new ScriptEditor(astemp);
 
@@ -290,11 +290,11 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
 
         CommandPanel rightButtonPanel = CommandPanel.createPanel(false);
 
-        check = new JButton(App.messages.getString("res.465"));
+        check = new JButton(App.messages.getString("res.521"));
         ok = new JButton(App.messages.getString("res.3"));
         cancel = new JButton(App.messages.getString("res.4"));
 
-        JButton empty = new JButton(App.messages.getString("res.181"));
+        JButton empty = new JButton(App.messages.getString("res.23"));
 
         ok.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -342,7 +342,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
     private IconTree createFunctionTree() {
         Icon icon = Util.getIcon("/jatools/icons/function.gif");
 
-        SimpleTreeNode rootNode = new SimpleTreeNode(App.messages.getString("res.463"), icon);
+        SimpleTreeNode rootNode = new SimpleTreeNode(App.messages.getString("res.246"), icon);
 
         SimpleTreeNode parentNode = rootNode;
 
@@ -510,7 +510,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
         boolean isNull = (txt == null) || txt.trim().equals("");
 
         if (isNull && !nullPermitted) {
-            MessageBox.error(CustomFormulaDialog.this, App.messages.getString("res.466"));
+            MessageBox.error(CustomFormulaDialog.this, App.messages.getString("res.522"));
             textArea.requestFocus();
 
             return;
@@ -518,7 +518,7 @@ public class CustomFormulaDialog extends JDialog implements ActionListener {
                 (!txt.trim().equals(PrintConstants.TOTAL_PAGE_NUMBER))) {
             if (AmbiguousNameNodePattern.matches(txt, PrintConstants.TOTAL_PAGE_NUMBER)) {
                 MessageBox.error(CustomFormulaDialog.this,
-                    App.messages.getString("res.467") + PrintConstants.TOTAL_PAGE_NUMBER + App.messages.getString("res.468"));
+                    App.messages.getString("res.523") + PrintConstants.TOTAL_PAGE_NUMBER + App.messages.getString("res.524"));
 
                 textArea.requestFocus();
 

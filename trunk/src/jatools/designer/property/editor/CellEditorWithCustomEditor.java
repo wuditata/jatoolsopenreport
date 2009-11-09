@@ -29,10 +29,10 @@ import javax.swing.table.TableCellRenderer;
  */
 public class CellEditorWithCustomEditor extends AbstractCellEditor
     implements TableCellEditor {
-    TableCellEditor inplaceEditor; //嵌入单元格中的编辑器
-    Chooser chooser; //后应弹出的选择器
-    Object value; // 当前编辑器的值
-    JPanel editorContainer; // 嵌入单元格中的pane
+    TableCellEditor inplaceEditor; 
+    Chooser chooser; 
+    Object value; 
+    JPanel editorContainer; 
     JButton chooserButton;
     JComponent owner;
 
@@ -63,14 +63,14 @@ public class CellEditorWithCustomEditor extends AbstractCellEditor
         this.chooser = chooser;
 
 
-        //建立ui/////////////////////////////////////////////////
-        editorContainer = new JPanel(new BorderLayout()); // BorderLayout 东西组件忽略高度，取宽度，南北则反之
-                                                          //      中间均忽略
+        
+        editorContainer = new JPanel(new BorderLayout()); 
+                                                          
 
 
-        // BorderLayout 东西组件忽略高度，取宽度，南北则反之
-        //      中间均忽略
-        chooserButton = new MoreButton(); // 弹出按钮 //
+        
+        
+        chooserButton = new MoreButton(); 
        // chooserButton.setMargin(new Insets(0, 0, 0, 0));
 
         editorContainer.add(chooserButton, "East"); //
@@ -80,20 +80,20 @@ public class CellEditorWithCustomEditor extends AbstractCellEditor
             public void actionPerformed(ActionEvent e) {
                
 
-                // 弹出选择器
+                
                 if (CellEditorWithCustomEditor.this.chooser.showChooser(CellEditorWithCustomEditor.this.owner,value)) {
-                    // 如果修改了属性，就告诉JTable
+                    
                     value = CellEditorWithCustomEditor.this.chooser.getValue();
                     stopCellEditing();
                 } else {
-                    // 如果不想修改，也告诉JTable
+                    
                     cancelCellEditing();
                 }
             }
         });
 
 
-        // 双击时，弹出chooser
+        
         editorContainer.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 if (e.getClickCount() == 2) {
@@ -103,18 +103,18 @@ public class CellEditorWithCustomEditor extends AbstractCellEditor
         });
 
         if (this.inplaceEditor != null) {
-            //从嵌入式编辑器中得到消息///////////////////////////////////////////////
+            
             this.inplaceEditor.addCellEditorListener(new CellEditorListener() {
                 public void editingStopped(ChangeEvent e) {
                     value = CellEditorWithCustomEditor.this.inplaceEditor.getCellEditorValue();
 
 
-                    // 如果嵌入的编辑器编辑完成，请告诉我，以便我可以转告JTable
+                    
                     fireEditingStopped();
                 }
 
                 public void editingCanceled(ChangeEvent e) {
-                    // 如果嵌入的编辑器取消了编辑也请告诉我
+                    
                     fireEditingCanceled();
                 }
             });

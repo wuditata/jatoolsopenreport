@@ -39,7 +39,7 @@ public class ProgressDialog extends JDialog {
      * @param f DOCUMENT ME!
      */
     public ProgressDialog(Frame frame, String title, File f) {
-        super(frame, App.messages.getString("res.391"), true);
+        super(frame, App.messages.getString("res.442"), true);
 
         pb = new ProgressFan();
 
@@ -48,7 +48,7 @@ public class ProgressDialog extends JDialog {
 
         pp.add(pb, BorderLayout.WEST);
 
-        prompt = new JLabel(App.messages.getString("res.392"));
+        prompt = new JLabel(App.messages.getString("res.443"));
 
         pp.add(prompt, BorderLayout.CENTER);
 
@@ -57,7 +57,7 @@ public class ProgressDialog extends JDialog {
         contentPane.add(pp, BorderLayout.CENTER);
 
         JPanel commands = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        openCommand = new JButton(App.messages.getString("res.393"));
+        openCommand = new JButton(App.messages.getString("res.444"));
         openCommand.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     hide();
@@ -93,7 +93,7 @@ public class ProgressDialog extends JDialog {
      */
     public void done() {
         pb.stop();
-        prompt.setText(App.messages.getString("res.394") + file.getName());
+        prompt.setText(App.messages.getString("res.445") + file.getName());
         ok.setEnabled(true);
         this.openCommand.setEnabled(true);
     }

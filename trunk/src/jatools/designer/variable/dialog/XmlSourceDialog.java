@@ -31,7 +31,7 @@ public class XmlSourceDialog extends JDialog implements ActionListener{
       super((Frame)javax.swing.SwingUtilities.getWindowAncestor(c));
         this.c=c;
         exitedOK=false;
-        this.setTitle(App.messages.getString("res.255"));
+        this.setTitle(App.messages.getString("res.281"));
         this.setModal(true);
         this.setSize(270,160);
         this.setLocation(250,250);
@@ -40,7 +40,7 @@ public class XmlSourceDialog extends JDialog implements ActionListener{
     private void initUI(){
         JPanel center=new JPanel();
 
-        JLabel label=new JLabel(App.messages.getString("res.243"));
+        JLabel label=new JLabel(App.messages.getString("res.269"));
         tagName=new JTextField();
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -53,14 +53,14 @@ public class XmlSourceDialog extends JDialog implements ActionListener{
         center.add(tagName, gbc);
         gbc.weightx = 0;
 
-        label=new JLabel(App.messages.getString("res.256"));
+        label=new JLabel(App.messages.getString("res.282"));
         url=new JTextField();
         gbc.gridwidth = 1;
         center.add(label, gbc); //
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         center.add(url, gbc);
 
-        label=new JLabel(App.messages.getString("res.257"));
+        label=new JLabel(App.messages.getString("res.283"));
         xpath=new JTextField();
         gbc.gridwidth = 1;
         center.add(label, gbc); //
@@ -133,12 +133,12 @@ public class XmlSourceDialog extends JDialog implements ActionListener{
     private boolean checkNull(){
          boolean b=false;
         if(tagName.getText()==null||tagName.getText().trim().equals("")){
-            JOptionPane.showConfirmDialog(c,App.messages.getString("res.258"),App.messages.getString("res.55"),
+            JOptionPane.showConfirmDialog(c,App.messages.getString("res.284"),App.messages.getString("res.82"),
                JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
             b=true;
         }
         else  if(url.getText()==null||url.getText().trim().equals("")){
-            JOptionPane.showConfirmDialog(c,App.messages.getString("res.259"),App.messages.getString("res.55"),
+            JOptionPane.showConfirmDialog(c,App.messages.getString("res.285"),App.messages.getString("res.82"),
                JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
             b=true;
         }

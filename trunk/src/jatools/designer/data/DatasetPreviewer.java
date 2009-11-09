@@ -52,7 +52,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
      * @param owner DOCUMENT ME!
      */
     public DatasetPreviewer(Frame owner) {
-        super(owner, App.messages.getString("res.480"), true);
+        super(owner, App.messages.getString("res.536"), true);
 
         buildUI();
 
@@ -114,7 +114,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
         toolbar.add(cancelCmd);
         toolbar.add(refreshCmd);
 
-        JButton tocsv = new JButton(App.messages.getString("res.481"));
+        JButton tocsv = new JButton(App.messages.getString("res.537"));
 
         toolbar.add(tocsv);
         tocsv.addActionListener(new ActionListener() {
@@ -157,7 +157,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
         if (chooser == null) {
             chooser = new JFileChooser();
             chooser.setAcceptAllFileFilterUsed(false);
-            filter = new JatoolsFileFilter(new String[] { "txt" }, App.messages.getString("res.482"));
+            filter = new JatoolsFileFilter(new String[] { "txt" }, App.messages.getString("res.538"));
 
             chooser.addChoosableFileFilter(filter);
         }
@@ -169,7 +169,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
         if (f != null) {
             try {
                 table.saveAsCsv(f);
-                MessageBox.show(this, App.messages.getString("res.55"), App.messages.getString("res.483"));
+                MessageBox.show(this, App.messages.getString("res.82"), App.messages.getString("res.539"));
             } catch (Exception e) {
                 MessageBox.error(this, e.getMessage());
             }
@@ -209,7 +209,7 @@ public class DatasetPreviewer extends JDialog implements ChangeListener {
      */
     public void stateChanged(ChangeEvent e) {
         if (e == DatasetTable.ADD_ROW) {
-            pageNumber.setText(App.messages.getString("res.484") + table.getRowCount());
+            pageNumber.setText(App.messages.getString("res.540") + table.getRowCount());
             repaint();
         } else if (e == DatasetTable.START) {
             refreshCmd.setEnabled(false);

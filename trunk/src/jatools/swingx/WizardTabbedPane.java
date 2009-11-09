@@ -1,5 +1,6 @@
 package jatools.swingx;
 
+import jatools.designer.App;
 import jatools.swingx.wizard.AbstractWizard;
 
 import java.awt.BorderLayout;
@@ -26,13 +27,13 @@ import javax.swing.event.ChangeListener;
  */
 public class WizardTabbedPane extends JPanel implements ActionListener, ChangeListener {
     public static final String PROPERTY_WIZARD = "wizard"; //
-    static final String NEXT = "下一步 ->"; //
-    static final String FINISHED = "确定"; //
+    static final String NEXT = App.messages.getString("res.37"); //
+    static final String FINISHED = App.messages.getString("res.3"); //
     static Icon padIcon;
     JTabbedPane steps = new JTabbedPane();
-    JButton prevButton = new JButton("<- 上一步"); //
+    JButton prevButton = new JButton(App.messages.getString("res.38")); //
     JButton nextButton = new JButton(NEXT);
-    JButton cancelButton = new JButton("取消"); //
+    JButton cancelButton = new JButton(App.messages.getString("res.4")); //
     AbstractWizard selectedWizard;
     ActionListener finishedAction;
 

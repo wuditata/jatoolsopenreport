@@ -41,12 +41,12 @@ import javax.swing.event.ChangeListener;
   */
 public class TableBuilder extends JDialog implements ChangeListener {
     static final String[] PROMPT_STRINGS = {
-            App.messages.getString("res.193"), App.messages.getString("res.194"),
-            App.messages.getString("res.195"), App.messages.getString("res.196"),
+            App.messages.getString("res.216"), App.messages.getString("res.217"),
+            App.messages.getString("res.218"), App.messages.getString("res.219"),
         };
-    static final String PREVIEW = App.messages.getString("res.197");
-    static final String NEXT = App.messages.getString("res.198");
-    static final String FINISHED = App.messages.getString("res.199");
+    static final String PREVIEW = App.messages.getString("res.38");
+    static final String NEXT = App.messages.getString("res.37");
+    static final String FINISHED = App.messages.getString("res.220");
     static final String CANCEL = App.messages.getString("res.4");
     private BuilderContext context;
     private boolean exitOK;
@@ -69,7 +69,7 @@ public class TableBuilder extends JDialog implements ChangeListener {
      * @param context DOCUMENT ME!
      */
     public TableBuilder(Frame owner, BuilderContext context) {
-        super(owner, App.messages.getString("res.200"), true);
+        super(owner, App.messages.getString("res.221"), true);
         this.context = context;
         exitOK = false;
         initUI();
@@ -94,10 +94,10 @@ public class TableBuilder extends JDialog implements ChangeListener {
         groupBySelector = new GroupBySelector();
         summarySelector = new SummarySelector();
 
-        steps.add(App.messages.getString("res.80"), readerSelector);
-        steps.add(App.messages.getString("res.201"), displayFieldSelector);
-        steps.add(App.messages.getString("res.202"), groupBySelector);
-        steps.add(App.messages.getString("res.203"), summarySelector);
+        steps.add(App.messages.getString("res.107"), readerSelector);
+        steps.add(App.messages.getString("res.222"), displayFieldSelector);
+        steps.add(App.messages.getString("res.223"), groupBySelector);
+        steps.add(App.messages.getString("res.224"), summarySelector);
 
         getContentPane().add(steps, BorderLayout.CENTER);
         SwingUtil.setBorder6((JComponent) getContentPane());
@@ -107,7 +107,7 @@ public class TableBuilder extends JDialog implements ChangeListener {
                         super.setSelectedIndex(index);
                         activatePanel(index);
                     } else {
-                        JOptionPane.showMessageDialog(TableBuilder.this, new JLabel(App.messages.getString("res.204")));
+                        JOptionPane.showMessageDialog(TableBuilder.this, new JLabel(App.messages.getString("res.225")));
                     }
                 }
             });

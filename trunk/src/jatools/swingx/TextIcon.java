@@ -1,5 +1,7 @@
 package jatools.swingx;
 
+import jatools.designer.App;
+
 import java.awt.Component;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -34,9 +36,9 @@ public class TextIcon implements Icon, PropertyChangeListener {
 
 	// The small kana characters and Japanese punctuation that draw in the top right quadrant:
 	// small a, i, u, e, o, tsu, ya, yu, yo, wa  (katakana only) ka ke
-	static final String sDrawsInTopRight = "¤¡¤£¤¥¤§¤©¤Ã¤ã¤å¤ç¤î" + // hiragana //
-		"¥¡¥£¥¥¥§¥©¥Ã¥ã¥å¥ç¥î¥õ¥ö"; // katakana //
-	static final String sDrawsInFarTopRight = "¡¢¡£"; // comma, full stop //
+	static final String sDrawsInTopRight = App.messages.getString("res.33") + // hiragana //
+		App.messages.getString("res.34"); // katakana //
+	static final String sDrawsInFarTopRight = App.messages.getString("res.35"); // comma, full stop //
 	static final int DEFAULT_CJK = ROTATE_NONE;
 	static final int LEGAL_ROMAN = ROTATE_NONE | ROTATE_LEFT | ROTATE_RIGHT;
 	static final int DEFAULT_ROMAN = ROTATE_RIGHT;

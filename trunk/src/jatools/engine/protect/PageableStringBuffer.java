@@ -62,11 +62,11 @@ public class PageableStringBuffer implements ProtectPublic {
      */
     public void append(String string) {
         if (buffer.length() > pageChars) {
-            //  	System.out.println("缓冲区超限了,buffer 大小"+buffer.length()+",上限是"+pageChars);
+            
             if (writer == null) {
                 try {
                     writer = new FileWriter2(pageFile = FileUtil.createTempFile("htm", ".ch"));
-                    //           System.out.println("创建了临时文件.");
+                    
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -76,7 +76,7 @@ public class PageableStringBuffer implements ProtectPublic {
                 writer.write(buffer.toString());
                 buffer = new StringBuffer(pageChars);
 
-                //    System.out.println("写到了临时文件.");    
+                
             } catch (IOException e) {
                 // MYDO Auto-generated catch block
                 e.printStackTrace();
@@ -113,7 +113,7 @@ public class PageableStringBuffer implements ProtectPublic {
                     _writer.write(b, 0, size);
                 }
 
-                //   System.out.println("读到临时文件.");
+                
             } catch (Exception e) {
                 // MYDO Auto-generated catch block
                 e.printStackTrace();

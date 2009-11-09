@@ -210,7 +210,7 @@ class Column {
             return "OBJECT";
 
         default:
-            throw new SQLException(App.messages.getString("res.543") + type);
+            throw new SQLException(App.messages.getString("res.603") + type);
         }
     }
 
@@ -294,7 +294,7 @@ class Column {
             return s.getBytes();
 
         default:
-            throw new SQLException(App.messages.getString("res.543") + type);
+            throw new SQLException(App.messages.getString("res.603") + type);
         }
     }
 

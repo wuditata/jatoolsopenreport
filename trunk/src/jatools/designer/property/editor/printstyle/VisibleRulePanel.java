@@ -26,13 +26,13 @@ import org.apache.commons.lang.ArrayUtils;
 public class VisibleRulePanel extends JPanel {
     private String[] printMode = {
             "",
-            App.messages.getString("res.352"),
-            App.messages.getString("res.353")
+            App.messages.getString("res.400"),
+            App.messages.getString("res.401")
         };
     private String[] visible = {
             "",
-            App.messages.getString("res.354"),
-            App.messages.getString("res.355")
+            App.messages.getString("res.402"),
+            App.messages.getString("res.403")
         };
     private TemplateComboBox printModeTempCombo = null;
     private TemplateComboBox visibleTempCombo = null;
@@ -55,14 +55,14 @@ public class VisibleRulePanel extends JPanel {
         gbc.insets = new Insets(0, 0, 0, 0);
 
         gbc.fill = GridBagConstraints.NONE;
-        add(new JLabel(App.messages.getString("res.356"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.404"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100;
         add(printModeTempCombo, gbc);
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.357"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.405"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(visibleTempCombo, gbc);
 

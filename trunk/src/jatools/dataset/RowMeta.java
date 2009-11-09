@@ -160,8 +160,8 @@ public class RowMeta {
         int count = fieldInfos.length;
 
         if ((i < 0) || (i > (count - 1))) {
-            throw new ArrayIndexOutOfBoundsException(App.messages.getString("res.545") +
-                (count - 1) + "Ö®¼ä!"); // //$NON-NLS-2$
+            throw new ArrayIndexOutOfBoundsException(App.messages.getString("res.607") +
+                (count - 1) + App.messages.getString("res.608")); // //$NON-NLS-2$
         }
 
         return fieldInfos[i];
@@ -255,7 +255,7 @@ public class RowMeta {
      */
     public void remove(int k) {
         if ((k < 0) || (k > (fieldInfos.length - 1))) {
-            throw new ArrayIndexOutOfBoundsException(App.messages.getString("res.546") + k);
+            throw new ArrayIndexOutOfBoundsException(App.messages.getString("res.609") + k);
         } else {
             ArrayList v = new ArrayList(Arrays.asList(fieldInfos));
             v.remove(k);

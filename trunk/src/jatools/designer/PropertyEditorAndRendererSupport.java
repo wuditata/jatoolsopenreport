@@ -114,7 +114,7 @@ public class PropertyEditorAndRendererSupport {
                         icon.setColor((Color) value);
 
                         if (value == null) {
-                            super.setValue(App.messages.getString("res.135"));
+                            super.setValue(App.messages.getString("res.13"));
                         } else {
                             Color color = (Color) value;
                             super.setValue("RGB[" + color.getRed() + "," + color.getGreen() + "," +
@@ -261,27 +261,27 @@ public class PropertyEditorAndRendererSupport {
                 new Integer(2)
             };
         Object[] texts = new Object[] {
-                App.messages.getString("res.131"),
-                App.messages.getString("res.136"),
-                App.messages.getString("res.133")
+                App.messages.getString("res.157"),
+                App.messages.getString("res.161"),
+                App.messages.getString("res.159")
             };
         alignX = new RadioButtonsCellEditorRX(values, texts);
         pe.registerPropertyEditor(ComponentConstants.PROPERTY_HORIZONTAL_ALIGNMENT, alignX);
         pe.registerPropertyRenderer(ComponentConstants.PROPERTY_HORIZONTAL_ALIGNMENT, alignX);
 
         texts = new Object[] {
-                App.messages.getString("res.130"),
-                App.messages.getString("res.136"),
-                App.messages.getString("res.132")
+                App.messages.getString("res.156"),
+                App.messages.getString("res.161"),
+                App.messages.getString("res.158")
             };
         alignY = new RadioButtonsCellEditorRX(values, texts);
         pe.registerPropertyEditor(ComponentConstants.PROPERTY_VERTICAL_ALIGNMENT, alignY);
         pe.registerPropertyRenderer(ComponentConstants.PROPERTY_VERTICAL_ALIGNMENT, alignY);
 
         //        texts = new Object[] {
-        //                "◊Û…œΩ«",
-        //                "æ”÷–",
-        //                "¿≠…Ï"
+        
+        
+        
         //            };
 
         //        RadioButtonsCellEditorRX imageModeX = new RadioButtonsCellEditorRX(values, texts);

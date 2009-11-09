@@ -28,9 +28,9 @@ import org.w3c.dom.NodeList;
 public class CollectionSerializer extends ContainerSerializer {
 	private static Logger logger = Logger.getLogger("ZCollectionElemnt"); //
 
-	// 如果 iterator()
+	
 
-	// 如果支持写，则该类必须
+	
 
 	private static final String ITEM_CLASS = "ItemClass"; //
 
@@ -145,7 +145,7 @@ public class CollectionSerializer extends ContainerSerializer {
 		 * </Fields>
 		 */
 
-		// 是否得相同的class,如果相同打上标志 ITEM_CLASS
+		
 		List list = (List) object;
 		Class itemClass = getItemClass(list);
 

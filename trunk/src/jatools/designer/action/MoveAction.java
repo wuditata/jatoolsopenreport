@@ -23,7 +23,7 @@ class MoveAction extends ReportAction {
      * @param orientation DOCUMENT ME!
      */
     public MoveAction(int orientation) {
-        super(App.messages.getString("res.530"));
+        super(App.messages.getString("res.585"));
         this.orientation = orientation;
     }
 

@@ -184,7 +184,7 @@ public class VariableTree extends IconTree implements ActionListener, ChangeList
     }
 
     protected void delete() {
-        if (MessageBox.show(this.getTopLevelAncestor(), App.messages.getString("res.389"), App.messages.getString("res.500"),
+        if (MessageBox.show(this.getTopLevelAncestor(), App.messages.getString("res.437"), App.messages.getString("res.555"),
                     MessageBox.OK_CANCEL) == MessageBox.OK) {
             SimpleTreeNode selected = (SimpleTreeNode) this.getSelectionModel().getSelectionPath()
                                                            .getLastPathComponent();
@@ -498,7 +498,7 @@ public class VariableTree extends IconTree implements ActionListener, ChangeList
 
     class _AddAction extends AbstractAction {
         _AddAction() {
-            super(App.messages.getString("res.66"));
+            super(App.messages.getString("res.93"));
         }
 
         public void actionPerformed(ActionEvent e) {
@@ -508,7 +508,7 @@ public class VariableTree extends IconTree implements ActionListener, ChangeList
 
     class _DeleteAction extends AbstractAction {
         _DeleteAction() {
-            super(App.messages.getString("res.69"));
+            super(App.messages.getString("res.96"));
         }
 
         public void actionPerformed(ActionEvent e) {
@@ -518,7 +518,7 @@ public class VariableTree extends IconTree implements ActionListener, ChangeList
 
     class _EditAction extends AbstractAction {
         _EditAction() {
-            super(App.messages.getString("res.68"));
+            super(App.messages.getString("res.95"));
         }
 
         public void actionPerformed(ActionEvent e) {
@@ -528,7 +528,7 @@ public class VariableTree extends IconTree implements ActionListener, ChangeList
 
     class _PreviewAction extends AbstractAction {
         _PreviewAction() {
-            super(App.messages.getString("res.70"));
+            super(App.messages.getString("res.97"));
         }
 
         public void actionPerformed(ActionEvent e) {

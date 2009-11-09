@@ -105,19 +105,19 @@ public class SqlReaderDialog extends JDialog {
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.WEST;
-        north.add(new JLabel(App.messages.getString("res.63")), gbc);
+        north.add(new JLabel(App.messages.getString("res.90")), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.add(nameText, 150);
 
         north.add(Box.createVerticalStrut(10), gbc);
-        north.add(new TitledSeparator(App.messages.getString("res.161")), gbc);
+        north.add(new TitledSeparator(App.messages.getString("res.185")), gbc);
         connectionPane = new ConnectionPanel(north, gbc);
 
         gbc.fill = GridBagConstraints.BOTH;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         north.add(Box.createVerticalStrut(10), gbc);
-        north.add(new TitledSeparator(App.messages.getString("res.162")), gbc);
+        north.add(new TitledSeparator(App.messages.getString("res.186")), gbc);
         gbc.gridwidth = 1;
 
         gbc.weighty = 1.0;
@@ -137,7 +137,7 @@ public class SqlReaderDialog extends JDialog {
         gbc.gridwidth = 1;
         north.add(Box.createVerticalStrut(10));
 
-        JButton b = new JButton(App.messages.getString("res.163"));
+        JButton b = new JButton(App.messages.getString("res.187"));
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     preview();

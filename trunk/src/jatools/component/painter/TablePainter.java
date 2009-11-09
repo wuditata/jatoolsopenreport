@@ -69,7 +69,7 @@ public class TablePainter extends SimplePainter {
     }
 
     private void paintCrossPoint(Graphics2D g, PowerTable power) {
-        // 算出中心点位置;
+        
         Cell cell = power.getLeftHeader().getCell();
 
         int x = power.getColumnX(cell.colSpan);
@@ -213,7 +213,7 @@ public class TablePainter extends SimplePainter {
                     } else {
                         Cell cell = co.getCell();
 
-                        // 只有顶格的单元格才需要画
+                        
                         if ((cell.row == row) && (cell.column == col)) {
                             r = table.getBounds(co.getCell());
                         }

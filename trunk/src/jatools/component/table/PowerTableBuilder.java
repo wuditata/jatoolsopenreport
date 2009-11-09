@@ -19,7 +19,7 @@ import java.util.Map;
   */
 public class PowerTableBuilder {
     private static void deleteRowPanel(Component panel) {
-        // 删除list下的子部件
+        
         Component[] removed = (Component[]) panel.getChildren().toArray(new Component[0]);
 
         for (int i = 0; i < removed.length; i++) {
@@ -50,7 +50,7 @@ public class PowerTableBuilder {
      */
     public static void layoutLeftHeaderGroup(PowerTable p, String[] groups)
         throws Exception {
-        // 删除行板
+        
  
 
         HeaderTable ltable = p.getLeftHeader();
@@ -88,24 +88,24 @@ public class PowerTableBuilder {
             }
 
             if (!reserved) {
-                // 删除rowpanel
+                
                 if (normalGroup) {
                     Component rowPanel = ltable.getComponentByName("_p" + g);
 
                     if (rowPanel == null) {
-                        throw new Exception(App.messages.getString("res.571") + "_p" + g);
+                        throw new Exception(App.messages.getString("res.642") + "_p" + g);
                     }
 
                     deleteRowPanel(rowPanel);
                 }
 
-                // 删除列
+                
                 Component totalLabel = ltable.getComponentByName("_t" + g);
                 p.removeColumn(gColumn, gColumns[i]);
 
-                // 删除合计所在的行
+                
                 if (totalLabel == null) {
-                    System.out.println(App.messages.getString("res.571") + "_p" + g);
+                    System.out.println(App.messages.getString("res.642") + "_p" + g);
                 } else {
                     p.removeRow(totalLabel.getCell().row, totalLabel.getCell().rowSpan);
                 }
@@ -120,28 +120,28 @@ public class PowerTableBuilder {
             p.getLeftHeader().getComponentsByName("_x" + gNames[0], texts);
 
             if (texts.isEmpty()) {
-                throw new Exception(App.messages.getString("res.571") + "_x" + gNames[0]);
+                throw new Exception(App.messages.getString("res.642") + "_x" + gNames[0]);
             }
 
             Component totalLabel = ltable.getComponentByName("_t" + gNames[0]);
 
             if (totalLabel == null) {
-                throw new Exception(App.messages.getString("res.572") + "_t" + gNames[0]);
+                throw new Exception(App.messages.getString("res.643") + "_t" + gNames[0]);
             }
 
             Component rowPanel = ltable.getComponentByName("_p" + gNames[0]);
 
             if (rowPanel == null) {
-                throw new Exception(App.messages.getString("res.573") + "_p" + gNames[0]);
+                throw new Exception(App.messages.getString("res.644") + "_p" + gNames[0]);
             }
 
             int topRows = p.getTopHeader().getRowCount();
 
-            //          在 leftheader.row 上方插入一行
+            
             int h = p.getRowHeight(topRows);
             p.insertRowBefore(topRows, 20);
 
-            //          在 &DW 前的单元格，cell.row = 0; cell.rowSpan ++;
+            
             for (int i = ltable.getColumnCount() - 1; i > -1; i--) {
                 Component c = p.getComponent(topRows + 1, i);
 
@@ -154,9 +154,9 @@ public class PowerTableBuilder {
          
             deleteRowPanel(rowPanel);
 
-            // 将 DW 的 total 将入到 &dw
+            
 
-            // 将 DW 的 text 加入到 &dw
+            
             rowPanel.clear();
 
             Iterator it = texts.iterator();
@@ -176,7 +176,7 @@ public class PowerTableBuilder {
 
             deepPanel.add(rowPanel);
 
-            // 将 DW 的 total 将入到 &dw
+            
             totalLabel.getCell().row = rowPanel.getCell().row2() + 1;
             totalLabel.getCell().rowSpan = 1;
             totalLabel.getCell().column = ltable.getColumnCount() - gColumns[0];
@@ -185,7 +185,7 @@ public class PowerTableBuilder {
             totalLabel.delete();
             deepPanel.add(totalLabel);
 
-            //          将 DW 的 total 数值cell 移到 total
+            
             int topCols = p.getTopHeader().getColumnCount();
             int leftCols = ltable.getColumnCount();
             int bottomRow = p.getRowCount() - 1;
@@ -198,7 +198,7 @@ public class PowerTableBuilder {
                 }
             }
 
-            // 删除前面两列
+            
             p.removeColumn(0, gColumns[0]);
             
             p.removeRow(p.getRowCount()-1);
@@ -253,7 +253,7 @@ public class PowerTableBuilder {
             p.getLeftHeader().getComponentsByName("_x" + lName, texts);
 
             if (texts.isEmpty()) {
-                throw new Exception(App.messages.getString("res.571") + "_x" + lName);
+                throw new Exception(App.messages.getString("res.642") + "_x" + lName);
             }
 
             getKeptColumns(keptColumns, texts);
@@ -293,7 +293,7 @@ public class PowerTableBuilder {
             Component totalLabel = ltable.getComponentByName("_t" + lName);
 
             if (totalLabel == null) {
-                throw new Exception(App.messages.getString("res.572") + "_t" + lName);
+                throw new Exception(App.messages.getString("res.643") + "_t" + lName);
             }
 
             cc.put("_t" + lName, totalLabel);
@@ -303,7 +303,7 @@ public class PowerTableBuilder {
             ltable.getComponentsByName("_x" + lName, texts);
 
             if (texts.isEmpty()) {
-                throw new Exception(App.messages.getString("res.571") + "_x" + lName);
+                throw new Exception(App.messages.getString("res.642") + "_x" + lName);
             }
 
             cc.put("_x" + lName, texts);
@@ -313,7 +313,7 @@ public class PowerTableBuilder {
             Component panel = ltable.getComponentByName("_p" + lName);
 
             if (panel == null) {
-                throw new Exception(App.messages.getString("res.573") + "_p" + lName);
+                throw new Exception(App.messages.getString("res.644") + "_p" + lName);
             }
 
             cc.put("_p" + lName, panel);
@@ -325,7 +325,7 @@ public class PowerTableBuilder {
             totalGroupCols += groupCols[i];
         }
 
-        // 取得原来的列宽
+        
         int[] cols = new int[totalGroupCols];
         Arrays.fill(cols, 80);
 
@@ -344,7 +344,7 @@ public class PowerTableBuilder {
 
         int topRows = p.getTopHeader().getCell().getRowSpan();
 
-        // 取得高度
+        
         int[] rows = new int[groups.length + 1];
         Arrays.fill(rows, p.getRowHeight(topRows));
 
@@ -361,13 +361,13 @@ public class PowerTableBuilder {
         // _t  total label
         // _p  panel
         // _x  table
-        // 1. 设置父版,R
-        // 2. 设置当前级别为0,找到0级 pathName -> pn
-        // 3. 取得 _t+pn断-> T ,_p+pn -> P
-        // 4. 如果T.row > p.row 合计在后
-        // 5. 设置 T，P的cell
-        // 6. T,P 加入到 R
-        // 7. col ++,row 处于top中间
+        
+        
+        
+        
+        
+        
+        
         Component childPanel = null;
         Component childTotal = null;
 
@@ -385,7 +385,7 @@ public class PowerTableBuilder {
             Cell totalCell = total.getCell();
             totalCell.row = groupRows;
 
-            // totalCell.rowSpan =  不用改
+            
             int offCol = groupCol - totalCell.column;
 
             totalCell.column = groupCol;
@@ -400,7 +400,7 @@ public class PowerTableBuilder {
 
             panel.clear();
 
-            // 处理 text
+            
             List texts = (List) cc.get("_x" + lName);
             Iterator it = texts.iterator();
 
@@ -412,7 +412,7 @@ public class PowerTableBuilder {
 
                 textCell.column += offCol;
 
-                // textCell.colSpan 不需要改变 
+                
                 String style = text.getPrintStyle();
 
                 if (style == null) {
@@ -425,7 +425,7 @@ public class PowerTableBuilder {
                 panel.add(text);
             }
 
-            //            // 处理 total 2
+            
             //            List totals = (List) cc.get("_t2" + lName);
             //            it = totals.iterator();
             //

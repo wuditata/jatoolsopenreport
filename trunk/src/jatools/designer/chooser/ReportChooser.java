@@ -40,7 +40,7 @@ public class ReportChooser implements ActionListener {
     public static final int SHOW_OPEN = 2;
     public static final int SHOW_ALL = SHOW_NEW | SHOW_OPEN;
     private static ReportChooser shared;
-    JatoolsFileFilter filter = new JatoolsFileFilter(new String[] { "xml" }, App.messages.getString("res.509"));
+    JatoolsFileFilter filter = new JatoolsFileFilter(new String[] { "xml" }, App.messages.getString("res.564"));
     JFileChooser fileChooser;
     NewPanel newPanel;
     boolean startup;
@@ -111,11 +111,11 @@ public class ReportChooser implements ActionListener {
             JTabbedPane tabbed = new JTabbedPane();
 
             if ((showOption & SHOW_NEW) != 0) {
-                tabbed.add(this.getNewPanel(), App.messages.getString("res.508"));
+                tabbed.add(this.getNewPanel(), App.messages.getString("res.563"));
             }
 
             if ((showOption & SHOW_OPEN) != 0) {
-                tabbed.add(this.getOpenPanel(), App.messages.getString("res.65"));
+                tabbed.add(this.getOpenPanel(), App.messages.getString("res.92"));
             }
 
             contentPane.add(tabbed);
@@ -126,7 +126,7 @@ public class ReportChooser implements ActionListener {
         }
 
         if (withStillShow) {
-            JCheckBox box = new JCheckBox(App.messages.getString("res.510"));
+            JCheckBox box = new JCheckBox(App.messages.getString("res.565"));
             box.setSelected(true);
 
             box.addActionListener(new ActionListener() {
@@ -165,7 +165,7 @@ public class ReportChooser implements ActionListener {
         JFileChooser fc = getOpenPanel();
         fc.setDialogType(JFileChooser.SAVE_DIALOG);
 
-        return this.showDialog(App.messages.getString("res.511"), SHOW_OPEN);
+        return this.showDialog(App.messages.getString("res.566"), SHOW_OPEN);
     }
 
     /**
@@ -178,7 +178,7 @@ public class ReportChooser implements ActionListener {
         fc.setDialogType(JFileChooser.SAVE_DIALOG);
         safeSave = true;
 
-        boolean ret = this.showDialog(App.messages.getString("res.511"), SHOW_OPEN);
+        boolean ret = this.showDialog(App.messages.getString("res.566"), SHOW_OPEN);
         safeSave = false;
 
         return ret;
@@ -237,7 +237,7 @@ public class ReportChooser implements ActionListener {
 
                 if (safeSave && file.exists() && !file.equals(selectedFile)) {
                     if (JOptionPane.showConfirmDialog(dialog,
-                                new JLabel(App.messages.getString("res.140") + file.getName() + App.messages.getString("res.512")), App.messages.getString("res.55"),
+                                new JLabel(App.messages.getString("res.165") + file.getName() + App.messages.getString("res.567")), App.messages.getString("res.82"),
                                 JOptionPane.OK_CANCEL_OPTION) == JOptionPane.CANCEL_OPTION) {
                         return;
                     }
@@ -248,7 +248,7 @@ public class ReportChooser implements ActionListener {
 
                 cacheDocfile(document, file);
             } catch (Exception e) {
-                MessageBox.error(dialog, App.messages.getString("res.513") + Util.toString(e));
+                MessageBox.error(dialog, App.messages.getString("res.568") + Util.toString(e));
                 Util.debug(Logger.getLogger("ZReportChooser.saveDocument"), e.getMessage());
             }
         }

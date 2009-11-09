@@ -83,7 +83,7 @@ public class PrinterFactory {
             Class printerClass = (Class) printerClassesCache.get(c.getClass());
 
             if (printerClass == null) {
-                System.out.println(c.getClass() + App.messages.getString("res.23") + c.getClass());
+                System.out.println(c.getClass() + App.messages.getString("res.47") + c.getClass());
 
                 return null;
             }

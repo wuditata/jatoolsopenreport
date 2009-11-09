@@ -17,12 +17,12 @@ import jatools.designer.App;
  * @version $Revision$
   */
 public class CustomSummary {
-    public static final String COUNT = App.messages.getString("res.188");
-    public static final String SUM = App.messages.getString("res.189");
-    public static final String MAX = App.messages.getString("res.190");
-    public static final String MIN = App.messages.getString("res.191");
-    public static final String AVERAGE = App.messages.getString("res.177");
-    public static final String DISTINCT_COUNT = App.messages.getString("res.192");
+    public static final String COUNT = App.messages.getString("res.211");
+    public static final String SUM = App.messages.getString("res.212");
+    public static final String MAX = App.messages.getString("res.213");
+    public static final String MIN = App.messages.getString("res.214");
+    public static final String AVERAGE = App.messages.getString("res.201");
+    public static final String DISTINCT_COUNT = App.messages.getString("res.215");
     public static final String[] SUPPORT_FUNCTIONS = {
             COUNT, SUM, MAX, MIN, AVERAGE, DISTINCT_COUNT,
         };

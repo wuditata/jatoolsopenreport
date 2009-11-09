@@ -81,7 +81,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
             setBackground(Color.white);
 
             if (nodeValue instanceof Boolean) {
-                return new JLabel(App.messages.getString("res.232"));
+                return new JLabel(App.messages.getString("res.258"));
             }
 
             if (nodeValue instanceof TreeNodeValue) {
@@ -125,7 +125,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                         JLabel button = new JLabel(index[i]);
                         button.setOpaque(true);
                         button.setBackground(labelColor);
-                        button.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 12));
+                        button.setFont(new Font(App.messages.getString("res.21"), Font.PLAIN, 12));
                         button.setBorder(labelBorder);
 
                         button.putClientProperty(NODE, "[" + row + "]" + "index1" + index[i]);
@@ -140,7 +140,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                         JLabel button = new JLabel(index2[i]);
                         button.setOpaque(true);
                         button.setBackground(labelColor);
-                        button.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 12));
+                        button.setFont(new Font(App.messages.getString("res.21"), Font.PLAIN, 12));
                         button.setBorder(labelBorder);
 
                         button.putClientProperty(NODE, "[" + row + "]" + "index2" + index2[i]);
@@ -173,7 +173,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                         JLabel button = new JLabel(index[i]);
                         button.setOpaque(true);
                         button.setBackground(labelColor);
-                        button.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 12));
+                        button.setFont(new Font(App.messages.getString("res.21"), Font.PLAIN, 12));
                         button.setBorder(labelBorder);
 
                         button.putClientProperty(NODE, "[" + row + "]" + index[i]);
@@ -204,7 +204,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                             JLabel button = new JLabel(fields[i]);
                             button.setOpaque(true);
                             button.setBackground(labelColor);
-                            button.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 12));
+                            button.setFont(new Font(App.messages.getString("res.21"), Font.PLAIN, 12));
                             button.setBorder(labelBorder);
                             button.putClientProperty(NODE, "[" + row + "]" + fields[i]);
                             add(button);
@@ -310,7 +310,7 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                         }
                     };
 
-            textLabel.setFont(new Font(App.messages.getString("res.22"), Font.PLAIN, 12));
+            textLabel.setFont(new Font(App.messages.getString("res.21"), Font.PLAIN, 12));
             textLabel.setOpaque(true);
             textLabel.setBackground(Color.white);
             this.add(iconLabel, BorderLayout.WEST);

@@ -38,7 +38,7 @@ import javax.swing.table.AbstractTableModel;
  * @version $Revision$
   */
 public class DatasetExplorer extends JPanel implements ChangeListener, NameChecker {
-    public static final String NAME = App.messages.getString("res.477");
+    public static final String NAME = App.messages.getString("res.533");
     JTextField proxySelector = new JTextField();
     JTextField descriptionText = new JTextField();
     JTable fieldsTable;
@@ -105,7 +105,7 @@ public class DatasetExplorer extends JPanel implements ChangeListener, NameCheck
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(2, 2, 2, 2);
         gbc.gridwidth = 1;
-        commandsPane.add(new JLabel(App.messages.getString("res.63")), gbc);
+        commandsPane.add(new JLabel(App.messages.getString("res.90")), gbc);
 
         gbc.weightx = 100.0f;
 
@@ -131,7 +131,7 @@ public class DatasetExplorer extends JPanel implements ChangeListener, NameCheck
         }
 
         gbc.gridwidth = 1;
-        commandsPane.add(new JLabel(App.messages.getString("res.478")), gbc);
+        commandsPane.add(new JLabel(App.messages.getString("res.534")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         descriptionText.setEditable(false);
@@ -154,7 +154,7 @@ public class DatasetExplorer extends JPanel implements ChangeListener, NameCheck
      */
     public void setProxyContainer(DatasetReaderList proxyContainer) {
         if (proxyContainer == null) {
-            throw new NullPointerException(App.messages.getString("res.479"));
+            throw new NullPointerException(App.messages.getString("res.535"));
         }
 
         if (this.proxyContainer != null) {

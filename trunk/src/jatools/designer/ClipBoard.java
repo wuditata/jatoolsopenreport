@@ -59,7 +59,7 @@ public class ClipBoard {
         }
 
         //        if (!isSameParent(source)) {
-        //            throw new Exception("ZClipBoard.setContents(...): 所有复制对象须在同一个容器中."); //
+        
         //        }
         Component parent = source[0].getParent();
 
@@ -97,7 +97,7 @@ public class ClipBoard {
     * @throws Exception DOCUMENT ME!
     */
     public Component[] getContents() throws Exception {
-        // 从系统剪贴板中取得文本 inputstream
+        
         Transferable contents = sysClipBoard.getContents(this);
 
         if (contents == null) {
@@ -106,7 +106,7 @@ public class ClipBoard {
 
         String text = (String) (contents.getTransferData(DataFlavor.stringFlavor));
 
-        // 如果不是anyreport 对象格式，则退出
+        
         if (text.indexOf(XML_ID) == -1) {
             return null;
         }

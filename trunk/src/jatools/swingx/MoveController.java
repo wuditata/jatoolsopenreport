@@ -1,5 +1,6 @@
 package jatools.swingx;
 
+import jatools.designer.App;
 import jatools.swingx.dnd.Moveable;
 import jatools.util.Util;
 
@@ -71,11 +72,11 @@ public class MoveController extends JPanel {
      */
     public MoveController(Moveable leftMoveable, Moveable rightMoveable, int options) {
         if (leftMoveable == null) {
-            throw new NullPointerException("ZMoveController.ZMoveController(...): 拖动源参数不应为空."); //
+            throw new NullPointerException(App.messages.getString("res.27")); //
         }
 
         if (rightMoveable == null) {
-            throw new NullPointerException("ZMoveController.ZMoveController(...): 放置目标不参数不应为空."); //
+            throw new NullPointerException(App.messages.getString("res.28")); //
         }
 
         this.leftMoveable = leftMoveable;

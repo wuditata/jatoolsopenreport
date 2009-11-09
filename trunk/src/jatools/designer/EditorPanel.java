@@ -46,8 +46,8 @@ public class EditorPanel extends JSplitPane {
         sp.setDividerLocation(200);
         sp.setOneTouchExpandable(true);
 
-        propTab.addTab(App.messages.getString("res.90"), propertTable);
-        propTab.addTab(App.messages.getString("res.91"), sp);
+        propTab.addTab(App.messages.getString("res.117"), propertTable);
+        propTab.addTab(App.messages.getString("res.118"), sp);
 
         setLeftComponent(propTab);
         setRightComponent(tabbedPanel);

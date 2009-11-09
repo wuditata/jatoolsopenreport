@@ -29,15 +29,15 @@ public class ColorComboBox extends JComboBox implements ListCellRenderer/*自定义
     public static final int OTHER_BOX_VISIBLE = 2;
     public static final String PROPERTY_POPUP_CLOSED = "popup_closed"; //
 
-    // 调色板，也是弹出式列表的绘制器
+    
     private ColorPallette listRenderer;
 
-    // 是一个项目集，始终只有一个颜色对象，而且始终选定第一项，两种情况改变唯一元素
-    // 1.当用setColor 初始颜色时，改变此集合的唯一元素
-    // 2.当弹出式列表关闭时后 ，从列表中即调色板中取回
+    
+    
+    
     private Color color = Color.black;
 
-    // 本组合框的模型，以colors作为备选项目
+    
     private DefaultComboBoxModel model = new DefaultComboBoxModel();
 
     /**
@@ -53,33 +53,33 @@ public class ColorComboBox extends JComboBox implements ListCellRenderer/*自定义
      * @param textVisible DOCUMENT ME!
      */
     public ColorComboBox(int textVisible) {
-        // 填充唯一项目对象，默认为黑色，一般会通过setColor进行修改
+        
         model.addElement(color);
 
         setModel(model);
 
 
-        //创建调色板列表绘制器
+        
         listRenderer = new ColorPallette(textVisible);
 
 
-        // 告诉组合框到此地找到列表绘制器
+        
         setRenderer(this);
 
-        // 创建ui,该ui可以定制弹出式列表的大小及即时取到弹出式列表的实例
+        
         FixedSizeComboBoxUI ui = new FixedSizeComboBoxUI();
         setUI(ui);
 
 
-        // 取到列表，以便将鼠标事件传给调色板，这样调色板可以呈现rollover风格
+        
         listenToList(ui.getPopupList());
 
 
-        // 指向第一项
+        
         setSelectedIndex(0);
 
 
-        // 不可编辑
+        
         setEditable(false);
 
         JComponent jc = (JComponent) this.getEditor().getEditorComponent();
@@ -122,7 +122,7 @@ public class ColorComboBox extends JComboBox implements ListCellRenderer/*自定义
         listRenderer.setColor(color);
 
 
-        // 如果index == -1,则指示绘制器正被嵌入组合框中，而不是处于弹出状态
+        
         listRenderer.setAtHeader(index == -1);
 
         return listRenderer;
@@ -144,7 +144,7 @@ public class ColorComboBox extends JComboBox implements ListCellRenderer/*自定义
             }
 
             public void mouseReleased(MouseEvent e) {
-                // 通知列表被关闭了
+                
                 firePropertyChange(PROPERTY_POPUP_CLOSED, false, true);
             }
 

@@ -69,13 +69,13 @@ public abstract class AbstractFlowPrinter extends AbstractPrinter {
     public View print(Context context) throws Exception {
         this.doBeforePrint(context.getScript());
 
-        // 准备layout
+        
         CompoundView view = createView(context);
         PrinterLayout layout = createLayout(context, view);
         context.pushLayout(layout);
 
-        // 调整子件打印的起始位置
-        // 打印子件
+        
+        
         printChildren(context, layout);
         context.popLayout();
         this.doAfterPrint(context.getScript());

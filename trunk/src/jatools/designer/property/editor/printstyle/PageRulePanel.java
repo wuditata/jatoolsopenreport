@@ -24,9 +24,9 @@ import org.apache.commons.lang.ArrayUtils;
  * @version $Revision: 1.3 $
   */
 public class PageRulePanel extends JPanel {
-    private static final String[] forceBreakPrompts = { "", App.messages.getString("res.210"), App.messages.getString("res.211") };
+    private static final String[] forceBreakPrompts = { "", App.messages.getString("res.232"), App.messages.getString("res.233") };
     private static final String[] forceBreakValues = { "", "true", "false" };
-    private String[] newPagePos = { "", App.messages.getString("res.324"), "0" };
+    private String[] newPagePos = { "", App.messages.getString("res.372"), "0" };
     private TemplateComboBox newPageXTempCombo = null;
     private TemplateComboBox forceBreakTempCombo = new TemplateComboBox(forceBreakPrompts);
     private TemplateComboBox newPageYTempCombo = null;
@@ -49,21 +49,21 @@ public class PageRulePanel extends JPanel {
         gbc.insets = new Insets(0, 0, 0, 0);
 
         gbc.fill = GridBagConstraints.NONE;
-        add(new JLabel(App.messages.getString("res.325"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.373"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100;
         add(newPageYTempCombo, gbc);
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.326"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.374"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(newPageXTempCombo, gbc);
 
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.327"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.375"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(forceBreakTempCombo, gbc);
 

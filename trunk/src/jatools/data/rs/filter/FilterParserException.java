@@ -54,7 +54,7 @@ public class FilterParserException extends IOException { // QueryParserException
 //            state = "find special char '"+(char)tokens.ttype+"'";
 //        }
 
-        return new FilterParserException(msg + App.messages.getString("res.551") + tokens + " in " );
+        return new FilterParserException(msg + App.messages.getString("res.618") + tokens + " in " );
     }
 
 } // QueryParserException

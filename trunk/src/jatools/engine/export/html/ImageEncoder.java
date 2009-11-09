@@ -37,7 +37,7 @@ public class ImageEncoder {
             return style.getImageFileSrc();
         }
 
-        // 是否已经解析过这个部件
+        
         String cache = (String) caches.get(style);
 
         if (cache != null) {
@@ -50,14 +50,14 @@ public class ImageEncoder {
             } else {
                 StringBuffer result = new StringBuffer();
 
-                // by 2007.12.27 李振兴
-                // 获得路径，加入表格的背景图片
+                
+                
                 String repeat = "no-repeat";
                 String position = "";
                 boolean isRepeatx = style.isRepeatx();
                 boolean isRepeaty = style.isRepeaty();
 
-                // 更改背景图片的位置！~
+                
                 if (isRepeatx && !isRepeaty) {
                     repeat = "repeat-x";
                 } else if (!isRepeatx && isRepeaty) {
@@ -86,7 +86,7 @@ public class ImageEncoder {
             return style.getImageFileSrc();
         }
 
-        // 是否已经解析过这个部件
+        
         String cache = (String) caches.get(style);
 
         if (cache != null) {

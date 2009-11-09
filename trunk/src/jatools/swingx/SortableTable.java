@@ -148,11 +148,11 @@ public class SortableTable extends JPanel implements ListSelectionListener {
             this.getModel().removeRow(i);
 
             if (i == this.table.getRowCount()) {
-                // //太后了，不存在这个序号的元素
+                
                 i--;
             }
 
-            if (i >= 0) // 在有效索引的范围内
+            if (i >= 0) 
              {
                 this.setSelectedRow(i);
             }

@@ -1,5 +1,6 @@
 package jatools.swingx;
 
+import jatools.designer.App;
 import jatools.swingx.dnd.DNDManager;
 import jatools.swingx.wizard.WizardCellEditor;
 
@@ -28,7 +29,7 @@ public class TwoListSelector extends JPanel implements WizardCellEditor {
 	protected JListX source;
 	protected JListX target;
 	protected ArrayList lastSelection = new ArrayList();
-	protected String errorMessage = "错了.你什么也没选."; //
+	protected String errorMessage = App.messages.getString("res.36"); //
 
 	/**
 	 * Creates a new ZTwoListSelector object.

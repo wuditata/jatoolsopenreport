@@ -23,7 +23,7 @@ public class EditCopyAction extends EditClipAction {
      * Creates a new EditCopyAction object.
      */
     public EditCopyAction() {
-        super(null, App.messages.getString("res.101"), getIcon("/jatools/icons/copy.gif"),
+        super(null, App.messages.getString("res.128"), getIcon("/jatools/icons/copy.gif"),
             getIcon("/jatools/icons/copy2.gif"));
         setStroke(ctrl(KeyEvent.VK_C));
     }
@@ -34,7 +34,7 @@ public class EditCopyAction extends EditClipAction {
      * @param reportPanel DOCUMENT ME!
      */
     public EditCopyAction(ReportPanel reportPanel) {
-        super(reportPanel, App.messages.getString("res.101"), getIcon("/jatools/icons/copy.gif"),
+        super(reportPanel, App.messages.getString("res.128"), getIcon("/jatools/icons/copy.gif"),
             getIcon("/jatools/icons/copy2.gif"));
         setStroke(ctrl(KeyEvent.VK_C));
     }

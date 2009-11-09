@@ -82,7 +82,7 @@ public class ReportExporter extends ReportActionBase {
 
             ba.writeTo(os);
         } else {
-            throw new Exception(App.messages.getString("res.19") + as);
+            throw new Exception(App.messages.getString("res.44") + as);
         }
 
         os.close();
@@ -207,7 +207,7 @@ public class ReportExporter extends ReportActionBase {
             String as = (String) request.getParameter(ReportJob.AS_PARAM);
 
             if ((as == null) && (formats.indexOf(as + ";") == 1)) {
-                throw new Exception(App.messages.getString("res.20"));
+                throw new Exception(App.messages.getString("res.45"));
             }
 
             ReportJob job = null;

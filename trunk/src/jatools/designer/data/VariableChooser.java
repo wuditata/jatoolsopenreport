@@ -25,7 +25,7 @@ public class VariableChooser implements Chooser {
      * @return DOCUMENT ME!
      */
     public boolean showChooser(JComponent owner, Object value) {
-        VariableExplorer explorer = new VariableExplorer(Main.getInstance(), App.messages.getString("res.499"));
+        VariableExplorer explorer = new VariableExplorer(Main.getInstance(), App.messages.getString("res.554"));
         explorer.setLocationRelativeTo(owner);
 
         explorer.setVariable((String) value);

@@ -35,7 +35,7 @@ public class ComparatorFactoryCache {
         NodeComparatorFactory p = (NodeComparatorFactory) painters.get(cls);
 
         if (p == null) {
-            throw new IllegalArgumentException(App.messages.getString("res.44") + cls.getName());
+            throw new IllegalArgumentException(App.messages.getString("res.68") + cls.getName());
         }
 
         return p;

@@ -51,21 +51,21 @@ public class ReaderVariableNameChecker implements NameChecker {
         String err = null;
 
         if ((name == null) || name.equals("")) {
-            err = App.messages.getString("res.87");
+            err = App.messages.getString("res.114");
         } else {
             String stringName = (String) name;
 
             Pattern pattern = Pattern.compile(NAME_PATTERN);
 
             if (!pattern.matcher(stringName).find()) {
-                err = App.messages.getString("res.88");
+                err = App.messages.getString("res.115");
             } else {
                 if (this.namesCache == null) {
                     prepareNamesCache();
                 }
 
                 if (namesCache.contains(name)) {
-                    err = App.messages.getString("res.89") + name + ".";
+                    err = App.messages.getString("res.116") + name + ".";
                 }
             }
         }

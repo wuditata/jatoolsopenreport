@@ -38,7 +38,7 @@ import javax.swing.JTextField;
 public class CrossIndexDialog extends JDialog implements ActionListener {
     private static CrossIndexNodeSource crossSource;
     private static boolean exitedOK;
-    static final String info = App.messages.getString("res.241");
+    static final String info = App.messages.getString("res.267");
 
     private JTextField nameField;
     private JList leftList;
@@ -56,7 +56,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
         super((Frame) javax.swing.SwingUtilities.getWindowAncestor(parent));
         exitedOK = false;
         this.setModal(true);
-        this.setTitle(App.messages.getString("res.242"));
+        this.setTitle(App.messages.getString("res.268"));
         this.crossSource = crossSource;
         this.c = parent;
         initUI();
@@ -81,7 +81,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
 
         centerPanel.add(center,BorderLayout.CENTER);
 
-        JLabel nameLabel=new JLabel(App.messages.getString("res.243"));
+        JLabel nameLabel=new JLabel(App.messages.getString("res.269"));
         nameField=new JTextField();
         Box nameBox=Box.createHorizontalBox();
         nameBox.add(nameLabel);
@@ -102,10 +102,10 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
         columnList = new JList();
 
         leftTab = new JTabbedPane();
-        leftTab.addTab(App.messages.getString("res.244"), new JScrollPane(leftList));
+        leftTab.addTab(App.messages.getString("res.270"), new JScrollPane(leftList));
         rightTab = new JTabbedPane();
-        rightTab.addTab(App.messages.getString("res.245"), new JScrollPane(rowList));
-        rightTab.addTab(App.messages.getString("res.246"), new JScrollPane(columnList));
+        rightTab.addTab(App.messages.getString("res.271"), new JScrollPane(rowList));
+        rightTab.addTab(App.messages.getString("res.272"), new JScrollPane(columnList));
 
         leftTab.setPreferredSize(new Dimension(200, 350));
         rightTab.setPreferredSize(new Dimension(200, 350));
@@ -307,7 +307,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
             String[] columnIndexs = new String[columnModel.getSize()];
 
             if(nameField.getText()==null||nameField.getText().trim().equals("")){
-              JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.247"), App.messages.getString("res.55"), JOptionPane.CLOSED_OPTION,
+              JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.273"), App.messages.getString("res.82"), JOptionPane.CLOSED_OPTION,
                    JOptionPane.ERROR_MESSAGE);
                return;
 
@@ -315,7 +315,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
 
 
             if ((rowIndexs.length == 0) || (columnIndexs.length == 0)) {
-                JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.248"), App.messages.getString("res.55"), JOptionPane.CLOSED_OPTION,
+                JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.274"), App.messages.getString("res.82"), JOptionPane.CLOSED_OPTION,
                     JOptionPane.ERROR_MESSAGE);
 
                 return;

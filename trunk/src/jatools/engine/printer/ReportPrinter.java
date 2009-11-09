@@ -240,7 +240,7 @@ public class ReportPrinter implements PrintConstants, ProtectPublic {
      */
     public void print() throws Exception {
         if (context.uo == 0) {
-            throw new Exception(App.messages.getString("res.38"));
+            throw new Exception(App.messages.getString("res.62"));
         }
 
         int c = 0;

@@ -151,7 +151,7 @@ public class IndexNode extends DatasetBasedNode {
         int col = getDataset().getColumnIndex(prop);
 
         if (col > -1) {
-            // 如果索引数源,则默认为表格方向,
+            
             Key key = this.getRoot().getScript()
                           .getKeyStack(this.getRoot().getScript().getStackType()).getKey();
 

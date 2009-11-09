@@ -49,14 +49,14 @@ public class DatasetReaderSelectDialog extends JDialog implements ChangeListener
      */
     public static final String CATAGORY = "catagory";
     DatasetReaderSelectPanel panel;
-    JButton browseButton = new JButton(App.messages.getString("res.75"));
+    JButton browseButton = new JButton(App.messages.getString("res.102"));
     JButton okButton = new JButton(CommandPanel.OK);
     ReportDocument document;
     DatasetReader reader;
     boolean externalReader;
 
     DatasetReaderSelectDialog(Frame owner, ReportDocument doc) {
-        super(owner, App.messages.getString("res.76"), true);
+        super(owner, App.messages.getString("res.103"), true);
         panel = new DatasetReaderSelectPanel();
 
         ActionListener cancel = new ActionListener() {
@@ -100,9 +100,9 @@ public class DatasetReaderSelectDialog extends JDialog implements ChangeListener
     }
 
     protected void done() {
-        // 如果是当前数据集，则直接返回
-        // 如果不是当前数据集，则检查是否需要更换变量名，如果需更换，则弹出更名对话框
-        // 命名变量到当前库 
+        
+        
+        
         // 
         SimpleTreeNode node = (SimpleTreeNode) panel.tree.getSelectionPath().getLastPathComponent();
 
@@ -123,7 +123,7 @@ public class DatasetReaderSelectDialog extends JDialog implements ChangeListener
             //                    try {
             //                        checker.check(reader.getName());
             //                    } catch (Exception e) {
-            //                        JOptionPane.showInputDialog(this, "将在当前报表中创建数据集变量，变量名称为:", "创建数据集变量",
+            
             //                            JOptionPane.OK_CANCEL_OPTION);
             //                    }
             //                }
@@ -165,7 +165,7 @@ public class DatasetReaderSelectDialog extends JDialog implements ChangeListener
                         checker.check(_reader.getName());
                     } catch (Exception e) {
                         e.printStackTrace();
-                        JOptionPane.showInputDialog(null, App.messages.getString("res.77"), App.messages.getString("res.78"),
+                        JOptionPane.showInputDialog(null, App.messages.getString("res.104"), App.messages.getString("res.105"),
                             JOptionPane.OK_CANCEL_OPTION);
                     }
                 }
@@ -217,7 +217,7 @@ class DatasetReaderSelectPanel extends JPanel {
     DatasetReaderSelectPanel() {
         super(new BorderLayout());
 
-        SimpleTreeNode root = new SimpleTreeNode(App.messages.getString("res.79"), null, -1);
+        SimpleTreeNode root = new SimpleTreeNode(App.messages.getString("res.106"), null, -1);
         tree = new IconTree();
 
         tree.setModel(new DefaultTreeModel(root));

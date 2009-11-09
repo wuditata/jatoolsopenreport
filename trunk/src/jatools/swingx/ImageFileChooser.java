@@ -1,5 +1,7 @@
 package jatools.swingx;
 
+import jatools.designer.App;
+
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -74,7 +76,7 @@ public class ImageFileChooser {
 
     public boolean show() {
         boolean option = false;
-        int returnVal = fc.showDialog(owner, "È·¶¨"); //
+        int returnVal = fc.showDialog(owner, App.messages.getString("res.3")); //
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             file = fc.getSelectedFile();

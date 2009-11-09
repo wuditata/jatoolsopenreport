@@ -24,7 +24,7 @@ public class NewAction extends ReportAction {
      * @param owner DOCUMENT ME!
      */
     public NewAction() {
-        super(App.messages.getString("res.508") + "...   ", getIcon("/jatools/icons/new.gif")); 
+        super(App.messages.getString("res.586"), getIcon("/jatools/icons/new.gif")); // //$NON-NLS-2$
         setStroke(ctrl(KeyEvent.VK_N));
     }
 
@@ -37,20 +37,20 @@ public class NewAction extends ReportAction {
     public void actionPerformed(ActionEvent e) {
         ReportChooser chooser = ReportChooser.getInstance();
 
-        if (chooser.showDialog(App.messages.getString("res.508"), ReportChooser.SHOW_NEW)) { 
+        if (chooser.showDialog(App.messages.getString("res.563"), ReportChooser.SHOW_NEW)) { //
 
             ReportDocument doc = chooser.getDocument();
 
             if (doc != null) {
            
-                Main.getInstance().createEditor(doc, App.messages.getString("res.531"), null);
+                Main.getInstance().createEditor(doc, App.messages.getString("res.587"), null);
             }
         }
     }
 
     protected boolean saveAs() {
-        int answer = MessageBox.show(getEditor(), App.messages.getString("res.389"),
-        		App.messages.getString("res.save"), MessageBox.YES_NO_CANCEL); 
+        int answer = MessageBox.show(getEditor(), App.messages.getString("res.437"),
+                App.messages.getString("res.588"), MessageBox.YES_NO_CANCEL); // //$NON-NLS-2$
 
         if (answer == MessageBox.YES) {
             ReportDocument doc = getEditor().getDocument();

@@ -23,7 +23,7 @@ import javax.swing.Icon;
  * @version $Revision$
   */
 public class BlankStyler implements ReportStyler {
-    static final String STYLER_NAME = App.messages.getString("res.230");
+    static final String STYLER_NAME = App.messages.getString("res.256");
     static final String ICON_URL = "/jatools/icons/styleblank.gif";
     ReportBuilder builder;
 
@@ -105,7 +105,7 @@ public class BlankStyler implements ReportStyler {
      * @return DOCUMENT ME!
      */
     public String getDescription() {
-        return App.messages.getString("res.231");
+        return App.messages.getString("res.257");
     }
 
     class _BlankBuilder implements ReportBuilder {

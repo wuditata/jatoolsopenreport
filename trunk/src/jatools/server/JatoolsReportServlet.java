@@ -60,7 +60,7 @@ public class JatoolsReportServlet extends HttpServlet implements ProtectPublic {
         } else if ("tempfile".equals(action)) {
             FileFinder.service(request, response);
         } else {
-            throw new ServletException(App.messages.getString("res.17") + action + ".");
+            throw new ServletException(App.messages.getString("res.42") + action + ".");
         }
     }
 

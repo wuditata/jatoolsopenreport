@@ -19,7 +19,7 @@ public class DocumentSettingsAction extends ReportAction {
      * Creates a new DocumentSettingsAction object.
      */
     public DocumentSettingsAction() {
-        super(App.messages.getString("res.525"));
+        super(App.messages.getString("res.580"));
     }
 
     /**

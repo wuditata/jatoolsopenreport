@@ -12,7 +12,7 @@ import java.awt.Font;
  * @version $Revision$
   */
 public interface PrintConstants {
-    static final Font BIG_FONT = new Font(App.messages.getString("res.22"), Font.BOLD, 36);
+    static final Font BIG_FONT = new Font(App.messages.getString("res.21"), Font.BOLD, 36);
     static final String CURRENT_PRINTER = "_current_printer_";
     static final String VARIABLE_MANAGER = "$$vm";
     static final String SESSION2 = "$$session";

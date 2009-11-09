@@ -265,7 +265,7 @@ public class DatasetTable extends JTable {
                 String cls = TypeUtil.getShortName(this.getColumnClass(i));
 
                 if (cls == null) {
-                    throw new Exception(App.messages.getString("res.489") + this.getColumnClass(i) + App.messages.getString("res.490"));
+                    throw new Exception(App.messages.getString("res.544") + this.getColumnClass(i) + App.messages.getString("res.545"));
                 }
 
                 classes += cls;

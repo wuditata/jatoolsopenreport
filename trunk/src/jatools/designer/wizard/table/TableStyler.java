@@ -54,7 +54,7 @@ import javax.swing.Icon;
  * @author   java9
  */
 public class TableStyler implements ReportStyler {
-    static final String STYLER_NAME = App.messages.getString("res.205");
+    static final String STYLER_NAME = App.messages.getString("res.226");
     static final String ICON_URL = "/jatools/icons/styletable.gif";
 
     /*
@@ -116,21 +116,21 @@ public class TableStyler implements ReportStyler {
      * @return 生成的报表
      */
     public void format(ReportDocument doc, BuilderContext context) {
-        // 创建页面
+        
         Page page = new Page();
         page.setName("panel");
 
-        // 创建页眉
+        
         PagePanel header = new PagePanel();
         header.setHeight(80);
         header.setName("header");
         page.setHeader(header);
 
-        // 创建页主体
+        
         PagePanel body = new PagePanel();
         body.setName("body");
 
-        // 创建一个表格,在页主体中
+        
         //    Table t = getTable();
         Table t = getTable2(context);
         t.setX(20);
@@ -139,17 +139,17 @@ public class TableStyler implements ReportStyler {
         body.add(t);
         page.setBody(body);
 
-        // 创建页脚
+        
         PagePanel footer = new PagePanel();
         footer.setHeight(80);
         footer.setName("footer");
 
         page.setFooter(footer);
 
-        // 加入页部件,到reportdocument对象中
+        
         doc.setPage(page);
 
-        // 加入相关节点源
+        
         //doc.setNodeSource(getRootNodeSource());
         doc.setNodeSource(generateRootNodeSource(context));
     }
@@ -176,7 +176,7 @@ public class TableStyler implements ReportStyler {
 
             if (summariesVector != null) {
                 for (int i = 0; i < summariesVector.size(); i++) {
-                    //calcField许多是重叠的
+                    
                     CustomSummary cs = (CustomSummary) summariesVector.get(i);
                     String calcField = cs.getCalcField();
 
@@ -220,7 +220,7 @@ public class TableStyler implements ReportStyler {
 
         Collection c = temp.values();
         Iterator it = c.iterator();
-        int number = 1; //至少一行
+        int number = 1; 
 
         while (it.hasNext()) {
             Integer in = (Integer) it.next();
@@ -234,12 +234,12 @@ public class TableStyler implements ReportStyler {
     }
 
     int getRowNumber(CustomGroup[] groupFields, HashMap summariesMap) {
-        //头行
+        
         int rowNumber = 1;
-        //row行
+        
         rowNumber = rowNumber + 1;
 
-        //group行数
+        
         for (int i = groupFields.length - 1; i >= 0; i--) {
             CustomGroup cg = (CustomGroup) groupFields[i];
             String key = cg.getGroupBy();
@@ -248,16 +248,16 @@ public class TableStyler implements ReportStyler {
             if (b) {
                 ArrayList v = (ArrayList) summariesMap.get(key);
                 int num = getSameCalcFieldLargestNumber(v);
-                rowNumber = rowNumber + num; //有问题
+                rowNumber = rowNumber + num; 
             } else {
                 rowNumber = rowNumber + 1;
             }
 
-            //总是包含了行头,group最底层,rowPanel包含的行数越多
+            
             rowNumberMap.put(key, new Integer(rowNumber));
         }
 
-        //合计行数
+        
         boolean bb = summariesMap.containsKey(null);
 
         if (bb) {
@@ -292,14 +292,14 @@ public class TableStyler implements ReportStyler {
         Table table = new Table(rows, columns);
         table.setNodePath(reader.getName());
 
-        //第一行表头
+        
         Label label = null;
 
         for (int i = 0; i < groupFields.length; i++) {
             //      label=new Label(groupFields[i].getGroupBy());
             //      table.add(label,0,i);
 
-            //显示成标签
+            
             String name = groupFields[i].getGroupBy();
 
             if (aliasLooker.containsKey(name)) {
@@ -317,7 +317,7 @@ public class TableStyler implements ReportStyler {
             //      label=new Label(disPlayField.get(i).toString());
             //      table.add(label,0,groupFields.length+i);
 
-            //显示成标签
+            
             String name = disPlayField.get(i).toString();
 
             if (aliasLooker.containsKey(name)) {
@@ -329,7 +329,7 @@ public class TableStyler implements ReportStyler {
             table.add(label, 0, groupFields.length + i);
         }
 
-        //group行与row行
+        
         ArrayList rowsList = new ArrayList();
 
         for (int i = 0; i < groupFields.length; i++) {
@@ -346,7 +346,7 @@ public class TableStyler implements ReportStyler {
             int rowSpan = ((Integer) rowNumberMap.get(groupby)).intValue() - 1;
             rowPanel.setCell(new Cell(1, 0, disPlayField.size() + groupFields.length, rowSpan));
 
-            //rowPanel 加入text（统计函数）
+            
             int groupNumber = groupFields.length;
             int disPlayNumber = disPlayField.size();
             boolean b = summariesMap.containsKey(groupby);
@@ -357,9 +357,9 @@ public class TableStyler implements ReportStyler {
             }
 
             if (!b || (v.size() < 1)) {
-                //小计
+                
                 if (i < (groupFields.length - 1)) {
-                    Label xiaoji = new Label(App.messages.getString("res.206"));
+                    Label xiaoji = new Label(App.messages.getString("res.227"));
                     rowPanel.add(xiaoji, rowSpan, i + 1, groupFields.length - i - 1, 1);
                 }
 
@@ -369,12 +369,12 @@ public class TableStyler implements ReportStyler {
                     rowPanel.add(text, rowSpan, groupNumber + j);
                 }
             } else {
-                //获得具有相同calcfield的行数
-                //小计
+                
+                
                 int largest = getSameCalcFieldLargestNumber(v);
 
                 if (i < (groupFields.length - 1)) {
-                    Label xiaoji = new Label(App.messages.getString("res.206"));
+                    Label xiaoji = new Label(App.messages.getString("res.227"));
                     rowPanel.add(xiaoji, rowSpan - (largest - 1), i + 1,
                         groupFields.length - i - 1, largest);
                 }
@@ -394,12 +394,12 @@ public class TableStyler implements ReportStyler {
                             CustomSummary cs = (CustomSummary) copyVector.get(w);
 
                             if (cs.getCalcField().equals(field)) {
-                                //cs.getCalcType()注意
+                                
                                 String clac = cs.getCalcType()
                                                 .substring(cs.getCalcType().indexOf("(") + 1,
                                         cs.getCalcType().indexOf(")"));
                                 text.setVariable("=$." + field + "." + clac + "()");
-                                //以免重复
+                                
                                 copyVector.remove(cs);
 
                                 break;
@@ -414,7 +414,7 @@ public class TableStyler implements ReportStyler {
             rowsList.add(rowPanel);
         }
 
-        //明细行
+        
         RowPanel lastRow = new RowPanel();
         lastRow.setNodePath("Row");
 
@@ -437,7 +437,7 @@ public class TableStyler implements ReportStyler {
             lastRow.add(text, 1, groupFields.length + i, 1, 1);
         }
 
-        //如果没有分组
+        
         if (groupFields.length == 0) {
             table.add(lastRow);
         }
@@ -448,7 +448,7 @@ public class TableStyler implements ReportStyler {
         rowsList.remove(firstPanel);
         configPanel(rowsList, firstPanel);
 
-        //合计
+        
         boolean bb = summariesMap.containsKey(null);
 
         if (bb) {
@@ -456,7 +456,7 @@ public class TableStyler implements ReportStyler {
             int largest = getSameCalcFieldLargestNumber(vv);
             int rowSpan = ((Integer) rowNumberMap.get(null)).intValue() - 1;
 
-            table.add(label = new Label(App.messages.getString("res.207")), rowSpan - (largest - 1), 0, groupFields.length,
+            table.add(label = new Label(App.messages.getString("res.228")), rowSpan - (largest - 1), 0, groupFields.length,
                 largest);
 
             int disPlayNumber = disPlayField.size();
@@ -482,7 +482,7 @@ public class TableStyler implements ReportStyler {
                                     cs.getCalcType().indexOf(")"));
                             text.setVariable("=$." + field + "." + clac + "()");
 
-                            //以免重复
+                            
                             copyVector.remove(cs);
 
                             break;
@@ -495,7 +495,7 @@ public class TableStyler implements ReportStyler {
         } else {
         }
 
-        // table中所有组件,加上边框
+        
         setBorder(table);
 
         return table;
@@ -598,7 +598,7 @@ public class TableStyler implements ReportStyler {
             ((GroupNodeSource) groupNodeSourceList.get(groupNodeSourceList.size() - 1)).add(closed);
         }
 
-        //当没有分组时候，也需要一个RowNodeSource
+        
         if (groupNodeSourceList.size() == 0) {
             RowNodeSource closed = new RowNodeSource();
             dns.add(closed);
@@ -646,7 +646,7 @@ public class TableStyler implements ReportStyler {
      * @return DOCUMENT ME!
      */
     public String getDescription() {
-        return "建立一个简单表格,或可以分组汇总的表格."; // //
+        return App.messages.getString("res.229"); // //
     }
 
     class _TableBuilder implements ReportBuilder {

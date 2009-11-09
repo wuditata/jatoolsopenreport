@@ -1,5 +1,7 @@
 package jatools.swingx.dnd;
 
+import jatools.designer.App;
+
 import java.awt.Component;
 
 import javax.swing.JTable;
@@ -21,12 +23,12 @@ public class TableMover implements Moveable {
      */
     public TableMover(JTable table) {
         if (table == null) {
-            throw new NullPointerException("ZTableMover.ZTableMover(...): 表参数不应为空."); //
+            throw new NullPointerException(App.messages.getString("res.40")); //
         }
 
         if (!(table.getModel() instanceof Selectable)) {
             throw new IllegalArgumentException(
-                    "ZTableMover.ZTableMover(...): 要使表支持拖放其模型应实现接口:ezsoft.swing.dnd.ZSelectable."); //
+                    App.messages.getString("res.41")); //
         }
 
         this.table = table;

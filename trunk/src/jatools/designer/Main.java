@@ -63,7 +63,7 @@ public class Main extends JFrame {
     private static Main instance;
     private static String EDITOR_PANEL = "editor";
     private static String PREVIEW_PANEL = "preview";
-    private static String titlePrefix = App.messages.getString("res.39");
+    private static String titlePrefix = App.messages.getString("res.63");
     private ActionManager am;
     private _IconToggleButton boldButton;
     private _IconToggleButton italicButton;
@@ -298,7 +298,7 @@ public class Main extends JFrame {
             ppm.add(new JMenuItem(am.bringToFrontAction));
             ppm.add(new JMenuItem(am.bringToBackAction));
 
-            ppmAlignMenu = new JMenu(App.messages.getString("res.103"));
+            ppmAlignMenu = new JMenu(App.messages.getString("res.130"));
             ppmAlignMenu.setIcon(ReportAction.EMPTY_ICON);
 
             ppmAlignMenu.add(new JMenuItem(am.leftAlignAction));
@@ -310,7 +310,7 @@ public class Main extends JFrame {
             ppm.add(ppmAlignMenu);
             ppm.add(new JMenuItem(am.centerPageAction));
 
-            ppmSizeMenu = new JMenu(App.messages.getString("res.104"));
+            ppmSizeMenu = new JMenu(App.messages.getString("res.15"));
             ppmSizeMenu.setIcon(ReportAction.EMPTY_ICON);
             ppmSizeMenu.add(new JMenuItem(am.sameHeightAction));
             ppmSizeMenu.add(new JMenuItem(am.sameWidthAction));
@@ -324,7 +324,7 @@ public class Main extends JFrame {
     private JMenuBar createMenuBar() {
         JMenuBar mbar = new JMenuBar();
 
-        JMenu fileMenu = new JMenu(App.messages.getString("res.105"), true);
+        JMenu fileMenu = new JMenu(App.messages.getString("res.131"), true);
         fileMenu.setMnemonic('F');
         fileMenu.add(new JMenuItem(am.newAction));
         fileMenu.add(new JMenuItem(am.openAction));
@@ -349,7 +349,7 @@ public class Main extends JFrame {
         fileMenu.addSeparator();
         fileMenu.add(new JMenuItem(am.exitAction));
 
-        JMenu editMenu = new JMenu(App.messages.getString("res.106"), true);
+        JMenu editMenu = new JMenu(App.messages.getString("res.132"), true);
         editMenu.setMnemonic('E');
         editMenu.add(new JMenuItem(am.undoAction));
         editMenu.add(new JMenuItem(am.redoAction));
@@ -360,7 +360,7 @@ public class Main extends JFrame {
         editMenu.add(new JMenuItem(am.pasteAction));
         editMenu.add(new JMenuItem(am.deleteAction));
 
-        JMenu newMenu = new JMenu(App.messages.getString("res.107"), true);
+        JMenu newMenu = new JMenu(App.messages.getString("res.133"), true);
         newMenu.setMnemonic('I');
         newMenu.add(new JMenuItem(am.newLabelAction));
         newMenu.add(new JMenuItem(am.newTextAction));
@@ -371,12 +371,12 @@ public class Main extends JFrame {
 
         newMenu.add(new JMenuItem(am.newTableAction));
 
-        JMenu formatMenu = new JMenu(App.messages.getString("res.108"), true);
+        JMenu formatMenu = new JMenu(App.messages.getString("res.134"), true);
         formatMenu.setMnemonic('O');
         formatMenu.add(new JMenuItem(am.bringToFrontAction));
         formatMenu.add(new JMenuItem(am.bringToBackAction));
 
-        alignMenu = new JMenu(App.messages.getString("res.103"));
+        alignMenu = new JMenu(App.messages.getString("res.130"));
         alignMenu.setIcon(ReportAction.EMPTY_ICON);
         alignMenu.add(new JMenuItem(am.leftAlignAction));
         alignMenu.add(new JMenuItem(am.rightAlignAction));
@@ -387,7 +387,7 @@ public class Main extends JFrame {
         formatMenu.add(alignMenu);
         formatMenu.add(new JMenuItem(am.centerPageAction));
 
-        sizeMenu = new JMenu(App.messages.getString("res.104"));
+        sizeMenu = new JMenu(App.messages.getString("res.15"));
 
         sizeMenu.setIcon(ReportAction.EMPTY_ICON);
         sizeMenu.add(new JMenuItem(am.sameHeightAction));
@@ -395,7 +395,7 @@ public class Main extends JFrame {
         sizeMenu.add(new JMenuItem(am.sameBothAction));
         formatMenu.add(sizeMenu);
 
-        JMenu helpMenu = new JMenu(App.messages.getString("res.109"));
+        JMenu helpMenu = new JMenu(App.messages.getString("res.135"));
         helpMenu.setMnemonic('H');
 
         helpMenu.add(am.aboutAction);

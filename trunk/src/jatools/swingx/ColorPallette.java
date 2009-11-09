@@ -1,5 +1,7 @@
 package jatools.swingx;
 
+import jatools.designer.App;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FontMetrics;
@@ -24,44 +26,44 @@ import javax.swing.event.ChangeListener;
 public class ColorPallette extends JLabel {
     public static final int NULL_BOX_VISIBLE = 1;
     public static final int OTHER_BOX_VISIBLE = 2;
-    final static int NULL_COLOR_INDEX = 64; // 空颜色色序
-    final static int OTHER_COLOR_INDEX = 65; // 其他颜色色序
-    final static int COLUMN = 8; // 色点阵行列数
+    final static int NULL_COLOR_INDEX = 64; 
+    final static int OTHER_COLOR_INDEX = 65; 
+    final static int COLUMN = 8; 
     final static int ROW = 8;
-    final static String NULL_COLOR_TEXT = "透明"; // "空色框"中显示的字符 //
-    final static String OTHER_COLOR_TEXT = "其他..."; // "其他色框"中显示的字符 //
-    final static int COLOR_DROP_SIZE = 12; // 色点大小
-    final static int DROP_GAP = 7; // 色点间距
-    final static int TEXT_BOX_HEIGHT = 25; // 空色框及其他色框的高度
+    final static String NULL_COLOR_TEXT = App.messages.getString("res.13"); // "空色框"中显示的字符 //
+    final static String OTHER_COLOR_TEXT = App.messages.getString("res.14"); // "其他色框"中显示的字符 //
+    final static int COLOR_DROP_SIZE = 12; 
+    final static int DROP_GAP = 7; 
+    final static int TEXT_BOX_HEIGHT = 25; 
 
-    // 色点的色值生成因子
+    
     private static Color[] colors8x8;
 
-    // 当前选定色,每次绘制器被弹出时用setColor进行初始化
-    // 绘制器关闭时，调用getColor时也会修改此变量
+    
+    
     private Color color;
 
-    // 本面板的被分割成三个面板，在绘制时被充值
+    
     Rectangle indexColorBox = new Rectangle();
     Rectangle nullColorBox = new Rectangle();
     Rectangle otherColorBox = new Rectangle();
 
-    // 当与组合框配合使用时，组合框通知绘制器是否正被嵌入到组合框中
+    
     private boolean atHeader;
 
-    // 空色框及其他色框是否可见
+    
     private int textBoxVisible;
 
-    // 被选择的色序，
+    
     private int selectedIndex = -1;
 
-    // 当前被击中的色序,鼠标移动时及离开时修改本值， 色序为-1则什么也没击中
+    
     private int hittedIndex = -1;
 
-    // 侦听器集合，告诉当前色改变
+    
     ArrayList listeners = new ArrayList();
 
-    // 保存背景，因为背景经常被组合框改变
+    
     Color backColor;
 
     /**
@@ -113,7 +115,7 @@ public class ColorPallette extends JLabel {
 
             int index = 0;
 
-            // 绘制 8*8点颜色
+            
             for (int r = 0; r < values.length; r++) {
                 for (int g = 0; g < values.length; g++) {
                     for (int b = 0; b < values.length; b++) {
@@ -190,7 +192,7 @@ public class ColorPallette extends JLabel {
             color = null;
         }
 
-        //// else if(selectedIndex = -1){  不改变，仍按setColor时的值返回 }
+        
         return color;
     }
 
@@ -200,9 +202,9 @@ public class ColorPallette extends JLabel {
  * @param e 鼠标事件
  */
     public void mouseExited(MouseEvent e) {
-        hittedIndex = -1; // 没有击中任何色序
+        hittedIndex = -1; 
 
-        // 如果配合组合框使用，调用this.repaint()不会使弹出列表刷新，姑在此应取得源组件，进行刷新
+        
         JComponent comp = (JComponent) e.getSource();
         comp.repaint();
     }
@@ -302,7 +304,7 @@ public class ColorPallette extends JLabel {
         } else if (otherColorBox.contains(x, y)) {
             i = OTHER_COLOR_INDEX;
         } else if (indexColorBox.contains(x, y)) {
-            // 从indexColorBox中取得颜色序号
+            
             int column = (x - DROP_GAP / 2) / (COLOR_DROP_SIZE + DROP_GAP);
             column = (column >= COLUMN) ? (COLUMN - 1) : column;
 
@@ -325,19 +327,19 @@ public class ColorPallette extends JLabel {
     public void paintComponent(Graphics g_) {
         Graphics2D g2 = (Graphics2D) g_;
 
-        // 如果绘制器正被嵌入到组合框中，则按头方式画出
+        
         if (atHeader) {
             paintAtHeader(g2);
 
             return;
         }
 
-        // 色点的间距
+        
         int x = DROP_GAP;
         int y = DROP_GAP;
 
 
-        // 绘制背景
+        
         g2.setColor(backColor);
 
         Rectangle bounds = getBounds();
@@ -345,7 +347,7 @@ public class ColorPallette extends JLabel {
 
         Rectangle box = new Rectangle(x, y, COLOR_DROP_SIZE, COLOR_DROP_SIZE);
 
-        // 绘制 8*8点颜色
+        
         Color[] colors = get8x8Colors();
 
         for (int i = 0; i < colors.length; i++) {
@@ -358,10 +360,10 @@ public class ColorPallette extends JLabel {
             g2.draw(box);
 
             if ((color != null) && c.equals(color)) {
-                // 如果是被选颜色则凹进显示
+                
                 draw3DBox(g2, box, DROP_GAP / 2, DROP_GAP / 2, false);
             } else if (hittedIndex == i) {
-                // 如果击中本点，则突出显示
+                
                 draw3DBox(g2, box, DROP_GAP / 2, DROP_GAP / 2, true);
             }
 
@@ -375,7 +377,7 @@ public class ColorPallette extends JLabel {
 
         indexColorBox.height = y;
 
-        // 画 nullColorBox
+        
         FontMetrics fm = g2.getFontMetrics(g2.getFont());
 
         if ((textBoxVisible & NULL_BOX_VISIBLE) != 0) {
@@ -383,7 +385,7 @@ public class ColorPallette extends JLabel {
             nullColorBox.x = 0;
 
 
-            // 画字符
+            
             x = (nullColorBox.width - fm.stringWidth(NULL_COLOR_TEXT)) / 2;
             y = (nullColorBox.y + nullColorBox.height) - ((nullColorBox.height - fm.getHeight()) / 2);
             g2.setColor(Color.black);
@@ -395,7 +397,7 @@ public class ColorPallette extends JLabel {
 
             g2.draw(box);
 
-            // 画边框
+            
             if (color == null) {
                 draw3DBox(g2, nullColorBox, -DROP_GAP, -DROP_GAP / 2, false);
             } else if (hittedIndex == NULL_COLOR_INDEX) {
@@ -403,12 +405,12 @@ public class ColorPallette extends JLabel {
             }
 
 
-            // 重设当前纵座标
+            
             y = nullColorBox.y + nullColorBox.height;
         }
 
         if ((textBoxVisible & OTHER_BOX_VISIBLE) != 0) {
-            // 画 otherColorBox
+            
             otherColorBox.y = y;
             otherColorBox.x = 0;
             x = (otherColorBox.width - fm.stringWidth(OTHER_COLOR_TEXT)) / 2;

@@ -21,7 +21,7 @@ public class UndoAction extends ReportAction {
      * Creates a new UndoAction object.
      */
     public UndoAction() {
-        super(App.messages.getString("res.542"), getIcon("/jatools/icons/undo.gif"),
+        super(App.messages.getString("res.602"), getIcon("/jatools/icons/undo.gif"),
             getIcon("/jatools/icons/undo2.gif"));
         setStroke(ctrl(KeyEvent.VK_Z));
         this.setEnabled(false);

@@ -39,7 +39,7 @@ import javax.swing.JToolBar;
   */
 public class ConnectionPanel {
     static JFileChooser chooser;
-    static final String DEFAULT_SUFFIX = App.messages.getString("res.48");
+    static final String DEFAULT_SUFFIX = App.messages.getString("res.72");
     static final String JDBC_PROVIDERS_CONFIG = "jdbcproviders.xml";
     static JdbcProvider[] jdbcProviders;
     private JComboBox suggestionsCombo;
@@ -58,11 +58,11 @@ public class ConnectionPanel {
      * Creates a new JDBCConfigurePane object.
      */
     public ConnectionPanel(JPanel owner, GridBagConstraints gbc) {
-        JLabel suggestionLabel = new JLabel("数据库:"); //
+        JLabel suggestionLabel = new JLabel(App.messages.getString("res.73")); //
         JLabel driverLabel = new JLabel("Driver:"); //
         JLabel urlLabel = new JLabel("URL:"); //
-        JLabel userLabel = new JLabel("用户名:"); //
-        JLabel passwordLabel = new JLabel("密码:"); //
+        JLabel userLabel = new JLabel(App.messages.getString("res.74")); //
+        JLabel passwordLabel = new JLabel(App.messages.getString("res.75")); //
         gbc.gridwidth = 1;
         owner.add(suggestionLabel, gbc);
         gbc.gridwidth = 1;
@@ -89,14 +89,14 @@ public class ConnectionPanel {
         DropDownButton ddb = new DropDownButton(null, Util.getIcon("/jatools/icons/tree.gif"));
         ddb.setPreferredSize(new Dimension(23, 23));
 
-        JMenuItem mi = new JMenuItem(App.messages.getString("res.49"));
+        JMenuItem mi = new JMenuItem(App.messages.getString("res.76"));
         mi.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     addToFavourites();
                 }
             });
         ddb.getPopupMenu().add(mi);
-        mi = new JMenuItem(App.messages.getString("res.50"));
+        mi = new JMenuItem(App.messages.getString("res.77"));
         mi.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     removeFromFavourites();
@@ -105,7 +105,7 @@ public class ConnectionPanel {
 
         ddb.getPopupMenu().add(mi);
 
-        mi = new JMenuItem(App.messages.getString("res.51"));
+        mi = new JMenuItem(App.messages.getString("res.78"));
         mi.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     setDefault();
@@ -114,7 +114,7 @@ public class ConnectionPanel {
         ddb.getPopupMenu().add(mi);
         ddb.getPopupMenu().addSeparator();
 
-        mi = new JMenuItem(App.messages.getString("res.52"));
+        mi = new JMenuItem(App.messages.getString("res.79"));
         mi.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     exportProviders();
@@ -122,7 +122,7 @@ public class ConnectionPanel {
             });
         ddb.getPopupMenu().add(mi);
 
-        mi = new JMenuItem(App.messages.getString("res.53"));
+        mi = new JMenuItem(App.messages.getString("res.80"));
         mi.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     importProviders();
@@ -186,7 +186,7 @@ public class ConnectionPanel {
         bar = new JToolBar();
         bar.addSeparator();
 
-        JButton b = new JButton(App.messages.getString("res.54"), Util.getIcon("/jatools/icons/conn.gif"));
+        JButton b = new JButton(App.messages.getString("res.81"), Util.getIcon("/jatools/icons/conn.gif"));
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     testConnection();
@@ -228,11 +228,11 @@ public class ConnectionPanel {
     protected void testConnection() {
         try {
             getConnection().getConnection();
-            MessageBox.show(this.urlText.getTopLevelAncestor(), App.messages.getString("res.55"), App.messages.getString("res.56"));
+            MessageBox.show(this.urlText.getTopLevelAncestor(), App.messages.getString("res.82"), App.messages.getString("res.83"));
             this.setConnectable(true);
         } catch (Exception e) {
             //e.printStackTrace() ;
-            MessageBox.error(null, App.messages.getString("res.57"), e);
+            MessageBox.error(null, App.messages.getString("res.84"), e);
             this.setConnectable(false);
         }
     }
@@ -252,11 +252,11 @@ public class ConnectionPanel {
             try {
                 providers = getJdbcProviders(file);
             } catch (Exception e) {
-                MessageBox.error(this.passwordText.getTopLevelAncestor(), App.messages.getString("res.58"));
+                MessageBox.error(this.passwordText.getTopLevelAncestor(), App.messages.getString("res.85"));
             }
 
             if (providers.length > 0) {
-                // 将新追加的项，去掉默认
+                
                 for (int i = 0; i < providers.length; i++) {
                     String name = providers[i].getName();
 
@@ -274,8 +274,8 @@ public class ConnectionPanel {
                 refreshSugguestion();
                 this.suggestionsCombo.setSelectedIndex(0);
                 updateProviders();
-                MessageBox.show(this.passwordText.getTopLevelAncestor(), App.messages.getString("res.55"),
-                    App.messages.getString("res.59") + file.getAbsolutePath() + App.messages.getString("res.60") + providers.length + App.messages.getString("res.61"));
+                MessageBox.show(this.passwordText.getTopLevelAncestor(), App.messages.getString("res.82"),
+                    App.messages.getString("res.86") + file.getAbsolutePath() + App.messages.getString("res.87") + providers.length + App.messages.getString("res.88"));
             }
         }
     }
@@ -291,8 +291,8 @@ public class ConnectionPanel {
 
         if (file != null) {
             saveProviders(file);
-            MessageBox.show(this.passwordText.getTopLevelAncestor(), App.messages.getString("res.55"),
-                App.messages.getString("res.62") + file.getAbsolutePath());
+            MessageBox.show(this.passwordText.getTopLevelAncestor(), App.messages.getString("res.82"),
+                App.messages.getString("res.89") + file.getAbsolutePath());
         }
     }
 
@@ -326,7 +326,7 @@ public class ConnectionPanel {
             jdbcProviders = providers;
 
             if ((jdbcProviders.length > 0) && provider.getName().endsWith(DEFAULT_SUFFIX)) {
-                // 删除的是默认项，需要重新配置默认项
+                
                 setDefault(0);
             }
 
@@ -338,7 +338,7 @@ public class ConnectionPanel {
 
     protected void addToFavourites() {
         String results = JOptionPane.showInputDialog(this.passwordText.getTopLevelAncestor(),
-                App.messages.getString("res.63"), App.messages.getString("res.64"), JOptionPane.OK_CANCEL_OPTION);
+                App.messages.getString("res.90"), App.messages.getString("res.91"), JOptionPane.OK_CANCEL_OPTION);
 
         if (results != null) {
             JdbcProvider provider = new JdbcProvider(this.getConnection());

@@ -8,6 +8,7 @@
 package jatools.designer.action;
 
 import jatools.component.Label;
+import jatools.designer.App;
 
 import java.awt.event.ActionEvent;
 
@@ -20,7 +21,7 @@ import java.awt.event.ActionEvent;
  */
 public class NewLabelAction extends ReportAction {
     public NewLabelAction() {
-        super("±Í«©", getIcon("/jatools/icons/label.gif"), getIcon("/jatools/icons/label2.gif")); // //$NON-NLS-2$
+        super(App.messages.getString("res.590"), getIcon("/jatools/icons/label.gif"), getIcon("/jatools/icons/label2.gif")); // //$NON-NLS-2$
         putValue(CLASS,Label.class );
       }
 

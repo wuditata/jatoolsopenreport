@@ -53,7 +53,7 @@ public class HtmlExport extends BasicExport {
     public static final String HTML_VERTICAL_ALIGN_TOP = "top";
     public static final String HTML_VERTICAL_ALIGN_MIDDLE = "middle";
     public static final String HTML_VERTICAL_ALIGN_BOTTOM = "bottom";
-    private static final String title = App.messages.getString("res.39");
+    private static final String title = App.messages.getString("res.63");
     public static final int colorMask = Integer.parseInt("FFFFFF", 16);
     public static final int INCH = 96;
     public static final double DOTS_PER_MM = (double) INCH / (double) 25.4;

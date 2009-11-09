@@ -54,7 +54,7 @@ public class PrintablePanelBuilder {
         }
 
         for (int i = 0; i < cols.length; i++) {
-            // 找到第一个是0的,也就是新的list的开始行
+            
             for (; (i < cols.length) && (cols[i] != 0); i++)
                 ;
 
@@ -98,7 +98,7 @@ public class PrintablePanelBuilder {
         }
 
         for (int i = 0; i < rows.length; i++) {
-            // 找到第一个是0的,也就是新的list的开始行
+            
             for (; (i < rows.length) && (rows[i] != 0); i++)
                 ;
 

@@ -43,7 +43,7 @@ import javax.swing.Icon;
  * @version $Revision$
   */
 public class CrossTabStyler implements ReportStyler {
-    static final String STYLER_NAME = App.messages.getString("res.227");
+    static final String STYLER_NAME = App.messages.getString("res.253");
     static final String ICON_URL = "/jatools/icons/stylecrosstab.gif";
     public static final String ROW_FIELDS = "ROW_FIELDS";
     public static final String COLUMN_FIELDS = "COLUMN_FIELDS";
@@ -179,7 +179,7 @@ public class CrossTabStyler implements ReportStyler {
      * @return DOCUMENT ME!
      */
     public String getDescription() {
-        return App.messages.getString("res.228");
+        return App.messages.getString("res.254");
     }
 
     private RootNodeSource generateNodeSource(BuilderContext context) {
@@ -284,9 +284,9 @@ public class CrossTabStyler implements ReportStyler {
 
         if (_isisRowSumTop) {
             if (multiRows) {
-                table.add(new Label(App.messages.getString("res.229")), 0, 0, rowsList.size(), sums.size());
+                table.add(new Label(App.messages.getString("res.255")), 0, 0, rowsList.size(), sums.size());
             } else {
-                table.add(new Label(App.messages.getString("res.229")), 0, 0, rowsList.size(), 1);
+                table.add(new Label(App.messages.getString("res.255")), 0, 0, rowsList.size(), 1);
             }
 
             ArrayList rowPanels = new ArrayList();
@@ -305,7 +305,7 @@ public class CrossTabStyler implements ReportStyler {
 
                     int rowPosition = multiRows ? ((rowsList.size() - 1 - i) * (sums.size()))
                                                 : (rowsList.size() - 1 - i);
-                    rowPanel.add(new Label(App.messages.getString("res.206")), rowPosition + (multiRows ? sums.size() : 1),
+                    rowPanel.add(new Label(App.messages.getString("res.227")), rowPosition + (multiRows ? sums.size() : 1),
                         i + 1, rowsList.size() - 1 - i, rowSpane);
                 }
 
@@ -348,7 +348,7 @@ public class CrossTabStyler implements ReportStyler {
 
                     int rowPosition = multiRows ? ((rowsList.size() - 1 - i) * (sums.size()))
                                                 : (rowsList.size() - 1 - i);
-                    rowPanel.add(new Label(App.messages.getString("res.206")), rowPosition, i + 1, rowsList.size() - 1 - i,
+                    rowPanel.add(new Label(App.messages.getString("res.227")), rowPosition, i + 1, rowsList.size() - 1 - i,
                         rowSpane);
                 }
 
@@ -379,7 +379,7 @@ public class CrossTabStyler implements ReportStyler {
                 table.add(new Label("合计"), rowsList.size() * sums.size(), 0, rowsList.size(),
                     sums.size());
             } else {
-                table.add(new Label(App.messages.getString("res.229")), rowsList.size(), 0, rowsList.size(), 1);
+                table.add(new Label(App.messages.getString("res.255")), rowsList.size(), 0, rowsList.size(), 1);
             }
         }
 
@@ -419,9 +419,9 @@ public class CrossTabStyler implements ReportStyler {
 
         if (_isColumnSumLeft) {
             if (mutilColumns) {
-                table.add(new Label(App.messages.getString("res.229")), 0, 0, sums.size(), columnsList.size());
+                table.add(new Label(App.messages.getString("res.255")), 0, 0, sums.size(), columnsList.size());
             } else {
-                table.add(new Label(App.messages.getString("res.229")), 0, 0, 1, columnsList.size());
+                table.add(new Label(App.messages.getString("res.255")), 0, 0, 1, columnsList.size());
             }
 
             ArrayList columnPanels = new ArrayList();
@@ -442,7 +442,7 @@ public class CrossTabStyler implements ReportStyler {
 
                     int columnPosition = mutilColumns ? ((columnsList.size() - 1 - i) * sums.size())
                                                       : (columnsList.size() - 1 - i);
-                    columnPanel.add(new Label(App.messages.getString("res.206")), i + 1,
+                    columnPanel.add(new Label(App.messages.getString("res.227")), i + 1,
                         columnPosition + (mutilColumns ? sums.size() : 1), columnSpan,
                         columnsList.size() - 1 - i);
                 }
@@ -487,7 +487,7 @@ public class CrossTabStyler implements ReportStyler {
 
                     int columnPosition = mutilColumns ? ((columnsList.size() - 1 - i) * sums.size())
                                                       : (columnsList.size() - 1 - i);
-                    columnPanel.add(new Label(App.messages.getString("res.206")), i + 1, columnPosition, columnSpan,
+                    columnPanel.add(new Label(App.messages.getString("res.227")), i + 1, columnPosition, columnSpan,
                         columnsList.size() - 1 - i);
                 }
 
@@ -518,7 +518,7 @@ public class CrossTabStyler implements ReportStyler {
                 table.add(new Label("合计"), 0, columnsList.size() * sums.size(), sums.size(),
                     columnsList.size());
             } else {
-                table.add(new Label(App.messages.getString("res.229")), 0, columnsList.size(), 1, columnsList.size());
+                table.add(new Label(App.messages.getString("res.255")), 0, columnsList.size(), 1, columnsList.size());
             }
         }
 

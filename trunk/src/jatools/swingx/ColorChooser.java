@@ -26,7 +26,7 @@ public class ColorChooser implements Chooser {
 		Object value) {
 		color = (Color) value;
 		Color selectedColor =
-			JColorChooser.showDialog(owner, App.messages.getString("res.11"), color); 
+			JColorChooser.showDialog(owner, App.messages.getString("res.12"), color); 
 
 		if ((selectedColor != null) && !selectedColor.equals(color)) {
 			color = selectedColor;

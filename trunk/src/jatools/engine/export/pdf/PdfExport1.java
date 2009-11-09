@@ -71,7 +71,7 @@ public class PdfExport1 extends BasicExport {
                 this.createTempExport();
                 count = 0;
             }
-        } else if (currentExport == null) // 是不缓存，且是第一次
+        } else if (currentExport == null) 
          {
             currentExport = new PdfExport(os, size);
         }

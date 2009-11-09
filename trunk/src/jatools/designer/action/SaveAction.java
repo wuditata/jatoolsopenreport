@@ -25,7 +25,7 @@ public class SaveAction extends ReportAction {
      * Creates a new SaveAction object.
      */
     public SaveAction() {
-        super(App.messages.getString("res.511"), getIcon("/jatools/icons/save.gif"), getIcon("/jatools/icons/save2.gif"));
+        super(App.messages.getString("res.566"), getIcon("/jatools/icons/save.gif"), getIcon("/jatools/icons/save2.gif"));
         setStroke(ctrl(KeyEvent.VK_S));
     }
 
@@ -50,7 +50,7 @@ public class SaveAction extends ReportAction {
                 try {
                     ReportDocument.save(doc, docFile, false);
                 } catch (Exception e) {
-                    MessageBox.error(Main.getInstance(), App.messages.getString("res.513") + Util.toString(e));
+                    MessageBox.error(Main.getInstance(), App.messages.getString("res.568") + Util.toString(e));
                     Util.debug("ZSaveAction", e);
                 }
             }

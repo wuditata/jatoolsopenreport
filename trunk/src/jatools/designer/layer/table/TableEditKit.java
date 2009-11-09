@@ -555,7 +555,7 @@ public class TableEditKit implements ActionListener {
 
         ReportPanel panel = tablePeer.getOwner();
 
-        JMenu menu = new JMenu(App.messages.getString("res.360"));
+        JMenu menu = new JMenu(App.messages.getString("res.408"));
 
         Action[] inserts = Main.getInstance().getNewableActions();
 
@@ -571,11 +571,11 @@ public class TableEditKit implements ActionListener {
 
         pop.addSeparator();
 
-        _PopAction mergeAction = new _PopAction(App.messages.getString("res.361"));
+        _PopAction mergeAction = new _PopAction(App.messages.getString("res.409"));
         mergeAction.putValue(Action.ACTION_COMMAND_KEY, UNITE_CELL);
         pop.add(mergeAction);
 
-        _PopAction unmergeAction = new _PopAction(App.messages.getString("res.362"));
+        _PopAction unmergeAction = new _PopAction(App.messages.getString("res.410"));
         unmergeAction.putValue(Action.ACTION_COMMAND_KEY, UN_UNITE_CELL);
         pop.add(unmergeAction);
 
@@ -583,37 +583,37 @@ public class TableEditKit implements ActionListener {
 
         AbstractAction action = null;
 
-        menu = new JMenu(App.messages.getString("res.363"));
+        menu = new JMenu(App.messages.getString("res.411"));
         pop.add(menu);
 
-        action = new _PopAction(App.messages.getString("res.364"));
+        action = new _PopAction(App.messages.getString("res.412"));
         action.putValue(Action.ACTION_COMMAND_KEY, INSERT_ROW_BEFORE);
         menu.add(action);
 
-        action = new _PopAction(App.messages.getString("res.365"));
+        action = new _PopAction(App.messages.getString("res.413"));
         action.putValue(Action.ACTION_COMMAND_KEY, INSERT_ROW_AFTER);
         menu.add(action);
 
         pop.add(menu);
 
-        menu = new JMenu(App.messages.getString("res.366"));
+        menu = new JMenu(App.messages.getString("res.414"));
         pop.add(menu);
 
-        action = new _PopAction(App.messages.getString("res.367"));
+        action = new _PopAction(App.messages.getString("res.415"));
         action.putValue(Action.ACTION_COMMAND_KEY, INSERT_COL_BEFORE);
         menu.add(action);
 
-        action = new _PopAction(App.messages.getString("res.368"));
+        action = new _PopAction(App.messages.getString("res.416"));
         action.putValue(Action.ACTION_COMMAND_KEY, INSERT_COL_AFTER);
         menu.add(action);
 
-        menu = new JMenu(App.messages.getString("res.369"));
+        menu = new JMenu(App.messages.getString("res.417"));
         pop.add(menu);
 
-        JMenu tmp0 = new JMenu(App.messages.getString("res.364"));
+        JMenu tmp0 = new JMenu(App.messages.getString("res.412"));
         menu.add(tmp0);
 
-        JMenu tmp1 = new JMenu(App.messages.getString("res.365"));
+        JMenu tmp1 = new JMenu(App.messages.getString("res.413"));
 
         menu.add(tmp1);
 
@@ -634,12 +634,12 @@ public class TableEditKit implements ActionListener {
             tmp1.add(mi);
         }
 
-        menu = new JMenu(App.messages.getString("res.370"));
+        menu = new JMenu(App.messages.getString("res.418"));
         pop.add(menu);
 
-        tmp0 = new JMenu(App.messages.getString("res.367"));
+        tmp0 = new JMenu(App.messages.getString("res.415"));
         menu.add(tmp0);
-        tmp1 = new JMenu(App.messages.getString("res.368"));
+        tmp1 = new JMenu(App.messages.getString("res.416"));
 
         menu.add(tmp1);
 
@@ -660,15 +660,15 @@ public class TableEditKit implements ActionListener {
             tmp1.add(mi);
         }
 
-        action = new _PopAction(App.messages.getString("res.371"));
+        action = new _PopAction(App.messages.getString("res.419"));
         action.putValue(Action.ACTION_COMMAND_KEY, REMOVE_ROW);
         pop.add(action);
 
-        action = new _PopAction(App.messages.getString("res.372"));
+        action = new _PopAction(App.messages.getString("res.420"));
         action.putValue(Action.ACTION_COMMAND_KEY, REMOVE_COL);
         pop.add(action);
 
-        action = new _PopAction(App.messages.getString("res.373"));
+        action = new _PopAction(App.messages.getString("res.421"));
         action.putValue(Action.ACTION_COMMAND_KEY, RESIZE_ROW_HEIGHTS);
 
         if (!panel.simple) {
@@ -676,14 +676,14 @@ public class TableEditKit implements ActionListener {
             pop.add(action);
         }
 
-        action = new _PopAction(App.messages.getString("res.374"));
+        action = new _PopAction(App.messages.getString("res.422"));
         action.putValue(Action.ACTION_COMMAND_KEY, RESIZE_COL_WIDTHS);
 
         if (!panel.simple) {
             pop.add(action);
         }
 
-        action = new _PopAction(App.messages.getString("res.375"));
+        action = new _PopAction(App.messages.getString("res.423"));
         action.putValue(Action.ACTION_COMMAND_KEY, SHOW_GRID);
 
         JCheckBoxMenuItem gridVisible = new JCheckBoxMenuItem(action);
@@ -1349,7 +1349,7 @@ public class TableEditKit implements ActionListener {
         TableBase t = (TableBase) getTable();
 
         if (t.getColumnCount() == count) {
-            MessageBox.error(tablePeer.getOwner().getTopLevelAncestor(), App.messages.getString("res.376"));
+            MessageBox.error(tablePeer.getOwner().getTopLevelAncestor(), App.messages.getString("res.424"));
 
             return false;
         }
@@ -1382,7 +1382,7 @@ public class TableEditKit implements ActionListener {
         }
 
         if (t.getRowCount() == count) {
-            MessageBox.error(tablePeer.getOwner().getTopLevelAncestor(), App.messages.getString("res.377"));
+            MessageBox.error(tablePeer.getOwner().getTopLevelAncestor(), App.messages.getString("res.425"));
 
             return false;
         }
@@ -1413,7 +1413,7 @@ public class TableEditKit implements ActionListener {
         int width = table.getColumnWidth(selection.x);
 
         SizeDialog input = new SizeDialog((Frame) tablePeer.getOwner().getTopLevelAncestor(),
-                App.messages.getString("res.374"), App.messages.getString("res.378"), width);
+                App.messages.getString("res.422"), App.messages.getString("res.426"), width);
         input.show();
 
         if (!input.xok) {
@@ -1441,7 +1441,7 @@ public class TableEditKit implements ActionListener {
         int height = table.getRowHeight(selection.y);
 
         SizeDialog input = new SizeDialog((Frame) tablePeer.getOwner().getTopLevelAncestor(),
-                App.messages.getString("res.373"), App.messages.getString("res.379"), height);
+                App.messages.getString("res.421"), App.messages.getString("res.427"), height);
 
         input.show();
 

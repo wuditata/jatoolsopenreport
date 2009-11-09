@@ -56,7 +56,7 @@ public class PropertiesSerializer extends AbstractSerializer {
 	 */
 	public void write(Element e, Object object) {
 
-		// 是否得相同的class,如果相同打上标志 ITEM_CLASS
+		
 		Properties m = (Properties) object;
 
 		Iterator it = m.keySet().iterator();

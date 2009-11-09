@@ -34,7 +34,7 @@ public class JobCacher {
         Map params = (Map) session.getAttribute(jobSessionId);
 
         if (params == null) {
-            throw new Exception(App.messages.getString("res.18"));
+            throw new Exception(App.messages.getString("res.43"));
         }
 
         return ReportJob.createJob(params);

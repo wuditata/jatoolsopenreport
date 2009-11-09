@@ -42,9 +42,9 @@ public class CrossTableBuilder
   CrossHeaderSelector crossHeaderSelector;
   CrossPrintSelector2 crossPrintSelector;
 
-  static final String PREVIEW = App.messages.getString("res.197");
-  static final String NEXT = App.messages.getString("res.198");
-  static final String FINISHED = App.messages.getString("res.199");
+  static final String PREVIEW = App.messages.getString("res.38");
+  static final String NEXT = App.messages.getString("res.37");
+  static final String FINISHED = App.messages.getString("res.220");
   static final String CANCEL = App.messages.getString("res.4");
   JButton nextCommand = new JButton(NEXT);
   JButton prevCommand = new JButton(PREVIEW);
@@ -57,9 +57,9 @@ public class CrossTableBuilder
   private DatasetReader selectedReader;
 
   static final String[] PROMPT_STRINGS = {
-      " 报表数据集选择. 必须且只有一个数据集 (必选). ", //数据集提示信息
-      " 选择列标题,行标题,及统计函数 (必选)", //显示项提示信息
-      App.messages.getString("res.223")
+      App.messages.getString("res.247"), //数据集提示信息
+      App.messages.getString("res.248"), //显示项提示信息
+      App.messages.getString("res.249")
   };
 
   public CrossTableBuilder() {
@@ -67,7 +67,7 @@ public class CrossTableBuilder
   }
 
   public CrossTableBuilder(Frame owner, BuilderContext context) {
-    super(owner, App.messages.getString("res.224"), true);
+    super(owner, App.messages.getString("res.250"), true);
     isExitOk = false;
     setSize(600, 500);
     this.context = context;
@@ -77,9 +77,9 @@ public class CrossTableBuilder
     crossHeaderSelector = new CrossHeaderSelector();
     crossPrintSelector=new CrossPrintSelector2();
     steps = new JTabbedPane();
-    steps.addTab(App.messages.getString("res.80"), readerSelector);
-    steps.addTab(App.messages.getString("res.225"), crossHeaderSelector);
-    steps.addTab(App.messages.getString("res.226"),crossPrintSelector);
+    steps.addTab(App.messages.getString("res.107"), readerSelector);
+    steps.addTab(App.messages.getString("res.251"), crossHeaderSelector);
+    steps.addTab(App.messages.getString("res.252"),crossPrintSelector);
 
     infoLabel = new JLabel(PROMPT_STRINGS[0]);
     infoLabel.setHorizontalAlignment(JLabel.LEFT);
@@ -99,7 +99,7 @@ public class CrossTableBuilder
         }
         else {
           JOptionPane.showMessageDialog(CrossTableBuilder.this,
-                                        new JLabel(App.messages.getString("res.204")));
+                                        new JLabel(App.messages.getString("res.225")));
         }
       }
     });

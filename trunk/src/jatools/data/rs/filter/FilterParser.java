@@ -221,7 +221,7 @@ public class FilterParser { // QueryParser
 			result = parseWhereOr(tokens,filter);
 			tokens.nextToken();
 			if (tokens.ttype != ')') {
-				throw FilterParserException.create(App.messages.getString("res.547"), tokens
+				throw FilterParserException.create(App.messages.getString("res.614"), tokens
 						);
 			}
 		} else {
@@ -280,7 +280,7 @@ public class FilterParser { // QueryParser
 //			}
 		}
 
-		throw FilterParserException.create(App.messages.getString("res.548"), tokens
+		throw FilterParserException.create(App.messages.getString("res.615"), tokens
 				);
 	}
 
@@ -317,7 +317,7 @@ public class FilterParser { // QueryParser
 				tokens.nextToken();
 			} while (tokens.ttype == ',');
 			if (tokens.ttype != ')') {
-				throw FilterParserException.create(App.messages.getString("res.549"),
+				throw FilterParserException.create(App.messages.getString("res.616"),
 						tokens);
 			}
 			return list;
@@ -326,7 +326,7 @@ public class FilterParser { // QueryParser
 		// TODO peut etre avoir un keyword DATE pour les dates: Date(31/12/2004)
 
 		throw FilterParserException
-				.create(App.messages.getString("res.550"), tokens);
+				.create(App.messages.getString("res.617"), tokens);
 	}
 
 	// ////////////////////////////////////////////////////////////////////

@@ -7,6 +7,7 @@
 package jatools.designer.data;
 
 import jatools.data.reader.sql.Connection;
+import jatools.designer.App;
 import jatools.designer.config.UserX;
 import jatools.swingx.MessageBox;
 
@@ -47,11 +48,11 @@ public class ConnectionEditor extends JDialog {
      * @param connection DOCUMENT ME!
      */
     public ConnectionEditor(Frame owner, Connection connection) {
-        super(owner, (connection != null) ? "数据集编辑" : "数据集新增", true); // //$NON-NLS-2$
+        super(owner, (connection != null) ? App.messages.getString("res.447") : App.messages.getString("res.448"), true); // //$NON-NLS-2$
 
         JPanel namePane = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
-        JLabel nameLabel = new JLabel("名称:"); //
+        JLabel nameLabel = new JLabel(App.messages.getString("res.90")); //
         nameLabel.setPreferredSize(new Dimension(56, 20));
         gbc.fill = GridBagConstraints.BOTH;
         namePane.add(nameLabel, gbc);
@@ -71,14 +72,14 @@ public class ConnectionEditor extends JDialog {
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
 
-        JButton testButton = new JButton("测试连接"); //
+        JButton testButton = new JButton(App.messages.getString("res.81")); //
         testButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     test();
                 }
             });
         buttonPanel.add(testButton);
-        JButton okButton = new JButton("确定"); //
+        JButton okButton = new JButton(App.messages.getString("res.3")); //
         okButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done();
@@ -87,7 +88,7 @@ public class ConnectionEditor extends JDialog {
 
         buttonPanel.add(okButton);
 
-        JButton cancelButton = new JButton("取消"); //
+        JButton cancelButton = new JButton(App.messages.getString("res.4")); //
         cancelButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     cancel();
@@ -125,7 +126,7 @@ public class ConnectionEditor extends JDialog {
     		
     	   try {
 			connection.getConnection() ;
-			MessageBox.show( this,"提示","恭喜,测试通过"); // //$NON-NLS-2$
+			MessageBox.show( this,App.messages.getString("res.82"),App.messages.getString("res.449")); // //$NON-NLS-2$
 		} catch (Exception e) {
 			 MessageBox.error(this,e.getMessage() );
 			 
@@ -186,7 +187,7 @@ public class ConnectionEditor extends JDialog {
 
         if ((driver == null) || driver.trim().equals("")) //
          {
-            MessageBox.error(this, "数据集的驱动器不能为空."); //
+            MessageBox.error(this, App.messages.getString("res.450")); //
             connPane.driverText.requestFocus();
 
             return false;
@@ -194,7 +195,7 @@ public class ConnectionEditor extends JDialog {
 
         if ((url == null) || url.trim().equals("")) //
          {
-            MessageBox.error(this, "数据集的url不能为空."); //
+            MessageBox.error(this, App.messages.getString("res.451")); //
             connPane.urlText.requestFocus();
 
             return false;

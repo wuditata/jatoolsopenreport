@@ -88,7 +88,7 @@ public class VariableExplorer extends JDialog {
 
         JButton cancelCommand = new JButton(App.messages.getString("res.4"));
 
-        JButton applyNull = new JButton(App.messages.getString("res.261"));
+        JButton applyNull = new JButton(App.messages.getString("res.287"));
 
         applyNull.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {

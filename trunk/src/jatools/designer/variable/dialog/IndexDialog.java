@@ -39,7 +39,7 @@ public class IndexDialog
   private Component c;
   private static boolean exitedOK;
   private JLabel infoLabel;
-  static final String info = App.messages.getString("res.241");
+  static final String info = App.messages.getString("res.267");
 
   private JTextField nameField;
   private IndexDialog(DatasetNodeSource parentSrc, IndexNodeSource indexSource,
@@ -48,7 +48,7 @@ public class IndexDialog
     super( (Frame) javax.swing.SwingUtilities.getWindowAncestor(parent));
     exitedOK = false;
     this.setModal(true);
-    this.setTitle(App.messages.getString("res.252"));
+    this.setTitle(App.messages.getString("res.278"));
     this.indexSource = indexSource;
     this.c = parent;
     initUI();
@@ -74,7 +74,7 @@ public class IndexDialog
 
     centerPanel.add(center, BorderLayout.CENTER);
 
-    JLabel nameLabel = new JLabel(App.messages.getString("res.243"));
+    JLabel nameLabel = new JLabel(App.messages.getString("res.269"));
     nameField = new JTextField();
     Box nameBox = Box.createHorizontalBox();
     nameBox.add(nameLabel);
@@ -94,9 +94,9 @@ public class IndexDialog
     rightList = new JList();
 
     JTabbedPane leftTab = new JTabbedPane();
-    leftTab.addTab(App.messages.getString("res.244"), new JScrollPane(leftList));
+    leftTab.addTab(App.messages.getString("res.270"), new JScrollPane(leftList));
     JTabbedPane rightTab = new JTabbedPane();
-    rightTab.addTab(App.messages.getString("res.253"), new JScrollPane(rightList));
+    rightTab.addTab(App.messages.getString("res.279"), new JScrollPane(rightList));
     leftTab.setPreferredSize(new Dimension(200, 350));
     rightTab.setPreferredSize(new Dimension(200, 350));
 
@@ -264,14 +264,14 @@ public class IndexDialog
       String indexs[] = new String[rightModel.getSize()];
 
       if (nameField.getText() == null || nameField.getText().trim().equals("")) {
-        JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.247"), App.messages.getString("res.55"),
+        JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.273"), App.messages.getString("res.82"),
                                       JOptionPane.CLOSED_OPTION,
                                       JOptionPane.ERROR_MESSAGE);
         return;
 
       }
       if (indexs.length == 0) {
-        JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.254"), App.messages.getString("res.55"),
+        JOptionPane.showConfirmDialog(nameField, App.messages.getString("res.280"), App.messages.getString("res.82"),
                                       JOptionPane.CLOSED_OPTION,
                                       JOptionPane.ERROR_MESSAGE);
         return;

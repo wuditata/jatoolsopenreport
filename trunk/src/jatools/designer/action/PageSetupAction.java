@@ -30,7 +30,7 @@ public class PageSetupAction extends ReportAction {
      * Creates a new PageSetupAction object.
      */
     public PageSetupAction() {
-        super(App.messages.getString("res.134"), getIcon("/jatools/icons/pageformat.gif"));
+        super(App.messages.getString("res.160"), getIcon("/jatools/icons/pageformat.gif"));
     }
 
     /**

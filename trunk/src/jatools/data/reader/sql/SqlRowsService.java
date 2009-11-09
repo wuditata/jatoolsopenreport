@@ -2,6 +2,7 @@ package jatools.data.reader.sql;
 
 
 import jatools.dataset.DatasetException;
+import jatools.designer.App;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -79,7 +80,7 @@ public class SqlRowsService {
             return new java.sql.Date(0);
 
         default:
-            throw new DatasetException("java.sql.Types 类型: " + type + " 不支持!#!"); // //$NON-NLS-2$
+            throw new DatasetException(App.messages.getString("res.625") + type + App.messages.getString("res.626")); // //$NON-NLS-2$
         }
     }
 

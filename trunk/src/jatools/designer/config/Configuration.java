@@ -61,9 +61,9 @@ public class Configuration extends AutoAccessor implements ChangeListener, Datas
             configure = (Configuration) XmlReader.read(is);
             is.close();
         } catch (FileNotFoundException e) {
-            Util.debug(logger, App.messages.getString("res.503") + filePath);
+            Util.debug(logger, App.messages.getString("res.558") + filePath);
         } catch (Exception e) {
-            Util.debug(logger, App.messages.getString("res.504") + Util.toString(e));
+            Util.debug(logger, App.messages.getString("res.559") + Util.toString(e));
         }
 
         if (configure == null) {
@@ -88,7 +88,7 @@ public class Configuration extends AutoAccessor implements ChangeListener, Datas
             XmlWriter.write(this, fo);
             fo.close();
         } catch (Exception ex) {
-            Util.debug(logger, App.messages.getString("res.505") + filePath + "," + Util.toString(ex));
+            Util.debug(logger, App.messages.getString("res.560") + filePath + "," + Util.toString(ex));
         }
     }
 

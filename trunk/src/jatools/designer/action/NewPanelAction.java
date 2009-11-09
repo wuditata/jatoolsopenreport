@@ -19,7 +19,7 @@ public class NewPanelAction extends ReportAction {
      * @param owner DOCUMENT ME!
      */
     public NewPanelAction() {
-        super(App.messages.getString("res.532"), getIcon("/jatools/icons/panel.gif"), getIcon("/jatools/icons/panel2.gif"));
+        super(App.messages.getString("res.591"), getIcon("/jatools/icons/panel.gif"), getIcon("/jatools/icons/panel2.gif"));
         putValue(CLASS,Panel.class );
         
     }

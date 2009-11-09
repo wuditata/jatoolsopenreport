@@ -46,10 +46,10 @@ public class PropertyPanel extends JPanel implements ChangeListener, TooltipHelp
         setLayout(new BorderLayout());
 
         tp = new JTabbedPane();
-        tp.addTab(App.messages.getString("res.274"), Util.getIcon("/jatools/icons/properties.gif"),
+        tp.addTab(App.messages.getString("res.300"), Util.getIcon("/jatools/icons/properties.gif"),
             new JScrollPane(propEditor));
-        tp.addTab(App.messages.getString("res.275"), Util.getIcon("/jatools/icons/event.gif"), new JScrollPane(eventEditor));
-        tp.addTab(App.messages.getString("res.182"), Util.getIcon("/jatools/icons/variable.gif"),
+        tp.addTab(App.messages.getString("res.301"), Util.getIcon("/jatools/icons/event.gif"), new JScrollPane(eventEditor));
+        tp.addTab(App.messages.getString("res.205"), Util.getIcon("/jatools/icons/variable.gif"),
             new JScrollPane(variableTree));
 
         xmlPanel = new XmlPanel();
@@ -86,7 +86,7 @@ public class PropertyPanel extends JPanel implements ChangeListener, TooltipHelp
             if (var.getVariableName() != null) {
                 int type = node.getType();
 
-                text = App.messages.getString("res.276");
+                text = App.messages.getString("res.302");
             }
         }
 

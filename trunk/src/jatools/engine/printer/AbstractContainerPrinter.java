@@ -96,7 +96,7 @@ public abstract class AbstractContainerPrinter extends AbstractPrinter {
 
         Object firstFooter = null;
 
-        // 从下往上,查找所有每页必打的 footer;
+        
         // for (int i = 0; i < childPrinters.length; i++) {
         if (layout.isFooterSupported()) {
             for (int i = childPrinters.length - 1; i >= 0; i--) {
@@ -125,9 +125,9 @@ public abstract class AbstractContainerPrinter extends AbstractPrinter {
 
             boolean print = false;
 
-            // 每页打印;
-            // 前面全打印完,而且没有打印的,再打印
-            // 没打印过的,
+            
+            
+            
             if (everyPagePrint) {
                 if (_done) {
                     printer.reset();
@@ -186,7 +186,7 @@ public abstract class AbstractContainerPrinter extends AbstractPrinter {
         }
 
         if ((cursor == null) || !cursor.hasNext()) {
-            // 换页,
+            
             cursor = createCursor(context, this.getComponent(), context.getScript().getStackType());
             resetPrinters();
         } else if (!isFixedBounds()) {
@@ -256,7 +256,7 @@ public abstract class AbstractContainerPrinter extends AbstractPrinter {
         if (isVisible(context.getScript())) {
             Component c = getComponent();
 
-            // 准备layout
+            
             PrinterLayout layout = createLayout(context);
 
             pushLayout(context, layout);
@@ -265,12 +265,12 @@ public abstract class AbstractContainerPrinter extends AbstractPrinter {
 
             popLayout(context);
 
-            // 将view 加入中
+            
             layout.doLayout();
 
             CompoundView view = layout.getRootView();
 
-            // 如果是正在复制中,则加到copyview
+            
             repeatstore.add(layout.getRootView());
 
             if (childrenDone) {
@@ -301,11 +301,11 @@ public abstract class AbstractContainerPrinter extends AbstractPrinter {
                     }
 
                     // else
-                    // 执行下面新增一列的代码
+                    
                 }
 
                 if (shiftrow) {
-                    // 右移一列
+                    
                     repeater.col = 0;
                     repeater.row++;
 
@@ -338,11 +338,11 @@ public abstract class AbstractContainerPrinter extends AbstractPrinter {
                     }
 
                     // else
-                    // 执行下面新增一列的代码
+                    
                 }
 
                 if (shiftcol) {
-                    // 右移一列
+                    
                     repeater.row = 0;
                     repeater.col++;
 

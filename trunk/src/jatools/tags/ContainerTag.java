@@ -90,7 +90,7 @@ public class ContainerTag extends AbstractReportTag {
      */
     public int doStartTag() throws JspException {
         if (!(this.getParent() instanceof ReportTag)) {
-            throw new JspException(App.messages.getString("res.8") + id + App.messages.getString("res.9"));
+            throw new JspException(App.messages.getString("res.9") + id + App.messages.getString("res.10"));
         }
 
         boolean _candrag = (canDrag == null) || canDrag.equals("true");

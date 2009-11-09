@@ -50,13 +50,13 @@ public class RepeatRulePanel extends JPanel {
         };
     private static final String[] flowWay = {
     		"",
-            App.messages.getString("res.333"),
-            App.messages.getString("res.334")
+            App.messages.getString("res.381"),
+            App.messages.getString("res.382")
         };
     private static final String[] overflow = {
     		"",
-            App.messages.getString("res.335"),
-            App.messages.getString("res.336")
+            App.messages.getString("res.383"),
+            App.messages.getString("res.384")
         };
     private TemplateComboBox vGapTextField;
     private TemplateComboBox hGapTextField;
@@ -90,44 +90,44 @@ public class RepeatRulePanel extends JPanel {
         gbc.insets = new Insets(0, 0, 0, 0);
 
         gbc.fill = GridBagConstraints.NONE;
-        add(new JLabel(App.messages.getString("res.337"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.385"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100;
         add(vTempCombo, gbc);
         gbc.weightx = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.338"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.386"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(hTempCombo, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.339"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.387"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(vGapTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.340"), JLabel.LEFT), gbc);
+        add(new JLabel(App.messages.getString("res.388"), JLabel.LEFT), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(hGapTextField, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.341")), gbc);
+        add(new JLabel(App.messages.getString("res.389")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(printTempCombo, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.342")), gbc);
+        add(new JLabel(App.messages.getString("res.390")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(overflowTempCombo, gbc);
         
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        add(new JLabel(App.messages.getString("res.343")), gbc);
+        add(new JLabel(App.messages.getString("res.391")), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(modCountTempCombo, gbc);
         
@@ -252,7 +252,7 @@ public class RepeatRulePanel extends JPanel {
         } catch (Exception e) {
         }
 
-        JFrame frame = new JFrame(App.messages.getString("res.13"));
+        JFrame frame = new JFrame(App.messages.getString("res.29"));
         frame.setResizable(true);
 
         RepeatRulePanel lp = new RepeatRulePanel();

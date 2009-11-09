@@ -19,7 +19,7 @@ public class SameBothAction extends ResizeAction {
      * Creates a new SameBothAction object.
      */
     public SameBothAction() {
-        super(App.messages.getString("res.536"), getIcon("/jatools/icons/sameboth.gif"),
+        super(App.messages.getString("res.596"), getIcon("/jatools/icons/sameboth.gif"),
             getIcon("/jatools/icons/sameboth2.gif"));
     }
 

@@ -52,7 +52,7 @@ public class IndexBuilder {
     private Object[] getLevels(int[] fields) {
         Object[] result = new Object[fields.length];
 
-        // 建立每一级索引, 如 fields2{1,5,6} -> fields{{1},{1,5},{1,5,6}}
+        
         for (int i = 0; i < fields.length; i++) {
             int[] f = new int[i + 1];
             System.arraycopy(fields, 0, f, 0, i + 1);
@@ -112,16 +112,16 @@ public class IndexBuilder {
             int _from = from;
             int _to = row - 1;
 
-            // 建立索引项
+            
             Object[] vals = thisRow.values(fields);
             Key key = new Key(vals);
 
             RowSet item = getIndex(key, _from, _to);
 
-            // 加入缓冲
+            
             this.index.put(key, item);
 
-            // 建下一级索引,
+            
             if (level < (this.groupLevels.length - 1)) {
                 build(level + 1, _from, _to);
             }

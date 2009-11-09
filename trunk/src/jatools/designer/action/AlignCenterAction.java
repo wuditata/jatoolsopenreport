@@ -19,7 +19,7 @@ public class AlignCenterAction extends AlignAction {
      * Creates a new AlignCenterAction object.
      */
     public AlignCenterAction() {
-        super(App.messages.getString("res.15"), getIcon("/jatools/icons/alignhcenter.gif"),
+        super(App.messages.getString("res.31"), getIcon("/jatools/icons/alignhcenter.gif"),
             getIcon("/jatools/icons/alignhcenter2.gif"));
     }
 

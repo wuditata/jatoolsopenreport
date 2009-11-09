@@ -23,7 +23,7 @@ public class BringToFrontAction extends ReportAction {
      * Creates a new BringToFrontAction object.
      */
     public BringToFrontAction() {
-        super(App.messages.getString("res.523"), getIcon("/jatools/icons/tofront.gif"),
+        super(App.messages.getString("res.578"), getIcon("/jatools/icons/tofront.gif"),
             getIcon("/jatools/icons/tofront2.gif"));
     }
 

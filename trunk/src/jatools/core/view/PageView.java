@@ -99,7 +99,7 @@ public class PageView extends CompoundView implements Printable {
     public void autoAdjustHeight() {
         int maxy = 0;
 
-        //            // 第一个是 transformview;
+        
         //            it.next();
         Insets is = this.getPadding();
         Iterator it = this.elementCache.iterator();
