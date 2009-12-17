@@ -30,9 +30,9 @@ import java.util.Iterator;
  * @version 1.0
  */
 public class GroupTableFactory {
-    
-    
-    
+    //分组之间不允许ROW，从上往向下
+    //该分组有子分组时候，提供两个选项（1、只做本节点分组；2、做本节点和子节点分组）
+    //子分组没有子分组的时候，只做本节点分组；
     /**
      * 此方法供选中是groupNodesource展示分组用，暂时弃用
      * 改拖groupNodesource直接生成简单的单元格
@@ -41,7 +41,7 @@ public class GroupTableFactory {
      * @return Table
      */
     public static Table getTable(NodeSource source, boolean containNext) {
-        
+        //分组报表
         Table table = null;
 
         if (source instanceof GroupNodeSource) {
@@ -53,7 +53,7 @@ public class GroupTableFactory {
                 Dataset dataSet = null;
                 String[] fields = dataSet.getFieldNames(reader);
 
-                
+                //groupSourceNumber 包含子节点row的个数
                 ArrayList groupsList = getGroupList(new ArrayList(), source, containNext);
 
                 //               int groupSourceNumber=getGroupNumber(1,groupSource,containNext);
@@ -62,13 +62,13 @@ public class GroupTableFactory {
                 int[] rows = new int[groupSourceNumber + 1];
                 Arrays.fill(rows, 20);
 
-                
+                //这里考虑groupField不重复
                 int[] columns = new int[fields.length];
                 Arrays.fill(columns, 80);
-                
+                //创建表
                 table = new Table(rows, columns);
 
-                
+                //以下构建列头
                 ArrayList headerVector = new ArrayList();
 
                 for (int i = 0; i < fields.length; i++) {
@@ -86,7 +86,7 @@ public class GroupTableFactory {
                     table.add(label, 0, i);
                 }
 
-                
+                //以下构建rowPanel
                 RowPanel rowPanel = new RowPanel();
                 table.add(getRowPanel(rowPanel, headerList, groupsList, groupSource, containNext,
                         groupSourceNumber));
@@ -112,20 +112,20 @@ public class GroupTableFactory {
                 DatasetReader reader = datasetSource.getReader();
                 String[] fields = Dataset.getFieldNames(reader);
 
-                
+                //groupSourceNumber 包含子节点row的个数
                 ArrayList groupsList = getGroupList(new ArrayList(), groupSource, true);
                 int groupSourceNumber = groupsList.size();
 
                 int[] rows = new int[groupSourceNumber + 1];
                 Arrays.fill(rows, 20);
 
-                
+                //这里考虑groupField不重复
                 int[] columns = new int[fields.length];
                 Arrays.fill(columns, 80);
-                
+                //创建表
                 table = new Table(rows, columns);
 
-                
+                //以下构建列头
                 ArrayList headerVector = new ArrayList();
 
                 for (int i = 0; i < fields.length; i++) {
@@ -141,7 +141,7 @@ public class GroupTableFactory {
                     table.add(label, 0, i);
                 }
 
-                
+                //以下构建rowPanel
                 RowPanel rowPanel = new RowPanel();
                 table.add(getRowPanel(rowPanel, headerList, groupsList, groupSource, true,
                         groupSourceNumber));
@@ -165,9 +165,9 @@ public class GroupTableFactory {
             DatasetNodeSource datasetNodeSource = getNearestDatasetSource(rowNodeSource);
             NodeSource parent = datasetNodeSource.getParent();
 
-            if (!(parent instanceof RootNodeSource)) {
-                return null;
-            } else {
+//            if (!(parent instanceof RootNodeSource)) {
+//                return null;
+//            } else {
                 GroupNodeSource groupSource = getFirstNodeSource(datasetNodeSource, rowNodeSource);
 
                 if (groupSource != null) {
@@ -183,14 +183,14 @@ public class GroupTableFactory {
                     int[] rows = new int[groupSourceNumber + 2];
                     Arrays.fill(rows, 20);
 
-                    
+                    //这里考虑groupField重复,重复的+1
                     int[] columns = new int[fields.length ];
                     Arrays.fill(columns, 80);
-                    
+                    //创建表
                     table = new Table(rows, columns);
                     table.setNodePath(reader.getName());
 
-                    
+                    //以下构建列头
                     ArrayList headerVector = new ArrayList();
 
                     for (int i = 0; i < (groupsList.size() - 1); i++) {
@@ -217,13 +217,13 @@ public class GroupTableFactory {
                         table.add(label, 0, i);
                     }
 
-                    
+                    //以下构建rowPanel
                     RowPanel rowPanel = new RowPanel();
                     table.add(getRowPanel(rowPanel, headerList, groupsList, groupSource, true,
                             groupSourceNumber));
 
-                    
-                    Label zjLabel = new Label(App.messages.getString("res.406"));
+                    //总计
+                    Label zjLabel = new Label(App.messages.getString("res.358"));
                     zjLabel.setBorder(new Border(1, Color.black));
                     table.add(zjLabel, rows.length - 1, 0, groupsList.size() - 1, 1);
 
@@ -237,7 +237,7 @@ public class GroupTableFactory {
                 } else {
                     return getNormalTable(rowNodeSource);
                 }
-            }
+//            }
         }
     }
 
@@ -251,7 +251,7 @@ public class GroupTableFactory {
             DatasetReader reader = getNearestDatasetSource(source).getReader();
             String[] fields = Dataset.getFieldNames(reader);
 
-            
+            //以下构建列头
             ArrayList headerVector = new ArrayList();
 
             for (int i = 0; i < fields.length; i++) {
@@ -272,7 +272,7 @@ public class GroupTableFactory {
             Table table = new Table(rows, columns);
             table.setNodePath(reader.getName());
 
-            
+            //构造列
             GroupNodeSource group = (GroupNodeSource) source;
             Label label = new Label(group.getTagName());
             table.add(label, 0, 0, 1, 1);
@@ -284,7 +284,7 @@ public class GroupTableFactory {
                 table.add(label, 0, i + 1, 1, 1);
             }
 
-            
+            //构造行
             RowPanel rowPanel = new RowPanel();
             rowPanel.setNodePath(group.getGroup().getField());
             rowPanel.setCell(new Cell(1, 0, fields.length, 1));
@@ -339,8 +339,8 @@ public class GroupTableFactory {
 
             table.add(rowPanel);
 
-            
-            Label zjLabel = new Label(App.messages.getString("res.406"));
+            //总计：
+            Label zjLabel = new Label(App.messages.getString("res.358"));
             zjLabel.setBorder(new Border(1, Color.black));
             table.add(zjLabel, rows.length - 1, 0, 1, 1);
 
@@ -557,7 +557,7 @@ public class GroupTableFactory {
             Label text = null;
 
             Label label = new Label();
-            label.setText(App.messages.getString("res.407"));
+            label.setText(App.messages.getString("res.359"));
             label.setBorder(new Border());
             rowPanel.add(label, offIndex, index + 1, groupsList.size() - (index + 1), 1);
 
