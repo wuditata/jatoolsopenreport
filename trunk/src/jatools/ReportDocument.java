@@ -1,15 +1,22 @@
 package jatools;
 
+import bsh.Interpreter;
+
 import jatools.accessor.PropertyAccessor;
 import jatools.accessor.PropertyDescriptor;
+
 import jatools.component.Component;
 import jatools.component.ComponentConstants;
 import jatools.component.Page;
+
 import jatools.data.Formula;
+
 import jatools.dom.src.RootNodeSource;
 import jatools.dom.src.xpath.XPath;
+
 import jatools.xml.XmlReader;
 import jatools.xml.XmlWriter;
+
 import jatools.xml.serializer.ListenToXmlWrite;
 import jatools.xml.serializer.XmlReadListener;
 import jatools.xml.serializer.XmlWriteListener;
@@ -20,12 +27,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
-import bsh.Interpreter;
+import java.util.Properties;
 
 
 /**
@@ -39,12 +46,14 @@ public class ReportDocument implements PropertyAccessor, ListenToXmlWrite, XmlWr
         Interpreter.setXPathProcessor(XPath.getDefaults());
     }
 
+    public final static String EXPORT_FILE_NAME = "export_file_name";
     static Map cachedFile;
     private VariableContext variableContext = new VariableContext(this);
     private String title;
     boolean closeback = false;
     private Page page;
     private RootNodeSource nodeSource;
+    private Properties properties;
 
     /**
      * Creates a new ReportDocument object.
@@ -180,11 +189,13 @@ public class ReportDocument implements PropertyAccessor, ListenToXmlWrite, XmlWr
             ComponentConstants._VARIABLE_CONTEXT,
             
             new PropertyDescriptor("Page", Page.class, PropertyDescriptor.SERIALIZABLE),
+            
             new PropertyDescriptor("Pages", Page.class,
                 PropertyDescriptor.SERIALIZABLE | PropertyDescriptor.READONLY),
             
             new PropertyDescriptor("NodeSource", RootNodeSource.class,
-                PropertyDescriptor.SERIALIZABLE), ComponentConstants._TITLE
+                PropertyDescriptor.SERIALIZABLE), ComponentConstants._TITLE,
+            ComponentConstants._PROPERTIES
         };
     }
 
@@ -420,6 +431,57 @@ public class ReportDocument implements PropertyAccessor, ListenToXmlWrite, XmlWr
     public void validate() {
         if (this.page != null) {
             page.validate();
+        }
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public Properties getProperties() {
+        return properties;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param properties DOCUMENT ME!
+     */
+    public void setProperties(Properties properties) {
+        this.properties = properties;
+    }
+
+    /**
+     * 设置统计图某一属性
+     *
+     * @param prop DOCUMENT ME!
+     * @param val DOCUMENT ME!
+     */
+    public void setProperty(String prop, String val) {
+        if (properties == null) {
+            this.properties = new Properties();
+        }
+
+        if (val == null) {
+            this.properties.remove(prop);
+        }
+
+        properties.setProperty(prop, val);
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param prop DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public String getProperty(String prop) {
+        if (properties != null) {
+            return this.properties.getProperty(prop);
+        } else {
+            return null;
         }
     }
 }

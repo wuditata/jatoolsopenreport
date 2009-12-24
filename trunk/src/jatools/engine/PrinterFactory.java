@@ -8,11 +8,14 @@ import jatools.component.Page;
 import jatools.component.PagePanel;
 import jatools.component.Panel;
 import jatools.component.Text;
+import jatools.component.chart.Chart;
+import jatools.component.painter.ChartPainter;
 import jatools.component.table.HeaderTable;
 import jatools.component.table.PowerTable;
 import jatools.component.table.RowPanel;
 import jatools.component.table.Table;
 import jatools.designer.App;
+import jatools.engine.printer.ChartPrinter;
 import jatools.engine.printer.ColumnPanelPrinter;
 import jatools.engine.printer.ImagePrinter;
 import jatools.engine.printer.LabelPrinter;
@@ -54,6 +57,8 @@ public class PrinterFactory {
         printerClassesCache.put(Text.class, TextPrinter.class);
 
         printerClassesCache.put(Image.class, ImagePrinter.class);
+        
+        printerClassesCache.put(Chart.class, ChartPrinter.class);
     }
 
     private final Map printerCache = new HashMap();

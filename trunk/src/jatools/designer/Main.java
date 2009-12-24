@@ -239,6 +239,7 @@ public class Main extends JFrame {
 
         toolbar.add(new Icon25x25Button(am.newTextAction));
         toolbar.add(new Icon25x25Button(am.newImageAction));
+        toolbar.add(new Icon25x25Button(am.newChartAction));
 
         toolbar.add(new Icon25x25Button(am.newPanelAction));
         toolbar.add(new Icon25x25Button(am.newTableAction));
@@ -366,6 +367,7 @@ public class Main extends JFrame {
         newMenu.add(new JMenuItem(am.newTextAction));
 
         newMenu.add(new JMenuItem(am.newImageAction));
+        newMenu.add(new JMenuItem(am.newChartAction));
 
         newMenu.add(new JMenuItem(am.newPanelAction));
 

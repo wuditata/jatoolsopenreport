@@ -30,6 +30,9 @@ public class ComponentEditorFactory {
             editor = new VariableSelectEditor();
         } else if (target instanceof Label) {
             editor = new LabelEditor();
+        }else if (target instanceof jatools.component.chart.Chart) {
+            editor = new ChartEditor();
+            
         } else if (target instanceof jatools.component.Image) {
             editor = new ImageEditor();
         } else {

@@ -2,21 +2,30 @@ package jatools.server;
 
 import jatools.ReportDocument;
 import jatools.VariableContext;
+
 import jatools.data.Formula;
 import jatools.data.Parameter;
+
 import jatools.designer.App;
+
 import jatools.engine.ReportJob;
 import jatools.engine.System2;
+
 import jatools.engine.printer.ReportPrinter;
+
 import jatools.engine.script.ReportContext;
 import jatools.engine.script.Script;
+
 import jatools.formatter.DateFormat;
+
 import jatools.io.DefaultResourceOutputFactory;
 import jatools.io.ResourceOutputFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
+
 import java.net.URLEncoder;
+
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -91,12 +100,13 @@ public class ReportExporter extends ReportActionBase {
     private static String getFileName(ReportJob job, String ext) {
         String result = (String) job.getParameter(ReportJob.EXPORT_DEFAULT_NAME);
 
-        if ((result == null) && (job.getDocument().getTitle() != null) &&
-                (job.getDocument().getTitle().trim().length() > 0)) {
-            String title = job.getDocument().getTitle();
+        if ((result == null)) {
+            String expName = job.getDocument().getProperty(ReportDocument.EXPORT_FILE_NAME);
 
-            Script script = prepareScriptEngine(job);
-            result = (String) script.evalTemplate(title);
+            if ((expName != null) && (expName.trim().length() > 0)) {
+                Script script = prepareScriptEngine(job);
+                result = (String) script.evalTemplate(expName);
+            }
         }
 
         if (result == null) {

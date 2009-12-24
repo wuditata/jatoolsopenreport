@@ -102,6 +102,7 @@ public class TagSelector extends JPanel implements ChangeListener, ActionListene
                 JToggleButton label = new JToggleButton("<" + klass + ">");
                 
                 
+                
                 label.setFont(f);
                 label.setBorder(null);
                 label.setMaximumSize(new Dimension(200, 20));
