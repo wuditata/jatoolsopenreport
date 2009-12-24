@@ -26,6 +26,7 @@ import javax.swing.JPanel;
   */
 public class DocumentSettingsDialog extends JDialog {
     TemplateTextField titleField = new TemplateTextField();
+    TemplateTextField exportNameField = new TemplateTextField();
 
     private ReportDocument doc;
 
@@ -47,6 +48,14 @@ public class DocumentSettingsDialog extends JDialog {
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         p.add(titleField, gbc);
+        
+        gbc.weightx = 0;
+        gbc.gridwidth = 1;
+        p.add(new JLabel("默认导出文件名:"), gbc);
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+
+        p.add(exportNameField, gbc);
+        
         
         gbc.weighty = 1.0;
         p.add(Box.createVerticalStrut(20), gbc);
@@ -78,6 +87,7 @@ public class DocumentSettingsDialog extends JDialog {
 
         if (doc != null) {
             this.titleField.setText(doc.getTitle());
+            this.exportNameField.setText(doc.getProperty(ReportDocument.EXPORT_FILE_NAME));
            
             this.doc = doc;
         }
@@ -88,6 +98,12 @@ public class DocumentSettingsDialog extends JDialog {
             this.doc.setTitle(this.titleField.getText().trim());
         } else {
             this.doc.setTitle(null);
+        }
+        
+        if ((this.exportNameField.getText() != null) && (this.exportNameField.getText().trim().length() > 0)) {
+            this.doc.setProperty(ReportDocument.EXPORT_FILE_NAME,this.exportNameField.getText().trim());
+        } else {
+            this.doc.setProperty(ReportDocument.EXPORT_FILE_NAME,null);
         }
 
        

@@ -7,6 +7,7 @@ import jatools.component.Page;
 import jatools.component.PagePanel;
 import jatools.component.Panel;
 import jatools.component.Text;
+import jatools.component.chart.Chart;
 import jatools.component.table.HeaderTable;
 import jatools.component.table.PowerTable;
 import jatools.component.table.RowPanel;
@@ -43,7 +44,8 @@ public class PainterFactory {
 
         
         registerPainter(Page.class, new SimplePainter());
-
+        
+        registerPainter(Chart.class, new ChartPainter());
        
         registerPainter(Image.class, new ImagePainter());
         registerPainter(Label.class, p = new LabelPainter());

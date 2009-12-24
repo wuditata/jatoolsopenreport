@@ -7,6 +7,7 @@ import jatools.component.table.Cell;
 import jatools.component.table.PowerTable;
 import jatools.component.table.Table;
 import jatools.core.view.Border;
+import jatools.data.reader.AbstractDatasetReader;
 import jatools.designer.data.Hyperlink;
 import jatools.engine.script.Script;
 import jatools.xml.serializer.ListenToXmlWrite;
@@ -1469,6 +1470,14 @@ public abstract class Component implements PropertyAccessor, ListenToXmlWrite {
     public void setConstraints(String constraints) {
         this.constraints = constraints;
     }
+
+//	public AbstractDatasetReader getReader() {
+////		Connection conn = new Connection();
+////		
+////		new SqlReader(conn,"select name,area from country ");
+//		
+//		return null;
+//	}
 
     
 }

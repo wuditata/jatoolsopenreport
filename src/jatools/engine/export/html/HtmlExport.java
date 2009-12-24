@@ -140,7 +140,7 @@ public class HtmlExport extends BasicExport {
 
         index++;
 
-        body.append(StringUtil.format("<div id='_page_#' class='pb' ", index + ""));
+        body.append(StringUtil.format("<div id='_page_#' class='pcls' ", index + ""));
 
         body.append(StringUtil.format(" style='margin:#;width:#;height:#;", _html_offset + "",
                 "" + page.getBounds().width, page.getBounds().height + ""));
@@ -638,7 +638,7 @@ public class HtmlExport extends BasicExport {
     private void writeSettings(Writer out2) {
         String orientation = (pageFormat.getOrientation() == PageFormat.PORTRAIT) ? "1" : "2";
         String pageWidth = toMM(pageFormat.getWidth()) + "";
-        String pageHeight = toMM(pageFormat.getPrintHeight()) + "";
+        String pageHeight = pageFormat.getPrintHeight() + "";
         String jobSessionId = this.jobSessionId;
 
         try {
@@ -665,17 +665,17 @@ public class HtmlExport extends BasicExport {
         try {
             out.write("<style><!--\n*{\n-moz-box-sizing: border-box;\n}\n");
 
-            out.write(".pb{float: left;overflow:hidden;");
+            out.write(".pcls{float: left;overflow:hidden;position:relative");
 
             out.write(";}\n");
 
-            out.write("div.pb *{white-space:nowrap;}\n");
-            out.write("div.pb div{position:absolute}\n");
-            out.write("div.pb table{position:absolute}\n");
-            out.write("div.pb img{position:absolute}\n");
-            // out.write("div.pb p{overflow:hidden;position:absolute;width:100%;}\n");
+            out.write("div.pcls *{white-space:nowrap;}\n");
+            out.write("div.pcls div{position:absolute}\n");
+            out.write("div.pcls table{position:absolute}\n");
+            out.write("div.pcls img{position:absolute}\n");
+            // out.write("div.pcls p{overflow:hidden;position:absolute;width:100%;}\n");
             out.write("div.td {overflow:hidden;width:100%;height:100%;}\n");
-            out.write("div.pb div.h{overflow:hidden;}");
+            out.write("div.pcls div.h{overflow:hidden;}");
 
             //out.write(".nt{display:table-cell;_position:absolute}\n");
             out.write(".txd{position:static;width:100%}\n");

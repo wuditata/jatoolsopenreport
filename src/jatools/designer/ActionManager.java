@@ -20,6 +20,7 @@ import jatools.designer.action.EditDeleteAction;
 import jatools.designer.action.ExitAction;
 import jatools.designer.action.FormatBrushAction;
 import jatools.designer.action.NewAction;
+import jatools.designer.action.NewChartAction;
 import jatools.designer.action.NewImageAction;
 import jatools.designer.action.NewLabelAction;
 import jatools.designer.action.NewPanelAction;
@@ -79,6 +80,7 @@ public class ActionManager implements EditorView {
     Action newLabelAction;
     Action newTextAction;
     Action newImageAction;
+    Action newChartAction;
     Action newPanelAction;
     Action newTableAction;
     Action newPowerTableAction;
@@ -139,6 +141,8 @@ public class ActionManager implements EditorView {
         newTextAction = new NewTextAction();
 
         newImageAction = new NewImageAction();
+        newChartAction = new NewChartAction();
+        
 
         newPanelAction = new NewPanelAction();
         newTableAction = new NewTableAction();
@@ -183,6 +187,7 @@ public class ActionManager implements EditorView {
         newTextAction.setEnabled(b);
 
         newImageAction.setEnabled(b);
+        newChartAction.setEnabled(b);
 
         newPanelAction.setEnabled(b);
         newTableAction.setEnabled(b);
@@ -251,7 +256,7 @@ public class ActionManager implements EditorView {
         return new Action[] {
             selectAction, newLabelAction, newTextAction,
             
-            newImageAction,
+            newImageAction,newChartAction,
             
             newPanelAction, newTableAction, newPowerTableAction
         };

@@ -11,6 +11,7 @@ import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JWindow;
 
 
 /**
@@ -19,14 +20,14 @@ import javax.swing.JLabel;
  * @author $author$
  * @version $Revision: 1.3 $
   */
-public class SplashWindow extends JDialog {
+public class SplashWindow extends JWindow {
     /**
      * Creates a new SplashWindow object.
      *
      * @param icon DOCUMENT ME!
      */
     public SplashWindow(Icon icon) {
-        super(getDummyFrame(), App.messages.getString("res.63"));
+        super(getDummyFrame());//, App.messages.getString("res.63"));
 
         JLabel l = new JLabel(icon);
         getContentPane().add(l, BorderLayout.CENTER);

@@ -413,45 +413,45 @@ public class SummarySelector extends JPanel implements ChangeListener, ListSelec
     }
 
     /**
-     * DOCUMENT ME!
-     *
-     * @param context DOCUMENT ME!
-     */
-    public void apply2(BuilderContext context) {
-        if (lastGroupBy != null) {
-            functionCache.put(lastGroupBy, table.cloneRows());
-        }
-
-        Map haspMap = new HashMap();
-
-        Set keys = functionCache.keySet();
-
-        for (Iterator iter = keys.iterator(); iter.hasNext();) {
-            Object element = (Object) iter.next();
-            Column groupField = (element == GROUP_FOR_ALL) ? null : ((Column) element);
-            ArrayList rows = (ArrayList) functionCache.get(element);
-            ArrayList summaryVector = new ArrayList();
-
-            for (Iterator iterator = rows.iterator(); iterator.hasNext();) {
-                Vector v = (Vector) iterator.next();
-                Column calcField = (Column) v.get(0);
-                String calcType = (String) v.get(1);
-
-                if (calcType.equals(App.messages.getString("res.200"))) {
-                    calcType = App.messages.getString("res.201");
-                }
-
-                CustomSummary summary = new CustomSummary(null,
-                        (groupField == null) ? null : groupField.getName(), calcField.getName(),
-                        calcType, null);
-                summaryVector.add(summary);
-            }
-
-            haspMap.put((groupField == null) ? null : groupField.getName(), summaryVector);
-        }
-
-        context.setValue(BuilderContext.SUMMARY_ITEMS, haspMap);
-    }
+	 * DOCUMENT ME!
+	 *
+	 * @param context DOCUMENT ME!
+	 */
+	public void apply2(BuilderContext context) {
+	    if (lastGroupBy != null) {
+	        functionCache.put(lastGroupBy, table.cloneRows());
+	    }
+	
+	    Map haspMap = new HashMap();
+	
+	    Set keys = functionCache.keySet();
+	
+	    for (Iterator iter = keys.iterator(); iter.hasNext();) {
+	        Object element = (Object) iter.next();
+	        Column groupField = (element == GROUP_FOR_ALL) ? null : ((Column) element);
+	        ArrayList rows = (ArrayList) functionCache.get(element);
+	        ArrayList summaryVector = new ArrayList();
+	
+	        for (Iterator iterator = rows.iterator(); iterator.hasNext();) {
+	            Vector v = (Vector) iterator.next();
+	            Column calcField = (Column) v.get(0);
+	            String calcType = (String) v.get(1);
+	
+	            if (calcType.equals(App.messages.getString("res.200"))) {
+	                calcType = App.messages.getString("res.201");
+	            }
+	
+	            CustomSummary summary = new CustomSummary(null,
+	                    (groupField == null) ? null : groupField.getName(), calcField.getName(),
+	                    calcType, null);
+	            summaryVector.add(summary);
+	        }
+	
+	        haspMap.put((groupField == null) ? null : groupField.getName(), summaryVector);
+	    }
+	
+	    context.setValue(BuilderContext.SUMMARY_ITEMS, haspMap);
+	}
 
     class _FunctionModel extends DefaultComboBoxModel {
         public _FunctionModel(Object[] items) {
