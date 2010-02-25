@@ -19,6 +19,8 @@ import java.awt.font.TextLayout;
 import java.text.AttributedCharacterIterator;
 import java.text.AttributedString;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.JLabel;
 
@@ -327,8 +329,10 @@ public class TextView extends AbstractView implements Cloneable {
             Font font = displayStyle.getFont();
 
             if (font != null) {
+                  
                 gcopy.setFont(font);
             }
+            
 
             TextLine[] lines = getWrappedLines();
 

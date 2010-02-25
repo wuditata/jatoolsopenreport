@@ -22,6 +22,8 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 
+
+
 /**
  * DOCUMENT ME!
  *
@@ -177,6 +179,10 @@ public class ReportJob implements ProtectPublic {
         job.paramValues = (Map) ((HashMap) map).clone();
 
         return job;
+    }
+    
+    public void printAsRTF(OutputStream os) throws Exception {
+        _Job.printAsRTF(os, doc, paramValues);
     }
 
     /**

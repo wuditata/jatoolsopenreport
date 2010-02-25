@@ -90,6 +90,8 @@ public class ReportExporter extends ReportActionBase {
             }
 
             ba.writeTo(os);
+        } else if (as.equals("rtf")) {
+            job.printAsRTF(os);
         } else {
             throw new Exception(App.messages.getString("res.44") + as);
         }

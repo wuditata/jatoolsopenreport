@@ -20,6 +20,8 @@ import java.awt.font.TextLayout;
 import java.text.AttributedCharacterIterator;
 import java.text.AttributedString;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -63,11 +65,20 @@ public class LabelPainter extends SimplePainter {
         if ((text != null) && !text.equals("")) { //
             g.setColor(label.getForeColor());
 
+           
+
+         
+
+            
+            
             Font font = label.getFont();
 
             if (font != null) {
                 g.setFont(font);
             }
+            
+          
+            
 
             FontMetrics fm = g.getFontMetrics();
 
