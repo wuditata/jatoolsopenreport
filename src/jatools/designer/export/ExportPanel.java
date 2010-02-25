@@ -72,6 +72,7 @@ public class ExportPanel extends JPanel implements ActionListener {
         chooser.addChoosableFileFilter(pdfFilter);
         chooser.addChoosableFileFilter(xlsFilter);
         chooser.addChoosableFileFilter(xls1Filter);
+        chooser.addChoosableFileFilter(rtfFilter);
 
         if (UIManager.getLookAndFeel().getID().equals("Windows")) {
             if (chooser.getComponent(1).getClass().getName()
@@ -196,6 +197,8 @@ public class ExportPanel extends JPanel implements ActionListener {
                                     job.printAsXLS();
                                 } else if (type == XLS1) {
                                     job.printAsXLS1();
+                                } else if (type == RTF) {
+                                    job.printAsRTF();
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();

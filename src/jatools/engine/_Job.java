@@ -2,28 +2,41 @@ package jatools.engine;
 
 import jatools.PageFormat;
 import jatools.ReportDocument;
+
 import jatools.core.view.DisplayStyleManager;
 import jatools.core.view.PageView;
+
 import jatools.data.reader.sql.Connection;
+
 import jatools.designer.App;
+
+import jatools.engine.export.doc.RtfExport;
 import jatools.engine.export.html.HtmlExport;
 import jatools.engine.export.pdf.PdfExport1;
 import jatools.engine.export.runnable.ExportRunnable;
 import jatools.engine.export.runnable.HtmlRunnable;
 import jatools.engine.export.runnable.PageCollectionRunnable;
 import jatools.engine.export.runnable.PdfRunnable;
+import jatools.engine.export.runnable.RtfRunnable;
 import jatools.engine.export.runnable.XlsRunnable;
 import jatools.engine.export.xls.XlsExport;
+
 import jatools.engine.printer.ReportCacher;
 import jatools.engine.printer.ReportPrinter;
+
 import jatools.io.ResourceOutputFactory;
+
 import jatools.util.Util;
 
+import org.apache.log4j.Logger;
+
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -31,12 +44,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.OutputStream;
 import java.io.Writer;
+
 import java.util.ArrayList;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
-
-import org.apache.log4j.Logger;
 
 
 /**
@@ -175,6 +187,26 @@ public class _Job {
         }
 
         generatePage(doc, paramValues, new XlsRunnable(exp), csser);
+        exp.close();
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param os DOCUMENT ME!
+     * @param doc DOCUMENT ME!
+     * @param paramValues DOCUMENT ME!
+     *
+     * @throws Exception DOCUMENT ME!
+     */
+    public static void printAsRTF(OutputStream os, ReportDocument doc, Map paramValues)
+        throws Exception {
+        PageFormat pf = doc.getPage().getPageFormat();
+
+        RtfExport exp = new RtfExport(os, new Dimension(pf.getWidth(), pf.getHeight()));
+
+        generatePage(doc, paramValues, new RtfRunnable(exp), null);
+
         exp.close();
     }
 

@@ -6,6 +6,7 @@ import jatools.core.view.DisplayStyleManager;
 import jatools.core.view.PageView;
 import jatools.engine.PrintConstants;
 import jatools.engine.ReportJob;
+import jatools.engine.export.doc.RtfExport;
 import jatools.engine.export.html.HtmlExport;
 import jatools.engine.export.pdf.PdfExport1;
 import jatools.engine.export.xls.XlsExport;
@@ -20,6 +21,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Map;
+
+
 
 
 
@@ -151,6 +154,28 @@ public class LocalReportJob {
 
         for (int i = 0; i < pages.length; i++) {
             exp.export(pages[i], i, null);
+        }
+
+        exp.close();
+    }
+    
+    public void printAsRTF() throws Exception {
+       	parameters.put( "as","rtf");
+        ReportPrinter printer = new ReportPrinter(doc, parameters);
+        printer.print();
+
+        PageView[] pages = printer.getPages();
+        Dimension size = null;
+
+        if (pages.length > 0) {
+            PageFormat pf = pages[0].getPageFormat();
+            size = new Dimension(pf.getWidth(), pf.getHeight());
+        }
+
+        RtfExport exp = new RtfExport(new FileOutputStream(file), size);
+
+        for (int i = 0; i < pages.length; i++) {
+            exp.export(pages[i], i);
         }
 
         exp.close();
