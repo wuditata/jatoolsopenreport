@@ -7,6 +7,7 @@ import java.awt.Color;
 
 
 public class FillStyleFactory {
+	
 	public static FillStyleInterface createFillStyle(Gc gc){
 		FillStyleInterface style = null;
 		if(gc.getFillStyle() == Gc.FILL_SOLID){

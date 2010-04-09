@@ -90,8 +90,8 @@ public class DatasetNode extends DatasetBasedNode implements Document {
 		return null;
 	}
 
-	public DOMConfiguration getDomConfig() {
-		// TODO Auto-generated method stub
+	public org.w3c.dom.DOMConfiguration getDomConfig() {
+		
 		return null;
 	}
 
