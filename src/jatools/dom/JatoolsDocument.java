@@ -13,6 +13,7 @@ import java.util.HashMap;
 import org.w3c.dom.Attr;
 import org.w3c.dom.CDATASection;
 import org.w3c.dom.Comment;
+import org.w3c.dom.DOMConfiguration;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
@@ -434,4 +435,74 @@ public class JatoolsDocument extends DatasetBasedNode implements Document, Root 
     public Object getElement(Object key) {
         return this.elementCache.get(key);
     }
+
+	public Node adoptNode(Node source) throws DOMException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getDocumentURI() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public DOMConfiguration getDomConfig() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getInputEncoding() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean getStrictErrorChecking() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public String getXmlEncoding() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean getXmlStandalone() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public String getXmlVersion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void normalizeDocument() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Node renameNode(Node n, String namespaceURI, String qualifiedName) throws DOMException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setDocumentURI(String documentURI) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setStrictErrorChecking(boolean strictErrorChecking) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setXmlStandalone(boolean xmlStandalone) throws DOMException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setXmlVersion(String xmlVersion) throws DOMException {
+		// TODO Auto-generated method stub
+		
+	}
 }

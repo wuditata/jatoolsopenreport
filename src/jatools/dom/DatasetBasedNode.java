@@ -7,10 +7,13 @@ import jatools.engine.script.Script;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.TypeInfo;
+import org.w3c.dom.UserDataHandler;
 
 import bsh.CallStack;
 import bsh.Interpreter;
@@ -425,4 +428,104 @@ public abstract class DatasetBasedNode extends ElementBase implements NodeSortab
     public RowList getRowList() {
         return this.getRowSet();
     }
+
+	public TypeInfo getSchemaTypeInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setIdAttribute(String name, boolean isId) throws DOMException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setIdAttributeNS(String namespaceURI, String localName, boolean isId) throws DOMException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setIdAttributeNode(Attr idAttr, boolean isId) throws DOMException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public short compareDocumentPosition(Node other) throws DOMException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public String getBaseURI() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getFeature(String feature, String version) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getLocalName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getNamespaceURI() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Document getOwnerDocument() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getPrefix() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getTextContent() throws DOMException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getUserData(String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean isDefaultNamespace(String namespaceURI) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isEqualNode(Node arg) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isSameNode(Node other) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public String lookupNamespaceURI(String prefix) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String lookupPrefix(String namespaceURI) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setTextContent(String textContent) throws DOMException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object setUserData(String key, Object data, UserDataHandler handler) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
