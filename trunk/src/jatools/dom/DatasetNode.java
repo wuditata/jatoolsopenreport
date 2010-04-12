@@ -1,13 +1,15 @@
 package jatools.dom;
 
+import bsh.BSHStar;
+import bsh.UtilEvalError;
+
 import jatools.dataset.Dataset;
 import jatools.dataset.RowSet;
+
 import jatools.engine.script.Script;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.xerces.dom3.DOMConfiguration;
+
 import org.w3c.dom.Attr;
 import org.w3c.dom.CDATASection;
 import org.w3c.dom.Comment;
@@ -22,8 +24,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.ProcessingInstruction;
 import org.w3c.dom.Text;
 
-import bsh.BSHStar;
-import bsh.UtilEvalError;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -46,87 +48,14 @@ public class DatasetNode extends DatasetBasedNode implements Document {
     Map names0;
     Map names1;
     String globalID;
-    
 
-    
-
-    public void normalizeDocument() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public Node renameNode(Node n, String namespaceURI, String qualifiedName) throws DOMException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void setDocumentURI(String documentURI) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void setStrictErrorChecking(boolean strictErrorChecking) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void setXmlStandalone(boolean xmlStandalone) throws DOMException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void setXmlVersion(String xmlVersion) throws DOMException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public Node adoptNode(Node source) throws DOMException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getDocumentURI() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public org.w3c.dom.DOMConfiguration getDomConfig() {
-		
-		return null;
-	}
-
-	public String getInputEncoding() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public boolean getStrictErrorChecking() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public String getXmlEncoding() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public boolean getXmlStandalone() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public String getXmlVersion() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/**
-     * Creates a new DatasetNode object.
-     *
-     * @param p DOCUMENT ME!
-     * @param ds DOCUMENT ME!
-     * @param tag DOCUMENT ME!
-     */
+    /**
+    * Creates a new DatasetNode object.
+    *
+    * @param p DOCUMENT ME!
+    * @param ds DOCUMENT ME!
+    * @param tag DOCUMENT ME!
+    */
     public DatasetNode(Node p, Dataset ds, String tag) {
         this._parent = (DatasetBasedNode) p;
 
@@ -134,8 +63,158 @@ public class DatasetNode extends DatasetBasedNode implements Document {
         setDataset(ds);
 
         globalID = (String) this._parent.getRoot().registerElement(this);
-        if(ds != null)
-        	ds.setGlobalID(globalID);
+
+        if (ds != null) {
+            ds.setGlobalID(globalID);
+        }
+    }
+
+    /**
+     * DOCUMENT ME!
+     */
+    public void normalizeDocument() {
+        // TODO Auto-generated method stub
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param n DOCUMENT ME!
+     * @param namespaceURI DOCUMENT ME!
+     * @param qualifiedName DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     *
+     * @throws DOMException DOCUMENT ME!
+     */
+    public Node renameNode(Node n, String namespaceURI, String qualifiedName)
+        throws DOMException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param documentURI DOCUMENT ME!
+     */
+    public void setDocumentURI(String documentURI) {
+        // TODO Auto-generated method stub
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param strictErrorChecking DOCUMENT ME!
+     */
+    public void setStrictErrorChecking(boolean strictErrorChecking) {
+        // TODO Auto-generated method stub
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param xmlStandalone DOCUMENT ME!
+     *
+     * @throws DOMException DOCUMENT ME!
+     */
+    public void setXmlStandalone(boolean xmlStandalone)
+        throws DOMException {
+        // TODO Auto-generated method stub
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param xmlVersion DOCUMENT ME!
+     *
+     * @throws DOMException DOCUMENT ME!
+     */
+    public void setXmlVersion(String xmlVersion) throws DOMException {
+        // TODO Auto-generated method stub
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param source DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     *
+     * @throws DOMException DOCUMENT ME!
+     */
+    public Node adoptNode(Node source) throws DOMException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public String getDocumentURI() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public org.w3c.dom.DOMConfiguration getDomConfig() {
+        return null;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public String getInputEncoding() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public boolean getStrictErrorChecking() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public String getXmlEncoding() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public boolean getXmlStandalone() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public String getXmlVersion() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     /**
@@ -523,8 +602,6 @@ public class DatasetNode extends DatasetBasedNode implements Document {
     public RowSet getRowSet() {
         return this.getDataset().getRowSet();
     }
-
-
 
     /**
      * DOCUMENT ME!

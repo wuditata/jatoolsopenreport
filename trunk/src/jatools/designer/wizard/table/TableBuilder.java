@@ -1,16 +1,20 @@
 package jatools.designer.wizard.table;
 
-
 import jatools.data.reader.DatasetReader;
+
 import jatools.designer.App;
 import jatools.designer.DataTreeUtil;
 import jatools.designer.DisplayFieldSelector;
 import jatools.designer.GroupBySelector;
 import jatools.designer.SummarySelector;
+
 import jatools.designer.data.ReaderSelector;
+
 import jatools.designer.wizard.BuilderContext;
+
 import jatools.swingx.CommandPanel;
 import jatools.swingx.SwingUtil;
+
 import jatools.util.Util;
 
 import java.awt.BorderLayout;
@@ -18,6 +22,7 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -91,6 +96,7 @@ public class TableBuilder extends JDialog implements ChangeListener {
         readerSelector = new ReaderSelector(DataTreeUtil.asTree(App.getConfiguration()));
         readerSelector.addChangeListener(this);
         displayFieldSelector = new DisplayFieldSelector();
+        displayFieldSelector.addChangeListener(this);
         groupBySelector = new GroupBySelector();
         summarySelector = new SummarySelector();
 
@@ -107,7 +113,8 @@ public class TableBuilder extends JDialog implements ChangeListener {
                         super.setSelectedIndex(index);
                         activatePanel(index);
                     } else {
-                        JOptionPane.showMessageDialog(TableBuilder.this, new JLabel(App.messages.getString("res.225")));
+                        JOptionPane.showMessageDialog(TableBuilder.this,
+                            new JLabel(App.messages.getString("res.225")));
                     }
                 }
             });
@@ -120,6 +127,8 @@ public class TableBuilder extends JDialog implements ChangeListener {
         control.addComponent(cancelCommand);
 
         prevCommand.setEnabled(false);
+        finishCommand.setEnabled(false);
+
         getContentPane().add(control, BorderLayout.SOUTH);
     }
 
@@ -154,8 +163,6 @@ public class TableBuilder extends JDialog implements ChangeListener {
                     finish();
                 }
             });
-
-        finishCommand.setEnabled(false);
     }
 
     void activatePanel(int index) {
@@ -191,6 +198,7 @@ public class TableBuilder extends JDialog implements ChangeListener {
         infoLabel.setText(PROMPT_STRINGS[index]);
         prevCommand.setEnabled(index > 0);
         nextCommand.setEnabled(index < (steps.getTabCount() - 1));
+
     }
 
     protected void finish() {
@@ -235,9 +243,11 @@ public class TableBuilder extends JDialog implements ChangeListener {
      * @param e DOCUMENT ME!
      */
     public void stateChanged(ChangeEvent e) {
-        if (e.getSource() == readerSelector) {
+       // if (e.getSource() == readerSelector) {
             selectedReader = readerSelector.getSelectedReader();
-            finishCommand.setEnabled(selectedReader != null);
-        }
+
+            finishCommand.setEnabled((selectedReader != null) &&
+                this.displayFieldSelector.isSelected());
+        //}
     }
 }

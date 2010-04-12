@@ -1,29 +1,38 @@
 package jatools.engine.script;
 
+import bsh.Interpreter;
+import bsh.Primitive;
+
 import jatools.accessor.ProtectPublic;
+
 import jatools.designer.App;
+
 import jatools.engine.ImportFunctions;
 import jatools.engine.System2;
+
 import jatools.engine.script.debug.ScriptDebugger;
+
 import jatools.util.HZUtil;
 
 import java.io.UnsupportedEncodingException;
+
 import java.net.URLEncoder;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
 import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-
-import bsh.Interpreter;
-import bsh.Primitive;
 
 
 /**
@@ -33,6 +42,18 @@ import bsh.Primitive;
  * @version $Revision$
   */
 public class GlobalScripts implements ProtectPublic {
+    /**
+     * DOCUMENT ME!
+     *
+     * @param time1 DOCUMENT ME!
+     * @param time2 DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+   
+    
+   
+
     /**
      * DOCUMENT ME!
      *
@@ -781,9 +802,18 @@ public class GlobalScripts implements ProtectPublic {
      */
     public static TableModel getTableModel() {
         DefaultTableModel result = new DefaultTableModel(0, 4);
-        result.addRow(new Object[] { App.messages.getString("res.51"), new Integer(16), App.messages.getString("res.52"), new Integer(90) });
-        result.addRow(new Object[] { App.messages.getString("res.53"), new Integer(17), App.messages.getString("res.54"), new Integer(99) });
-        result.addRow(new Object[] { App.messages.getString("res.55"), new Integer(18), App.messages.getString("res.54"), new Integer(85) });
+        result.addRow(new Object[] {
+                App.messages.getString("res.51"), new Integer(16), App.messages.getString("res.52"),
+                new Integer(90)
+            });
+        result.addRow(new Object[] {
+                App.messages.getString("res.53"), new Integer(17), App.messages.getString("res.54"),
+                new Integer(99)
+            });
+        result.addRow(new Object[] {
+                App.messages.getString("res.55"), new Integer(18), App.messages.getString("res.54"),
+                new Integer(85)
+            });
 
         return result;
     }
@@ -818,12 +848,5 @@ public class GlobalScripts implements ProtectPublic {
         return System2.getProperty(name);
     }
 
-    /**
-     * DOCUMENT ME!
-     *
-     * @param args DOCUMENT ME!
-     */
-    public static void main(String[] args) {
-        GlobalScripts.getResultSet();
-    }
+  
 }
