@@ -1,11 +1,15 @@
 package jatools.designer;
 
 import jatools.data.reader.DatasetReader;
+
 import jatools.dataset.Column;
+
 import jatools.designer.wizard.BuilderContext;
+
 import jatools.swingx.CustomTable;
 import jatools.swingx.SimpleTreeNode;
 import jatools.swingx.SwingUtil;
+
 import jatools.util.Util;
 
 import java.awt.Dimension;
@@ -14,7 +18,10 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import javax.swing.BorderFactory;
@@ -34,7 +41,6 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
-
 
 
 /**
@@ -57,7 +63,7 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
     Column hitField;
     DatasetReader reader;
     private JButton selectAllCommand;
-
+    ArrayList listenerCache = new ArrayList();
     /**
      * Creates a new DisplayFieldSelector object.
      */
@@ -100,9 +106,7 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
         if (fields.length > 0) {
             for (int i = 0; i < fields.length; i++) {
                 if (!table.exists(0, fields[i].getUserObject())) {
-                    table.addRow(new Object[] {
-                            fields[i].getUserObject(),null
-                        }, true);
+                    table.addRow(new Object[] { fields[i].getUserObject(), null }, true);
                 }
             }
 
@@ -115,6 +119,16 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
 
         if (index < (sourceTree.getRowCount() - 1)) {
             sourceTree.setSelectionRow(sourceTree.getSelectionRows()[0] + 1);
+        }
+    }
+    
+    void fireChangeListener() {
+        ChangeEvent e = new ChangeEvent(this);
+
+        for (Iterator iter = listenerCache.iterator(); iter.hasNext();) {
+            ChangeListener element = (ChangeListener) iter.next();
+
+            element.stateChanged(e);
         }
     }
 
@@ -139,7 +153,7 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
 
                     hitField = (Column) stn.getUserObject();
 
-                   // alias = (String) stn.getProperty(SimpleTreeNode.ALIAS);
+                    // alias = (String) stn.getProperty(SimpleTreeNode.ALIAS);
                 }
             }
         }
@@ -169,6 +183,8 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
     public void enableButtons() {
         upCommand.setEnabled(table.canUp());
         downCommand.setEnabled(table.canDown());
+        
+
     }
 
     /**
@@ -205,7 +221,9 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
     }
 
     private JPanel getTargetPanel() {
-        table = new CustomTable(new String[] { App.messages.getString("res.108"), App.messages.getString("res.109") });
+        table = new CustomTable(new String[] {
+                    App.messages.getString("res.108"), App.messages.getString("res.109")
+                });
         table.setEditable(1, true);
 
         downCommand = new JButton(Util.getIcon("/jatools/icons/download.gif"));
@@ -373,7 +391,23 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
 
         refreshSelectedNode();
         sourceTree.repaint();
+        
+        fireChangeListener();
     }
+    
+    public void addChangeListener(ChangeListener lst) {
+        listenerCache.add(lst);
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param lst DOCUMENT ME!
+     */
+    public void removeChangeListener(ChangeListener lst) {
+        listenerCache.remove(lst);
+    }
+    
 
     void refreshSelectedNode() {
         int[] selectedRows = sourceTree.getSelectionRows();
@@ -447,5 +481,14 @@ public class DisplayFieldSelector extends JPanel implements ListDataListener, Ch
 
         context.setValue(fieldKey, fields);
         context.setValue(aliasLookerKey, aliasLooker);
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public boolean isSelected() {
+        return this.table.getRowCount() > 0;
     }
 }

@@ -66,6 +66,7 @@ public class AccessorSerializer extends AbstractSerializer {
 
             Element fieldNode = (Element) item;
             String fieldName = fieldNode.getNodeName();
+            
             PropertyDescriptor des = PropertyUtil.getPropertyDescriptor(accessor, fieldName);
 
             
