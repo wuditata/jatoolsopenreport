@@ -1,18 +1,27 @@
 package jatools.data.reader.sql;
 
 import jatools.accessor.PropertyDescriptor;
+
 import jatools.component.ComponentConstants;
+
 import jatools.data.reader.AbstractDatasetReader;
+
 import jatools.dataset.Dataset;
 import jatools.dataset.DatasetException;
 import jatools.dataset.Row;
 import jatools.dataset.RowMeta;
 import jatools.dataset.StreamService;
+
 import jatools.designer.App;
+
 import jatools.engine.printer.ReportPrinter;
+
 import jatools.engine.script.ReportContext;
 import jatools.engine.script.Script;
+
 import jatools.util.Util;
+
+import org.apache.log4j.Logger;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
@@ -20,10 +29,8 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 import java.util.List;
-
-import org.apache.log4j.Logger;
-
 
 
 /**
@@ -49,7 +56,6 @@ public class SqlReader extends AbstractDatasetReader {
     StreamService streamService;
     private Dataset lastDataset;
     private RowMeta lastRowMeta;
-
 
     /**
      * Creates a new SqlReader object.
@@ -122,7 +128,6 @@ public class SqlReader extends AbstractDatasetReader {
             new PropertyDescriptor(ComponentConstants.PROPERTY_DESCRIPTION, String.class),
             new PropertyDescriptor("JdbcType", Integer.TYPE),
             new PropertyDescriptor(ComponentConstants.PROPERTY_CONNECTION, Connection.class)
-           
         };
     }
 
@@ -171,7 +176,8 @@ public class SqlReader extends AbstractDatasetReader {
 
         try {
             if (sql == null) {
-                throw new IllegalArgumentException(Util.debug(logger, App.messages.getString("res.620")));
+                throw new IllegalArgumentException(Util.debug(logger,
+                        App.messages.getString("res.620")));
             }
 
             String sqlcopy = sql;
@@ -192,6 +198,10 @@ public class SqlReader extends AbstractDatasetReader {
 
             if (isQuery(sqlcopy)) {
                 if (!withdata) {
+                    while ((sqlcopy = sqlcopy.trim()).endsWith(";")) {
+                        sqlcopy = sqlcopy.substring(0, sqlcopy.length() - 1);
+                    }
+
                     sqlcopy = "select * from (" + sqlcopy + ") a where 1=0";
                 }
 
@@ -297,7 +307,8 @@ public class SqlReader extends AbstractDatasetReader {
     public java.sql.Connection getConnection2(Script paraProvider)
         throws Exception {
         if (connection == null) {
-            throw new jatools.dataset.DatasetException(Util.debug(logger, App.messages.getString("res.623")));
+            throw new jatools.dataset.DatasetException(Util.debug(logger,
+                    App.messages.getString("res.623")));
         }
 
         return connection.getConnection(paraProvider);
@@ -314,7 +325,8 @@ public class SqlReader extends AbstractDatasetReader {
      */
     public Row readRow(RowMeta rowInfo) throws jatools.dataset.DatasetException {
         if (results == null) {
-            throw new jatools.dataset.DatasetException(Util.debug(logger, App.messages.getString("res.624")));
+            throw new jatools.dataset.DatasetException(Util.debug(logger,
+                    App.messages.getString("res.624")));
         }
 
         try {
@@ -334,8 +346,7 @@ public class SqlReader extends AbstractDatasetReader {
                     return Row.NO_MORE_ROWS;
                 }
             } else {
-                throw new jatools.dataset.DatasetException(
-                    App.messages.getString("res.612"));
+                throw new jatools.dataset.DatasetException(App.messages.getString("res.612"));
             }
         } catch (SQLException e) {
             throw new jatools.dataset.DatasetException(App.messages.getString("res.613"), e);
