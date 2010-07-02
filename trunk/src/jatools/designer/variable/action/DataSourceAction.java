@@ -1,6 +1,11 @@
 package jatools.designer.variable.action;
 
+import jatools.data.reader.AbstractDatasetReader;
 import jatools.data.reader.DatasetReader;
+import jatools.data.reader.udc.UserDefinedColumn;
+import jatools.dataset.Column;
+import jatools.dataset.DatasetException;
+import jatools.dataset.UserColumn;
 import jatools.designer.Main;
 import jatools.designer.data.DatasetPreviewer;
 import jatools.designer.data.DatasetReaderFactory;
@@ -8,17 +13,23 @@ import jatools.designer.data.SimpleDatasetReaderFactory;
 import jatools.designer.variable.DatasetTreeNodeValue;
 import jatools.designer.variable.TreeNodeValue;
 import jatools.designer.variable.XmlSourceTree;
+import jatools.designer.variable.dialog.UserDefinedColumnDialog;
 import jatools.dom.src.DatasetNodeSource;
 import jatools.dom.src.GroupNodeSource;
 import jatools.dom.src.NodeSource;
+import jatools.engine.script.ReportContext;
 import jatools.swingx.MessageBox;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
 import javax.swing.AbstractAction;
 import javax.swing.tree.DefaultMutableTreeNode;
+
+
 
 
 
@@ -30,7 +41,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
  */
 public class DataSourceAction extends AbstractAction {
     public static final int ADD_JDBC = 0;
-
+    public static final int DEFINE_COLUMN = 4;
     public static final int DELETE = 7;
     public static final int MODIFY = 8;
     public static final int PREVIEW = 10;
@@ -87,12 +98,64 @@ public class DataSourceAction extends AbstractAction {
 
             break;
 
-        
+
+        case DEFINE_COLUMN:
+            defineColumnAction((DatasetNodeSource) this.nodeSource, this.defaultMutableTreeNode,
+                this.c);
+
+            break;    
 
         }
     }
 
-   
+    void defineColumnAction(DatasetNodeSource nodeSource,
+            DefaultMutableTreeNode defaultMutableTreeNode, Component c) {
+            DatasetNodeSource dns = (DatasetNodeSource) nodeSource;
+            AbstractDatasetReader reader = (AbstractDatasetReader) dns.getReader();
+
+            ArrayList cols = reader.getUserDefinedColumns();
+            UserDefinedColumn[] userCols = null;
+
+            if ((cols != null) && !cols.isEmpty()) {
+                userCols = (UserDefinedColumn[]) cols.toArray(new UserDefinedColumn[0]);
+            } else {
+                userCols = new UserDefinedColumn[0];
+            }
+
+            ArrayList srcCols = null;
+
+            try {
+                srcCols = new ArrayList(Arrays.asList(reader.read(ReportContext.getDefaultContext(), 0)
+                                                         .getRowInfo().getColumns()));
+            } catch (DatasetException e) {
+                srcCols = new ArrayList();
+                e.printStackTrace();
+            }
+
+            Iterator it = srcCols.iterator();
+
+            while (it.hasNext()) {
+                if (it.next() instanceof UserColumn) {
+                    it.remove();
+                }
+            }
+
+            Column[] sysCols = (Column[]) srcCols.toArray(new Column[0]);
+
+            UserDefinedColumnDialog d = new UserDefinedColumnDialog(Main.getInstance(), sysCols,
+                    userCols);
+            d.show();
+
+            if (d.isDone()) {
+                reader.setUserDefinedColumns(d.getUserColumns());
+
+                if (c instanceof XmlSourceTree) {
+                    invalidate();
+                    updateTree(defaultMutableTreeNode, MODIFY);
+                }
+            }
+        }
+
 
     void invalidate() {
         ((DatasetTreeNodeValue) this.defaultMutableTreeNode.getUserObject()).invalidate();

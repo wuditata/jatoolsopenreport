@@ -30,6 +30,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -127,6 +128,7 @@ public class SqlReader extends AbstractDatasetReader {
             new PropertyDescriptor(ComponentConstants.PROPERTY_SQL, String.class),
             new PropertyDescriptor(ComponentConstants.PROPERTY_DESCRIPTION, String.class),
             new PropertyDescriptor("JdbcType", Integer.TYPE),
+            ComponentConstants._USER_DEFINED_COLUMNS,
             new PropertyDescriptor(ComponentConstants.PROPERTY_CONNECTION, Connection.class)
         };
     }
@@ -198,6 +200,7 @@ public class SqlReader extends AbstractDatasetReader {
 
             if (isQuery(sqlcopy)) {
                 if (!withdata) {
+                    // 修正bug,当输入的sql以分号结束时
                     while ((sqlcopy = sqlcopy.trim()).endsWith(";")) {
                         sqlcopy = sqlcopy.substring(0, sqlcopy.length() - 1);
                     }
@@ -486,6 +489,10 @@ public class SqlReader extends AbstractDatasetReader {
 
         readEnd();
 
+        if (this.userDefinedColumns != null) {
+            addUserColumns(ds, this.userDefinedColumns, script);
+        }
+
         ds.setReaderSrc(this);
 
         return ds;
@@ -499,6 +506,10 @@ public class SqlReader extends AbstractDatasetReader {
                 this.lastDataset = new Dataset(readStart(script, false));
             } else {
                 this.lastDataset = new Dataset(lastRowMeta);
+            }
+
+            if (this.userDefinedColumns != null) {
+                addUserColumns(lastDataset, this.userDefinedColumns, script);
             }
 
             lastDataset.setReaderSrc(this);
@@ -553,5 +564,15 @@ public class SqlReader extends AbstractDatasetReader {
      */
     public RowMeta getRowMeta(Script script) {
         return null;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param userDefinedColumns DOCUMENT ME!
+     */
+    public void setUserDefinedColumns(ArrayList userDefinedColumns) {
+        super.setUserDefinedColumns(userDefinedColumns);
+        this.invalidate();
     }
 }

@@ -1,20 +1,23 @@
 package jatools.designer.variable.popup;
 
-
 import jatools.designer.App;
+
 import jatools.designer.variable.SourceType;
 import jatools.designer.variable.TreeNodeValue;
+import jatools.designer.variable.action.ArraySourceAction;
 import jatools.designer.variable.action.CrossSourceAction;
 import jatools.designer.variable.action.DataSourceAction;
 import jatools.designer.variable.action.GroupSourceAction;
 import jatools.designer.variable.action.IndexSourceAction;
 import jatools.designer.variable.action.RowSourceAction;
+
 import jatools.dom.src.DatasetNodeSource;
 import jatools.dom.src.GroupNodeSource;
 import jatools.dom.src.NodeSource;
 import jatools.dom.src.RowNodeSource;
 
 import java.awt.Component;
+
 import java.util.ArrayList;
 
 import javax.swing.JMenu;
@@ -38,6 +41,7 @@ public class SourcePopup extends JPopupMenu implements SourceType {
     private JMenuItem addIndexItem;
     private JMenuItem delIndexItem;
     private JMenuItem modifyIndexItem;
+    private JMenuItem defineColumnItem;
     private JMenuItem addCrossItem;
     private JMenuItem delCrossItem;
     private JMenuItem modifyCrossItem;
@@ -46,6 +50,9 @@ public class SourcePopup extends JPopupMenu implements SourceType {
     private JMenuItem addGroupItem;
     private JMenuItem delGroupItem;
     private JMenuItem modifyGroupItem;
+    private JMenuItem addArrayItem;
+    private JMenuItem delArrayItem;
+    private JMenuItem modifyArrayItem;
     private NodeSource nodeSource;
     private Component c;
     private JMenu addView;
@@ -63,47 +70,54 @@ public class SourcePopup extends JPopupMenu implements SourceType {
         TreeNodeValue nodeValue = (TreeNodeValue) defaultMutableTreeNode.getUserObject();
         this.nodeSource = nodeValue.getNodeSource();
         addDatasetMenu = new JMenu(App.messages.getString("res.261"));
-        addJdbcItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.262"), c, defaultMutableTreeNode,
-                    DataSourceAction.ADD_JDBC));
+        addJdbcItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.262"), c,
+                    defaultMutableTreeNode, DataSourceAction.ADD_JDBC));
+        defineColumnItem = new JMenuItem(new DataSourceAction("自定义字段", c, defaultMutableTreeNode,
+                DataSourceAction.DEFINE_COLUMN));
 
         addDatasetMenu.add(addJdbcItem);
 
-        delDatasetItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.96"), c, defaultMutableTreeNode,
-                    DataSourceAction.DELETE));
+        delDatasetItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.96"), c,
+                    defaultMutableTreeNode, DataSourceAction.DELETE));
 
-        modifyDatasetItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.95"), c, defaultMutableTreeNode,
-                    DataSourceAction.MODIFY));
+        modifyDatasetItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.95"), c,
+                    defaultMutableTreeNode, DataSourceAction.MODIFY));
 
         addView = new JMenu(App.messages.getString("res.263"));
-        addIndexItem = new JMenuItem(new IndexSourceAction(App.messages.getString("res.264"), c, defaultMutableTreeNode,
-                    IndexSourceAction.ADD));
-        delIndexItem = new JMenuItem(new IndexSourceAction(App.messages.getString("res.96"), c, defaultMutableTreeNode,
-                    IndexSourceAction.DELETE));
+        addIndexItem = new JMenuItem(new IndexSourceAction(App.messages.getString("res.264"), c,
+                    defaultMutableTreeNode, IndexSourceAction.ADD));
+        delIndexItem = new JMenuItem(new IndexSourceAction(App.messages.getString("res.96"), c,
+                    defaultMutableTreeNode, IndexSourceAction.DELETE));
 
-        addCrossItem = new JMenuItem(new CrossSourceAction(App.messages.getString("res.265"), c, defaultMutableTreeNode,
-                    CrossSourceAction.ADD));
-        delCrossItem = new JMenuItem(new CrossSourceAction(App.messages.getString("res.96"), c, defaultMutableTreeNode,
-                    CrossSourceAction.DELETE));
-        modifyCrossItem = new JMenuItem(new CrossSourceAction(App.messages.getString("res.95"), c, defaultMutableTreeNode,
-                    CrossSourceAction.MODIFY));
+        addCrossItem = new JMenuItem(new CrossSourceAction(App.messages.getString("res.265"), c,
+                    defaultMutableTreeNode, CrossSourceAction.ADD));
+        delCrossItem = new JMenuItem(new CrossSourceAction(App.messages.getString("res.96"), c,
+                    defaultMutableTreeNode, CrossSourceAction.DELETE));
+        modifyCrossItem = new JMenuItem(new CrossSourceAction(App.messages.getString("res.95"), c,
+                    defaultMutableTreeNode, CrossSourceAction.MODIFY));
 
-        addRowItem = new JMenuItem(new RowSourceAction(App.messages.getString("res.266"), c, defaultMutableTreeNode,
-                    RowSourceAction.ADD_ROW));
+        addRowItem = new JMenuItem(new RowSourceAction(App.messages.getString("res.266"), c,
+                    defaultMutableTreeNode, RowSourceAction.ADD_ROW));
 
         addRowItem.setEnabled(!hasRowChild());
 
-        delRowItem = new JMenuItem(new RowSourceAction(App.messages.getString("res.96"), c, defaultMutableTreeNode,
-                    RowSourceAction.DELETE_ROW));
+        delRowItem = new JMenuItem(new RowSourceAction(App.messages.getString("res.96"), c,
+                    defaultMutableTreeNode, RowSourceAction.DELETE_ROW));
+        addArrayItem = new JMenuItem(new ArraySourceAction("添加java数组", c, defaultMutableTreeNode,
+                    ArraySourceAction.ADD));
+        delArrayItem = new JMenuItem(new ArraySourceAction("删除", c, defaultMutableTreeNode,
+                    ArraySourceAction.DELETE));
+        modifyArrayItem = new JMenuItem(new ArraySourceAction("编辑", c, defaultMutableTreeNode,
+                    ArraySourceAction.MODIFY));
+        addGroupItem = new JMenuItem(new GroupSourceAction(App.messages.getString("res.223"), c,
+                    defaultMutableTreeNode, GroupSourceAction.ADD_GROUP));
+        delGroupItem = new JMenuItem(new GroupSourceAction(App.messages.getString("res.96"), c,
+                    defaultMutableTreeNode, GroupSourceAction.DELETE_GROUP));
+        modifyGroupItem = new JMenuItem(new GroupSourceAction(App.messages.getString("res.95"), c,
+                    defaultMutableTreeNode, GroupSourceAction.MODIFY_GROUP));
 
-        addGroupItem = new JMenuItem(new GroupSourceAction(App.messages.getString("res.223"), c, defaultMutableTreeNode,
-                    GroupSourceAction.ADD_GROUP));
-        delGroupItem = new JMenuItem(new GroupSourceAction(App.messages.getString("res.96"), c, defaultMutableTreeNode,
-                    GroupSourceAction.DELETE_GROUP));
-        modifyGroupItem = new JMenuItem(new GroupSourceAction(App.messages.getString("res.95"), c, defaultMutableTreeNode,
-                    GroupSourceAction.MODIFY_GROUP));
-
-        dataPreviewItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.187"), c, defaultMutableTreeNode,
-                    DataSourceAction.PREVIEW));
+        dataPreviewItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.187"), c,
+                    defaultMutableTreeNode, DataSourceAction.PREVIEW));
 
         switch (popupType) {
         case SourceType.ROOT_NODE_SOURCE:
@@ -135,11 +149,17 @@ public class SourcePopup extends JPopupMenu implements SourceType {
             configRowPopup();
 
             break;
+
+        case SourceType.ARRAY_NODE_SOURCE:
+            configArrayPopup();
+
+            break;
         }
     }
 
     private void configRootPopup() {
         this.add(addDatasetMenu);
+        this.add(addArrayItem);
     }
 
     private void configDatasetPopup() {
@@ -152,9 +172,10 @@ public class SourcePopup extends JPopupMenu implements SourceType {
         addView.add(addGroupItem);
         this.add(addView);
         this.add(addDatasetMenu);
-
+        this.add(addArrayItem);
         this.addSeparator();
-
+        this.add(defineColumnItem);
+        this.addSeparator();
         this.add(modifyDatasetItem);
         this.add(delDatasetItem);
     }
@@ -190,7 +211,7 @@ public class SourcePopup extends JPopupMenu implements SourceType {
         addView.add(addGroupItem);
         this.add(addView);
         this.add(addDatasetMenu);
-
+        this.add(addArrayItem);
         this.addSeparator();
         this.add(modifyGroupItem);
         this.add(delGroupItem);
@@ -198,9 +219,22 @@ public class SourcePopup extends JPopupMenu implements SourceType {
 
     private void configRowPopup() {
         this.add(addDatasetMenu);
-
+        this.add(addArrayItem);
         this.addSeparator();
         this.add(delRowItem);
+    }
+
+    private void configArrayPopup() {
+        this.add(addDatasetMenu);
+
+        this.add(addArrayItem);
+
+        this.addSeparator();
+        this.add(modifyArrayItem);
+        this.add(delArrayItem);
+
+        addRowItem.setEnabled(!childrenContainGroupORRow());
+        addGroupItem.setEnabled(!childrenContainGroupORRow());
     }
 
     private void addOrDelRow() {

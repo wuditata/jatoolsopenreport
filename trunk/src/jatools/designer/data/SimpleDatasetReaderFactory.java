@@ -18,6 +18,7 @@ import java.util.Map;
 public class SimpleDatasetReaderFactory {
     static {
         registerFactory(SqlReader.TYPE, new SqlReaderFactory());
+        //registerFactory(SqlReader.TYPE, new SqlReaderFactory());
     }
 
     static String[] types = { SqlReader.TYPE };

@@ -1,19 +1,23 @@
 package jatools.component;
 
-
-
-
 import jatools.PageFormat;
 import jatools.VariableContext;
+
 import jatools.accessor.PropertyDescriptor;
+
 import jatools.component.table.Cell;
+
 import jatools.core.view.Border;
+
 import jatools.data.reader.DatasetReader;
+
 import jatools.designer.data.Hyperlink;
+
 import jatools.formatter.Format2;
 
 import java.awt.Color;
 import java.awt.Font;
+
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -104,7 +108,6 @@ public class ComponentConstants {
     private static final String PROPERTY_FILL_HEIGHT = "FillHeight";
     public static PropertyDescriptor _FILL_HEIGHT = new PropertyDescriptor(PROPERTY_FILL_HEIGHT,
             Boolean.TYPE, PropertyDescriptor.SERIALIZABLE);
-
     public static final PropertyDescriptor _FILEPATH = new PropertyDescriptor(PROPERTY_FILEPATH,
             String.class, PropertyDescriptor.SERIALIZABLE);
     public static final PropertyDescriptor _VARIABLE_CONTEXT = new PropertyDescriptor(PROPERTY_VARIABLE_CONTEXT,
@@ -265,5 +268,8 @@ public class ComponentConstants {
     public static final PropertyDescriptor _LABEL_FIELD = new PropertyDescriptor("LabelField",
             String.class, PropertyDescriptor.SERIALIZABLE);
     public static final PropertyDescriptor _PLOT_DATA = new PropertyDescriptor("PlotData",
+            ArrayList.class, PropertyDescriptor.SERIALIZABLE);
+    public static final String PROPERTY_USER_DEFINED_COLUMNS = "UserDefinedColumns";
+    public static final PropertyDescriptor _USER_DEFINED_COLUMNS = new PropertyDescriptor(PROPERTY_USER_DEFINED_COLUMNS,
             ArrayList.class, PropertyDescriptor.SERIALIZABLE);
 }

@@ -1,7 +1,8 @@
 package jatools.designer.variable;
 
-
 import jatools.designer.data._Variable;
+
+import jatools.dom.src.ArrayNodeSource;
 import jatools.dom.src.CrossIndexNodeSource;
 import jatools.dom.src.DatasetNodeSource;
 import jatools.dom.src.GroupNodeSource;
@@ -66,6 +67,8 @@ public class TreeNodeValue extends _Variable implements SourceType {
             return GROUP_NODE_SOURCE;
         } else if (nodeSource instanceof XmlNodeSource) {
             return XML_NODE_SOURCE;
+        } else if (nodeSource instanceof ArrayNodeSource) {
+            return ARRAY_NODE_SOURCE;
         }
 
         return -2;
