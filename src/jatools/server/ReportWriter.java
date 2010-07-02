@@ -57,6 +57,7 @@ public class ReportWriter extends ReportActionBase {
     public static void service(HttpServletRequest request, HttpServletResponse response)
         throws ServletException {
         try {
+        
             ReportJob job = null;
             String jobUUID = request.getParameter(ReportJob.REQUIRED_CAHCED_JOB_UUID);
 

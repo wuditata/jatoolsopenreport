@@ -3,6 +3,8 @@ package jatools.data.reader;
 
 import jatools.accessor.PropertyDescriptor;
 import jatools.accessor.ProtectPublic;
+import jatools.data.reader.udc.UserColumnBuilder;
+import jatools.data.reader.udc.UserDefinedColumnBuilderCache;
 import jatools.dataset.Dataset;
 import jatools.dataset.DatasetException;
 import jatools.dataset.FilterSet;
@@ -29,6 +31,7 @@ public abstract class AbstractDatasetReader implements DatasetReader, ProtectPub
     protected String name;
     protected String description;
     protected ArrayList indexs;
+    protected ArrayList userDefinedColumns;
     protected FilterSet filterSet;
 
     /**
@@ -218,10 +221,23 @@ public abstract class AbstractDatasetReader implements DatasetReader, ProtectPub
         }
 
         readEnd();
+        if (this.userDefinedColumns != null) {
+            addUserColumns(ds, this.userDefinedColumns, script);
+        }
 
         ds.setReaderSrc(this);
 
         return ds;
+    }
+    
+    protected void addUserColumns(Dataset data, ArrayList cols, Script script) {
+        Iterator it = cols.iterator();
+
+        while (it.hasNext()) {
+            Object col = it.next();
+            UserColumnBuilder f = UserDefinedColumnBuilderCache.getInstance(col);
+            f.build(data, col, script);
+        }
     }
 
     /**
@@ -231,5 +247,24 @@ public abstract class AbstractDatasetReader implements DatasetReader, ProtectPub
      */
     public void setIndexs(ArrayList indexs) {
         this.indexs = indexs;
+    }
+    
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public ArrayList getUserDefinedColumns() {
+        return userDefinedColumns;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param userDefinedColumns DOCUMENT ME!
+     */
+    public void setUserDefinedColumns(ArrayList userDefinedColumns) {
+        this.userDefinedColumns = userDefinedColumns;
     }
 }

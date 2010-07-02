@@ -1,6 +1,7 @@
 package jatools.designer.variable;
 
 import jatools.designer.App;
+import jatools.dom.src.ArrayNodeSource;
 import jatools.dom.src.CrossIndexNodeSource;
 import jatools.dom.src.DatasetNodeSource;
 import jatools.dom.src.IndexNodeSource;
@@ -25,6 +26,8 @@ import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeCellRenderer;
+
+
 
 
 /**
@@ -249,7 +252,37 @@ public class SourceTreeRenderer extends JPanel implements TreeCellRenderer {
                     }
 
                     break;
+                    
+                case TreeNodeValue.ARRAY_NODE_SOURCE:
+
+                    ArrayNodeSource arrayNodeSource = (ArrayNodeSource) tnv.getNodeSource();
+                    String[] v = arrayNodeSource.getFields();
+                    setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+                    label = new IconPanel(tnv.toString(), array_icon);
+                    label.putClientProperty(NODE, "[" + row + "]" + arrayNodeSource.getTagName());
+
+                    if (selected) {
+                        label.setBackground(selectedBackGround);
+                        label.setForeground(Color.white);
+                    }
+
+                    add(label);
+
+                    if (v != null) {
+                        for (int i = 0; i < v.length; i++) {
+                            JLabel button = new JLabel(v[i].toString());
+                            button.setOpaque(true);
+                            button.setBackground(labelColor);
+                            button.setFont(new Font("ËÎÌו", Font.PLAIN, 12));
+                            button.setBorder(labelBorder);
+                            button.putClientProperty(NODE, "[" + row + "]" + v[i].toString());
+                            add(button);
+                        }
+                    }
+
+                    break;
                 }
+               
             }
         }
 
